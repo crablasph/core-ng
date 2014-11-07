@@ -35,13 +35,11 @@ $parametros["per"] = substr($_REQUEST['periodo'], 5, 1);
 $cadena_sqlD = $this->sql->cadena_sql("consultarCodigoIdentificacion",$parametros);
 
 $registrosD = $esteRecursoDB->ejecutarAcceso($cadena_sqlD,"busqueda");
-
+$codigo = 0;
 if(!is_null($registrosD)){
 
 	$codigo = $registrosD[0][0];
-}
-
-$codigo = 0;
+} 
 
 
 

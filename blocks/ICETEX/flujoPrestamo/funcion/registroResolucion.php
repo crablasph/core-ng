@@ -73,6 +73,7 @@ foreach ($this->listadoCodigos as $lista){
 			$_REQUEST['valorIndividual'] = 0;
 		}
 		$parametros['aprobado'] = 'S';
+		$parametros['identificacion'] = $lista[4];
 		
 		//Validar Codigo - Identificacion
 		if($parametros["codigo"]==0){
@@ -88,18 +89,20 @@ foreach ($this->listadoCodigos as $lista){
 		
 		//validar Modalidad de Credito
 		if(strlen ($lista[2])<1){
-			$parametos['modalidadCredito'] = $lista[2];
+			$parametros['modalidadCredito'] = 0;
 			$errorModalidad = true;
-		}
+		}else $parametros['modalidadCredito'] = $lista[2];
 		
 		//validar Modalidad de Credito
-		if($this->validateDate($modalidadCredito)){
-			$parametos['fechaCredito'] = $lista[3];
+		if(!$this->validateDate($lista[3])){
+			$parametros['fechaCredito'] = 0;
 			$errorFecha = true;
-		}
+		}else $parametros['fechaCredito'] = $lista[3];
 		 
 		
-		if($errorValor==false&&$$errorModalidad==false&&$errorFecha==false&&$errorCodigo==false){
+		
+		
+		if($errorValor==false&&$errorModalidad==false&&$errorFecha==false&&$errorCodigo==false){
 				//Se agrega el cambio ya que no se habia tenido en cuenta que para hacer la solicitud el 
 				//credito debe encontrarse aprobado
 				//Insert
@@ -150,12 +153,10 @@ foreach ($this->listadoCodigos as $lista){
 		
 		}else{
 			
-			if($errorValor!=false) array_push($arrayp,array($parametros["codigo"],'Valor individual'));
-			if($errorModalidad!=false) array_push($arrayp,array($parametros["codigo"],'Modalidad'));
-			if($errorFecha!=false) array_push($arrayp,array($parametros["codigo"],'Fecha'));
-			if($errorCodigo!=false) array_push($arrayp,array($parametros["codigo"],'Identificacion'));
-				
-			array_push($listaError,$arrayp );
+			
+			$errorInsert = true ;
+			$errorUpdate = true;
+			
 		
 		}
 		
@@ -183,16 +184,24 @@ foreach ($this->listadoCodigos as $lista){
                             $cuerpo .= "<br>Acerquese o comuniquese con <b>Bienestar Institucional</b> la universidad para realizar el procedimiento de cancelación de valores adecuados o por el contrario reclamación de los valores a devolver";
                         }
                         $bandera++;
+                        
+                 $this->notificarEstudiante($cuerpo, $tema , $this->rutaArchivo, 'RESOLUCION');
+                 $this->actualizarEstadoFlujo();
 		}else{
 			
-			if($errorInsert!=false) array_push($arrayp,array($parametros["codigo"],'Insertar'));
-			if($errorUpdate!=false) array_push($arrayp,array($parametros["codigo"],'Actualizar'));
+			
+			if($errorValor!=false) array_push($arrayp,array($parametros["codigo"],'Valor individual',$parametros['identificacion']));
+			if($errorModalidad!=false) array_push($arrayp,array($parametros["codigo"],'Modalidad',$parametros['identificacion']));
+			if($errorFecha!=false) array_push($arrayp,array($parametros["codigo"],'Fecha',$parametros['identificacion']));
+			if($errorCodigo!=false) array_push($arrayp,array($parametros["codigo"],'Identificacion',$parametros['identificacion']));
+			if($errorInsert!=false) array_push($arrayp,array($parametros["codigo"],'Insertar',$parametros['identificacion']));
+			if($errorUpdate!=false) array_push($arrayp,array($parametros["codigo"],'Actualizar',$parametros['identificacion']));
+			
 			array_push($listaError,$arrayp );
 				
 		}
 		
-		$this->notificarEstudiante($cuerpo, $tema , $this->rutaArchivo, 'RESOLUCION');
-		$this->actualizarEstadoFlujo();
+		
 		
 		$errorUpdate = false;
 		$errorInsert = false;
@@ -230,7 +239,7 @@ if(count($listaError)>0){
 	echo '<div style="text-align: center;color:red"><p><b>';
 	echo $this->lenguaje->getCadena("errorRegistroResolucion")." <br>";
 	foreach($listaError as $li){
-		echo $li[0][0]." - ".$li[0][1]."<br>";
+		echo $li[0][0]." - ".$li[0][2].": ".$li[0][1]."<br>";
 	}
 	echo "</b></p></div><br><br>";
 }

@@ -42,33 +42,15 @@ if (isset($_FILES["excelResolucion"])&&$_FILES["excelResolucion"]['size']<=$maxS
 			exit("Por favor ingrese un archivo valido." . EOL);
 		}
 		$objPHPExcelReader = PHPExcel_IOFactory::load($_FILES["excelResolucion"]["tmp_name"]);
-		$lastRow = $objPHPExcelReader->getActiveSheet()->getHighestRow();
-		for ($i=2;$i<=$lastRow;$i++){
-			
-			//cedula
-			$celdaA = trim($objPHPExcelReader->getActiveSheet()->getCell('E'.$i)->getValue());
-			//valor individual
-			$celdaB = trim($objPHPExcelReader->getActiveSheet()->getCell('H'.$i)->getValue());
-			//Resolucion
-			$celdaK = trim($objPHPExcelReader->getActiveSheet()->getCell('K'.$i)->getValue());
-			//modalidad resolucion
-			$celdaC = trim($objPHPExcelReader->getActiveSheet()->getCell('C'.$i)->getValue());
-			//Fecha que llego la resolucion
-			$celdaI = trim($objPHPExcelReader->getActiveSheet()->getCell('I'.$i)->getValue());
-			
-			$celdaK  = trim($celdaK);
-			
-			if(trim($celdaA)!='0' &&!is_null($celdaA)&&$celdaK==$_REQUEST["resolucion"]){
-				$celdaA = $this->identificacionACodigo($celdaA);
-				$arr = array($celdaA,$celdaB,$celdaC,$celdaI);
-			
-			
-				
-				array_push($this->listadoCodigos,$arr);
-			}
-				
-			
-		}
+		
+		$permitidos = array('RENOVADOS','LEGALIZADOS');
+		
+		
+		$this->procesarHoja($permitidos[0],$objPHPExcelReader);
+		$this->procesarHoja($permitidos[1],$objPHPExcelReader);
+		
+		
+		
 		
 	}
 }else {

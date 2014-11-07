@@ -5,6 +5,8 @@ if(!isset($GLOBALS["autorizado"]))
 	exit;
 }
 
+
+
 include_once("core/manager/Configurador.class.php");
 include_once("core/builder/InspectorHTML.class.php");
 include_once("core/builder/Mensaje.class.php");
@@ -60,10 +62,14 @@ class FuncionflujoPrestamo
 
 	}
 	
+	function procesarHoja($indexName,$objPHPExcelReader){
+		include($this->ruta."/funcion/procesarHoja.php");
+	}
+	
 	function validateDate($date)
 	{
-		$d = DateTime::createFromFormat('d/m/Y', $date);
-        return $d && $d->format('d/m/Y') == $date;
+		$d = DateTime::createFromFormat('j/m/y', $date);
+        return $d && $d->format('j/m/y') == $date;
 	}
 
 	function mostrarTabla()

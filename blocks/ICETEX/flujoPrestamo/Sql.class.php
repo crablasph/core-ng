@@ -246,7 +246,7 @@ class SqlflujoPrestamo extends sql {
 			case "registroResolucion":
 				$cadena_sql=" UPDATE CREDITO_RESOLUCION SET ";
 				$cadena_sql.=" CRE_MODALIDAD = '".$variable['modalidadCredito']."', ";
-				$cadena_sql.=" CRE_FECHA_INGRESO = '".$variable['fechaCredito']."', ";
+				$cadena_sql.=" CRE_FECHA_INGRESO = to_date('".$variable['fechaCredito']."','DD/MM/YY'), ";
 				$cadena_sql.=" CRE_RESOLUCION = '".$variable['resolucion']."', ";
 				$cadena_sql.=" CRE_VALOR_TOTAL = ".$variable['valorTotal'].", ";
 				$cadena_sql.=" CRE_VALOR_INDIVIDUAL = ".$variable['valorIndividual'].", ";
