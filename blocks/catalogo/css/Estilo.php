@@ -5,8 +5,10 @@ $estilo[$indice++]="validationEngine.jquery.css";
 $estilo[$indice++]="listado.css";
 $estilo[$indice++]="jquery.dataTables.css";
 $estilo[$indice++]="jquery.dataTables_themeroller.css";
+$estilo[$indice++]="arbol.css";
 $rutaBloque=$this->miConfigurador->getVariableConfiguracion("host");
 $rutaBloque.=$this->miConfigurador->getVariableConfiguracion("site");
+
 
 if($unBloque["grupo"]==""){
 	$rutaBloque.="/blocks/".$unBloque["nombre"];

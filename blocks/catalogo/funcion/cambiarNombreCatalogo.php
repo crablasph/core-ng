@@ -55,22 +55,25 @@ class Formulario {
     	//validar request nombre
     	if(!isset($_REQUEST['nombreCatalogo'])){
     		$this->miConfigurador->setVariableConfiguracion ( 'mostrarMensaje', 'errorNombre' );
+    		$this->miConfigurador->setVariableConfiguracion ( 'tipoMensaje','error' );
     		$this->mensaje();
     		exit;
     	}
     	
     	if(strlen($_REQUEST['nombreCatalogo'])>50){
     		$this->miConfigurador->setVariableConfiguracion ( 'mostrarMensaje', 'errorLargoNombre' );
+    		$this->miConfigurador->setVariableConfiguracion ( 'tipoMensaje','error' );
     		$this->mensaje();
     		exit;
     	}
     	
     	//validar nombre existente
-    	$cadena_sql = $this->sql->getCadenaSql("buscarCatalogo",$_REQUEST['idCatalogo']);
+    	$cadena_sql = $this->sql->getCadenaSql("buscarCatalogo",$_REQUEST['nombreCatalogo']);
     	$registros = $this->esteRecursoDB->ejecutarAcceso($cadena_sql,"busqueda");
     	
-    	if(is_array($registros)){
+    	if( is_array($registros)){
     		$this->miConfigurador->setVariableConfiguracion ( 'mostrarMensaje', 'errorNombreExiste' );
+    		$this->miConfigurador->setVariableConfiguracion ( 'tipoMensaje','error' );
     		$this->mensaje();
     		exit;
     	}
@@ -81,6 +84,7 @@ class Formulario {
     	
     	if(!$registros){
     		$this->miConfigurador->setVariableConfiguracion ( 'mostrarMensaje', 'errorCambioNombre' );
+    		$this->miConfigurador->setVariableConfiguracion ( 'tipoMensaje','error' );
     		$this->mensaje();
     		exit;
     	}
@@ -88,7 +92,7 @@ class Formulario {
     	
 		 $this->mensaje2('cambioNombre');
     	
-    	 $this->funcion->dibujarCatalogo();
+    	 //$this->funcion->dibujarCatalogo();
     	
     	exit;
     	
@@ -117,7 +121,8 @@ class Formulario {
             $esteCampo = 'divMensaje';
             $atributos ['id'] = $esteCampo;
             $atributos ["tamanno"] = '';
-            $atributos ["estilo"] = 'information';
+            if( $tipoMensaje)  $atributos ["estilo"] = $tipoMensaje;
+            else $atributos ["estilo"] = 'information';
             $atributos ["etiqueta"] = '';
             $atributos ["columnas"] = ''; // El control ocupa 47% del tamaño del formulario
             echo $this->miFormulario->campoMensaje ( $atributos );
@@ -134,7 +139,7 @@ class Formulario {
     
     	
     	
-    
+    	$atributos = array();
     				$atributos ['mensaje'] = $this->lenguaje->getCadena ( $mensaje );
     	
     		// -------------Control texto-----------------------
@@ -162,6 +167,6 @@ $miFormulario = new Formulario ( $this->lenguaje, $this->miFormulario,$this->sql
 
 
 $miFormulario->cambiarNombre ();
-$miFormulario->mensaje ();
+//$miFormulario->mensaje ();
 
 ?>

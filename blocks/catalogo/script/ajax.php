@@ -254,6 +254,7 @@ $casa =  $url.$cadena0;
 		
 		$('#idPadre').val(cod);
 		$('#lidPadre').html(cod);
+		$('#idPadre').val(id);
 		$('#idReg').val(id);
 	}
 

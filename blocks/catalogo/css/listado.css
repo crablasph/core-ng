@@ -7,6 +7,10 @@
 	
 }
 
+.tabla tr td {
+    text-align: center;
+}
+
 .cont:hover{
 	cursor:pointer;	
 	

@@ -67,4 +67,7 @@ $this->idioma['listaMenu']="Menu";
 $this->idioma["listaId"]="Identificador";
 $this->idioma["listaCasa"]="Ir a la lista de catalogos";
 $this->idioma['crearLabel']="Crear catalogo";
+$this->idioma["listaMostrar"]="Ver";
+$this->idioma["listaEdicion"]="Editar";
+$this->idioma["listaEliminacion"]="Eliminar";
 ?>

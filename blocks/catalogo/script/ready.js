@@ -23,7 +23,7 @@ $('#clave').keydown(function(e) {
     }
 });
 
-$('#listadoCatalogo').DataTable({
+$('#tabla').DataTable({
 	"jQueryUI":true
 });
 

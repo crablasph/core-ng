@@ -7,9 +7,6 @@
 $indice=0;
 $funcion[$indice++]="jquery.validationEngine.js";
 $funcion[$indice++]="jquery.validationEngine-es.js";
-$funcion[$indice ++]="modernizr.custom.js";
-$funcion[$indice ++]="jquery.dlmenu.js";
-$funcion[$indice ++]="jquery.dataTables.js";
 
 
 

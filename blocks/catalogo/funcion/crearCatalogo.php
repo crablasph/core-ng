@@ -46,12 +46,14 @@ class Formulario {
     	//validar request nombre
     	if(!isset($_REQUEST['nombre'])){
     		$this->miConfigurador->setVariableConfiguracion ( 'mostrarMensaje', 'errorNombre' );
+    		$this->miConfigurador->setVariableConfiguracion ( 'tipoMensaje','error' );
     		$this->mensaje();
     		exit;
     	}
     	
     	if(strlen($_REQUEST['nombre'])>50){
     		$this->miConfigurador->setVariableConfiguracion ( 'mostrarMensaje', 'errorLargoNombre' );
+    		$this->miConfigurador->setVariableConfiguracion ( 'tipoMensaje','error' );
     		$this->mensaje();
     		exit;
     	}
@@ -62,6 +64,7 @@ class Formulario {
     	
     	if(is_array($registros)){
     		$this->miConfigurador->setVariableConfiguracion ( 'mostrarMensaje', 'errorNombreExiste' );
+    		$this->miConfigurador->setVariableConfiguracion ( 'tipoMensaje','error' );
     		$this->mensaje();
     		exit;
     	}
@@ -72,6 +75,7 @@ class Formulario {
     	
     	if(!$registros){
     		$this->miConfigurador->setVariableConfiguracion ( 'mostrarMensaje', 'errorCreacion' );
+    		$this->miConfigurador->setVariableConfiguracion ( 'tipoMensaje','error' );
     		$this->mensaje();
     		exit;
     	}
@@ -146,7 +150,8 @@ class Formulario {
     		$esteCampo = 'divMensaje';
     		$atributos ['id'] = $esteCampo;
     		$atributos ["tamanno"] = '';
-    		$atributos ["estilo"] = 'information';
+    		if( $tipoMensaje)  $atributos ["estilo"] = $tipoMensaje;
+            else $atributos ["estilo"] = 'information';
     		$atributos ["etiqueta"] = '';
     		$atributos ["columnas"] = ''; // El control ocupa 47% del tamaño del formulario
     		echo $this->miFormulario->campoMensaje ( $atributos );

@@ -40,6 +40,8 @@ class Formulario {
     
     public function validarEntrada(){
     	
+    	//var_dump($_REQUEST);exit;
+    	
     	//validar request nombre
     	if(!isset($_REQUEST['nombreElemento'])){
     		$this->miConfigurador->setVariableConfiguracion ( 'mostrarMensaje', 'errorNombre' );
@@ -86,7 +88,7 @@ class Formulario {
     		exit;
     	}
     	
-    	if(strlen($_REQUEST['idPadre'])>50||!is_numeric($_REQUEST['idPadre'])){
+    	if(strlen($_REQUEST['idPadre'])>50||!is_numeric($_REQUEST['idPadre'])||strlen($_REQUEST['idReg'])>50||!is_numeric($_REQUEST['idReg'])){
     		$this->miConfigurador->setVariableConfiguracion ( 'mostrarMensaje', 'errorIdP' );
     		$this->mensaje();
     		exit;
@@ -194,7 +196,8 @@ class Formulario {
             $esteCampo = 'divMensaje';
             $atributos ['id'] = $esteCampo;
             $atributos ["tamanno"] = '';
-            $atributos ["estilo"] = 'information';
+            if( $tipoMensaje)  $atributos ["estilo"] = $tipoMensaje;
+            else $atributos ["estilo"] = 'information';
             $atributos ["etiqueta"] = '';
             $atributos ["columnas"] = ''; // El control ocupa 47% del tamaño del formulario
             echo $this->miFormulario->campoMensaje ( $atributos );

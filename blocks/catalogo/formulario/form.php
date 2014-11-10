@@ -49,6 +49,9 @@ class Formulario {
     	$textos[6]=$this->lenguaje->getCadena("listaMenu");
     	$textos[7]=$this->lenguaje->getCadena("listaId");
     	$textos[8]=$this->lenguaje->getCadena("listaCasa");
+    	$textos[9]=$this->lenguaje->getCadena("listaMostrar");
+    	$textos[10]=$this->lenguaje->getCadena("listaEdicion");
+    	$textos[11]=$this->lenguaje->getCadena("listaEliminacion");
     	$cadena_sql = $this->sql->getCadenaSql("listarCatalogos",'');
     	$registros = $this->esteRecursoDB->ejecutarAcceso($cadena_sql,"busqueda");
     	
@@ -86,13 +89,15 @@ class Formulario {
     		exit;
     	}
     	
-    	$cadena = '<table id="listadoCatalogo">';
+    	$cadena = '<table id="tabla" class="tabla">';
     	$cadena .= "<thead>";
     	$cadena .= "<tr>";
     	$cadena .= "<th>".$textos[7]."</th>";
     	$cadena .= "<th>".$textos[3]."</th>";
     	$cadena .= "<th>".$textos[4]."</th>";
-    	$cadena .= "<th>".$textos[6]."     </th>";
+    	$cadena .= "<th>".$textos[9]."</th>";
+    	$cadena .= "<th>".$textos[10]."</th>";
+    	$cadena .= "<th>".$textos[11]."</th>";
     	$cadena .= "</tr>";
     	$cadena .= "</thead>";
     	$cadena .= "<tfoot>";
@@ -100,7 +105,9 @@ class Formulario {
     	$cadena .= "<th>".$textos[7]."</th>";
     	$cadena .= "<th>".$textos[3]."</th>";
     	$cadena .= "<th>".$textos[4]."</th>";
-    	$cadena .= "<th>".$textos[6]."      </th>";
+    	$cadena .= "<th>".$textos[9]."</th>";
+    	$cadena .= "<th>".$textos[10]."</th>";
+    	$cadena .= "<th>".$textos[11]."</th>";
     	$cadena .= "</tr>";
     	$cadena .= "</tfoot>";
     	//exit;
@@ -130,15 +137,25 @@ class Formulario {
     		$cadena .= "</td>";
     		
     		//Edicion
+    		//mostrar
     		$cadena .= "<td>";
-    		
     		$cadena .= '<div class="interno">';
     		$cadena .= '<div class="mostrarElemento" onclick="mostrarElementoLista('.$fila[0].')" id="el'.$fila[0].'" title="'.$textos[1].'">v</div>';
+    		$cadena .='</div>';
+    		$cadena .= "</td>";
+    		
+    		//editar elementos
+    		$cadena .= "<td>";
+    		$cadena .= '<div class="interno">';
     		$cadena .= '<div class="editarElemento2"  onclick="editarElementoLista(this)" id="el'.$fila[0].'" title="'.$textos[2].'">e</div>';
+    		$cadena .='</div>';
+    		$cadena .= "</td>";
+    		
+    		//Eliminar
+    		$cadena .= "<td>";
+    		$cadena .= '<div class="interno">';
     		$cadena .= '<div class="eliminarElemento" onclick="eliminarElementoLista(this)" id="el'.$fila[0].'" title="'.$textos[5].'">x</div>';
     		$cadena .='</div>';
-    		
-    		
     		$cadena .= "</td>";
     		
     		//termina fila
