@@ -1,0 +1,114 @@
+a:11:{s:7:"version";s:3:"2.3";s:7:"methods";a:5:{i:0;O:13:"PhpWsdlMethod":7:{s:5:"Param";a:0:{}s:6:"Return";O:12:"PhpWsdlParam":5:{s:4:"Type";s:15:"ComplexTypeDemo";s:4:"Docs";s:10:"The object";s:4:"GUID";s:13:"54174c3a1b793";s:4:"Name";s:6:"return";s:8:"Settings";N;}s:8:"IsGlobal";b:0;s:4:"GUID";s:13:"54174c3a1b9b9";s:4:"Name";s:14:"GetComplexType";s:4:"Docs";s:25:"Get a complex type object";s:8:"Settings";N;}i:1;O:13:"PhpWsdlMethod":7:{s:5:"Param";a:1:{i:0;O:12:"PhpWsdlParam":5:{s:4:"Type";s:15:"ComplexTypeDemo";s:4:"Docs";s:10:"The object";s:4:"GUID";s:13:"54174c3a1bbfa";s:4:"Name";s:3:"obj";s:8:"Settings";N;}}s:6:"Return";O:12:"PhpWsdlParam":5:{s:4:"Type";s:6:"string";s:4:"Docs";s:21:"The result of print_r";s:4:"GUID";s:13:"54174c3a1bc37";s:4:"Name";s:6:"return";s:8:"Settings";N;}s:8:"IsGlobal";b:0;s:4:"GUID";s:13:"54174c3a1bc66";s:4:"Name";s:16:"PrintComplexType";s:4:"Docs";s:15:"Print an object";s:8:"Settings";N;}i:2;O:13:"PhpWsdlMethod":7:{s:5:"Param";a:1:{i:0;O:12:"PhpWsdlParam":5:{s:4:"Type";s:20:"ComplexTypeDemoArray";s:4:"Docs";s:23:"A ComplexTypeDemo array";s:4:"GUID";s:13:"54174c3a1bcca";s:4:"Name";s:3:"arr";s:8:"Settings";N;}}s:6:"Return";O:12:"PhpWsdlParam":5:{s:4:"Type";s:11:"stringArray";s:4:"Docs";s:22:"The results of print_r";s:4:"GUID";s:13:"54174c3a1bcf5";s:4:"Name";s:6:"return";s:8:"Settings";N;}s:8:"IsGlobal";b:0;s:4:"GUID";s:13:"54174c3a1bd1b";s:4:"Name";s:20:"ComplexTypeArrayDemo";s:4:"Docs";s:25:"Print an array of objects";s:8:"Settings";N;}i:3;O:13:"PhpWsdlMethod":7:{s:5:"Param";a:1:{i:0;O:12:"PhpWsdlParam":5:{s:4:"Type";s:6:"string";s:4:"Docs";s:30:"Some name (or an empty string)";s:4:"GUID";s:13:"54174c3a1bd78";s:4:"Name";s:4:"name";s:8:"Settings";N;}}s:6:"Return";O:12:"PhpWsdlParam":5:{s:4:"Type";s:6:"string";s:4:"Docs";s:15:"Response string";s:4:"GUID";s:13:"54174c3a1bda3";s:4:"Name";s:6:"return";s:8:"Settings";N;}s:8:"IsGlobal";b:0;s:4:"GUID";s:13:"54174c3a1bdc9";s:4:"Name";s:8:"SayHello";s:4:"Docs";s:14:"Say hello demo";s:8:"Settings";N;}i:4;O:13:"PhpWsdlMethod":7:{s:5:"Param";a:0:{}s:6:"Return";N;s:8:"IsGlobal";b:0;s:4:"GUID";s:13:"54174c3a1be1a";s:4:"Name";s:10:"DemoMethod";s:4:"Docs";s:81:"This method has no parameters and no return value, but it is visible in WSDL, too";s:8:"Settings";N;}}s:5:"types";a:4:{i:0;O:14:"PhpWsdlComplex":7:{s:4:"Type";N;s:8:"Elements";a:4:{i:0;O:14:"PhpWsdlElement":8:{s:8:"NillAble";b:1;s:9:"MinOccurs";i:1;s:9:"MaxOccurs";i:1;s:4:"Type";s:6:"string";s:4:"Docs";s:21:"A string with a value";s:4:"GUID";s:13:"54174c3a1bedf";s:4:"Name";s:7:"StringA";s:8:"Settings";N;}i:1;O:14:"PhpWsdlElement":8:{s:8:"NillAble";b:1;s:9:"MinOccurs";i:1;s:9:"MaxOccurs";i:1;s:4:"Type";s:6:"string";s:4:"Docs";s:26:"A string with a NULL value";s:4:"GUID";s:13:"54174c3a1bf14";s:4:"Name";s:7:"StringB";s:8:"Settings";N;}i:2;O:14:"PhpWsdlElement":8:{s:8:"NillAble";b:0;s:9:"MinOccurs";i:1;s:9:"MaxOccurs";i:1;s:4:"Type";s:3:"int";s:4:"Docs";s:10:"An integer";s:4:"GUID";s:13:"54174c3a1bf5e";s:4:"Name";s:7:"Integer";s:8:"Settings";N;}i:3;O:14:"PhpWsdlElement":8:{s:8:"NillAble";b:0;s:9:"MinOccurs";i:1;s:9:"MaxOccurs";i:1;s:4:"Type";s:7:"boolean";s:4:"Docs";s:9:"A boolean";s:4:"GUID";s:13:"54174c3a1bfa6";s:4:"Name";s:7:"Boolean";s:8:"Settings";N;}}s:7:"IsArray";b:0;s:4:"GUID";s:13:"54174c3a1c006";s:4:"Name";s:15:"ComplexTypeDemo";s:4:"Docs";s:171:"This is how to define a complex type f.e. - the class ComplexTypeDemo doesn't need to exists,
+but it would make it easier for you to return that complex type from a method";s:8:"Settings";N;}i:1;O:14:"PhpWsdlComplex":7:{s:4:"Type";s:6:"string";s:8:"Elements";a:0:{}s:7:"IsArray";b:1;s:4:"GUID";s:13:"54174c3a1c085";s:4:"Name";s:11:"stringArray";s:4:"Docs";s:19:"A string array type";s:8:"Settings";N;}i:2;O:14:"PhpWsdlComplex":7:{s:4:"Type";s:15:"ComplexTypeDemo";s:8:"Elements";a:0:{}s:7:"IsArray";b:1;s:4:"GUID";s:13:"54174c3a1c0f8";s:4:"Name";s:20:"ComplexTypeDemoArray";s:4:"Docs";s:27:"An array of ComplexTypeDemo";s:8:"Settings";N;}i:3;O:14:"PhpWsdlComplex":7:{s:4:"Type";s:3:"int";s:8:"Elements";a:0:{}s:7:"IsArray";b:1;s:4:"GUID";s:13:"54174c3a1c16c";s:4:"Name";s:10:"arrayOfInt";s:4:"Docs";s:17:"An int array type";s:8:"Settings";N;}}s:5:"files";a:2:{i:0;s:18:"class.soapdemo.php";i:1;s:25:"class.complextypedemo.php";}s:4:"name";s:8:"SoapDemo";s:4:"docs";N;s:4:"html";s:6507:"<html>
+<head>
+<title>SoapDemo interface description</title>
+<style type="text/css" media="all">
+body{font-family:Calibri,Arial;background-color:#fefefe;}
+.pre{font-family:Courier;}
+.normal{font-family:Calibri,Arial;}
+.bold{font-weight:bold;}
+h1,h2,h3{font-family:Verdana,Times;}
+h1{border-bottom:1px solid gray;}
+h2{border-bottom:1px solid silver;}
+h3{border-bottom:1px dashed silver;}
+a{text-decoration:none;}
+a:hover{text-decoration:underline;}
+.blue{color:#3400FF;}
+.lightBlue{color:#5491AF;}
+</style>
+<style type="text/css" media="print">
+.noprint{display:none;}
+</style>
+</head>
+<body>
+<h1>SoapDemo SOAP WebService interface description</h1>
+<p>Endpoint URI: <span class="pre">http://localhost/reglas/blocks/reglas/reglasServicio/src/wsdl/demo.php</span></p>
+<p>WSDL URI: <span class="pre"><a href="http://localhost/reglas/blocks/reglas/reglasServicio/src/wsdl/demo.php?WSDL&readable">http://localhost/reglas/blocks/reglas/reglasServicio/src/wsdl/demo.php?WSDL</a></span></p>
+<p>PHP SOAP client download URI: <span class="pre"><a href="http://localhost/reglas/blocks/reglas/reglasServicio/src/wsdl/demo.php?PHPSOAPCLIENT">http://localhost/reglas/blocks/reglas/reglasServicio/src/wsdl/demo.php?PHPSOAPCLIENT</a></span></p>
+<div class="noprint">
+<h2>Index</h2>
+<p>Complex types:</p>
+<ul>
+<li><a href="#ComplexTypeDemo"><span class="pre">ComplexTypeDemo</span></a></li>
+<li><a href="#ComplexTypeDemoArray"><span class="pre">ComplexTypeDemoArray</span></a></li>
+<li><a href="#arrayOfInt"><span class="pre">arrayOfInt</span></a></li>
+<li><a href="#stringArray"><span class="pre">stringArray</span></a></li>
+</ul>
+<p>Public methods:</p>
+<ul>
+<li><a href="#ComplexTypeArrayDemo"><span class="pre">ComplexTypeArrayDemo</span></a></li>
+<li><a href="#DemoMethod"><span class="pre">DemoMethod</span></a></li>
+<li><a href="#GetComplexType"><span class="pre">GetComplexType</span></a></li>
+<li><a href="#PrintComplexType"><span class="pre">PrintComplexType</span></a></li>
+<li><a href="#SayHello"><span class="pre">SayHello</span></a></li>
+</ul>
+</div>
+<h2>Complex types</h2>
+<h3>ComplexTypeDemo</h3>
+<a name="ComplexTypeDemo"></a>
+<p>This is how to define a complex type f.e. - the class ComplexTypeDemo doesn't need to exists,<br>
+but it would make it easier for you to return that complex type from a method</p>
+<ul class="pre">
+<li><span class="blue">string</span> <span class="bold">StringA</span> (nillable = <span class="blue">true</span>, minoccurs = <span class="blue">1</span>, maxoccurs = <span class="blue">1</span>)<br><span class="normal">A string with a value</span></li>
+<li><span class="blue">string</span> <span class="bold">StringB</span> (nillable = <span class="blue">true</span>, minoccurs = <span class="blue">1</span>, maxoccurs = <span class="blue">1</span>)<br><span class="normal">A string with a NULL value</span></li>
+<li><span class="blue">int</span> <span class="bold">Integer</span> (nillable = <span class="blue">false</span>, minoccurs = <span class="blue">1</span>, maxoccurs = <span class="blue">1</span>)<br><span class="normal">An integer</span></li>
+<li><span class="blue">boolean</span> <span class="bold">Boolean</span> (nillable = <span class="blue">false</span>, minoccurs = <span class="blue">1</span>, maxoccurs = <span class="blue">1</span>)<br><span class="normal">A boolean</span></li>
+</ul>
+<h3>ComplexTypeDemoArray</h3>
+<a name="ComplexTypeDemoArray"></a>
+<p>This is an array type of <span class="pre"><a href="#ComplexTypeDemo"><span class="lightBlue">ComplexTypeDemo</span></a></span>.</p>
+<p>An array of ComplexTypeDemo</p>
+<h3>arrayOfInt</h3>
+<a name="arrayOfInt"></a>
+<p>This is an array type of <span class="pre"><span class="blue">int</span></span>.</p>
+<p>An int array type</p>
+<h3>stringArray</h3>
+<a name="stringArray"></a>
+<p>This is an array type of <span class="pre"><span class="blue">string</span></span>.</p>
+<p>A string array type</p>
+<h2>Public methods</h2>
+<h3>ComplexTypeArrayDemo</h3>
+<a name="ComplexTypeArrayDemo"></a>
+<p class="pre"><a href="#stringArray"><span class="lightBlue">stringArray</span></a> <span class="bold">ComplexTypeArrayDemo</span> (
+<a href="#ComplexTypeDemoArray"><span class="lightBlue">ComplexTypeDemoArray</span></a> <span class="bold">arr</span>
+)</p>
+<p>Print an array of objects</p>
+<ul>
+<li class="pre"><a href="#ComplexTypeDemoArray"><span class="lightBlue">ComplexTypeDemoArray</span></a> <span class="bold">arr</span><br><span class="normal">A ComplexTypeDemo array</span></li>
+</ul>
+<p>Return value <span class="pre"><a href="#stringArray"><span class="lightBlue">stringArray</span></a></span>: The results of print_r</p>
+<h3>DemoMethod</h3>
+<a name="DemoMethod"></a>
+<p class="pre">void <span class="bold">DemoMethod</span> (
+)</p>
+<p>This method has no parameters and no return value, but it is visible in WSDL, too</p>
+<h3>GetComplexType</h3>
+<a name="GetComplexType"></a>
+<p class="pre"><a href="#ComplexTypeDemo"><span class="lightBlue">ComplexTypeDemo</span></a> <span class="bold">GetComplexType</span> (
+)</p>
+<p>Get a complex type object</p>
+<p>Return value <span class="pre"><a href="#ComplexTypeDemo"><span class="lightBlue">ComplexTypeDemo</span></a></span>: The object</p>
+<h3>PrintComplexType</h3>
+<a name="PrintComplexType"></a>
+<p class="pre"><span class="blue">string</span> <span class="bold">PrintComplexType</span> (
+<a href="#ComplexTypeDemo"><span class="lightBlue">ComplexTypeDemo</span></a> <span class="bold">obj</span>
+)</p>
+<p>Print an object</p>
+<ul>
+<li class="pre"><a href="#ComplexTypeDemo"><span class="lightBlue">ComplexTypeDemo</span></a> <span class="bold">obj</span><br><span class="normal">The object</span></li>
+</ul>
+<p>Return value <span class="pre"><span class="blue">string</span></span>: The result of print_r</p>
+<h3>SayHello</h3>
+<a name="SayHello"></a>
+<p class="pre"><span class="blue">string</span> <span class="bold">SayHello</span> (
+<span class="blue">string</span> <span class="bold">name</span>
+)</p>
+<p>Say hello demo</p>
+<ul>
+<li class="pre"><span class="blue">string</span> <span class="bold">name</span><br><span class="normal">Some name (or an empty string)</span></li>
+</ul>
+<p>Return value <span class="pre"><span class="blue">string</span></span>: Response string</p>
+<hr>
+<p><small>Powered by <a href="http://code.google.com/p/php-wsdl-creator/">PhpWsdl</a><span class="noprint"> - PDF download: <a href="http://online.htmltopdf.de/?plain=1&filename=SoapDemo-webservices.pdf&print=1">Download this page as PDF</a></span></small></p>
+</body>
+</html>";s:3:"php";N;s:7:"wsdluri";N;s:6:"phpuri";N;s:6:"docuri";N;}
