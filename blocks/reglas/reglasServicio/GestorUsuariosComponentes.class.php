@@ -39,10 +39,29 @@ class GestorUsuariosComponentes{
     	
     }
     
+    private function validarAcceso($idRegistro , $permiso){
+    	
+    	if(isset($idRegistro)&&$idRegistro!==0&&$idRegistro!==''&&!is_null($idRegistro))
+    		$permisos = $this->permisosUsuario($this->usuario,self::ID_OBJETO,$idRegistro);
+    	else $permisos = $this->permisosUsuario($this->usuario,self::ID_OBJETO,0);
+    	
+    	 
+    	if(in_array(0,$permisos)||in_array(5,$permisos)) return true;
+    	 
+    	if(!in_array($permiso,$permisos)||!$this->validarRelacion($this->usuario,self::ID_OBJETO,$idRegistro,$permiso)){
+    		$this->mensaje->addMensaje("101","errorPermisosGeneral",'error');
+    		
+    		return false;
+    	}
+    	
+    	return true;
+    }
+    
     private function verificaUsuario($usuario){
     	$idTablaUsuarios = 5;
     	$parametros =  array();
     	$parametros['id'] = $usuario;
+    	$parametros['estado'] = 1;
     	
     	//consulta
     	$consulta =  $this->registrador->ejecutar($idTablaUsuarios,$parametros,2);
@@ -74,7 +93,7 @@ class GestorUsuariosComponentes{
     
     public function crearRelacion($usuario ='',$objeto='',$registro='',$permiso = '',$estado=''){
     	
-    	 
+    	if(!$this->validarAcceso(0,1)) return false;
     	if($usuario===''||$objeto===''||$registro===''||$permiso===''){
     		
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
@@ -122,9 +141,10 @@ class GestorUsuariosComponentes{
     	
     }
     
+    
     public function actualizarRelacion($id = '',$usuario ='',$objeto='',$registro='',$permiso = '',$estado=''){
     	 
-    
+    	if(!$this->validarAcceso($id,3)) return false;
     	if($id==''||is_null($id)){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
     		return false;
@@ -180,7 +200,7 @@ class GestorUsuariosComponentes{
     
     public function consultarRelacion($id = '',$usuario ='',$objeto='',$registro='',$permiso = '',$estado=''){
     
-     
+    	if(!$this->validarAcceso($id,2)) return false;
     	$parametros =  array();
     	if($id!='')$parametros['id'] = $id;
     	if($usuario!='')$parametros['usuario'] = $usuario;
@@ -203,6 +223,7 @@ class GestorUsuariosComponentes{
     
     public function activarInactivarRelacion($id = ''){
     
+    	if(!$this->validarAcceso($id,3)) return false;
     	if($id==''||is_null($id)){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
     		return false;
@@ -226,7 +247,7 @@ class GestorUsuariosComponentes{
     public function permisosUsuario($usuario ='',$objeto='',$registro=''){    	
     	
     	if($usuario===''||$objeto===''||$registro===''){
-    		 
+    		
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
     		return false;
     	}
@@ -289,6 +310,15 @@ class GestorUsuariosComponentes{
     	
     	
     	//archivo
+    	//http://stackoverflow.com/questions/19898688/how-to-create-a-logfile-in-php
+    	//Something to write to txt log
+    	$log  = "Cliente: ".$_SERVER['REMOTE_ADDR'].' - '.date("F j, Y, g:i a").PHP_EOL.
+    	"Intento: ".($this->verificaUsuario($usuario)?'Exito':'Fallo').PHP_EOL.
+    	"Ususario: ".$usuario.PHP_EOL.
+    	"Codigo: ".$codigo.PHP_EOL.
+    	"-------------------------".PHP_EOL.PHP_EOL;
+    	//Save string to log, use FILE_APPEND to append.
+    	file_put_contents(__DIR__.'/log/log_'.date("j.n.Y").'.txt', $log, FILE_APPEND);
     	
     	
     	//bd

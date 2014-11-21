@@ -12,6 +12,7 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 
 include_once ("Mensaje.class.php");
 include_once ("Registrador.class.php");
+include_once ("GestorUsuariosComponentes.class.php");
 
 class GestorFuncion{
     
@@ -34,9 +35,28 @@ class GestorFuncion{
     	    	
     }
     
+    private function validarAcceso($idRegistro , $permiso){
+    	$usuario = new GestorUsuariosComponentes();
+    	
+    	if(isset($idRegistro)&&$idRegistro!==0&&$idRegistro!==''&&!is_null($idRegistro))
+    		$permisos = $usuario->permisosUsuario($this->usuario,self::ID_OBJETO,$idRegistro);
+    	else $permisos = $usuario->permisosUsuario($this->usuario,self::ID_OBJETO,0);
+         
+    	if(in_array(0,$permisos)||in_array(5,$permisos)) return true;
+    	 
+    	if(!in_array($permiso,$permisos)||!$usuario->validarRelacion($this->usuario,self::ID_OBJETO,$idRegistro,$permiso)){
+    		$this->mensaje->addMensaje("101","errorPermisosGeneral",'error');
+    		unset($usuario);
+    		return false;
+    	}
+    	unset($usuario);
+    	return true;
+    }
+    
+    
     public function crearFuncion($nombre ='',$descripcion='',$proceso='',$tipo = '',$valor='',$estado=''){
     	
-    	 
+    	if(!$this->validarAcceso(0,1)) return false;
     	if($nombre==''||$proceso==''||$valor==''||$tipo==''){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
     		return false;
@@ -65,7 +85,7 @@ class GestorFuncion{
     
     public function actualizarFuncion($id = '',$nombre ='',$descripcion='',$proceso='',$tipo = '',$valor='',$estado=''){
     	 
-    
+    	if(!$this->validarAcceso($id,3)) return false;
     	if($id==''||is_null($id)){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
     		return false;
@@ -93,7 +113,7 @@ class GestorFuncion{
     
     public function consultarFuncion($id = '',$nombre ='',$descripcion='',$proceso='',$tipo = '',$valor='',$estado=''){
     
-     
+    	if(!$this->validarAcceso($id,2)) return false;
     	$parametros =  array();
     	if($nombre!='')	$parametros['nombre'] = $nombre; 
     	if($descripcion!='')	$parametros['descripcion'] = $descripcion;
@@ -117,6 +137,7 @@ class GestorFuncion{
     
     public function activarInactivarFuncion($id = ''){
     
+    	if(!$this->validarAcceso($id,3)) return false;
     	if($id==''||is_null($id)){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
     		return false;
@@ -139,6 +160,7 @@ class GestorFuncion{
     
     public function duplicarFuncion($id = ''){
     
+    	if(!$this->validarAcceso($id,1)) return false;
     	if($id==''||is_null($id)){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
     		return false;

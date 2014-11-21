@@ -28,14 +28,17 @@ class ConstructorReglas{
     	//configurar usuario
     	$this->usuario = $_REQUEST['usuario'];
     	$this->registrador->setUsuario($this->usuario);
-    	//unset($_REQUEST['usuario']);
+    	
     	
     }
     
-    private function validarRelacion($idRegistro , $permiso){
+    private function validarAcceso($idRegistro = '', $permiso){
     	$usuario = new GestorUsuariosComponentes();
-    	$permisos = $usuario->permisosUsuario($this->usuario,self::ID_OBJETO,$idRegistro);
-         
+    	
+    	if(isset($idRegistro)&&$idRegistro!==0&&$idRegistro!==''&&!is_null($idRegistro))
+    		$permisos = $usuario->permisosUsuario($this->usuario,self::ID_OBJETO,$idRegistro);
+    	else $permisos = $usuario->permisosUsuario($this->usuario,self::ID_OBJETO,0);
+        
     	if(in_array(0,$permisos)||in_array(5,$permisos)) return true;
     	
     	if(!in_array($permiso,$permisos)||!$usuario->validarRelacion($this->usuario,self::ID_OBJETO,$idRegistro,$permiso)){
@@ -50,7 +53,7 @@ class ConstructorReglas{
     public function crearRegla($nombre ='',$descripcion='',$proceso='',$tipo = '',$valor='',$estado=''){
 
     	
-    	if(!$this->validarRelacion(0,1)) return false;
+    	if(!$this->validarAcceso(0,1)) return false;
     	
     	if($nombre===''||$proceso===''||$valor===''||$tipo===''){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
@@ -80,7 +83,7 @@ class ConstructorReglas{
     
     public function actualizarRegla($id = '',$nombre ='',$descripcion='',$proceso='',$tipo = '',$valor='',$estado=''){
     	 
-    	if(!$this->validarRelacion($id,3)) return false;
+    	if(!$this->validarAcceso($id,3)) return false;
     	
     	if($id==''||is_null($id)){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
@@ -108,8 +111,8 @@ class ConstructorReglas{
     
     public function consultarRegla($id = '',$nombre ='',$descripcion='',$proceso='',$tipo = '',$valor='',$estado=''){
     
-     
-    	if(!$this->validarRelacion($id,2)) return false;
+    	
+    	if(!$this->validarAcceso($id,2)) return false;
     	
     	$parametros =  array();
     	if($nombre!='')	$parametros['nombre'] = $nombre; 
@@ -134,7 +137,7 @@ class ConstructorReglas{
     
     public function activarInactivarRegla($id = ''){
     
-    	if(!$this->validarRelacion($id,3)) return false;
+    	if(!$this->validarAcceso($id,3)) return false;
     	
     	if($id==''||is_null($id)){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
@@ -158,7 +161,7 @@ class ConstructorReglas{
     
     public function duplicarRegla($id = ''){
     
-    	if(!$this->validarRelacion($id,1)) return false;
+    	if(!$this->validarAcceso($id,1)) return false;
     	
     	if($id==''||is_null($id)){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
