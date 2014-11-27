@@ -9,149 +9,307 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 
 
 include_once ("Mensaje.class.php");
-
+include_once ("Tipos.class.php");
+include_once (dirname(__FILE__)."/class/evalmath.class.php");
+include_once ("ConstructorReglas.class.php");
+include_once ("GestorFuncion.class.php");
+include_once ("GestorParametro.class.php");
+include_once ("GestorVariable.class.php");
 
 class EvaluadorReglas{
     
-	const ID_OBJETO = 1;
+	
 
 	private $parametros ;
-    private $registrador;
-    public $mensaje;
+    public  $mensaje;
+    private $evaluador;
+    private $usuario;
     
     function __construct(){
-    	$this->registrador = new Registrador();
+    	$this->evaluador = new \EvalMath();
     	$this->mensaje = new Mensaje();
+    	$this->usuario = $_REQUEST['usuario'];
     	
-    	//esta variable debe venir de algun lado.
-    	$_REQUEST['usuario'] = 'karlitos :)';
-    	$this->registrador->setUsuario($_REQUEST['usuario']);
     }
     
-    public function crearParametro($nombre ='',$descripcion='',$proceso='',$tipo = '',$valor='',$estado=''){
+    private function evaluar($valor){
+    	return $this->evaluador->e($valor);
+    }
+    
+    private function getErrorEvaluador(){
+    	return $this->evaluador->last_error;
+    }
+    
+    public function evaluarParametro($valor = '', $tipo = ''){
+    	if(Tipos::evaluarTipo($valor,$tipo))  	return $valor;
+    	return false;
     	
-    	 
-    	if($nombre==''||$proceso==''||$valor==''||$tipo==''){
-    		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
-    		return false;
-    	}
+    }
+    
+    public function evaluarVariable($valor = '', $tipo = '' , $rango = ''){
+    	if(Tipos::evaluarTipo($valor,$tipo)&&Rango::evaluarRango($valor , $tipo , $rango))
+    		  	return $this->evaluar($valor);
+    	return false;
     	
-    	if($estado=='') $estado = 1;
-    	if($tipo=='') $tipo = 1;
+    }
+    
+    /*
+     * reemplaza en la cadena los parametros
+     */
+    private function procesarParametros($cadena = '' ){
+
     	
-    	$parametros['nombre'] = $nombre;
-    	if($descripcion!='')	$parametros['descripcion'] = $descripcion;
-    	$parametros['proceso'] = $proceso;
-    	$parametros['tipo'] = $tipo;
-    	$parametros['valor'] = $valor;
-    	$parametros['estado'] = $estado;
+    	$needle = "_";
+    	$lastPos = 0;
+    	$positions = array();
     	
-    	
-    	   	if(!$this->registrador->ejecutar(self::ID_OBJETO,$parametros,1)){
+    	while (($lastPos = strpos($cadena, $needle, $lastPos))!== false) {
+    		$positions[] = $lastPos;
+    		$lastPos = $lastPos + strlen($needle);
+    	}	
+    	$ListaParametros =  $this->getListaParametros();
+    	if(!$ListaParametros||count($positions)%2!=0){
     		
-    		$this->mensaje = &$this->registrador->mensaje;
+    		$this->mensaje->addMensaje("101","errorCadenaMalFormada",'error');
     		return false;
     	}
     	
-    	return true;
+    	foreach ($ListaParametros as $parametro){
+    		$cadena = str_replace("_".$parametro['nombre']."_", $parametro['valor'], $cadena);
+    	}
+    	
+    	return $cadena;
     	
     }
     
-    public function actualizarParametro($id = '',$nombre ='',$descripcion='',$proceso='',$tipo = '',$valor='',$estado=''){
-    	 
+    /*
+     * reemplaza en la cadena las variables
+    */
+    private function procesarVariables($cadena = '' , $valores = ''){
     
-    	if($id==''||is_null($id)){
-    		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
-    		return false;
+    	$listaVariables = $this->getListaVariables();
+    	
+    	if(is_array($listaVariables)){
+    		
+    		
+
+    		foreach ($valores as $a => $b){
+    			foreach ($listaVariables as $variable){
+    				if($variable['nombre']==$a&&Rango::evaluarRango($b,$variable['tipo'],$variable['rango']))$cadena = str_replace($a, $b, $cadena);
+    			}
+    		}
     	}
+    	
     	 
-    	if($nombre!='')	$parametros['nombre'] = $nombre; 
-    	if($descripcion!='')	$parametros['descripcion'] = $descripcion;
-    	if($proceso!='')	$parametros['proceso'] = $proceso;
-    	if($tipo!='')	$parametros['tipo'] = $tipo;
-    	if($valor!='')	$parametros['valor'] = $valor;
-    	if($estado!='')	$parametros['estado'] = $estado;
-    	$parametros['id'] = $id;
-    	 
-    	 
-    	if(!$this->registrador->ejecutar(self::ID_OBJETO,$parametros,3)){
-    
-    		$this->mensaje = &$this->registrador->mensaje;
-    		return false;
-    	}
-    	 
-    	return true;
+    	return $cadena;
     	 
     }
     
-    public function consultarParametro($id = '',$nombre ='',$descripcion='',$proceso='',$tipo = '',$valor='',$estado=''){
+    /*
+     * reemplaza en la cadena las funciones
+    */
+    public function procesarFunciones($cadena = ''){
     
-     
-    	$parametros =  array();
-    	if($nombre!='')	$parametros['nombre'] = $nombre; 
-    	if($descripcion!='')	$parametros['descripcion'] = $descripcion;
-    	if($proceso!='')	$parametros['proceso'] = $proceso;
-    	if($tipo!='')	$parametros['tipo'] = $tipo;
-    	if($valor!='')	$parametros['valor'] = $valor;
-    	if($estado!='')	$parametros['estado'] = $estado;
-    	if($id!='') $parametros['id'] = $id;
+    	$listaFunciones = $this->getListaFunciones();
+    	 
+    	if(is_array($listaFunciones)){
+    
+        	foreach ($listaFunciones as $funcion){
+    			
+        		while(strpos($cadena,$funcion['nombre'])!==false){
+        			$posiscionNombre = strpos($cadena,$funcion['nombre'])+strlen($funcion['nombre']);
+        			$longitudNombre = strlen(strlen($funcion['nombre']));
+        			$cadenaArray =  str_split($cadena);
+        			
+        			$entradaFuncion = '';
+        			$aReemplazar = $funcion['nombre'];
+        			for($i = $posiscionNombre ; $i<strlen($cadena);$i++){
+        				$entradaFuncion .=$cadena[$i];
+        				$aReemplazar .=$cadena[$i];
+        				if($cadena[$i]==")")break;
+        			}
+
+        			$entradaFuncion =  trim($entradaFuncion);
+        			
+        			$entradaFuncion = str_replace("(", "", $entradaFuncion);
+        			$entradaFuncion = str_replace(")", "", $entradaFuncion);
+        			
+        			$listaVariablesFuncion = $this->arrayVariablesFuncion($funcion['valor'] , $entradaFuncion);
+        			$valores =  array("variables"=>$listaVariablesFuncion);
+        			$funcionEvaluada = $this->evaluarFuncion($funcion['valor'], $valores, $funcion['tipo'] , $funcion['rango']);
+        			
+        			
+        			$cadena = str_replace($aReemplazar, $funcionEvaluada, $cadena);
+        		}
+        		
+    				
+    			}
+    		
+    	}
+    	 
+    
+    	return $cadena;
+    
+    }
+    
+    public function arrayVariablesFuncion($cadena = '' , $valores = ''){
+    	
+    	$listaVariables = $this->getListaVariables();
+    	$listaValores = explode(",",$valores);
+    	if(!$listaValores&&$valores!='') $listaValores = array($valores);
+    	$resultado = array();
+    	$nombres = array();
+    	
+    	if(is_array($listaVariables)&&is_array($listaValores)){
+    		
+    		
+    		foreach ($listaVariables as $variable){
+                
+    			if(strpos($cadena,$variable['nombre'])!==false)
+    					$nombres[] = $variable['nombre'];
+    		
+    
+    	    } 
+    	    if(count($nombres)==count($listaValores)){
+
+    	    	for ($i = 0 ; $i<count($listaValores) ; $i++){
+    	    		$resultado[$nombres[$i]] = $listaValores[$i];
+    	    	}
+    	    }
+    	    
+    		
+    	}
+    	
+    	return $resultado;
+    
+    }
+    
+    
+    
+    
+    public function evaluarFuncion($cadena = '', $valores = '', $tipo = '' , $rango = ''){
+    	
+    	//1. Procesa los parametros y los Reemplaza
+    		$cadena = $this->procesarParametros($cadena  );
+    	
+    	//2. Reemplaza las variables y las evalua
+    	if(isset($valores['variables'])){
+    		$cadena = $this->procesarVariables($cadena , $valores['variables'] );
+    	}
+    	
+    	//3. Evalua toda la funcion
+    	$valor = $this->evaluar($cadena);
+    	 
+    	if(!$valor) return $this->getErrorEvaluador();
+    	
+    	//4. valida el tipo
+    	if(Tipos::evaluarTipo($valor,$tipo)&&Rango::evaluarRango($valor , $tipo , $rango))  	return $valor;
+    	
+    	return false;
+    	 
+    }
+    
+    private function getDatosRegla($idRegla){
+    	
+    	$Oreglas =  new ConstructorReglas();
+    	$datosRegla = $Oreglas->consultarRegla($idRegla,'','','','','',1);
+    	 
+    	if(!$datosRegla) {
+    		$this->mensaje = &$Oreglas->mensaje;
+    		return false;;
+    	}
+    	unset($Oreglas);
+    	return $datosRegla;
+    	
+    	 
+    }
+    
+    private function getListaFunciones(){
+    	
+    	$funcion  =  new GestorFuncion();
+    	$listaFunciones = $funcion->consultarFuncion('','','','','','',1);
+    	
+    	if(!$listaFunciones) {
+    		$this->mensaje = &$funcion->mensaje;
+    		unset($funcion);
+    		return false;
+    	}
+    	unset($funcion);
+    	return $listaFunciones;
+    }
+    
+    private function getListaVariables(){
+    	 
+    	$variable  =  new GestorVariable();
+    	$listaVariables = $variable->consultarVariable('','','','','','',1);
+    	if(!$listaVariables) {
+    		$this->mensaje = &$variable->mensaje;
+    		unset($variable);
+    		return false;
+    	}
+    	unset($variable);
+    	return $listaVariables;
+    }
+    
+    private function getListaParametros(){
+    
+    	$parametro  =  new GestorParametro();
+    	$listaParametro = $parametro->consultarParametro('','','','','','',1);
+    	if(!$listaParametro) {
+    		$this->mensaje = &$parametro->mensaje;
+    		unset($parametro);
+    		return false;
+    	}
+    	unset($parametro);
+    	return $listaParametro;
+    }
+    
+    public function evaluarRegla($idRegla = '', $valores = '', $idProceso = '' ){
+    	
+    	
+    	
+    	
+    	//consulta la regla
+    	$datosRegla = $this->getDatosRegla($idRegla);
+    	
+    	
+    	//asigna datos de la regla
+    	$idRegla = $datosRegla[0]['id'];
+    	$nombreRegla = $datosRegla[0]['nombre'];
+    	$procesoRegla = $datosRegla[0]['proceso'];
+    	$tipoRegla = $datosRegla[0]['tipo'];
+    	$valorRegla = $datosRegla[0]['valor'];
+    	
+    	$cadena = $valorRegla;
+    	
+    	
+    	//1. Procesa los parametros y los Reemplaza
+    	$cadena = $this->procesarParametros($cadena  );
+    	
+    	
+    	 
+    	//2. Reemplaza las variables y las evalua
+    	if(isset($valores['variables'])){
+    		$cadena = $this->procesarVariables($cadena , $valores['variables'] );
+    	
+    	}
+    	
+    	//3. Reemplaza funciones y las evalua
+    	 $cadena = $this->procesarFunciones($cadena);
+    	
+    	 //4. Evalua toda la regla
+    	 $valor = $this->evaluar($cadena);
+    	 
+    	 if(!$valor) return $this->getErrorEvaluador();
+    	 $valor =  (bool)$valor; 
+
+    	 if(Tipos::evaluarTipo($valor,$tipoRegla))  	return $valor;
+    	 
+    	 return false;
+    	
+    }
+    
         
-    	$consulta = $this->registrador->ejecutar(self::ID_OBJETO,$parametros,2);
-    	
-    	if(!$consulta){
-    
-    		$this->mensaje = &$this->registrador->mensaje;
-    		return false;
-    	}
-    
-    	return $consulta;
-    
-    }
-    
-    public function activarInactivarParametro($id = ''){
-    
-    	if($id==''||is_null($id)){
-    		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
-    		return false;
-    	}
-    
-    	$parametros =  array();
-    	$parametros['id'] = $id;
-    
-    	
-    	 
-    	if(!$this->registrador->ejecutar(self::ID_OBJETO,$parametros,5)){
-    
-    		$this->mensaje = &$this->registrador->mensaje;
-    		return false;
-    	}
-    
-    	return $consulta;
-    
-    }
-    
-    public function duplicarParametro($id = ''){
-    
-    	if($id==''||is_null($id)){
-    		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
-    		return false;
-    	}
-    
-    	$parametros =  array();
-    	$parametros['id'] = $id;
-    
-    	 
-    
-    	if(!$this->registrador->ejecutar(self::ID_OBJETO,$parametros,4)){
-    
-    		$this->mensaje = &$this->registrador->mensaje;
-    		return false;
-    	}
-    
-    	return $consulta;
-    
-    }
-    
 
 
 }

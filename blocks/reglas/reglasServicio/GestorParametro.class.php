@@ -37,10 +37,10 @@ class GestorParametro{
     
     private function validarAcceso($idRegistro , $permiso){
     	$usuario = new GestorUsuariosComponentes();
-    	if(isset($idRegistro)&&$idRegistro!==0&&$idRegistro!==''&&!is_null($idRegistro))
+    	$permisos = $usuario->permisosUsuario($this->usuario,self::ID_OBJETO,0);
+    	if(!$permisos&&isset($idRegistro)&&$idRegistro!==0&&$idRegistro!==''&&!is_null($idRegistro)) 
     		$permisos = $usuario->permisosUsuario($this->usuario,self::ID_OBJETO,$idRegistro);
-    	else $permisos = $usuario->permisosUsuario($this->usuario,self::ID_OBJETO,0);
-         
+    	 
     	if(in_array(0,$permisos)||in_array(5,$permisos)) return true;
     	 
     	if(!in_array($permiso,$permisos)||!$usuario->validarRelacion($this->usuario,self::ID_OBJETO,$idRegistro,$permiso)){

@@ -32,7 +32,7 @@ ALTER TABLE reglas.tipo_datos
     ('date','Fecha'),
     ('string','Texto'),
     ('array','Lista'),
-    ('NULL','Nulo');
+    ('NULL','Vacio');
   
   -- Crea tablas de estados
   CREATE TABLE reglas.estados
@@ -76,7 +76,7 @@ ALTER TABLE reglas.objetos
   ---Lnea Tabla de Objetos
   INSERT INTO reglas.objetos(
             objetos_nombre,objetos_alias)
-    VALUES ( 'reglas.parametros','Parametros'),
+     VALUES ( 'reglas.parametros','Parametros'),
     		( 'reglas.variables','Variables'),
     		( 'reglas.funciones','Funciones'),
     		( 'reglas.reglas','Reglas'),
@@ -174,6 +174,7 @@ CREATE TABLE reglas.variables
   var_nombre text UNIQUE NOT NULL,
   var_descripcion text,
   var_proceso integer NOT NULL,
+  var_rango text NOT NULL,
   var_tipo integer NOT NULL,
   var_valor text NOT NULL,
   var_estado integer NOT NULL,
@@ -200,6 +201,7 @@ ALTER TABLE reglas.variables
   var_nombre_h text NOT NULL,
   var_descripcion_h text,
   var_proceso_h integer NOT NULL,
+  var_rango_h text NOT NULL,
   var_tipo_h integer NOT NULL,
   var_valor_h text NOT NULL,
   var_estado_h integer NOT NULL,
@@ -224,6 +226,7 @@ CREATE TABLE reglas.funciones
   fun_nombre text UNIQUE NOT NULL,
   fun_descripcion text,
   fun_proceso integer NOT NULL,
+  fun_rango text NOT NULL,
   fun_tipo integer NOT NULL,
   fun_valor text NOT NULL,
   fun_estado integer NOT NULL,
@@ -250,6 +253,7 @@ ALTER TABLE reglas.funciones
   fun_nombre_h text NOT NULL,
   fun_descripcion_h text,
   fun_proceso_h integer NOT NULL,
+  fun_rango_h text NOT NULL,
   fun_tipo_h integer NOT NULL,
   fun_valor_h text NOT NULL,
   fun_estado_h integer NOT NULL,

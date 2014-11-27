@@ -15,13 +15,14 @@ include_once ("core/crypto/Encriptador.class.php");
 
 include_once("GestorUsuariosComponentes.class.php");
 include_once("Envoltura.class.php");
-//include_once("EstructurarReglas.class.php");
+
 
 
 include_once (dirname(__FILE__)."/class/wsdl/class.phpwsdl.php");
 use \PhpWsdl as PhpWsdl;
 
-
+include_once ("EvaluadorReglas.class.php");
+include_once ("Rango.class.php");
 
 class MediadorReglas {
     
@@ -82,18 +83,20 @@ class MediadorReglas {
     
     function action() {
     	
-    	if(isset($_SERVER['HTTP_USUARIO'])||isset($_SERVER['PHP_AUTH_USER'])){
-    		if(isset($_SERVER['PHP_AUTH_USER'])) $_REQUEST['usuario'] = $_SERVER['PHP_AUTH_USER'];
-    		else	$_REQUEST['usuario'] = $_SERVER['HTTP_USUARIO'];
-    	}else $_REQUEST['usuario'] = 'anonimo';
     	
-    	$validarAcceso =  new GestorUsuariosComponentes($_REQUEST['usuario']);
+    	/*$_REQUEST['usuario'] =  "1018439398";
+    	//$tipos =  new Tipos();
+    	//var_dump($tipos->evaluarTipo());
+    	//$parametros = array("parametro1"=>1);
+    	$variables = array("variable1"=>1);
+    	$valores = array("variables"=>$variables);
+    	$evaluador = new EvaluadorReglas();
+    	//var_dump($evaluador->evaluarFuncion("variable1*2",$valores,2,'0,1000000'));
+    	var_dump($evaluador->evaluarRegla(1,$valores,1));
+    	//var_dump($evaluador->procesarFunciones('funcion1(1)+1+funcion1(2)'));
+    	//var_dump($evaluador->arrayVariablesFuncion('variable1+variable2' , '1,2'));
+    	exit;*/
     	
-    	if(!$validarAcceso->habilitarServicio()){
-    		
-    		 echo $validarAcceso->mensaje->getLastMensaje();
-    		 return ;
-    	}
     		
     	
     	

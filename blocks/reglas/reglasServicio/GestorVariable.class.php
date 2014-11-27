@@ -38,10 +38,10 @@ class GestorVariable{
     private function validarAcceso($idRegistro , $permiso){
     	$usuario = new GestorUsuariosComponentes();
     	
-    	if(isset($idRegistro)&&$idRegistro!==0&&$idRegistro!==''&&!is_null($idRegistro))
+    	$permisos = $usuario->permisosUsuario($this->usuario,self::ID_OBJETO,0);
+    	if(!$permisos&&isset($idRegistro)&&$idRegistro!==0&&$idRegistro!==''&&!is_null($idRegistro)) 
     		$permisos = $usuario->permisosUsuario($this->usuario,self::ID_OBJETO,$idRegistro);
-    	else $permisos = $usuario->permisosUsuario($this->usuario,self::ID_OBJETO,0);
-         
+    	 
     	if(in_array(0,$permisos)||in_array(5,$permisos)) return true;
     	 
     	if(!in_array($permiso,$permisos)||!$usuario->validarRelacion($this->usuario,self::ID_OBJETO,$idRegistro,$permiso)){
@@ -53,10 +53,10 @@ class GestorVariable{
     	return true;
     }
     
-    public function crearVariable($nombre ='',$descripcion='',$proceso='',$tipo = '',$valor='',$estado=''){
+    public function crearVariable($nombre ='',$descripcion='',$proceso='',$rango='',$tipo = '',$valor='',$estado=''){
     	
     	if(!$this->validarAcceso(0,1)) return false;
-    	if($nombre==''||$proceso==''||$valor==''||$tipo==''){
+    	if($nombre==''||$proceso==''||$valor==''||$tipo==''||$rango==''){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
     		return false;
     	}
@@ -68,6 +68,7 @@ class GestorVariable{
     	if($descripcion!='')	$parametros['descripcion'] = $descripcion;
     	$parametros['proceso'] = $proceso;
     	$parametros['tipo'] = $tipo;
+    	$parametros['rango'] = $rango;
     	$parametros['valor'] = $valor;
     	$parametros['estado'] = $estado;
     	
@@ -82,7 +83,7 @@ class GestorVariable{
     	
     }
     
-    public function actualizarVariable($id = '',$nombre ='',$descripcion='',$proceso='',$tipo = '',$valor='',$estado=''){
+    public function actualizarVariable($id = '',$nombre ='',$descripcion='',$proceso='',$rango = '',$tipo = '',$valor='',$estado=''){
     	 
     	if(!$this->validarAcceso($id,3)) return false;
     	if($id==''||is_null($id)){
@@ -93,6 +94,7 @@ class GestorVariable{
     	if($nombre!='')	$parametros['nombre'] = $nombre; 
     	if($descripcion!='')	$parametros['descripcion'] = $descripcion;
     	if($proceso!='')	$parametros['proceso'] = $proceso;
+    	if($rango!='')$parametros['rango'] = $rango;
     	if($tipo!='')	$parametros['tipo'] = $tipo;
     	if($valor!='')	$parametros['valor'] = $valor;
     	if($estado!='')	$parametros['estado'] = $estado;
