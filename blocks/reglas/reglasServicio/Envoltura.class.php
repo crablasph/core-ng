@@ -13,7 +13,7 @@ include_once ("Mensaje.class.php");
 
 include_once ("GestorUsuariosComponentes.class.php");
 
-//include_once ("EstructurarReglas.class.php");
+
 
 include_once ("Registrador.class.php");
 include_once ("GestorParametro.class.php");

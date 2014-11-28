@@ -93,9 +93,9 @@ class EvaluadorReglas{
     		
     		
 
-    		foreach ($valores as $a => $b){
+    		foreach ($valores as $valor){
     			foreach ($listaVariables as $variable){
-    				if($variable['nombre']==$a&&Rango::evaluarRango($b,$variable['tipo'],$variable['rango']))$cadena = str_replace($a, $b, $cadena);
+    				if($variable['nombre']==$valor[0]&&Rango::evaluarRango($valor[1],$variable['tipo'],$variable['rango']))$cadena = str_replace($valor[0], $valor[1], $cadena);
     			}
     		}
     	}
@@ -135,7 +135,8 @@ class EvaluadorReglas{
         			$entradaFuncion = str_replace(")", "", $entradaFuncion);
         			
         			$listaVariablesFuncion = $this->arrayVariablesFuncion($funcion['valor'] , $entradaFuncion);
-        			$valores =  array("variables"=>$listaVariablesFuncion);
+        			$valores =  $listaVariablesFuncion;
+        			
         			$funcionEvaluada = $this->evaluarFuncion($funcion['valor'], $valores, $funcion['tipo'] , $funcion['rango']);
         			
         			
@@ -152,7 +153,7 @@ class EvaluadorReglas{
     
     }
     
-    public function arrayVariablesFuncion($cadena = '' , $valores = ''){
+    private function arrayVariablesFuncion($cadena = '' , $valores = ''){
     	
     	$listaVariables = $this->getListaVariables();
     	$listaValores = explode(",",$valores);
@@ -173,7 +174,7 @@ class EvaluadorReglas{
     	    if(count($nombres)==count($listaValores)){
 
     	    	for ($i = 0 ; $i<count($listaValores) ; $i++){
-    	    		$resultado[$nombres[$i]] = $listaValores[$i];
+    	    		$resultado[] = array($nombres[$i],$listaValores[$i]);
     	    	}
     	    }
     	    
@@ -193,8 +194,8 @@ class EvaluadorReglas{
     		$cadena = $this->procesarParametros($cadena  );
     	
     	//2. Reemplaza las variables y las evalua
-    	if(isset($valores['variables'])){
-    		$cadena = $this->procesarVariables($cadena , $valores['variables'] );
+    	if(is_array($valores)){
+    		$cadena = $this->procesarVariables($cadena , $valores );
     	}
     	
     	//3. Evalua toda la funcion
@@ -289,14 +290,16 @@ class EvaluadorReglas{
     	
     	 
     	//2. Reemplaza las variables y las evalua
-    	if(isset($valores['variables'])){
-    		$cadena = $this->procesarVariables($cadena , $valores['variables'] );
+    	if(is_array($valores)){
+    		$cadena = $this->procesarVariables($cadena , $valores );
     	
     	}
     	
+    	
+    	
     	//3. Reemplaza funciones y las evalua
     	 $cadena = $this->procesarFunciones($cadena);
-    	
+    	 
     	 //4. Evalua toda la regla
     	 $valor = $this->evaluar($cadena);
     	 

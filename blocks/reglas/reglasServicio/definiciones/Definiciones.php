@@ -81,12 +81,13 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 	 * @param string $nombre Nombre, cadena de caracteres Obligatorio
 	 * @param string $descripcion Descripcion, Opcional
 	 * @param integer $proceso IdProceso, entero Obligatorio
+	 * @param string $rango rango, cadena Obligatorio
 	 * @param integer $tipo Tipo Variable, entero Obligatorio
 	 * @param string $valor Valor, Obligatorio
 	 * @param integer $estado Estado, entero Obligatorio
 	 * @return bool Respuesta
 	 */
-	function crearVariable($nombre ='',$descripcion='',$proceso='',$tipo = '',$valor='',$estado=''){
+	function crearVariable($nombre ='',$descripcion='',$proceso='',$rango = '',$tipo = '',$valor='',$estado=''){
 	
 	}
 	
@@ -98,12 +99,13 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 	 * @param string $nombre Nombre, cadena de caracteres Opcional
 	 * @param string $descripcion Descripcion, Opcional
 	 * @param integer $proceso IdProceso, entero Opcional
+	 * @param string $rango rango, cadena Obligatorio
 	 * @param integer $tipo Tipo Variable, entero Opcional
 	 * @param string $valor Valor, Opcional
 	 * @param integer $estado Estado, entero Opcional
 	 * @return bool Respuesta
 	 */
-	function actualizarVariable($id = '',$nombre ='',$descripcion='',$proceso='',$tipo = '',$valor='',$estado=''){
+	function actualizarVariable($id = '',$nombre ='',$descripcion='',$proceso='',$rango = '',$tipo = '',$valor='',$estado=''){
 	
 	}
 	
@@ -154,12 +156,13 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 	 * @param string $nombre Nombre, cadena de caracteres Obligatorio
 	 * @param string $descripcion Descripcion, Opcional
 	 * @param integer $proceso IdProceso, entero Obligatorio
+	 * @param string $rango rango, cadena Obligatorio
 	 * @param integer $tipo Tipo Variable, entero Obligatorio
 	 * @param string $valor Valor, Obligatorio
 	 * @param integer $estado Estado, entero Obligatorio
 	 * @return bool Respuesta
 	 */
-	function crearFuncion($nombre ='',$descripcion='',$proceso='',$tipo = '',$valor='',$estado=''){
+	function crearFuncion($nombre ='',$descripcion='',$proceso='',$rango = '',$tipo = '',$valor='',$estado=''){
 	
 	}
 	
@@ -171,12 +174,13 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 	 * @param string $nombre Nombre, cadena de caracteres Opcional
 	 * @param string $descripcion Descripcion, Opcional
 	 * @param integer $proceso IdProceso, entero Opcional
+	 * @param string $rango rango, cadena Obligatorio
 	 * @param integer $tipo Tipo Variable, entero Opcional
 	 * @param string $valor Valor, Opcional
 	 * @param integer $estado Estado, entero Opcional
 	 * @return bool Respuesta
 	 */
-	function actualizarFuncion($id = '',$nombre ='',$descripcion='',$proceso='',$tipo = '',$valor='',$estado=''){
+	function actualizarFuncion($id = '',$nombre ='',$descripcion='',$proceso='',$rango = '',$tipo = '',$valor='',$estado=''){
 	
 	}
 	
@@ -347,7 +351,28 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 	
 	}
 	
+	/////////////////////////Evaluar Regla ///////////////////////////
 	
+
+	/**
+	 * @pw_complex stringArray A string array type
+	 */
+	/**
+	 * @pw_complex stringArrayArray An array of ComplexTypeDemo
+	 */
+	
+	
+	/**
+	 *
+	 *
+	 * @param integer $idRegla Id Registro Regla, entero Obligatorio
+	 * @param stringArrayArray $valores Array de los valores de las variables ejemplo array(array("variable1",1),array("variable2",2)), array Obligatorio
+	 * @param integer $idProceso id del proceso, Entero Obligatorio
+	 * @return bool Respuesta
+	 */
+	function evaluarRegla($idRegla = '', $valores = '', $idProceso = '' ){
+	
+	}
 	
 	
 	
