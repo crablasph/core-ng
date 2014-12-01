@@ -54,10 +54,10 @@ class GestorFuncion{
     }
     
     
-    public function crearFuncion($nombre ='',$descripcion='',$proceso='',$rango = '',$tipo = '',$valor='',$estado=''){
+    public function crearFuncion($nombre ='',$descripcion='',$proceso='',$rango = '',$tipo = '',$categoria = '',$ruta='',$valor='',$estado=''){
     	
     	if(!$this->validarAcceso(0,1)) return false;
-    	if($nombre==''||$proceso==''||$valor==''||$tipo==''||$rango == ''){
+    	if($nombre==''||$proceso==''||$valor==''||$tipo==''||$rango == ''||$categoria==''||$ruta==''){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
     		return false;
     	}
@@ -70,6 +70,8 @@ class GestorFuncion{
     	$parametros['proceso'] = $proceso;
     	$parametros['rango'] = $rango;
     	$parametros['tipo'] = $tipo;
+    	$parametros['categoria'] = $categoria;
+    	$parametros['ruta'] = $ruta;
     	$parametros['valor'] = $valor;
     	$parametros['estado'] = $estado;
     	
@@ -84,7 +86,7 @@ class GestorFuncion{
     	
     }
     
-    public function actualizarFuncion($id = '',$nombre ='',$descripcion='',$proceso='',$proceso = '',$tipo = '',$valor='',$estado=''){
+    public function actualizarFuncion($id = '',$nombre ='',$descripcion='',$proceso='',$proceso = '',$tipo = '',$categoria = '',$ruta='',$valor='',$estado=''){
     	 
     	if(!$this->validarAcceso($id,3)) return false;
     	if($id==''||is_null($id)){
@@ -97,6 +99,8 @@ class GestorFuncion{
     	if($proceso!='')	$parametros['proceso'] = $proceso;
     	if($rango!='') $parametros['rango'] = $rango;
     	if($tipo!='')	$parametros['tipo'] = $tipo;
+    	if($categoria!='')$parametros['categoria'] = $categoria;
+    	if($ruta!='')$parametros['ruta'] = $ruta;
     	if($valor!='')	$parametros['valor'] = $valor;
     	if($estado!='')	$parametros['estado'] = $estado;
     	$parametros['id'] = $id;

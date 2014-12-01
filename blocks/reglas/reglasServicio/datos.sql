@@ -1,3 +1,4 @@
+--Crea bloque - pagina de Servicio
 
 
 --Crea Usuario
@@ -82,7 +83,8 @@ ALTER TABLE reglas.objetos
     		( 'reglas.reglas','Reglas'),
     		( 'reglas.usuarios','Usuarios'),
     		( 'reglas.relaciones','Permisos'),
-    		( 'reglas.acceso','Acceso');
+    		( 'reglas.acceso','Acceso'),
+    		( 'reglas.fuentes','Fuentes');
     		
 
 
@@ -101,6 +103,7 @@ WITH (
 ALTER TABLE reglas.permisos
   OWNER TO reglas;
   
+ 
 --set a la secuencia en 0
 ALTER SEQUENCE "permisos_permisos_id_seq" MINVALUE 0 START 0 RESTART 0;
 
@@ -115,7 +118,69 @@ ALTER SEQUENCE "permisos_permisos_id_seq" MINVALUE 0 START 0 RESTART 0;
     		( 'administrador','Administrador');
 
 
+--categorias funcion
+--reglas.categoria_funcion
+  CREATE TABLE reglas.categoria_funcion
+(
+  cfun_id serial NOT NULL,
+  cfun_nombre text NOT NULL,
+  cfun_alias text NOT NULL,
+  CONSTRAINT categoria_funcion_pk PRIMARY KEY (cfun_id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE reglas.categoria_funcion
+  OWNER TO reglas;
 
+
+---Llena Tabla de categoria funciones
+  INSERT INTO reglas.categoria_funcion(
+            cfun_nombre,cfun_alias)
+    VALUES ( 'I','Interna'),
+    		( 'B','Base de datos'),
+    		( 'S','Servicio Web Soap');
+    		
+
+--operadores
+--reglas.operadores
+  CREATE TABLE reglas.operadores
+(
+  ope_id serial NOT NULL,
+  ope_nombre text NOT NULL,
+  ope_alias text NOT NULL,
+  ope_tipo text NOT NULL DEFAULT 0,
+  CONSTRAINT categoria_operadores PRIMARY KEY (ope_id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE reglas.operadores
+  OWNER TO reglas;
+
+
+---Llena Tabla de categoria funciones
+  INSERT INTO reglas.operadores(
+            ope_nombre,ope_alias,ope_tipo)
+    VALUES ( '+','Suma','Aritmeticos'),
+    		( '-','Resta','Aritmeticos'),
+    		( '*','Multiplicacion','Aritmeticos'),
+    		( '/','Division','Aritmeticos'),
+    		( '%','Modulo','Aritmeticos'),
+    		( '**','Exponenciacion','Aritmeticos'),
+    		( '&','Y','Logicos'),
+    		( '|','O','Logicos'),
+    		( '^','XOR','Logicos'),
+    		( '~','NO','Logicos'),
+    		( '==','Igual','Comparación'),
+    		( '===','Identico','Comparación'),
+    		( '<>','Diferente','Comparación'),
+    		( '!==','No identico','Comparación'),
+    		( '<','Menor que','Comparación'),
+    		( '>','Mayor que','Comparación'),
+    		( '<=','Menor igual','Comparación'),
+    		( '>=','Mayor igual','Comparación');
+ 
 
 --Tabla de parametros	   
 CREATE TABLE reglas.parametros
@@ -228,12 +293,17 @@ CREATE TABLE reglas.funciones
   fun_proceso integer NOT NULL,
   fun_rango text NOT NULL,
   fun_tipo integer NOT NULL,
+  fun_categoria integer NOT NULL,
+  fun_ruta text NOT NULL DEFAULT 0,
   fun_valor text NOT NULL,
   fun_estado integer NOT NULL,
   fun_fecha_registro date NOT NULL DEFAULT ('now'::text)::date,
   CONSTRAINT funciones_pk PRIMARY KEY (fun_id),
   CONSTRAINT funciones_estados_fk FOREIGN KEY (fun_estado)
       REFERENCES reglas.estados (estados_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE SET NULL,
+  CONSTRAINT funciones_categoria_fk FOREIGN KEY (fun_categoria)
+      REFERENCES reglas.categoria_funcion (cfun_id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE SET NULL,
   CONSTRAINT funciones_tipo_fk FOREIGN KEY (fun_tipo)
       REFERENCES reglas.tipo_datos (tipo_id) MATCH SIMPLE
@@ -245,7 +315,7 @@ WITH (
 ALTER TABLE reglas.funciones
   OWNER TO reglas;
      
---tabla h variables
+--tabla h funciones
  CREATE TABLE reglas.funciones_h
 (
   fun_hid serial NOT NULL,
@@ -255,6 +325,8 @@ ALTER TABLE reglas.funciones
   fun_proceso_h integer NOT NULL,
   fun_rango_h text NOT NULL,
   fun_tipo_h integer NOT NULL,
+  fun_categoria_h integer NOT NULL,
+  fun_ruta_h text NOT NULL,
   fun_valor_h text NOT NULL,
   fun_estado_h integer NOT NULL,
   fun_fecha_registro_h date NOT NULL ,
@@ -428,8 +500,6 @@ CREATE TABLE reglas.relaciones_h
   rel_fecha_h date NOT NULL DEFAULT ('now'::text)::date,
   rel_usuario text NOT NULL,
   CONSTRAINT relaciones_h_pk PRIMARY KEY (rel_hid)
-  
-  
 )
 WITH (
   OIDS=FALSE
@@ -438,4 +508,3 @@ ALTER TABLE reglas.relaciones_h
   OWNER TO reglas;
    
   
- 

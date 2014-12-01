@@ -82,7 +82,15 @@ class MediadorReglas {
     
     
     function action() {
+    	/*$_REQUEST['usuario'] ="1018439398"; 
     	
+    	$e = new EvaluadorReglas();
+    	$idRegla =  23;
+    	$valores =  array(array("variable1",1));
+    	$idProceso= 1;
+    	
+    	var_dump($e->evaluarRegla($idRegla, $valores, $idProceso ));exit;
+    	*/
         $this->soap=PhpWsdl::CreateInstance(
         		(string) __NAMESPACE__,								// PhpWsdl will determine a good namespace
            		$this->getEndPointURI()[0],								// Change this to your SOAP endpoint URI (or keep it NULL and PhpWsdl will determine it)

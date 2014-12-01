@@ -107,4 +107,7 @@ $this->idioma["relacionNoExiste"] = "relación no existe";
 $this->idioma["usuarioNoAutorizado"]="Error, usuario no autorizado";
 $this->idioma["errorPermisosGeneral"]="Error, el usuario no tiene permisos para ejecutar esta operacion";
 $this->idioma["usuarioSinPermisos"]="Error, usuario no posee permisos";
+$this->idioma["errorCadenaMalFormada"]="Error, cadena mal formada";
+$this->idioma["errorSoapCall"]="Error, en llamada al metodo soap";
+$this->idioma["errorRecuperarOperadores"]="Error, recuperando operadores";
 ?>

@@ -157,12 +157,14 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 	 * @param string $descripcion Descripcion, Opcional
 	 * @param integer $proceso IdProceso, entero Obligatorio
 	 * @param string $rango rango, cadena Obligatorio
-	 * @param integer $tipo Tipo Variable, entero Obligatorio
+	 * @param integer $tipo Tipo Funcion, entero Obligatorio
+	 * @param integer $categoria categoria funcion, entero Obligatorio
+	 * @param string $ruta lugar de ejecucion, cadena Obligatorio
 	 * @param string $valor Valor, Obligatorio
 	 * @param integer $estado Estado, entero Obligatorio
 	 * @return bool Respuesta
 	 */
-	function crearFuncion($nombre ='',$descripcion='',$proceso='',$rango = '',$tipo = '',$valor='',$estado=''){
+	function crearFuncion($nombre ='',$descripcion='',$proceso='',$rango = '',$tipo = '',$categoria = '',$ruta='',$valor='',$estado=''){
 	
 	}
 	
@@ -175,12 +177,14 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 	 * @param string $descripcion Descripcion, Opcional
 	 * @param integer $proceso IdProceso, entero Opcional
 	 * @param string $rango rango, cadena Obligatorio
-	 * @param integer $tipo Tipo Variable, entero Opcional
+	 * @param integer $tipo Tipo funcion, entero Opcional
+	 * @param integer $categoria categoria funcion, entero opcional
+	 * @param string $ruta lugar de ejecucion, cadena opcional
 	 * @param string $valor Valor, Opcional
 	 * @param integer $estado Estado, entero Opcional
 	 * @return bool Respuesta
 	 */
-	function actualizarFuncion($id = '',$nombre ='',$descripcion='',$proceso='',$rango = '',$tipo = '',$valor='',$estado=''){
+	function actualizarFuncion($id = '',$nombre ='',$descripcion='',$proceso='',$rango = '',$tipo = '',$categoria = '',$ruta='',$valor='',$estado=''){
 	
 	}
 	
@@ -371,6 +375,58 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 	 * @return bool Respuesta
 	 */
 	function evaluarRegla($idRegla = '', $valores = '', $idProceso = '' ){
+	
+	}
+	
+	
+	///////////////////////////Funciones de ayuda para traer listas y parametros de la bd///////////////////
+	/**
+	 *
+	 *
+	 * @void
+	 * @return array Respuesta
+	 */
+	function getListaEstados(){
+		
+	}
+	
+	/**
+	 *
+	 *
+	 * @void
+	 * @return array Respuesta
+	 */
+	function getListaTipos(){
+	
+	}
+	
+	/**
+	 *
+	 *
+	 * @void
+	 * @return array Respuesta
+	 */
+	function getListaObjetos(){
+	
+	}
+	
+	/**
+	 *
+	 *
+	 * @void
+	 * @return array Respuesta
+	 */
+	function getListaPermisos(){
+	
+	}
+	
+	/**
+	 *
+	 *
+	 * @void
+	 * @return array Respuesta
+	 */
+	function getListaOperadores(){
 	
 	}
 	

@@ -25,6 +25,7 @@ class Registrador{
 	private $tipos;
 	private $objetos;
 	private $permisos;
+	private $operadores;
 	private $miConfigurador;
 	public $persistencia;
 	private $tabla;
@@ -55,6 +56,7 @@ class Registrador{
 	    $this->recuperarTipos();
 	    $this->recuperarObjetos();
 	    $this->recuperarPermisos();
+	    
 	    
 	    if(!is_null($tabla)&&$tabla!="") $this->setAmbiente($tabla);
 	    
@@ -88,7 +90,7 @@ class Registrador{
 	}
 	
 	//private 
-	function getprefijoColumna(){
+	private function getprefijoColumna(){
 		$this->prefijoColumnas = $this->persistencia->getprefijoColumna().'_';
 	}
 	
@@ -102,6 +104,32 @@ class Registrador{
 		//$this->excluidos = array("'".$this->prefijoColumnas."_id'","'".$this->prefijoColumnas."_fecha_registro'");
 		$this->excluidos = array("'".$this->prefijoColumnas."fecha_registro'");
 	}
+	
+	/*
+	 * operadores
+	*/
+	
+	private function recuperarOperadores(){
+		//popula $this->operadores
+		$this->persistencia =  new Persistencia($this->conexion,'reglas.operadores');
+		$listaColumnas = $this->persistencia->getListaColumnas();
+		if(is_array($listaColumnas)){
+			$this->operadores = $this->persistencia->read($listaColumnas);
+			return true;
+		}
+		$this->operadores = false;
+		$this->mensaje->addMensaje("100","errorRecuperarOperadores",'error');
+		return false;
+	
+	
+	}
+	
+	public function getListaOperadores(){
+		$this->recuperarOperadores();
+		return $this->operadores;
+	}
+	
+	
 	
 	/*
 	 * permisos

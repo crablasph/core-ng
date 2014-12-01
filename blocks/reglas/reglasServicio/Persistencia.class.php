@@ -61,7 +61,7 @@ class Persistencia {
     	return $this->query;
     }
     
-    private function setQuery($query){
+    public function setQuery($query){
     	 $this->query = $query;
     }
     
@@ -159,7 +159,7 @@ class Persistencia {
     	return true;
     }
     
-    private function ejecutar($opcion = ''){
+    public function ejecutar($opcion = ''){
     	if($opcion!=''&&!is_null($opcion))	return $this->miRecursoDB->ejecutarAcceso($this->query,$opcion);
     	return $this->miRecursoDB->ejecutarAcceso($this->query);
     }
