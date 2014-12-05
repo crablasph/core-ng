@@ -1,6 +1,6 @@
 <?php
 
-namespace reglas\reglasServicio;
+namespace reglas;
 
 
 
@@ -71,14 +71,14 @@ class GestorParametro{
     	$parametros['valor'] = $valor;
     	$parametros['estado'] = $estado;
     	
-    	
-    	   	if(!$this->registrador->ejecutar(self::ID_OBJETO,$parametros,1)){
+    	$ejecutar = $this->registrador->ejecutar(self::ID_OBJETO,$parametros,1);
+    	   	if(!$ejecutar){
     		
     		$this->mensaje = &$this->registrador->mensaje;
     		return false;
     	}
     	
-    	return true;
+    	return $ejecutar;
     	
     }
     
@@ -111,16 +111,16 @@ class GestorParametro{
     	 
     }
     
-    public function consultarParametro($id = '',$nombre ='',$descripcion='',$proceso='',$tipo = '',$valor='',$estado=''){
+    public function consultarParametro($id = '',$nombre ='',$proceso='',$tipo = '',$estado=''){
     
      
     	if(!$this->validarAcceso($id,2)) return false;
     	$parametros =  array();
     	if($nombre!='')	$parametros['nombre'] = $nombre; 
-    	if($descripcion!='')	$parametros['descripcion'] = $descripcion;
+    	//if($descripcion!='')	$parametros['descripcion'] = $descripcion;
     	if($proceso!='')	$parametros['proceso'] = $proceso;
     	if($tipo!='')	$parametros['tipo'] = $tipo;
-    	if($valor!='')	$parametros['valor'] = $valor;
+    	//if($valor!='')	$parametros['valor'] = $valor;
     	if($estado!='')	$parametros['estado'] = $estado;
     	if($id!='') $parametros['id'] = $id;
         

@@ -1,5 +1,5 @@
 <?php
-namespace reglas\reglasServicio;
+namespace reglas;
 
 
 if (! isset ( $GLOBALS ["autorizado"] )) {

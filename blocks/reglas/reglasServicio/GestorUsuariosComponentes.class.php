@@ -1,6 +1,6 @@
 <?php
 
-namespace reglas\reglasServicio;
+namespace reglas;
 
 
 
@@ -130,13 +130,16 @@ class GestorUsuariosComponentes{
     	$parametros['estado'] = $estado;
     	
     	
-    	   	if(!$this->registrador->ejecutar(self::ID_OBJETO,$parametros,1)){
-    	   	
+    	$ejecutar = $this->registrador->ejecutar(self::ID_OBJETO,$parametros,1);
+    	   	if(!$ejecutar){
+    		
     		$this->mensaje = &$this->registrador->mensaje;
     		return false;
     	}
     	
-    	return true;
+    	return $ejecutar;
+    	
+    	
     	
     }
     

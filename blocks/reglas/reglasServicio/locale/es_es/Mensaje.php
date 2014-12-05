@@ -44,7 +44,7 @@ $this->idioma["errorSeleccionInvalido"] = "Error indice a seleccionar inválido";
 $this->idioma["errorTipoInvalido"] = "Error indice fuente inválido";
 $this->idioma["erroridObjetoEntrada"] = "Error en el formato de entrada del Id Objeto";
 $this->idioma["errorParametrosEntrada"] = "Error en el formato de entrada de los parámetros";
-$this->idioma["errorOperacionEntrada"] = "Error en el formato de entrada de la operacián";
+$this->idioma["errorOperacionEntrada"] = "Error en el formato de entrada de la operación";
 $this->idioma["errorParametrosEntradaIdObjeto"] = "Error id objeto no existe";
 $this->idioma["errorColumnaNoExiste"] = "Error atributo no existe";
 $this->idioma["errorEntradaParametrosId"] = "Error Id Inválido";
@@ -101,6 +101,7 @@ $this->idioma["registroObjetoNoExiste"] = "Registro objeto no existe";
 $this->idioma["permisoNoEncontrado"] = "Permiso no encontrado";
 $this->idioma["usuarioNoExiste"] = "Usuario no existe";
 $this->idioma["errorRecuperarPermisos"] = "error recuperando permisos";
+$this->idioma["errorRecuperarColumnas"] = "error recuperando columnas";
 $this->idioma["errorRecuperarObjetos"] = "error recuperando objetos";
 $this->idioma["objetoNoEncontrado"] = "error objeto no encontrado";
 $this->idioma["relacionNoExiste"] = "relación no existe";
@@ -110,4 +111,75 @@ $this->idioma["usuarioSinPermisos"]="Error, usuario no posee permisos";
 $this->idioma["errorCadenaMalFormada"]="Error, cadena mal formada";
 $this->idioma["errorSoapCall"]="Error, en llamada al metodo soap";
 $this->idioma["errorRecuperarOperadores"]="Error, recuperando operadores";
+$this->idioma["errorRegistroPropietario"]="Error, recuperando operadores";
+
+
+
+
+///cliente
+
+
+$this->idioma["crearFormulario"]="Crear";
+$this->idioma["actualizarFormulario"]="Actualizar";
+$this->idioma["usuario"]="Usuario";
+$this->idioma["clave"]="Clave:";
+$this->idioma["usuarioTitulo"]="NÃºmero de documento";
+$this->idioma["claveTitulo"]="Clave de Acceso";
+$this->idioma["enviar"]="Enviar";
+$this->idioma["botonAceptar"]="Aceptar";
+$this->idioma["botonCancelar"]="Cancelar";
+$this->idioma["noDefinido"]="No definido";
+$this->idioma["botonIngresar"]="Ingresar";
+$this->idioma['principalConsultar']="Consultar";
+$this->idioma['principalCrear']="Crear";
+$this->idioma['principalEditar']="Editar";
+$this->idioma['principalDuplicar']="Duplicar";
+$this->idioma['principalCambiarEstado']="Cambiar Estado";
+$this->idioma['principalSeleccionarObjeto']="Seleccione un objeto";
+$this->idioma['principalSeleccionarAccion']="Seleccione una acción";
+$this->idioma['principalValidar']="Validar";
+$this->idioma['crearAccion']="Se crea elemento con Id:";
+$this->idioma['actualizarAccion']="Se actualiza elemento con Id:";
+$this->idioma['crearAccionFallo']="Falló al crear elementos:";
+$this->idioma['actualizarAccionFallo']="Falló al actualizar elementos:";
+$this->idioma['id']="id";
+$this->idioma['idTitulo']="Ingrese Identificador";
+$this->idioma['buscar']="Buscar";
+$this->idioma['buscarTitulo']="Ingrese Buscar";
+$this->idioma['nombre']="nombre";
+$this->idioma['nombreTitulo']="Ingrese Nombre";
+$this->idioma['proceso']="proceso";
+$this->idioma['procesoTitulo']="Ingrese Proceso";
+$this->idioma['tipo']="tipo";
+$this->idioma['tipoTitulo']="Seleccione Tipo";
+$this->idioma['estado']="estado";
+$this->idioma['estadoTitulo']="Seleccione Estado";
+$this->idioma['categoria']="categoria";
+$this->idioma['categoriaTitulo']="Seleccione Categoría";
+$this->idioma['categoriaTilde']="categoría";
+$this->idioma['reiniciar']="reiniciar";
+$this->idioma['reiniciarTitulo']="Ingrese Reiniciar";
+$this->idioma['objeto']="objeto";
+$this->idioma['objetoTitulo']="Seleccione Objeto";
+$this->idioma['permiso']="permiso";
+$this->idioma['permisoTitulo']="Seleccione Permiso";
+$this->idioma['valor']="valor";
+$this->idioma['valorTitulo']="Ingrese Valor";
+$this->idioma['ruta']="valor";
+$this->idioma['rutaTitulo']="Ingrese Ruta";
+$this->idioma['usuario']="usuario";
+$this->idioma['rutaTitulo']="Ingrese Usuario";
+$this->idioma['rango']="rango";
+$this->idioma['rangoTitulo']="Ingrese Rango";
+$this->idioma['descripcion']="descripción";
+$this->idioma['descripcionTitulo']="Ingrese Descripción";
+$this->idioma['registro']="registro";
+$this->idioma['registroTitulo']="Ingrese Registro";
+$this->idioma['minimo']="Mínimo";
+$this->idioma['maximo']="Maximo";
+$this->idioma['guardar']="Guardar";
+$this->idioma['crear']="Crear";
+$this->idioma['accionCambiarEstado']="Accion: Cambiar estado resultados:<br>";
+$this->idioma['accionDuplicar']="Accion: Duplicar resultados:<br>";
+
 ?>

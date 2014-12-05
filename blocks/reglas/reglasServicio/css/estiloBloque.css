@@ -1,0 +1,56 @@
+#loading {
+  
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('loading.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+.contenedorInput{
+	float:left;
+	display:inline-block;
+}
+
+
+
+#herramientas{
+	float:left;
+	display: inline-block;
+}
+
+.posiscion{
+	text-align: right;
+	position:absolute;
+	right: 0;
+	width:300px;
+	clear:both;
+	display: inline-block;
+}
+#menu{
+	position:relative;
+	z-index:1000;
+	float:right;
+	display: inline-block;
+}
+
+#menuLista{
+	text-align: left;;
+}
+
+select {
+      width: 200px;
+    }
+    
+.tabla tr td {
+    text-align: center;
+    
+}
+
+.tabla .ui-selecting { background: #FECA40; }
+.tabla .ui-selected { background: #F39814; color: white; }

@@ -65,6 +65,14 @@ ALTER TABLE reglas.estados
   objetos_id serial NOT NULL ,
   objetos_nombre text NOT NULL,
   objetos_alias text NOT NULL,
+  objetos_ejecutar text NOT NULL,
+  objetos_visible bool NOT NULL DEFAULT FALSE,
+  objetos_crear bool NOT NULL DEFAULT FALSE,
+  objetos_consultar bool NOT NULL DEFAULT FALSE,
+  objetos_actualizar bool NOT NULL DEFAULT FALSE,
+  objetos_cambiarEstado bool NOT NULL DEFAULT FALSE,
+  objetos_duplicar bool NOT NULL DEFAULT FALSE,
+  objetos_eliminar bool NOT NULL DEFAULT FALSE,
   CONSTRAINT objetos_pk PRIMARY KEY (objetos_id)
 )
 WITH (
@@ -76,18 +84,59 @@ ALTER TABLE reglas.objetos
   
   ---Lnea Tabla de Objetos
   INSERT INTO reglas.objetos(
-            objetos_nombre,objetos_alias)
-     VALUES ( 'reglas.parametros','Parametros'),
-    		( 'reglas.variables','Variables'),
-    		( 'reglas.funciones','Funciones'),
-    		( 'reglas.reglas','Reglas'),
-    		( 'reglas.usuarios','Usuarios'),
-    		( 'reglas.relaciones','Permisos'),
-    		( 'reglas.acceso','Acceso'),
-    		( 'reglas.fuentes','Fuentes');
+            objetos_nombre,objetos_alias,objetos_ejecutar, objetos_visible, objetos_consultar, objetos_actualizar , objetos_cambiarEstado , objetos_duplicar , objetos_eliminar)
+     VALUES ( 'reglas.parametros','Parametros','parametro', true,true,true,true,false,false),
+    		( 'reglas.variables','Variables','variable', true,true,true,true,true,false),
+    		( 'reglas.funciones','Funciones','funcion', true,true,true,true,true,false),
+    		( 'reglas.reglas','Reglas','regla', true,true,true,true,true,false),
+    		( 'reglas.usuarios','Usuarios' ,'usuario', false,true,false,false,false,false),
+    		( 'reglas.relaciones','Permisos', 'relacion',true,true,true,true,true,false),
+    		( 'reglas.acceso','Acceso', 'acceso' ,false,true,false,false,false,false);
     		
 
+--Crea tabla de Columnas  
+  CREATE TABLE reglas.columnas
+(
+  columnas_id serial NOT NULL ,
+  columnas_nombre text NOT NULL,
+  columnas_alias text NOT NULL,
+  columnas_input text NOT NULL DEFAULT FALSE,
+  columnas_consultar bool NOT NULL DEFAULT FALSE,
+  columnas_crear bool NOT NULL DEFAULT FALSE,
+  columnas_actualizar bool NOT NULL DEFAULT FALSE,
+  columnas_codificada bool NOT NULL DEFAULT FALSE,
+  columnas_deshabilitado bool NOT NULL DEFAULT FALSE,
+  columnas_autocompletar bool NOT NULL DEFAULT FALSE,
+  columnas_requerido_consultar bool NOT NULL DEFAULT FALSE,
+  columnas_requerido_crear bool NOT NULL DEFAULT FALSE,
+  columnas_requerido_actualizar bool NOT NULL DEFAULT FALSE,
+  CONSTRAINT columnas_pk PRIMARY KEY (columnas_id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE reglas.columnas
+  OWNER TO reglas;
 
+INSERT INTO reglas.columnas
+( columnas_nombre , columnas_alias , columnas_input, columnas_consultar,columnas_crear,
+  columnas_actualizar,  columnas_codificada , columnas_deshabilitado ,columnas_autocompletar ,
+  columnas_requerido_consultar,columnas_requerido_crear,columnas_requerido_actualizar) VALUES
+  ('id','Identificación','text',true,false,false,false,false,true,false,false,true),
+  ('nombre','Nombre','text',true,true,true,false,false,true,false, true, false),
+  ('descripcion','Descripción','textarea',false,true,true,false,false,false,false, false, false),
+  ('proceso','Proceso','text',true,true,true,false,false,true,false, true, false),
+  ('tipo','Tipo','select',true,true,true,true,false,false,false, true, false),
+  ('valor','Valor','textarea',false,true,true,true,false,false, false, true, false),
+  ('estado','Estado','select',true,true,true,false,false,false,false, true, false),
+  ('fecha_registro','Fecha Registro','dateRange',true,false,false,false,false,false,false, false, false),
+  ('rango','Rango','rangeSlider',false,true,true,false,false,false, false, true, false),
+  ('categoria','Categoría','select',true,true,true,false,false,false,false,true,false),
+  ('ruta','Ruta','text',false,true,true,false,false,true,false,true,false),
+  ('usuario','Usuario','text',true,true,true,false,false,false,false,true,false),
+  ('objeto','Objeto','select',true,true,true,false,false,false,false,true,false),
+  ('registro','Registro','text',false,true,true,false,false,false,false,true,false),
+  ('permiso','Permiso','select',true,true,true,false,false,true,false,true,false);
 
 --Crea tabla de Permisos  
   CREATE TABLE reglas.permisos
@@ -239,8 +288,8 @@ CREATE TABLE reglas.variables
   var_nombre text UNIQUE NOT NULL,
   var_descripcion text,
   var_proceso integer NOT NULL,
-  var_rango text NOT NULL,
   var_tipo integer NOT NULL,
+  var_rango text NOT NULL,
   var_valor text NOT NULL,
   var_estado integer NOT NULL,
   var_fecha_registro date NOT NULL DEFAULT ('now'::text)::date,
@@ -266,8 +315,8 @@ ALTER TABLE reglas.variables
   var_nombre_h text NOT NULL,
   var_descripcion_h text,
   var_proceso_h integer NOT NULL,
-  var_rango_h text NOT NULL,
   var_tipo_h integer NOT NULL,
+  var_rango_h text NOT NULL,
   var_valor_h text NOT NULL,
   var_estado_h integer NOT NULL,
   var_fecha_registro_h date NOT NULL ,
@@ -291,8 +340,8 @@ CREATE TABLE reglas.funciones
   fun_nombre text UNIQUE NOT NULL,
   fun_descripcion text,
   fun_proceso integer NOT NULL,
-  fun_rango text NOT NULL,
   fun_tipo integer NOT NULL,
+  fun_rango text NOT NULL,
   fun_categoria integer NOT NULL,
   fun_ruta text NOT NULL DEFAULT 0,
   fun_valor text NOT NULL,
@@ -323,8 +372,8 @@ ALTER TABLE reglas.funciones
   fun_nombre_h text NOT NULL,
   fun_descripcion_h text,
   fun_proceso_h integer NOT NULL,
-  fun_rango_h text NOT NULL,
   fun_tipo_h integer NOT NULL,
+  fun_rango_h text NOT NULL,
   fun_categoria_h integer NOT NULL,
   fun_ruta_h text NOT NULL,
   fun_valor_h text NOT NULL,
