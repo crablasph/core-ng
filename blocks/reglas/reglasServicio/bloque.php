@@ -1,6 +1,6 @@
 <?php
 
-namespace reglas\reglasServicio;
+namespace reglas;
 
 // Evitar un acceso directo a este archivo
 if (! isset ( $GLOBALS ["autorizado"] )) {
@@ -13,32 +13,37 @@ include_once ("core/builder/Bloque.interface.php");
 include_once ("core/manager/Configurador.class.php");
 include_once ("core/builder/FormularioHtml.class.php");
 
+// Elementos que constituyen un bloque típico CRUD.
 
+// Interfaz gráfica
+include_once ("Frontera.class.php");
+
+// Funciones de procesamiento de datos
+include_once ("Funcion.class.php");
+
+// Compilación de clausulas SQL utilizadas por el bloque
+include_once ("Sql.class.php");
+
+// Mensajes
+include_once ("Lenguaje.class.php");
 include("MediadorReglas.class.php");
-
-
 
 
 // Esta clase actua como control del bloque en un patron FCE
 
-if (! class_exists ( '\\reglas\\reglasServicio\\Bloque' )) {
+if (! class_exists ( '\\reglas\\reglasInterfaz\\Bloque' )) {
     
-    class Bloque {
-        
-    	private $nombreBloque;
-        private $miConfigurador;
-        private $mediador; 
-        
-        
-
+    class Bloque implements \Bloque {
+    	const SOAP_VARIABLE='wsSoap';
+        var $nombreBloque;
+        var $miFuncion;
+        var $miSql;
+        var $miConfigurador;
+        var $miFormulario;
+        private $mediador;
         
         public function __construct($esteBloque, $lenguaje = "") {
             
-			
-        	$_REQUEST["bloqueNombre"] = $esteBloque['nombre'];
-        	$_REQUEST["bloqueGrupo"] =  $esteBloque['grupo'];
-			
-			
             // El objeto de la clase Configurador debe ser único en toda la aplicación
             $this->miConfigurador = \Configurador::singleton ();
             
@@ -51,22 +56,69 @@ if (! class_exists ( '\\reglas\\reglasServicio\\Bloque' )) {
             } else {
                 $ruta .= "/blocks/" . $esteBloque ["grupo"] . "/" . $esteBloque ["nombre"] . "/";
                 $rutaURL .= "/blocks/" . $esteBloque ["grupo"] . "/" . $esteBloque ["nombre"] . "/";
+                $this->miConfigurador->setVariableConfiguracion ( "bloqueActualGrupo", $esteBloque ["grupo"] );
             }
             
+            $this->miConfigurador->setVariableConfiguracion ( "bloqueActualNombre", $esteBloque ["nombre"] );
             $this->miConfigurador->setVariableConfiguracion ( "rutaBloque", $ruta );
             $this->miConfigurador->setVariableConfiguracion ( "rutaUrlBloque", $rutaURL );
             
-            $this->mediador =  New MediadorReglas();
+            $this->miConfigurador->setVariableConfiguracion ( "soapVariable", self::SOAP_VARIABLE );
             
-
-        
+            $this->miFuncion = new Funcion ();
+            $this->miSql = new Sql ();
+            $this->miFrontera = new Frontera ();
+            $this->miLenguaje = new Lenguaje ();
+            $this->miFormulario = new \FormularioHtml ();
+            
         }
-
         public function bloque() {
         	
         	
-               $this->mediador->action();
+        	if(isset($_REQUEST[self::SOAP_VARIABLE])){
+        		$this->mediador =  New MediadorReglas();
+        		$this->mediador->action();
+        	}
+        	
+            if (isset ( $_REQUEST ['botonCancelar'] ) && $_REQUEST ['botonCancelar'] == "true") {
+                $this->miFuncion->redireccionar ( "paginaPrincipal" );
+            } else {
+                
+                /**
+                 * Injección de dependencias
+                 */
+                
+                // Para la frontera
+                $this->miFrontera->setSql ( $this->miSql );
+                $this->miFrontera->setFuncion ( $this->miFuncion );
+                $this->miFrontera->setFormulario ( $this->miFormulario );
+                $this->miFrontera->setLenguaje ( $this->miLenguaje );
+                
+                // Para la entidad
+                $this->miFuncion->setSql ( $this->miSql );
+                $this->miFuncion->setFuncion ( $this->miFuncion );
+                $this->miFuncion->setLenguaje ( $this->miLenguaje );
+                
+                if (! isset ( $_REQUEST ['action'] )) {
                     
+                    $this->miFrontera->frontera ();
+                } else {
+                    
+                    $respuesta = $this->miFuncion->action ();
+                    
+                    // Si $respuesta==false, entonces se debe recargar el formulario y mostrar un mensaje de error.
+                    if (! $respuesta) {
+                        
+                        $miBloque = $this->miConfigurador->getVariableConfiguracion ( 'esteBloque' );
+                        $this->miConfigurador->setVariableConfiguracion ( 'errorFormulario', $miBloque ['nombre'] );
+                    
+                    }
+                    if (! isset ( $_REQUEST ['procesarAjax'] )) {
+                       $this->miFrontera->frontera ();
+                    }
+                
+                }
+            }
         }
     }
 }

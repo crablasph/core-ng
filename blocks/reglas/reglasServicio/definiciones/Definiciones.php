@@ -19,9 +19,9 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 	 * @param string $descripcion Descripcion, Opcional
 	 * @param integer $proceso IdProceso, entero Obligatorio
 	 * @param integer $tipo Tipo Variable, entero Obligatorio
-	 * @param string $valor Valor, Obligatorio
+	 * @param string $valor Valor codificado base64, Obligatorio
 	 * @param integer $estado Estado, entero Obligatorio
-	 * @return bool Respuesta
+	 * @return integer Respuesta
 	 */
 	function crearParametro($nombre ='',$descripcion='',$proceso='',$tipo = '',$valor='',$estado=''){
 		
@@ -36,7 +36,7 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 	 * @param string $descripcion Descripcion, Opcional
 	 * @param integer $proceso IdProceso, entero Opcional
 	 * @param integer $tipo Tipo Variable, entero Opcional
-	 * @param string $valor Valor, Opcional
+	 * @param string $valor Valor codificado base64, Opcional
 	 * @param integer $estado Estado, entero Opcional
 	 * @return bool Respuesta
 	 */
@@ -50,14 +50,12 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 	 *
 	 * @param integer $id Identificador, entero Opcional
 	 * @param string $nombre Nombre, cadena de caracteres Opcional
-	 * @param string $descripcion Descripcion, Opcional
 	 * @param integer $proceso IdProceso, entero Opcional
 	 * @param integer $tipo Tipo Variable, entero Opcional
-	 * @param string $valor Valor, Opcional
 	 * @param integer $estado Estado, entero Opcional
 	 * @return array Respuesta
 	 */
-	function consultarParametro($id = '',$nombre ='',$descripcion='',$proceso='',$tipo = '',$valor='',$estado=''){
+	function consultarParametro($id = '',$nombre ='',$proceso='',$tipo = '',$estado=''){
 		
 	}
 	
@@ -81,13 +79,13 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 	 * @param string $nombre Nombre, cadena de caracteres Obligatorio
 	 * @param string $descripcion Descripcion, Opcional
 	 * @param integer $proceso IdProceso, entero Obligatorio
-	 * @param string $rango rango, cadena Obligatorio
 	 * @param integer $tipo Tipo Variable, entero Obligatorio
-	 * @param string $valor Valor, Obligatorio
+	 * @param string $rango rango, cadena Obligatorio
+	 * @param string $valor Valor codificado base64, Obligatorio
 	 * @param integer $estado Estado, entero Obligatorio
-	 * @return bool Respuesta
+	 * @return integer Respuesta
 	 */
-	function crearVariable($nombre ='',$descripcion='',$proceso='',$rango = '',$tipo = '',$valor='',$estado=''){
+	function crearVariable($nombre ='',$descripcion='',$proceso='',$tipo = '',$rango = '',$valor='',$estado=''){
 	
 	}
 	
@@ -101,7 +99,7 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 	 * @param integer $proceso IdProceso, entero Opcional
 	 * @param string $rango rango, cadena Obligatorio
 	 * @param integer $tipo Tipo Variable, entero Opcional
-	 * @param string $valor Valor, Opcional
+	 * @param string $valor Valor codificado base64, Opcional
 	 * @param integer $estado Estado, entero Opcional
 	 * @return bool Respuesta
 	 */
@@ -115,14 +113,12 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 	 *
 	 * @param integer $id Identificador, entero Opcional
 	 * @param string $nombre Nombre, cadena de caracteres Opcional
-	 * @param string $descripcion Descripcion, Opcional
 	 * @param integer $proceso IdProceso, entero Opcional
 	 * @param integer $tipo Tipo Variable, entero Opcional
-	 * @param string $valor Valor, Opcional
 	 * @param integer $estado Estado, entero Opcional
 	 * @return array Respuesta
 	 */
-	function consultarVariable($id = '',$nombre ='',$descripcion='',$proceso='',$tipo = '',$valor='',$estado=''){
+	function consultarVariable($id = '',$nombre ='',$proceso='',$tipo = '',$estado=''){
 	
 	}
 	
@@ -156,15 +152,15 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 	 * @param string $nombre Nombre, cadena de caracteres Obligatorio
 	 * @param string $descripcion Descripcion, Opcional
 	 * @param integer $proceso IdProceso, entero Obligatorio
-	 * @param string $rango rango, cadena Obligatorio
 	 * @param integer $tipo Tipo Funcion, entero Obligatorio
+	 * @param string $rango rango, cadena Obligatorio
 	 * @param integer $categoria categoria funcion, entero Obligatorio
-	 * @param string $ruta lugar de ejecucion, cadena Obligatorio
-	 * @param string $valor Valor, Obligatorio
+	 * @param string $ruta lugar de ejecucion codificado base64, cadena Obligatorio
+	 * @param string $valor Valor codificado base64, Obligatorio
 	 * @param integer $estado Estado, entero Obligatorio
-	 * @return bool Respuesta
+	 * @return integer Respuesta
 	 */
-	function crearFuncion($nombre ='',$descripcion='',$proceso='',$rango = '',$tipo = '',$categoria = '',$ruta='',$valor='',$estado=''){
+	function crearFuncion($nombre ='',$descripcion='',$proceso='',$tipo = '',$rango = '',$categoria = '',$ruta='',$valor='',$estado=''){
 	
 	}
 	
@@ -179,8 +175,8 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 	 * @param string $rango rango, cadena Obligatorio
 	 * @param integer $tipo Tipo funcion, entero Opcional
 	 * @param integer $categoria categoria funcion, entero opcional
-	 * @param string $ruta lugar de ejecucion, cadena opcional
-	 * @param string $valor Valor, Opcional
+	 * @param string $ruta lugar de ejecucion codificado base64, cadena opcional
+	 * @param string $valor Valor codificado base64, Opcional
 	 * @param integer $estado Estado, entero Opcional
 	 * @return bool Respuesta
 	 */
@@ -194,14 +190,12 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 	 *
 	 * @param integer $id Identificador, entero Opcional
 	 * @param string $nombre Nombre, cadena de caracteres Opcional
-	 * @param string $descripcion Descripcion, Opcional
 	 * @param integer $proceso IdProceso, entero Opcional
 	 * @param integer $tipo Tipo Variable, entero Opcional
-	 * @param string $valor Valor, Opcional
 	 * @param integer $estado Estado, entero Opcional
 	 * @return array Respuesta
 	 */
-	function consultarFuncion($id = '',$nombre ='',$descripcion='',$proceso='',$tipo = '',$valor='',$estado=''){
+	function consultarFuncion($id = '',$nombre ='',$proceso='',$tipo = '',$estado=''){
 	
 	}
 	
@@ -235,9 +229,9 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 	 * @param string $descripcion Descripcion, Opcional
 	 * @param integer $proceso IdProceso, entero Obligatorio
 	 * @param integer $tipo Tipo Variable, entero Obligatorio
-	 * @param string $valor Valor, Obligatorio
+	 * @param string $valor Valor codificado base64, Obligatorio
 	 * @param integer $estado Estado, entero Obligatorio
-	 * @return bool Respuesta
+	 * @return integer Respuesta
 	 */
 	function crearRegla($nombre ='',$descripcion='',$proceso='',$tipo = '',$valor='',$estado=''){
 	
@@ -252,7 +246,7 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 	 * @param string $descripcion Descripcion, Opcional
 	 * @param integer $proceso IdProceso, entero Opcional
 	 * @param integer $tipo Tipo Variable, entero Opcional
-	 * @param string $valor Valor, Opcional
+	 * @param string $valor Valor codificado base64, Opcional
 	 * @param integer $estado Estado, entero Opcional
 	 * @return bool Respuesta
 	 */
@@ -297,7 +291,7 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 	
 	}
 	
-	/////////////USUARIOS//////////////////////////////////////////
+	/////////////PERMISOS//////////////////////////////////////////
 	
 	/**
 	 *
@@ -323,7 +317,7 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 	 * @param integer $registro Id Registro, entero Opcional
 	 * @param integer $permiso Id Pemiso, entero Opcional
 	 * @param integer $estado Estado, Opcional
-	 * @return bool Respuesta
+	 * @return integer Respuesta
 	 */
 	function actualizarRelacion($id = '' , $usuario ='',$objeto='',$registro='',$permiso = '',$estado=''){
 	
@@ -336,12 +330,11 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 	 * @param integer $id Id Registro Usuario, entero Obligatorio
 	 * @param integer $usuario Id Usuario, entero Opcional
 	 * @param integer $objeto Id Objeto, entero Opcional
-	 * @param integer $registro Id Registro, entero Opcional
 	 * @param integer $permiso Id Pemiso, entero Opcional
 	 * @param integer $estado Estado, Opcional
 	 * @return bool Respuesta
 	 */
-	function consultarRelacion($id = '',$usuario ='',$objeto='',$registro='',$permiso = '',$estado=''){
+	function consultarRelacion($id = '',$usuario ='',$objeto='',$permiso = '',$estado=''){
 	
 	}
 	
@@ -427,6 +420,36 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 	 * @return array Respuesta
 	 */
 	function getListaOperadores(){
+	
+	}
+	
+	/**
+	 *
+	 *
+	 * @void
+	 * @return array Respuesta
+	 */
+	function getListaCategorias(){
+	
+	}
+	
+	/**
+	 *
+	 *
+	 * @void
+	 * @return array Respuesta
+	 */
+	function getDatosColumnas(){
+	
+	}
+	
+	/**
+	 *
+	 * 
+	 * @param integer $idObjeto Id Objeto, entero Obligatorio
+	 * @return array Respuesta
+	 */
+	function getAtributosObjeto($idObjeto){
 	
 	}
 	

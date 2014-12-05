@@ -14,7 +14,7 @@
    echo Mensaje->getLastMensaje('json');
  */
 
-namespace reglas\reglasServicio;
+namespace reglas;
 use SoapFault;
 
 if (! isset ( $GLOBALS ["autorizado"] )) {
@@ -103,7 +103,8 @@ class Mensaje {
 		//set id mensaje
 		$mensaje->id = $id;
 		//recupera cadena de la clase lenguaje
-		$mensaje->texto = $this->recuperarCadena($cadena);
+		if($cadena[0]==':') $mensaje->texto = substr($cadena,1,strlen($cadena)-2);
+		else $mensaje->texto = $this->recuperarCadena($cadena);
 		//set tipo de mensaje
 		$mensaje->tipoMensaje = $tipoMensaje;
 		//set objeto de error

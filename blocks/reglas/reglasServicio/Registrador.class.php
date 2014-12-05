@@ -1,6 +1,6 @@
 <?php
 
-namespace reglas\reglasServicio;
+namespace reglas;
 
 
 if (! isset ( $GLOBALS ["autorizado"] )) {
@@ -26,6 +26,8 @@ class Registrador{
 	private $objetos;
 	private $permisos;
 	private $operadores;
+	private $categorias;
+	private $columnasTabla;
 	private $miConfigurador;
 	public $persistencia;
 	private $tabla;
@@ -62,6 +64,22 @@ class Registrador{
 	    
 	
 	}	
+	
+	public function getAtributosObjeto($idObjeto = ''){
+		
+		if($idObjeto == '') return false;
+		$nombre = $this->getObjeto($idObjeto,'id','nombre');
+		$this->persistencia =  new Persistencia($this->conexion,$nombre);
+		$listaColumnas = $this->persistencia->getListaColumnas();
+		$prefijo = $this->persistencia->getprefijoColumna();
+		 
+		$resultado =  array();
+		foreach ($listaColumnas as $columna){
+			$resultado[] =  str_replace ($prefijo.'_','',$columna);;
+		}
+		
+		return $resultado;
+	}
 	
 	public function setUsuario($usuario){
 		if(is_object($this->persistencia))$this->persistencia->setUsuario($usuario);
@@ -102,7 +120,47 @@ class Registrador{
 	
 	private function setExcluidos(){
 		//$this->excluidos = array("'".$this->prefijoColumnas."_id'","'".$this->prefijoColumnas."_fecha_registro'");
-		$this->excluidos = array("'".$this->prefijoColumnas."fecha_registro'");
+		//$this->excluidos = array("'".$this->prefijoColumnas."fecha_registro'");
+		$this->excluidos = array("'".$this->prefijoColumnas."'");
+	}
+	
+	
+	/*
+	 * columnas
+	*/
+	
+	private function recuperarColumnasTabla(){
+		//popula $this->columnas
+		$this->persistencia =  new Persistencia($this->conexion,'reglas.columnas');
+		$listaColumnas = $this->persistencia->getListaColumnas();
+		if(is_array($listaColumnas)){
+			$this->columnasTabla = $this->persistencia->read($listaColumnas);
+			return true;
+		}
+		$this->columnasTabla = false;
+		$this->mensaje->addMensaje("100","errorRecuperarColumnas",'error');
+		return false;
+	
+	
+	}
+	
+	public function getDatosColumnas(){
+		$this->recuperarColumnasTabla();
+	
+		$lista = array();
+		$prefijo = 'columnas_';
+		foreach ($this->columnasTabla as $columna){
+			$fila = array();
+			foreach ($columna as $a => $b){
+				if(strpos($a,$prefijo)!==false){
+					$indice = str_replace ($prefijo,"",$a);
+					$fila[$indice] =  $b;
+				}
+					
+			}
+			if(count($fila)>0)$lista[] = $fila;
+		}
+		return $lista;
 	}
 	
 	/*
@@ -126,7 +184,58 @@ class Registrador{
 	
 	public function getListaOperadores(){
 		$this->recuperarOperadores();
-		return $this->operadores;
+		
+		$lista = array();
+		$prefijo = 'ope_';
+		foreach ($this->operadores as $operador){
+			$fila = array();
+			foreach ($operador as $a => $b){
+				if(strpos($a,$prefijo)!==false){
+					$indice = str_replace ($prefijo,"",$a);
+					$fila[$indice] =  $b;
+				}
+					
+			}
+			if(count($fila)>0)$lista[] = $fila;
+		}
+		return $lista;
+	}
+	
+	/*
+	 * categorias funcion
+	*/
+	
+	private function recuperarCategorias(){
+		//popula $this->categorias
+		$this->persistencia =  new Persistencia($this->conexion,'reglas.categoria_funcion');
+		$listaColumnas = $this->persistencia->getListaColumnas();
+		if(is_array($listaColumnas)){
+			$this->categorias = $this->persistencia->read($listaColumnas);
+			return true;
+		}
+		$this->categorias = false;
+		$this->mensaje->addMensaje("100","errorRecuperarOperadores",'error');
+		return false;
+	
+	
+	}
+	
+	public function getListaCategorias(){
+		$this->recuperarCategorias();
+		$lista = array();
+		$prefijo = 'cfun_';
+		foreach ($this->categorias as $categoria){
+			$fila = array();
+			foreach ($categoria as $a => $b){
+				if(strpos($a,$prefijo)!==false){
+					$indice = str_replace ($prefijo,"",$a);
+					$fila[$indice] =  $b;
+				}
+					
+			}
+			if(count($fila)>0)$lista[] = $fila;
+		}
+		return $lista;
 	}
 	
 	
@@ -151,7 +260,21 @@ class Registrador{
 	}
 	
 	public function getListaPermisos(){
-		return $this->permisos;
+		$this->recuperarPermisos();
+		$lista = array();
+		$prefijo = 'permisos_';
+		foreach ($this->permisos as $permiso){
+			$fila = array();
+			foreach ($permiso as $a => $b){
+				if(strpos($a,$prefijo)!==false){
+					$indice = str_replace ($prefijo,"",$a);
+					$fila[$indice] =  $b;
+				}
+					
+			}
+			if(count($fila)>0)$lista[] = $fila;
+		}
+		return $lista;
 	}
 	
 	public function getPermiso($var = null,$tipo = null , $seleccion = null){
@@ -188,7 +311,21 @@ class Registrador{
 	}
 	
 	public function getListaEstados(){
-		return $this->estados;
+		$this->recuperarEstados();
+		$lista = array();
+		$prefijo = 'estados_';
+		foreach ($this->estados as $estado){
+			$fila = array();
+			foreach ($estado as $a => $b){
+				if(strpos($a,$prefijo)!==false){
+					$indice = str_replace ($prefijo,"",$a);
+					$fila[$indice] =  $b;
+				}
+					
+			}
+			if(count($fila)>0)$lista[] = $fila;
+		}
+		return $lista;
 	}
 	
 	public function getEstado($var = null,$tipo = null , $seleccion = null){
@@ -227,7 +364,21 @@ class Registrador{
 	}
 	
 	public function getListaTipos(){
-		return $this->tipos;
+		$this->recuperarTipos();
+		$lista = array();
+		$prefijo = 'tipo_';
+		foreach ($this->tipos as $tipo){
+			$fila = array();
+			foreach ($tipo as $a => $b){
+				if(strpos($a,$prefijo)!==false){
+					$indice = str_replace ($prefijo,"",$a);
+					$fila[$indice] =  $b;
+				}
+			
+			}
+			if(count($fila)>0)$lista[] = $fila;
+		}
+		return $lista;
 	}
 	
 	public function getTipo($var = null,$tipo = null , $seleccion = null){
@@ -265,7 +416,21 @@ class Registrador{
 	}
 	
 	public function getListaObjetos(){
-		return $this->objetos;
+		$this->recuperarObjetos();
+		$lista = array();
+		$prefijo = 'objetos_';
+		foreach ($this->objetos as $objeto){
+			$fila = array();
+			foreach ($objeto as $a => $b){
+				if(strpos($a,$prefijo)!==false){
+					$indice = str_replace ($prefijo,"",$a);
+					$fila[$indice] =  $b;
+				}
+				
+			}
+			if(count($fila)>0)$lista[] = $fila;
+		}
+		return $lista;
 	}
 	
 	public function getObjeto($var = null,$tipo = null,$seleccion = null){
@@ -535,6 +700,52 @@ class Registrador{
 			//
 			
 	}
+	
+	private function recuperarUltimoId(){
+		
+		$maxId = 'max('.$this->persistencia->getprefijoColumna().'_id)';
+		$leido = $this->persistencia->read(array($maxId));
+		 
+		
+		if(!$leido){
+			$this->mensaje->addMensaje("101","errorCreacion".$this->tablaAlias,'error');
+			return false;
+		}
+		return $leido[0][0];
+	}
+	
+	private function registrarPropietario($ultimoId = ''){
+		//recupera ultimo Id
+		
+		 if($ultimoId&&$ultimoId>=0){
+		 	
+		 	//set ambiente relaciones
+		 	$idObjeto = 6;
+		 	$tabla = $this->getObjeto($idObjeto,'id','nombre');
+		 	if(!$tabla) return false;
+		 	$this->tablaAlias = $this->getObjeto($idObjeto,'id','alias');
+		 	$this->setAmbiente($tabla);
+		 	
+		 	$parametros =  array();
+		 	$parametros['usuario'] = $this->usuario;
+		 	$parametros['objeto'] = $idObjeto;
+		 	$parametros['registro'] = $ultimoId;
+		 	$parametros['permiso'] = 0;
+		 	$parametros['estado'] = 1;
+		 	
+		 	if(!$this->procesarParametros($parametros)||!$this->persistencia->create($this->parametros,$this->valores)){
+		 			
+		 		$this->mensaje->addMensaje("101","errorCreacion".$this->tablaAlias,'error');
+		 		return false;
+		 	}
+		 	
+		 	return true;
+		 	 
+		 }
+		 $this->mensaje->addMensaje("101","errorRegistroPropietario".$this->tablaAlias,'error');
+		 return false;
+		
+	}
 		
 	public function ejecutar($idObjeto = null, $parametros = array(), $operacion = null){
 		
@@ -556,12 +767,20 @@ class Registrador{
 				//crear
 				unset($parametros['id']);
 				unset($parametros['fecha_creacion']);
-	
+				
 				if(!$this->procesarParametros($parametros)||!$this->persistencia->create($this->parametros,$this->valores)){
 					
 					$this->mensaje->addMensaje("101","errorCreacion".$this->tablaAlias,'error');
 					return false;
 				}
+				$ultimoId =  $this->recuperarUltimoId();
+				
+				 
+				//registrar propietario
+				
+				if(!$this->registrarPropietario($ultimoId)) return false;
+				return $ultimoId;
+				
 				break;
 			case 2:
 				//consultar

@@ -1,5 +1,5 @@
 <?php
-namespace reglas\reglasServicio;
+namespace reglas;
 
 
 if (! isset ( $GLOBALS ["autorizado"] )) {
@@ -30,11 +30,12 @@ class Envoltura {
     private $objetos;
     private $nombreObjetoSeleccionado ;
     private $objetoSeleccionado;
+    private $miConfigurador;
    
     public $mensaje;
     
     function __construct() {
-    	
+    	$this->miConfigurador = \Configurador::singleton ();
     	$this->objetos['GestorUsuariosComponentes'] = 'GestorUsuariosComponentes';
     	
     	//$this->objetos['EstructurarReglas'] = 'EstructurarReglas';
@@ -95,15 +96,17 @@ class Envoltura {
     }
     
     public function __call($method_name, $arguments){
+    	$variableSoap =  $this->miConfigurador->getVariableConfiguracion ( "soapVariable");
     	
       if($this->validarAcceso()){	
-    	
+
 	    	if($this->validarMetodo($method_name)){
 	    		
 	    		$ejecucion = call_user_func_array(array($this->objetoSeleccionado , $method_name), $arguments);
 	    		unset($this->objetoSeleccionado);
 	    		if(!$ejecucion){
-	    			return $this->mensaje->getLastMensaje("soap");
+	    			if(isset($_REQUEST[$variableSoap]))		return $this->mensaje->getLastMensaje("soap");
+	    			else 		return $this->mensaje->getLastMensaje();
 	    		}		
 	    		return $ejecucion ;
 	    	}
@@ -112,8 +115,8 @@ class Envoltura {
     	
        }
      
-       return $this->mensaje->getLastMensaje("soap");
-     
+       if(isset($_REQUEST[$variableSoap]))		return $this->mensaje->getLastMensaje("soap");
+	    			else 		return $this->mensaje->getLastMensaje();
     }
     
     

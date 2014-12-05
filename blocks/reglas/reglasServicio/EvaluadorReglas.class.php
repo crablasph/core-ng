@@ -1,7 +1,7 @@
 <?php
 
-namespace reglas\reglasServicio;
-use reglas\reglasServicio as ws;
+namespace reglas;
+
 use \SoapClient as SoapClient;
 
 if (! isset ( $GLOBALS ["autorizado"] )) {
@@ -88,7 +88,7 @@ class EvaluadorReglas{
     		
     		return $ejecucion; 
     	
-    	} catch (Exception $e) {
+    	} catch (\Exception $e) {
     		$this->mensaje->addMensaje("1000","errorSoapCall",'error');
     		
     		return false;
@@ -207,7 +207,7 @@ class EvaluadorReglas{
     	}
     	
     	foreach ($ListaParametros as $parametro){
-    		$cadena = str_replace("_".$parametro['nombre']."_", $parametro['valor'], $cadena);
+    		$cadena = str_replace("_".$parametro['nombre']."_", base64_decode($parametro['valor']), $cadena);
     	}
     	
     	return $cadena;
@@ -228,6 +228,7 @@ class EvaluadorReglas{
     		foreach ($valores as $valor){
     			foreach ($listaVariables as $variable){
     				if($variable['nombre']==$valor[0]&&Rango::evaluarRango($valor[1],$variable['tipo'],$variable['rango']))$cadena = str_replace($valor[0], $valor[1], $cadena);
+    				
     			}
     		}
     	}
@@ -247,7 +248,8 @@ class EvaluadorReglas{
     	if(is_array($listaFunciones)){
     
         	foreach ($listaFunciones as $funcion){
-    			
+        		$funcion['ruta'] = base64_decode($funcion['ruta']);
+        		$funcion['valor'] = base64_decode($funcion['valor']);
         		while(strpos($cadena,$funcion['nombre'])!==false){
         			$posiscionNombre = strpos($cadena,$funcion['nombre'])+strlen($funcion['nombre']);
         			$longitudNombre = strlen(strlen($funcion['nombre']));

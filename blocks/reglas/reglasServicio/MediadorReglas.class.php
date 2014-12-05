@@ -1,5 +1,5 @@
 <?php
-namespace reglas\reglasServicio;
+namespace reglas;
 
 
 if (! isset ( $GLOBALS ["autorizado"] )) {
@@ -21,13 +21,11 @@ include_once("Envoltura.class.php");
 include_once (dirname(__FILE__)."/class/wsdl/class.phpwsdl.php");
 use \PhpWsdl as PhpWsdl;
 
-include_once ("EvaluadorReglas.class.php");
-include_once ("Rango.class.php");
 
 class MediadorReglas {
     
 	
-	const SERVICIOS = 'reglas\reglasServicio\Envoltura';
+	const SERVICIOS = '\Envoltura';
 	
 	
     var $crypto;
@@ -58,21 +56,28 @@ class MediadorReglas {
 	
 	
     private function getEndPointURI() {
+    	
     	$url=$this->miConfigurador->getVariableConfiguracion("host");
     	$url.=$this->miConfigurador->getVariableConfiguracion("site");
     	$url.="/index.php?";
     	$resultado = '';
+    	
         foreach ($_REQUEST as $n=>$v){
         	if(strtolower($n)!='action'&&strtolower($n)!='pagina'&&strtolower($n)!='wsdl')
         		$resultado.=$n.'='.$v.'&';
         		
         }
-    
-        	$resultado.="pagina=".$this->miConfigurador->getVariableConfiguracion("pagina");
+     
+        $bloqueNombre = $this->miConfigurador->getVariableConfiguracion ( "bloqueActualNombre" );
+        $bloqueGrupo = $this->miConfigurador->getVariableConfiguracion ( "bloqueActualGrupo" );
+            //variale wsSoap
+            $resultado.="&wsSoap";
+        	
+            $resultado.="pagina=".$this->miConfigurador->getVariableConfiguracion("pagina");
         	$resultado.="&procesarAjax=true";
         	$resultado.="&action=index.php";
-        	$resultado.="&bloqueNombre=".$_REQUEST["bloqueNombre"];
-        	$resultado.="&bloqueGrupo=".$_REQUEST["bloqueGrupo"];
+        	$resultado.="&bloqueNombre=".$bloqueNombre;
+        	$resultado.="&bloqueGrupo=".$bloqueGrupo;
         	 
         	$enlace=$this->miConfigurador->getVariableConfiguracion("enlace");
         	$cadena=$this->miConfigurador->fabricaConexiones->crypto->codificar_url($resultado,$enlace);
@@ -82,21 +87,13 @@ class MediadorReglas {
     
     
     function action() {
-    	/*$_REQUEST['usuario'] ="1018439398"; 
     	
-    	$e = new EvaluadorReglas();
-    	$idRegla =  23;
-    	$valores =  array(array("variable1",1));
-    	$idProceso= 1;
-    	
-    	var_dump($e->evaluarRegla($idRegla, $valores, $idProceso ));exit;
-    	*/
         $this->soap=PhpWsdl::CreateInstance(
         		(string) __NAMESPACE__,								// PhpWsdl will determine a good namespace
            		$this->getEndPointURI()[0],								// Change this to your SOAP endpoint URI (or keep it NULL and PhpWsdl will determine it)
         		'./blocks/reglas/reglasServicio/cache',							// Change this to a folder with write access
         		$this->definiciones,
-        		self::SERVICIOS,								// The name of the class that serves the webservice will be determined by PhpWsdl
+        		(string) __NAMESPACE__.self::SERVICIOS,								// The name of the class that serves the webservice will be determined by PhpWsdl
            		null,								// This demo contains all method definitions in comments
         		null,								// This demo contains all complex types in comments
         		false,								// Don't send WSDL right now
