@@ -87,7 +87,7 @@ class GestorFuncion{
     	
     }
     
-    public function actualizarFuncion($id = '',$nombre ='',$descripcion='',$proceso='',$proceso = '',$tipo = '',$categoria = '',$ruta='',$valor='',$estado=''){
+    public function actualizarFuncion($id = '',$nombre ='',$descripcion='',$proceso='',$proceso = '',$tipo = '',$rango='',$categoria = '',$ruta='',$valor='',$estado=''){
     	 
     	if(!$this->validarAcceso($id,3)) return false;
     	if($id==''||is_null($id)){
@@ -118,7 +118,7 @@ class GestorFuncion{
     	 
     }
     
-    public function consultarFuncion($id = '',$nombre ='',$proceso='',$tipo = '',$estado=''){
+    public function consultarFuncion($id = '',$nombre ='',$proceso='',$tipo = '',$estado='',$fecha=''){
     
     	if(!$this->validarAcceso($id,2)) return false;
     	$parametros =  array();
@@ -129,7 +129,8 @@ class GestorFuncion{
     	//if($valor!='')	$parametros['valor'] = $valor;
     	if($estado!='')	$parametros['estado'] = $estado;
     	if($id!='') $parametros['id'] = $id;
-        
+    	if($fecha!='') $parametros['fecha_registro'] = $fecha;
+    	
     	$consulta = $this->registrador->ejecutar(self::ID_OBJETO,$parametros,2);
     	
     	if(!$consulta){

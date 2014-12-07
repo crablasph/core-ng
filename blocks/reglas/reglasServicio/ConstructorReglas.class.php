@@ -63,17 +63,19 @@ class ConstructorReglas{
     	}
     	
     	if($estado=='') $estado = 3;
+    	else $estado = 3;
     	if($tipo=='') $tipo = 1;
     	
     	$parametros['nombre'] = $nombre;
     	if($descripcion!='')	$parametros['descripcion'] = $descripcion;
     	$parametros['proceso'] = $proceso;
-    	$parametros['tipo'] = $tipo;
+    	$parametros['tipo'] = 1;
     	$parametros['valor'] = $valor;
     	$parametros['estado'] = $estado;
     	
     	
     	$ejecutar = $this->registrador->ejecutar(self::ID_OBJETO,$parametros,1);
+    	
     	if(!$ejecutar){
     	
     		$this->mensaje = &$this->registrador->mensaje;
@@ -112,19 +114,20 @@ class ConstructorReglas{
     	 
     }
     
-    public function consultarRegla($id = '',$nombre ='',$proceso='',$tipo = '',$estado=''){
+    public function consultarRegla($id = '',$nombre ='',$proceso='',$tipo = '',$estado='', $fecha=''){
     
     	
     	if(!$this->validarAcceso($id,2)) return false;
     	
     	$parametros =  array();
     	if($nombre!='')	$parametros['nombre'] = $nombre; 
-    	//if($descripcion!='')	$parametros['descripcion'] = $descripcion;
     	if($proceso!='')	$parametros['proceso'] = $proceso;
     	if($tipo!='')	$parametros['tipo'] = $tipo;
-    	//if($valor!='')	$parametros['valor'] = $valor;
     	if($estado!='')	$parametros['estado'] = $estado;
     	if($id!='') $parametros['id'] = $id;
+    	
+    	if($fecha!='') $parametros['fecha_registro'] = $fecha;
+    	
         
     	$consulta = $this->registrador->ejecutar(self::ID_OBJETO,$parametros,2);
     	

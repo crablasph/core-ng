@@ -84,7 +84,7 @@ class GestorVariable{
     	
     }
     
-    public function actualizarVariable($id = '',$nombre ='',$descripcion='',$proceso='',$rango = '',$tipo = '',$valor='',$estado=''){
+    public function actualizarVariable($id = '',$nombre ='',$descripcion='',$proceso='',$tipo = '',$rango = '',$valor='',$estado=''){
     	 
     	if(!$this->validarAcceso($id,3)) return false;
     	if($id==''||is_null($id)){
@@ -103,7 +103,7 @@ class GestorVariable{
     	 
     	 
     	if(!$this->registrador->ejecutar(self::ID_OBJETO,$parametros,3)){
-    
+            
     		$this->mensaje = &$this->registrador->mensaje;
     		echo $this->mensaje->getLastMensaje();
     		return false;
@@ -113,7 +113,7 @@ class GestorVariable{
     	 
     }
     
-    public function consultarVariable($id = '',$nombre ='',$proceso='',$tipo = '',$estado=''){
+    public function consultarVariable($id = '',$nombre ='',$proceso='',$tipo = '',$estado='',$fecha=''){
     
     	if(!$this->validarAcceso($id,2)) return false;
     	$parametros =  array();
@@ -124,6 +124,7 @@ class GestorVariable{
     	//if($valor!='')	$parametros['valor'] = $valor;
     	if($estado!='')	$parametros['estado'] = $estado;
     	if($id!='') $parametros['id'] = $id;
+    	if($fecha!='') $parametros['fecha_registro'] = $fecha;
         
     	$consulta = $this->registrador->ejecutar(self::ID_OBJETO,$parametros,2);
     	

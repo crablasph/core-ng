@@ -86,6 +86,7 @@ class GuardarDatos {
     	if(isset($lista[0])&&$lista[0]!=''){
     		$this->metodoAccion = 'actualizar';
     		$_REQUEST['id']= $lista[0];
+    		$this->listaParametros[] = $_REQUEST['id'];
     	}else{
     		$this->metodoAccion = 'crear';
     	}
@@ -149,12 +150,11 @@ class GuardarDatos {
 	    $metodo = $this->metodoAccion.ucfirst($this->objetoAliasSingular);
 	    	$argumentos =  $this->listaParametros;
 	    	$accion =  false;
-	    	try {
-	    	   $accion =  call_user_func_array(array($this->cliente , $metodo), $argumentos);
-	    	}catch (\SoapFault $fault) {
-	    		$this->mensaje->addMensaje($fault->faultcode,":".$fault->faultstring,'information');
-	    		$accion =  false;
-	    	}
+	    	$accion =  call_user_func_array(array($this->cliente , $metodo), $argumentos);
+	    	
+	    		
+	    		
+	    	
 	    	
 	    	$cadenaMensaje = '';
 	    	if(!$accion) $cadenaMensaje = $this->lenguaje->getCadena ( $this->metodoAccion."AccionFallo" );

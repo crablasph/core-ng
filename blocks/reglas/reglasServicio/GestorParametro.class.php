@@ -111,7 +111,7 @@ class GestorParametro{
     	 
     }
     
-    public function consultarParametro($id = '',$nombre ='',$proceso='',$tipo = '',$estado=''){
+    public function consultarParametro($id = '',$nombre ='',$proceso='',$tipo = '',$estado='',$fecha=''){
     
      
     	if(!$this->validarAcceso($id,2)) return false;
@@ -123,7 +123,8 @@ class GestorParametro{
     	//if($valor!='')	$parametros['valor'] = $valor;
     	if($estado!='')	$parametros['estado'] = $estado;
     	if($id!='') $parametros['id'] = $id;
-        
+    	if($fecha!='') $parametros['fecha_registro'] = $fecha;
+    	
     	$consulta = $this->registrador->ejecutar(self::ID_OBJETO,$parametros,2);
     	
     	if(!$consulta){

@@ -275,7 +275,7 @@ class Persistencia {
     		$sqlUpdate .=" SET ";
     		
     		
-    		
+    		$pushCon =  array(); 
     		foreach ($pkArray["lista"] as $idsPk){
     			$setArray = array();
     			foreach ($idsPk as $a=>$b){
@@ -293,6 +293,7 @@ class Persistencia {
 	    		      	if (strrpos($arrayValues[$i], "'") != false) $value ="'".$con[0]."'";
 	    		      	elseif (strrpos($arrayValues[$i], '"') != false) $value ='"'.$con[0].'"';
 	    		      	else $value = $con[0];
+	    		      	//$value ="'".$con[0]."'";
 	    		      	
 	    		      	if($arrayValues[$i]!=$value) $setArray[] =$arrayFields[$i]."=".$arrayValues[$i];
 	    		      	
@@ -301,7 +302,6 @@ class Persistencia {
 	    			
 	    		
 	    		}
-    		    
 	    		if(count($setArray)==0){
 	    			$this->mensaje->addMensaje("10","errorNoActualizar",'warning');
 	    		}
@@ -321,6 +321,7 @@ class Persistencia {
 	    		
 	    		
     	 }
+    	 
     	 return true;
     		 
     	}
@@ -489,7 +490,7 @@ class Persistencia {
     public function readPks($where=null){
     	
     	$listaPks = $this->getPks();
-    	
+    	 
     	$consulta =$this->read($listaPks,$where);
     	$nWhere = '';
     	$nombres = array();

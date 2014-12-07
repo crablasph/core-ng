@@ -74,7 +74,7 @@ class Formulario {
     		return 0;
     	}
     	//Esqueleto interfaz
-    	echo '<div id ="cabeza" >';
+    	echo '<div id ="cabeza"  >';
     	
     	//barra de herramientas
     	echo  '<div id ="herramientas" class="ui-widget-header ui-corner-all" >';
@@ -90,7 +90,6 @@ class Formulario {
 		    	
 		    			
     	echo "</div>";
-    	
     	
     	
     	//barra de menu para acceder a reglas, funciones, variables, parametros
@@ -154,6 +153,7 @@ class Formulario {
     	
         
     	echo '<div id ="pies">';
+    	
     	echo "</div>";
     	
       

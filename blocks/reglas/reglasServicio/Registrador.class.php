@@ -21,6 +21,7 @@ class Registrador{
 	const numeroCopiasMaxima = 100;
 	const CONEXION = 'reglas';
 	
+	private $fechaBetween = '';
 	private $estados;
 	private $tipos;
 	private $objetos;
@@ -260,6 +261,7 @@ class Registrador{
 	}
 	
 	public function getListaPermisos(){
+		
 		$this->recuperarPermisos();
 		$lista = array();
 		$prefijo = 'permisos_';
@@ -278,6 +280,7 @@ class Registrador{
 	}
 	
 	public function getPermiso($var = null,$tipo = null , $seleccion = null){
+		
 		if(!$this->validarEntradaSeleccion($var,$tipo,$seleccion)) return false;
 		$prefijo = "permisos_";
 		$listado = $this->permisos;
@@ -303,6 +306,7 @@ class Registrador{
 			$this->estados = $this->persistencia->read($listaColumnas);
 			return true;
 		}
+		
 		$this->estados = false;
 		$this->mensaje->addMensaje("100","errorRecuperarEstados",'error');
 		return false;
@@ -470,13 +474,13 @@ class Registrador{
 	}
 	
 	private function validarEntradaSeleccion($var = null,$tipo = null,$seleccion=null){
-		if(is_null($var)||$var=''){
+		if(is_null($var)||$var==''){
 			$this->mensaje->addMensaje("101","errorValorInvalido",'error');
 			return false;
-		}if(is_null($tipo)||$tipo=''){
+		}if(is_null($tipo)||$tipo==''){
 			$this->mensaje->addMensaje("101","errorTipoInvalido",'error');
 			return false;
-		}if(is_null($seleccion)||$seleccion=''){
+		}if(is_null($seleccion)||$seleccion==''){
 			$this->mensaje->addMensaje("101","errorSeleccionInvalido",'error');
 			return false;
 		}
@@ -595,7 +599,43 @@ class Registrador{
 		return true;
 	}
 	
+	//http://www.sergiomejias.com/2007/09/validar-una-fecha-con-expresiones-regulares-en-php/
+	private function validar_fecha($fecha){
+		if (ereg("(0[1-9]|[12][0-9]|3[01])[/](0[1-9]|1[012])[/](19|20)[0-9]{2}", $fecha)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	
+	private function validarFechaRegistro($cadena=''){
+		if(is_null($cadena)||$cadena==''){
+			$this->mensaje->addMensaje("101","errorEntradaParametrosFechas",'error');
+			return false;
+		}
+		
+		$fechas = explode( ',', $cadena );
+		$testWhere =  $this->where;
+		if(!$testWhere){
+			$testWhere =  '';
+		}
+		
+		
+		$testWhere = str_replace(' ', '', trim($testWhere));
+		$testWhere  = preg_replace('/\s+/', '', trim($testWhere));
+		
+		if(count($fechas)==1&&$this->validar_fecha($fechas[0])){
+			$this->fechaBetween .=" ".$this->prefijoColumnas."fecha_registro='".$fechas[0]."'::DATE " ;
+			return $fechas[0];
+		}elseif(count($fechas)>1&&$this->validar_fecha($fechas[0])&&$this->validar_fecha($fechas[1])){
+			$this->fechaBetween .=" (".$this->prefijoColumnas."fecha_registro, ".$this->prefijoColumnas."fecha_registro) OVERLAPS ('".$fechas[0]."'::DATE, '".$fechas[1]."'::DATE)";
+			
+			return $fechas[0];
+		}else{
+			return false;
+		}
+		
+	}
 	
 	private function procesarParametros($parametros){
 			
@@ -636,6 +676,12 @@ class Registrador{
 					if(!$this->validarEstado($b)) return false;
 					 $valor = $b;
 					break;
+				case 'fecha_registro':
+					$limiteFecha = $this->validarFechaRegistro($b);
+					if(!$limiteFecha) return false;
+					
+					$valor = "'".$limiteFecha."'";
+					break;
 				default:
 					$valor = "'".$b."'";
 					break;
@@ -654,13 +700,14 @@ class Registrador{
 	}
 	
 	private function setWhere($where = ''){
+		
 		if($where==''||is_null($where)){
 			
 			if(is_array($this->indexado)){
 			 foreach ($this->indexado as $a=>$b) {
-			    	$where.=" ".$a.'='.$b. " AND"; 
+			    	if($a !=$this->prefijoColumnas.'fecha_registro')$where.=" ".$a.'='.$b. " AND"; 
 			 }
-			 $where=substr($where, 0, strlen ($where)-3);;
+			 $where=substr($where, 0, strlen ($where)-3);
 			}
 			
 		}elseif ($where=='id'){
@@ -791,6 +838,10 @@ class Registrador{
 				}
 				else{
 					$this->setWhere();
+					
+					if(strlen($this->fechaBetween)>0&&strlen($this->where)>0) $this->where .= " AND ".$this->fechaBetween;
+					elseif(strlen($this->fechaBetween)>0&&!$this->where) $this->where .= $this->fechaBetween;
+					
 					$leido = $this->persistencia->read($this->columnas,$this->where);
 					
 					if(!$leido){
@@ -809,8 +860,12 @@ class Registrador{
 				//actualizar
 				if(!$this->procesarParametros($parametros)||!$this->setWhere('id')||!$this->persistencia->update($this->parametros,$this->valores,$this->where)){ 
 					$this->mensaje->addMensaje("101","errorActualizar".$this->tablaAlias,'error');
+					
+				
 					return false;
 				}
+				
+				
 				break;
 			case 4:
 				//duplicar
@@ -824,7 +879,7 @@ class Registrador{
 					$parametros = array();
 					unset($columnas[0]);
 					$leido = $this->persistencia->read($columnas,$this->where);
-					if(!leido) return false;
+					if(!$leido) return false;
 					//2. Crear
 						$parametros = $this->procesarLeido($leido[0]);
 						$nombre = $parametros['nombre'];

@@ -220,6 +220,84 @@ class FormularioConsultar {
     	 
     }
     
+    private function dateRangeElemento($elemento='elemento', $requerido = false, $codificada =  false){
+    	$cadena= '<br><br>';
+    	$cadenaHidden= '';
+    	$valor = '';
+    	 
+    	$textos = array();
+    	 
+    	$textos[0] = utf8_encode($this->lenguaje->getCadena ($elemento));
+    	$textos[1] = utf8_encode($this->lenguaje->getCadena ($elemento."Titulo"));
+    	$texto[2] = utf8_encode($this->lenguaje->getCadena ('min'.$elemento));
+    	$texto[3] = utf8_encode($this->lenguaje->getCadena ('max'.$elemento));
+    	 
+    	$cadena .='<div class="contenedorInput" >';
+    	$cadena .='<div style="float:left; width:150px;">';
+    	$cadena .= '<label for="'.$textos[0].'">';
+    	$cadena .= ucfirst(strtolower($textos[0]));
+    	$cadena .= '</label>';
+    	$cadena .= '<span style="white-space:pre;"> </span>';
+    	$cadena .= '</div>';
+    
+    	if($requerido) $requeridoTexto = ' validate[required] ui-corner-all';
+    	else $requeridoTexto = ' ui-corner-all ';
+    	 
+    	$cadena .= '<div style="position:relative;display:inline;">';
+    	 
+    	$cadena .= '<div style="width:300px;position:absolute;display:inline;">';
+    	//input  minimo
+    	$valorMinimo = '';
+    	$valorMaximo = '';
+    	$muestraBi = true;
+    	$valorMinimo = '';
+    	$valorMaximo = '';
+    	$muestraBi = array('inline','none');
+    	$lista = isset($_REQUEST[$elemento])?  explode( ',', $_REQUEST[$elemento] ): false;;
+    	if(isset($_REQUEST[$elemento])&&is_array($lista)){
+    		 
+    
+    		if(count($lista)==2) {
+    			$_REQUEST['min'.ucfirst($elemento)] = $lista[0];
+    			$_REQUEST['max'.ucfirst($elemento)] = $lista[1];
+    			$muestraBi = array('inline','none');
+    		}else $muestraBi = $muestraBi = array('none','inline');;
+    		 
+    	}
+    	if(isset($_REQUEST['min'.ucfirst($elemento)])) $valorMinimo .= $_REQUEST['min'.ucfirst($elemento)];
+    	if(isset($_REQUEST['max'.ucfirst($elemento)])) $valorMaximo .= $_REQUEST['max'.ucfirst($elemento)];
+    	$cadena .= '<input style="float:left;display:'.$muestraBi[0].';" class="'.$requeridoTexto.'" onchange="setRango(\''.$elemento.'\')" id ="min'.ucfirst($elemento).'" placeholder="'.$texto[2].'"  type="text"';
+    	$cadena .= 'value ="'.$valorMinimo.'" ></input>';
+    
+    	//input  maximo
+    	$cadena .= '<input style="float:left;display:'.$muestraBi[0].';" class="'.$requeridoTexto.'" onchange="setRango(\''.$elemento.'\')" id ="max'.ucfirst($elemento).'" placeholder="'.$texto[3].'"  type="text"';
+    	$cadena .= 'value ="'.$valorMaximo.'" ></input>';
+    	 
+    	$cadena .= '</div>';
+    	 
+    	$cadena .= '<div style="position:absolute;display:inline;">';
+    	$cadena.= '<input class="'.$requeridoTexto.'" title="'.$textos[1].'" type="text" style="float:left;display:'.$muestraBi[1].';"  id="'.$elemento.'" name="'.$elemento.'" ';
+    	if(isset($_REQUEST[$elemento])) $cadena .=' value="'.$_REQUEST[$elemento].'" ';
+    	else $cadena .=' value="" ';
+    	$cadena .=' >';
+    
+    	$cadena .= '</div>';
+    	 
+    	$cadena .= '</div>';
+    
+    	 
+    	$cadena .= '</div>';
+    
+    	 
+    
+    	 
+    	//input hidden
+    	 
+    	 
+    	return $cadena;
+    }
+    
+    
     
     
     private function selectElemento($elemento='elemento', $blanco = false){
@@ -294,7 +372,7 @@ class FormularioConsultar {
     	//inicio
     	$cadena = '<form name="formularioConsulta" id="formularioConsulta">';
     	
-    	$textos[1] = $this->lenguaje->getCadena ('buscar');
+    	$textos[1] = $this->lenguaje->getCadena ('buscar'). " ".$this->objetoAlias;;
     	$cadena .='<fieldset class="ui-corner-all">';
     	$cadena .='<legend>'.$textos[1].'</legend>';
     	 
@@ -310,6 +388,9 @@ class FormularioConsultar {
     				break;
     			case 'select':
     				$cadena .= $this->selectElemento($elemento[$nombre],$this->setBool($elemento[$requerido]));
+    				break;
+    			case 'date':
+    				$cadena .= $this->dateRangeElemento($elemento[$nombre],$this->setBool($elemento[$requerido]));
     				break;
     			case 'textarea':
     				break;

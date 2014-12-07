@@ -200,16 +200,16 @@ class GestorUsuariosComponentes{
     	 
     }
     
-    public function consultarRelacion($id = '',$usuario ='',$objeto='',$registro='',$permiso = '',$estado=''){
+    public function consultarRelacion($id = '',$usuario ='',$objeto='',$permiso = '',$estado='',$fecha=''){
     
     	if(!$this->validarAcceso($id,2)) return false;
     	$parametros =  array();
     	if($id!='')$parametros['id'] = $id;
     	if($usuario!='')$parametros['usuario'] = $usuario;
     	if($objeto!='')$parametros['objeto'] = $objeto;
-    	if($registro!='')$parametros['registro'] = $registro;
     	if($permiso!='')$parametros['permiso'] = $permiso;
     	if($estado!='')$parametros['estado'] = $estado;
+    	if($fecha!='') $parametros['fecha_registro'] = $fecha;
     	 
     	$consulta = $this->registrador->ejecutar(self::ID_OBJETO,$parametros,2);
     	

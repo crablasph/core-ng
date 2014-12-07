@@ -122,6 +122,7 @@ INSERT INTO reglas.columnas
 ( columnas_nombre , columnas_alias , columnas_input, columnas_consultar,columnas_crear,
   columnas_actualizar,  columnas_codificada , columnas_deshabilitado ,columnas_autocompletar ,
   columnas_requerido_consultar,columnas_requerido_crear,columnas_requerido_actualizar) VALUES
+  
   ('id','Identificación','text',true,false,false,false,false,true,false,false,true),
   ('nombre','Nombre','text',true,true,true,false,false,true,false, true, false),
   ('descripcion','Descripción','textarea',false,true,true,false,false,false,false, false, false),
@@ -129,7 +130,7 @@ INSERT INTO reglas.columnas
   ('tipo','Tipo','select',true,true,true,true,false,false,false, true, false),
   ('valor','Valor','textarea',false,true,true,true,false,false, false, true, false),
   ('estado','Estado','select',true,true,true,false,false,false,false, true, false),
-  ('fecha_registro','Fecha Registro','dateRange',true,false,false,false,false,false,false, false, false),
+  ('fecha_registro','Fecha Registro','date',true,false,false,false,false,false,false, false, false),
   ('rango','Rango','rangeSlider',false,true,true,false,false,false, false, true, false),
   ('categoria','Categoría','select',true,true,true,false,false,false,false,true,false),
   ('ruta','Ruta','text',false,true,true,false,false,true,false,true,false),

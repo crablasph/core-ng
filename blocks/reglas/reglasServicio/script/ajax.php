@@ -112,16 +112,20 @@ $guardar = $url.$cadena5;
            }
 
         function guardarElemento(){
+            
         	if($("#formularioCreacionEdicion").validationEngine('validate')!=false){
 		        	var data =  $( "#objetosFormulario" ).serialize()+"&"+$( "#identificacionFormulario" ).serialize();
 		        	data += "&"+ $( "#seleccionFormulario" ).serialize();
 		        	data += "&"+ $( "#formularioCreacionEdicion" ).serialize(); 
-		
-		        	var div = document.getElementById("espacioMensaje");
+
+		    		
+	                var div = document.getElementById("espacioMensaje");
 					div.innerHTML = '<div id="loading"></div>';
+					
 					
 		        	
 					if($('#formularioConsulta').length>0) $('#formularioConsulta')[0].reset();
+					$('#selectedItems').val('');
 		        	
 		        	$.ajax({
 			            url: "<?php echo $guardar;?>",
@@ -147,7 +151,7 @@ $guardar = $url.$cadena5;
             
             var div = document.getElementById("espacioMensaje");
 			div.innerHTML = '<div id="loading"></div>';
-			
+			$('#selectedItems').val('');
             $.ajax({
 	            url: "<?php echo $consultarFormulario;?>",
 	            type:"post",
@@ -167,6 +171,8 @@ $guardar = $url.$cadena5;
 			  	        goToByScroll($("#divMensaje").attr("id"));
 		  			}
 		  			else div.innerHTML="";
+		  			var elemento= 'fecha_registro';
+		  			activarRangoFecha(elemento);
 			       }
 	        });
 
@@ -180,11 +186,10 @@ $guardar = $url.$cadena5;
             if($('#selectedItems').val()!=''&&!skip) data += "&"+ $( "#seleccionFormulario" ).serialize();
             else $('#selectedItems').val('');
             
-			
             //if($("#formularioCreacionEdicion").validationEngine('validate')!=false){
 	            var div = document.getElementById("espacioMensaje");
 				div.innerHTML = '<div id="loading"></div>';
-				
+				$('#selectedItems').val(''); 
 	            $.ajax({
 		            url: "<?php echo $crearFormulario;?>",
 		            type:"post",
@@ -203,6 +208,12 @@ $guardar = $url.$cadena5;
 				  		    }, 5000);
 			  			}
 			  			else div.innerHTML="";
+			  			if($( "#tipo option:selected" ).text().toLowerCase()=='fecha'){
+			  				alternarTextARangoFecha('valor','text');
+					    	  activarFechaValor();
+					    	  activarRangoFecha('rango');
+					    	  	
+			  			}
 				       }
 		        });
 
@@ -296,12 +307,32 @@ $guardar = $url.$cadena5;
 	    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 	}
 
+	function activarFechaValor(){
+		elemento =  'valor';
+		$( '#'+elemento ).datepicker({
+		      defaultDate: "+1w",
+		      changeMonth: true,
+		      numberOfMonths: 3,
+		      dateFormat: "dd/mm/yy",
+		      onClose: function( selectedDate ) {
+		        $( '#max'+toTitleCase(elemento) ).datepicker( "option", "minDate", selectedDate );
+		      }
+		    });
+	}
+
+	function desactivarFechaValor(){
+		elemento =  'valor';
+		$('#'+elemento).removeAttr('disabled');
+		}
+
 	function cambiarRango(elemento){
 		      
 		      elemento = 'rango';
 		      desactivarRangoFecha(elemento);
 		      $('#min'+toTitleCase(elemento)).removeAttr('disabled');
-		      $('#max'+toTitleCase(elemento)).removeAttr('disabled'); 
+		      $('#max'+toTitleCase(elemento)).removeAttr('disabled');
+		      desactivarFechaValor();
+		      alternarTextARangoFecha('valor','textarea'); 
 		      switch($( "#tipo option:selected" ).text().toLowerCase()){
 			      case 'boleano':
 			    	  var minimo = 0;
@@ -315,6 +346,11 @@ $guardar = $url.$cadena5;
 			    	  
 			    	  break;
 			      case 'entero':
+
+			    	  $('#min'+toTitleCase(elemento)).val('-500');
+			    	  $('#max'+toTitleCase(elemento)).val('500');
+
+			    	  
 			    	  var minimo = $('#min'+toTitleCase(elemento)).val();
 			    	  var maximo = $('#max'+toTitleCase(elemento)).val();;
 			    	  var cadena = minimo + "," + maximo;
@@ -328,6 +364,10 @@ $guardar = $url.$cadena5;
 			    	  $('#max'+toTitleCase(elemento)).show();
 			    	  break;
 			      case 'doble':
+
+			    	  $('#min'+toTitleCase(elemento)).val('-1000.45');
+			    	  $('#max'+toTitleCase(elemento)).val('100.1');
+			    	  
 
 			    	  var minimo = $('#min'+toTitleCase(elemento)).val();
 			    	  var maximo = $('#max'+toTitleCase(elemento)).val();;
@@ -344,6 +384,10 @@ $guardar = $url.$cadena5;
 			    	  break;
 			      case 'porcentaje':
 
+			    	  $('#min'+toTitleCase(elemento)).val(0);
+			    	  $('#max'+toTitleCase(elemento)).val(100);
+			    	  
+			    	  
 			    	  var minimo = $('#min'+toTitleCase(elemento)).val();
 			    	  var maximo = $('#max'+toTitleCase(elemento)).val();;
 			    	  var cadena = minimo + "," + maximo;
@@ -351,7 +395,7 @@ $guardar = $url.$cadena5;
 				      
 
 			    	  $('#min'+toTitleCase(elemento)).attr("placeholder", 'ej:0');
-			    	  $('#max'+toTitleCase(elemento)).attr("placeholder", 'ej:0');
+			    	  $('#max'+toTitleCase(elemento)).attr("placeholder", 'ej:100');
 			    	  
 			    	  $('#'+elemento).hide();
 			    	  $('#min'+toTitleCase(elemento)).show();
@@ -359,13 +403,8 @@ $guardar = $url.$cadena5;
 			    	  
 				      break;
 			      case 'fecha':
-
-			    	  var minimo = $('#min'+toTitleCase(elemento)).val();
-			    	  var maximo = $('#max'+toTitleCase(elemento)).val();;
-			    	  var cadena = minimo + "," + maximo;
-			    	  $('#'+elemento).val(cadena);
-				      
-			    	  
+			    	  alternarTextARangoFecha('valor','text');
+			    	  activarFechaValor();
 			    	  var d = new Date();
 			    	  var curr_date = d.getDate();
 			    	  var curr_month = d.getMonth();
@@ -373,6 +412,16 @@ $guardar = $url.$cadena5;
 			    	  var fecha = curr_date + "/" + curr_month + "/" + curr_year;
 			    	  $('#min'+toTitleCase(elemento)).attr("placeholder", 'ej:'+fecha);
 			    	  $('#max'+toTitleCase(elemento)).attr("placeholder", 'ej:1/01/2018');
+
+			    	  $('#min'+toTitleCase(elemento)).val(fecha);
+			    	  $('#max'+toTitleCase(elemento)).val('1/01/2016');
+			    	  
+
+			    	  var minimo = $('#min'+toTitleCase(elemento)).val();
+			    	  var maximo = $('#max'+toTitleCase(elemento)).val();;
+			    	  var cadena = minimo + "," + maximo;
+			    	  $('#'+elemento).val(cadena); 
+			    	  
 			    	  
 			    	  $('#'+elemento).hide();
 			    	  
@@ -381,22 +430,38 @@ $guardar = $url.$cadena5;
                       
 			    	  
 			    	  activarRangoFecha(elemento);
+
+				      
+			    	  
 				      break;
 			      case 'texto':
+
+			    	  var minimo = $('#min'+toTitleCase(elemento)).val();
+			    	  var maximo = $('#max'+toTitleCase(elemento)).val();;
+			    	  var cadena = minimo + "," + maximo;
+			    	  $('#'+elemento).val(cadena);
 				       
 			    	  var cadena = 'a,b';
 			    	  $('#'+elemento).attr("placeholder", 'ej:'+cadena);
+			    	  
 			    	  $('#min'+toTitleCase(elemento)).hide();
 			    	  $('#max'+toTitleCase(elemento)).hide();
-			    	  
 			    	  $('#'+elemento).show();
+			    	  break;
 			      case 'lista':
+
+			    	  var minimo = $('#min'+toTitleCase(elemento)).val();
+			    	  var maximo = $('#max'+toTitleCase(elemento)).val();;
+			    	  var cadena = minimo + "," + maximo;
+			    	  $('#'+elemento).val(cadena);
+			    	  
 			    	  var cadena = '1,2';
 			    	  $('#'+elemento).attr("placeholder", 'ej:'+cadena);
 			    	  
 			    	  $('#min'+toTitleCase(elemento)).hide();
 			    	  $('#max'+toTitleCase(elemento)).hide();
 			    	  $('#'+elemento).show();
+			    	  break;
 			      case 'nulo':
 			    	  var cadena = 'null';
 			    	  $('#'+elemento).val(cadena);
@@ -414,6 +479,29 @@ $guardar = $url.$cadena5;
 					      break;
 			      }
 		}
+
+	function alternarTextARangoFecha(elemento,opcion){
+		var select = $("#"+elemento);
+
+
+		var attributes = $("#"+elemento).prop("attributes");
+        var cadenaAtributos = '';
+		// loop through <select> attributes and apply them on <div>
+		$.each(attributes, function() {
+		    //$div.attr(this.name, this.value);
+		    cadenaAtributos += " "+this.name+'="'+this.value+'"';
+		});
+		
+		var textarea = $('<textarea type="text" '+cadenaAtributos+'></textarea>');
+		var textbox = $('<input type="text" '+cadenaAtributos+'></input>');
+         
+		if(opcion=='text'){
+			var reemplazo = textbox;
+		}else var reemplazo = textarea;
+        
+		$("#"+elemento).replaceWith(reemplazo);
+		
+	}
 
 	function activarRangoFecha(elemento){
 		
@@ -447,25 +535,45 @@ $guardar = $url.$cadena5;
 			var minimo = $('#min'+toTitleCase(elemento)).val();
 			var maximo = $('#max'+toTitleCase(elemento)).val();
 			var cadena = minimo + "," + maximo;
+
+
+			//if((fmin instanceof Date));
+            
 			
-			var fmin = $.datepicker.parseDate( "dd/mm/yy", minimo);
-			var fmax = $.datepicker.parseDate( "dd/mm/yy", minimo);
-             
-			if((fmin instanceof Date)&&(fmax instanceof Date)) {
-				var minimo = $.datepicker.parseDate( "dd/mm/yy", minimo);
-				var maximo = $.datepicker.parseDate( "dd/mm/yy", minimo);
-	            			    
+			//var fmin = $.datepicker.parseDate( "dd/mm/yy", minimo);
+			//var fmax = $.datepicker.parseDate( "dd/mm/yy", maximo);
+
+			skip =  false;
+			try {
+				if(($.datepicker.parseDate( "dd/mm/yy", minimo) instanceof Date)) {
+					skip = true;
+		            			    
+				    }
 			}
-			if(minimo>maximo){
-				$('#'+elemento).val('0,1');
-				$('#min'+toTitleCase(elemento)).val('');
-				$('#max'+toTitleCase(elemento)).val('');
-				$("<div><span>Rango Inv&aacutelido</span></div>").dialog();
+			catch(err) {
+			}
+
+
+			try {
+				if(($.datepicker.parseDate( "dd/mm/yy", maximo) instanceof Date)) {
+					skip = true;			    
+				    }
+			}
+			catch(err) {
+			}
+            
+			if(skip==false){
+				if(Number(minimo)>Number(maximo)){
+					
+					$('#'+elemento).val('0,1');
+					$('#min'+toTitleCase(elemento)).val('');
+					$('#max'+toTitleCase(elemento)).val('');
+					$("<div><span>Rango Inv&aacutelido</span></div>").dialog();
+				}
 			}
 			
 			$('#'+elemento).val(cadena);
-			
-			}
+ 				}
 	}
 
     function goToByScroll(id){

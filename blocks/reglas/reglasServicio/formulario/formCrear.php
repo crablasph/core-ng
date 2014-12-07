@@ -78,6 +78,7 @@ class FormularioCrear {
 
     	if(isset($lista[0])&&$lista[0]!=''){
     		$_REQUEST['id']= $lista[0];
+    		$this->listaParametros[] = $_REQUEST['id'];
     		$this->metodoValidar = 'actualizar';
     	}else $this->metodoValidar = 'crear';;
     	
@@ -253,6 +254,12 @@ class FormularioCrear {
     		}
     	}
     	
+    	$deshabilitado = false;
+    	if(strtolower($this->objetoAlias)=='reglas'){
+    		$deshabilitado = true;
+    	}
+    	
+    	
     	$cadena= '';
     	$textos = array();
     	$textos[0] = utf8_encode($this->lenguaje->getCadena ($elemento));
@@ -266,6 +273,7 @@ class FormularioCrear {
     	$cadena .= '</div>';
     	$cadena .= '<select title="'.$textos[1].'" name="'.$elemento.'" id="'.$elemento.'" class="ui-corner-all" ';
     	$cadena .=	$cambio;
+    	if($deshabilitado) $cadena .= '  disabled ';;
     	$cadena .= ' >';
     	if(!$blanco) $cadena .= '<option ></option>';
     	foreach ($this->$elemento as $fila){
@@ -341,18 +349,12 @@ class FormularioCrear {
     	
     	if(!isset($_REQUEST[$elemento])&&!$codificada) $valor .='  >';
     	if(!isset($_REQUEST[$elemento])&&$codificada) $valor =' onchange="codificarValor(\''.$elemento.'\')"  >';
-    	if(isset($_REQUEST[$elemento])&&!$codificada) $valor =' >'.$_REQUEST[$elemento];
-    	if(isset($_REQUEST[$elemento])&&$codificada) $valor =' onchange="codificarValor(\''.$elemento.'\')" >'.base64_decode($_REQUEST[$elemento]);
+    	if(isset($_REQUEST[$elemento])&&!$codificada) $valor =' value="'.$_REQUEST[$elemento].'" >'.$_REQUEST[$elemento];
+    	if(isset($_REQUEST[$elemento])&&$codificada) $valor =' value="'.base64_decode($_REQUEST[$elemento]).'" onchange="codificarValor(\''.$elemento.'\')" >'.base64_decode($_REQUEST[$elemento]);
     	 
     	$cadena .=$valor;
     	 
     	$cadena .= '</textarea>';
-    	$cadena .= '</div>';
-    	$cadena .= '<br>';
-    	$cadena .= '<br>';
-    	$cadena .= '<br>';
-    	 
-    	
     	
     	//input hidden codificado
     	if($codificada) {
@@ -361,6 +363,15 @@ class FormularioCrear {
     		else $cadena .=' value="" ';
     		$cadena .=' >';
     	}
+    	
+    	$cadena .= '</div>';
+    	$cadena .= '<br>';
+    	$cadena .= '<br>';
+    	$cadena .= '<br>';
+    	 
+    	
+    	
+    	
     	return $cadena;
     }
     
@@ -398,7 +409,7 @@ class FormularioCrear {
     	$valorMinimo = 0;
     	$valorMaximo = 1;
     	$muestraBi = array('inline','none');
-    	$lista = explode( ',', $_REQUEST[$elemento] );
+    	$lista = isset($_REQUEST[$elemento])?  explode( ',', $_REQUEST[$elemento] ): false;;
     	if(isset($_REQUEST[$elemento])&&is_array($lista)){
     	
     		
@@ -409,8 +420,8 @@ class FormularioCrear {
     		}else $muestraBi = $muestraBi = array('none','inline');;
     	
     	}
-    	if(isset($_REQUEST['min'.ucfirst($elemento)])) $valorMinimo .= $_REQUEST['min'.ucfirst($elemento)];
-    	if(isset($_REQUEST['max'.ucfirst($elemento)])) $valorMaximo .= $_REQUEST['max'.ucfirst($elemento)];
+    	if(isset($_REQUEST['min'.ucfirst($elemento)])) $valorMinimo = $_REQUEST['min'.ucfirst($elemento)];
+    	if(isset($_REQUEST['max'.ucfirst($elemento)])) $valorMaximo = $_REQUEST['max'.ucfirst($elemento)];
     	$cadena .= '<input style="float:left;display:'.$muestraBi[0].';" class="'.$requeridoTexto.'" onchange="setRango(\''.$elemento.'\')" id ="min'.ucfirst($elemento).'" placeholder="'.$texto[2].'"  type="text"';
     	$cadena .= 'value ="'.$valorMinimo.'" ></input>';
     

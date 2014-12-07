@@ -22,11 +22,7 @@ include_once ("Envoltura.class.php");
 
 class ClienteServicioReglas {
 	
-	const SERVICIO_PAGINA = 'servicioReglas';
-	const SERVICIO_BLOQUE = 'reglasServicio';
-	const SERVICIO_GRUPOS = 'reglas';
-    
-    
+	
     private $miConfigurador;
     private $clienteSoap;
     private $usuario;

@@ -53,7 +53,7 @@ $this->idioma["errorEntradaParametrosDescripcion"] = "Error Descripción Inválida
 $this->idioma["errorEntradaParametrosTipo"] = "Error Tipo Inválido";
 $this->idioma["errorEntradaParametrosValor"] = "Error Valor Inválido";
 $this->idioma["errorEntradaParametrosEstado"] = "Error Estado Inválido";
-
+$this->idioma["errorEntradaParametrosFechas"] = "Error Fechas Inválidas";
 $this->idioma["errorEntradaParametrosGeneral"] = "Error en la Entrada de elementos";
 
 $this->idioma["metodoNoExiste"] = "Método No Existe";
@@ -175,6 +175,11 @@ $this->idioma['descripcion']="descripción";
 $this->idioma['descripcionTitulo']="Ingrese Descripción";
 $this->idioma['registro']="registro";
 $this->idioma['registroTitulo']="Ingrese Registro";
+$this->idioma['fecha_registro']="Fecha Registro";
+$this->idioma['minfecha_registro']="Fecha Inicio";
+$this->idioma['maxfecha_registro']="Fecha Final";
+$this->idioma['fecha_registroTitulo']="Ingrese rango de fechas";
+
 $this->idioma['minimo']="Mínimo";
 $this->idioma['maximo']="Maximo";
 $this->idioma['guardar']="Guardar";
