@@ -1200,7 +1200,7 @@ class PhpWsdl{
 			return;
 		// Header
 		if($withHeaders)
-			header('Content-Type: text/html; charset=UTF-8',true);
+			@header('Content-Type: text/html; charset=UTF-8',true);
 		$this->GetWsdlFromCache();
 		if(!is_null($this->HTML)){
 			if($echo)

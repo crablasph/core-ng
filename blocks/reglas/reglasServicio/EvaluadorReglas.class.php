@@ -108,32 +108,40 @@ class EvaluadorReglas{
     		
     		if(strpos($valor,$operador)!==false){
     			$lista =  explode($operador,$valor);
-    			$izquierda = $lista[0];
-    			$derecha = $lista[1];
+    			$izquierda = trim($lista[0]);
+    			if(Tipos::validarFecha($izquierda)){
+    				$izquierda = \DateTime::createFromFormat('d/m/Y', $izquierda);
+                	
+    			}
+    			$derecha = trim($lista[1]);
+    			if(Tipos::validarFecha($derecha)){
+    				$derecha = \DateTime::createFromFormat('d/m/Y', $derecha);
+    			}
+    			
     			switch ($operador){
     				case '===':
-    					$valor = ($izquierda === $derecha);
+    					$valor = (bool) ($izquierda === $derecha);
     					break;
     				case '==':
-    					$valor = ($izquierda == $derecha);
+    					$valor = (bool) ($izquierda == $derecha);
     					break;
     				case '!==':
-    					$valor = ($izquierda !== $derecha);
+    					$valor = (bool) ($izquierda !== $derecha);
     					break;
     				case '<>':
-    					$valor = ($izquierda <> $derecha);
+    					$valor = (bool) ($izquierda <> $derecha);
     					break;
     				case '>=':
-    					$valor = ($izquierda >= $derecha);
+    					$valor = (bool) ($izquierda >= $derecha);
     					break;
     				case '<=':
-    					$valor = ($izquierda <= $derecha);
+    					$valor = (bool) ($izquierda <= $derecha);
     					break;
     				case '>':
-    					$valor = ($izquierda > $derecha);
+    					$valor = (bool) ($izquierda > $derecha);
     					break;
     				case '<':
-    					$valor = ($izquierda < $derecha);
+    					$valor = (bool) ($izquierda < $derecha);
     					break;
     				default:
     					break;
@@ -145,12 +153,23 @@ class EvaluadorReglas{
     	
     }
     
-    private function evaluar($valor = '', $categoria = '',$ruta = ''){
+    private function evaluarValor($valor = '',$tipo=''){
+    	
+    	if(Tipos::validarFecha($valor)){
+    		return $valor ;//= \DateTime::createFromFormat('d/m/Y', $valor);
+    	}
+    	
+    	if(strtolower(Tipos::getTipoNombre($tipo))=='percent') $valor = $valor/100;
+    	
+    	return @$this->evaluador->e($valor);
+    }
+    
+    private function evaluar($valor = '', $categoria = '',$ruta = '',$tipo=''){
     	
     	switch ($categoria){
     		case '1':
-    			$valor = $this->procesarOperadoresComparacion($valor);
-    			return $this->evaluador->e($valor);
+    			$valor =  $this->procesarOperadoresComparacion($valor);
+    			return $this->evaluarValor($valor,$tipo);
     			break;
     		case '2':
     			return $this->evaluarFuncionBD($valor,$ruta);
@@ -159,15 +178,15 @@ class EvaluadorReglas{
     			return $this->evaluarFuncionSoap($valor,$ruta);
     			break;
     		default:
-    			$valor = $this->procesarOperadoresComparacion($valor);
-    			return $this->evaluador->e($valor);
+    			$valor =  $this->procesarOperadoresComparacion($valor);
+    			return $this->evaluarValor($valor,$tipo);
     			break;	
     	}
     	
     }
     
     private function getErrorEvaluador(){
-    	return $this->evaluador->last_error;
+    	return @$this->evaluador->last_error;
     }
     
     public function evaluarParametroTexto($valor = '', $tipo = ''){
@@ -228,7 +247,7 @@ class EvaluadorReglas{
     	}
     	
     	foreach ($ListaParametros as $parametro){
-    		$cadena = str_replace("_".$parametro['nombre']."_", base64_decode($parametro['valor']), $cadena);
+    		$cadena = str_replace("_".$parametro['nombre']."_", $this->evaluarValor(base64_decode($parametro['valor']),$parametro['tipo']), $cadena);
     	}
     	
     	return $cadena;
@@ -248,7 +267,7 @@ class EvaluadorReglas{
 
     		foreach ($valores as $valor){
     			foreach ($listaVariables as $variable){
-    				if($variable['nombre']==$valor[0]&&Rango::evaluarRango($valor[1],$variable['tipo'],$variable['rango']))$cadena = str_replace($valor[0], $valor[1], $cadena);
+    				if($variable['nombre']==$valor[0]&&Rango::evaluarRango($valor[1],$variable['tipo'],$variable['rango']))$cadena = str_replace($valor[0], $this->evaluarValor($valor[1],$variable['tipo']), $cadena);
     				
     			}
     		}
@@ -592,6 +611,7 @@ class EvaluadorReglas{
     	$listaSentencias = $this->procesarSentencias($valorRegla);
     	$listaResultados = array();
         $cadenas =  array();
+        $valorez =  array();
     	if(is_array($listaSentencias)){
     		
     		foreach ($listaSentencias as $sentencia){
@@ -612,15 +632,18 @@ class EvaluadorReglas{
     			//$cadenas[]=$cadena;
     			//4. Evalua toda la regla
     			$valor = $this->evaluar($cadena);
+    			//$valorez []= $valor;
     			$valor =  (bool) $valor;
-    			  			
+    			
     		
     			if(Tipos::evaluarTipo($valor,$tipoRegla))  $listaResultados[] = array($operador,$valor)	;//return $valor;
     			
     			
     		}
     		//return $this->procesarSentencias($valorRegla);
-    		//return array($listaSentencias);//,$cadenas,$this->procesarFunciones('funcion1(66)'));
+    		//return 100 == 100;
+    		//return $this->procesarOperadoresComparacion('100 === 100');
+    		//return array($cadenas,$listaResultados);//,$cadenas,$this->procesarFunciones('funcion1(66)'));
     		return  $this->evaluarResultados($listaResultados);
     		
     	}

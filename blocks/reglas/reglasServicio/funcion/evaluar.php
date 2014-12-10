@@ -184,6 +184,7 @@ class Evaluar {
     		if(!$accion) $cadenaMensaje .='falso';
     		else $cadenaMensaje .= $accion;
     		$cadenaMensaje .= '<br>';
+    		
     		$this->mensaje->addMensaje('2001',":".$cadenaMensaje,'information');
     		echo $this->mensaje->getLastMensaje();
     		return true;
@@ -236,6 +237,7 @@ class Evaluar {
     		$accion =  call_user_func_array(array($this->cliente , $metodo), $argumentos);
     		if(!$accion) $cadenaMensaje .='falso';
     		else $cadenaMensaje .=  is_bool($accion)?'verdadero':$accion;
+    		
     		
     		$cadenaMensaje .= '<br>';
     		$this->mensaje->addMensaje('2001',":".$cadenaMensaje,'information');

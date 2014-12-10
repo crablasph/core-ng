@@ -56,11 +56,11 @@ class Tipos{
     	return is_float($valor);
     }
     
-    private function validarPorcentaje($valor){
+    public function validarPorcentaje($valor){
     	return is_float($valor);
     }
     
-    private function validarFecha($valor){
+    public function validarFecha($valor){
     	//Formato
     	//'d/m/Y'
     	//30/01/2014
@@ -107,6 +107,44 @@ class Tipos{
     	return false;
     	
     	
+    }
+    
+    public static function getTipoNombre($tipo = ""){
+
+    	$arrayDatos = self::setAmbiente($tipo);
+    	
+    	if($arrayDatos){
+    		return $arrayDatos['nombre'];
+    	}
+    }
+    
+    
+    public static function validarTipo($valor = "" , $tipo = ""){
+    	 
+    	$arrayDatos = self::setAmbiente($tipo);
+    	 
+    	if($arrayDatos){
+    
+    		$idTipo = $arrayDatos['id'];
+    		$nombreTipo = $arrayDatos['nombre'];
+    		$aliasTipo = $arrayDatos['alias'];
+    		$metodo = $arrayDatos['metodo'];
+    
+    		switch($tipo){
+    			case $idTipo:
+    				if(method_exists(get_class(), $metodo))
+    					return call_user_func_array(array(get_class() , $metodo), array($valor));
+    				return false;
+    				break;
+    			default:
+    				return false;
+    				break;
+    		}
+    		 
+    	}
+    	return false;
+    	 
+    	 
     }
     
 

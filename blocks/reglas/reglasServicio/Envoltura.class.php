@@ -31,10 +31,10 @@ class Envoltura {
     private $nombreObjetoSeleccionado ;
     private $objetoSeleccionado;
     private $miConfigurador;
-   
     public $mensaje;
     
     function __construct() {
+    	
     	$this->miConfigurador = \Configurador::singleton ();
     	$this->objetos['GestorUsuariosComponentes'] = 'GestorUsuariosComponentes';
     	

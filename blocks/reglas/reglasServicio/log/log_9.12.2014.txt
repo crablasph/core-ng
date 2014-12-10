@@ -35818,3 +35818,6873 @@ Ususario: 1018439398
 Codigo: 5487c1964aefc
 -------------------------
 
+Cliente: ::1 - December 9, 2014, 7:48 pm
+Intento: Exito
+Ususario: 1018439398
+Codigo: 5487c273b5aeb
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:48 pm
+Intento: Exito
+Ususario: 1018439398
+Codigo: 5487c273dadb9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:48 pm
+Intento: Exito
+Ususario: 1018439398
+Codigo: 5487c2740dfd1
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:48 pm
+Intento: Exito
+Ususario: 1018439398
+Codigo: 5487c27434ea2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:48 pm
+Intento: Exito
+Ususario: 1018439398
+Codigo: 5487c2745675a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:48 pm
+Intento: Exito
+Ususario: 1018439398
+Codigo: 5487c27478278
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:48 pm
+Intento: Exito
+Ususario: 1018439398
+Codigo: 5487c2749b6b3
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:48 pm
+Intento: Exito
+Ususario: 1018439398
+Codigo: 5487c274be1f2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:48 pm
+Intento: Exito
+Ususario: 1018439398
+Codigo: 5487c278c9dad
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:48 pm
+Intento: Exito
+Ususario: 1018439398
+Codigo: 5487c27902a50
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:48 pm
+Intento: Exito
+Ususario: 1018439398
+Codigo: 5487c2797c79b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:48 pm
+Intento: Exito
+Ususario: 1018439398
+Codigo: 5487c279a40d7
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:48 pm
+Intento: Exito
+Ususario: 1018439398
+Codigo: 5487c279c63c6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:48 pm
+Intento: Exito
+Ususario: 1018439398
+Codigo: 5487c279e7a86
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:48 pm
+Intento: Exito
+Ususario: 1018439398
+Codigo: 5487c27a16e83
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:48 pm
+Intento: Exito
+Ususario: 1018439398
+Codigo: 5487c27a37cef
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:48 pm
+Intento: Exito
+Ususario: 1018439398
+Codigo: 5487c27a5a289
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:48 pm
+Intento: Exito
+Ususario: 1018439398
+Codigo: 5487c27a7b4d8
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:57 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4c1250eb
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:57 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4c5e288f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:57 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4c616d06
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:57 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4c63b2ad
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:57 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4c661a83
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:57 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4c68698a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:57 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4c6f3579
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:57 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4c744793
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:57 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4c768fe4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4cb2e120
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4cb52d0b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4cb78c37
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4cb9e48d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4cbc2b7f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4cbeb64c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4cc23730
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4cc4ff77
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4d455459
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4d484a1e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4d503628
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4d5284be
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4d547d3f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4d569120
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4d58a7f9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4d5ab65e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4d5cda3c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4d5ee712
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4e42cf83
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4e753ca4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4e777f01
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4e799c2e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4e7bb246
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4e7ded12
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4e80d88b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4e832f59
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4e85950d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4ef6c64d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4ef903d3
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4efb46dd
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4efd91e2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4f004b68
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4f027e7e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4f04ae10
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4f06d9ca
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4fa415ff
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4fa7516c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4fae9891
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4fb1a0d1
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4fb3b3ba
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4fb5ea70
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4fb80cc9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4fba52cf
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4fbccab2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c4fbef1e5
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c50da626b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c510d7795
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c5111fac6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c51142668
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c5116581e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c51188da1
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c511ab246
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c511cfa47
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c511f0e02
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c514e0801
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c5151a4fa
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c5153fc85
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c51562dfa
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c51585e96
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c515ad170
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c515d76fc
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c51608f10
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c5296dc57
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c529a0b0a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c529cd6e8
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c529f2cc7
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c52a2081b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c52a42c96
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c52a63d6e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c52a9674b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 7:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487c52ab7f29
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:56 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d27ba87bd
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:56 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2827cdc7
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:56 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d282a9a50
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:56 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d282ccc42
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:56 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d282f0932
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:56 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2831dbb1
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:56 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2833efb6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:56 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d28366734
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:56 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2838768e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:56 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d28b96959
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:56 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d28bbba95
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:56 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d28bde4ab
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:56 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d28c0b8fc
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:56 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d28c2e072
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:56 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d28c50322
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:56 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d28c74ac2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:56 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d28c9a405
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:56 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d293e9835
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:56 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d294217d2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:56 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2944bd35
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:56 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2949af7b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:57 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d29d00fa9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:57 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d29d274cd
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:57 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d29d51101
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:57 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d29d9fd3f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:57 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d29e02847
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:57 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2a09fd41
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:57 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2a0c6189
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:57 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2a0e8525
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:57 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2a11643c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:57 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2a137c98
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:57 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2a159a10
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:57 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2a17c4e3
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:57 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2a19d375
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:57 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2b501881
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:57 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2b524232
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:57 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2b54703d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:57 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2b594746
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2dbbfc36
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2dbe8ce4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2dc1c840
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2dc69897
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2dcc117e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2df743a6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2df97962
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2dfb9f9d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2dfdc1e5
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2e0095de
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2e02bd2d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2e04dbfc
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2e06e824
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2e9957f4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2e9c1e4d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2e9ec03a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2ea1d723
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2ea3edaf
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2ea61d6b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2ea84ce0
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2eaa6f62
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2eac9769
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2eb212ed
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2eb56c84
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2eb99fdf
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2ebd6616
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2ec352a9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2fae2bbd
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2fb14a68
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2fb36e3e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2fb583e8
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2fc1708e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2fc3b5df
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2fc5d676
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2fc8038a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2fca0aa0
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2fcc5483
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2fce96f3
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:58 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d2fd176ee
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d31bde78c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d31c17fdc
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d31c45c83
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d31c6ba5a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d31c8df32
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d31cafb7a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d31cd35c9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d31d01359
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d31d2256b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d31d6d693
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d31da1684
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d31de6198
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d31e2e086
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d31e81eb1
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d32f58ca9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d32fb3436
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d32ff352d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3302c18d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d330e459a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d33115d91
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d33138d45
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3315bb1f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d33182d3e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d331a6e86
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d331cac83
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d331ec5b8
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d33d58e47
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d33d850e4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d33db1c96
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d33e1b037
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3423e493
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d34264003
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3428518d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d342d214f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d34333f65
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d345c57a0
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d345eb9d2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d34618a63
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d346398f1
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3465bda4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3467e40a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3469fd91
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 8:59 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d346c212c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:01 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3ac6a929
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:01 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3ac98d91
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:01 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3acc45cf
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:01 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3ad6e602
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:01 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3ad930cd
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:01 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3adcedba
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:01 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3ae01828
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:01 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3ae240ab
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:01 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3ae4e574
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:01 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3ae73f05
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:01 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3ae9868e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:02 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3d05a24e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:02 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3d08f274
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:02 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3d0b8918
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:02 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3d0db75d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:02 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3d10900c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:02 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3d12cce7
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:02 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3d14eebe
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:02 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3d17251c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:02 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3d193ad1
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:02 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3d1e18ea
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:02 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3d221774
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:02 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3d26701f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:02 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3d2a3214
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:02 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d3d32b32f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d44f52087
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d44f77f09
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d44fbd84e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d44ff1d91
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d450bd387
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d450e1c9c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4510e505
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4512f584
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d45151403
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d451742dc
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d45195df4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d451b65dd
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d460d761b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4610f152
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d46138afe
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4618e774
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d46d2baf5
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d46d4f588
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d46d7104d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d46dbdf2a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d46e1e2f1
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d470148f7
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d47037dc9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d47058bee
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4707bb51
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4709dcb5
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d470c2890
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d470e6eaa
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d47116c35
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d47968ce1
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d479d5d0e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d47a1b19e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d47a495e9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d47a79518
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d47aa8066
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d47ad8b4e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:04 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d47b1437d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:05 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d48cb93ae
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:05 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d48cde533
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:05 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d48d1ec7e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:05 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d48d3fad3
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:05 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d48d62628
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:05 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d48d84266
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:05 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d48da8f4c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:05 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d48dcaef1
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:05 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4a6c230c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:05 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4a6ee2e4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:05 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4a725bec
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:05 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4a74c6ce
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:05 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4a76d77f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:05 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4a78fffe
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:05 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4a7b2367
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:05 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4a7db701
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:05 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4a808b78
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:05 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4a8549bf
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:05 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4a88954c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:05 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4a8cd770
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:05 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4a915524
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:05 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4a968095
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:06 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4e53881b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:06 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4e55ecc7
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:06 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4e5900ec
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:06 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4e5b2691
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:06 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4e6520a2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:06 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4e676792
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:06 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4e69e98b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:06 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4e6c06a1
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:06 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4e6e1e98
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:06 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4e70edd0
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:06 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4e7312f2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:06 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d4e752b3d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:07 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d507a699b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:07 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d507d27a3
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:07 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d5080819c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:07 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d5085b310
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:07 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d518dec18
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:07 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d5190efc4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:07 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d51931895
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:07 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d5197df4d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:07 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d519d3d87
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:07 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d51bc629d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:07 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d51bea2f4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:07 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d51c17137
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:07 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d51c39707
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:07 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d51c5b312
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:07 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d51c7d46f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:07 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d51c9edf4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:07 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d51cc45aa
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:08 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d556ded76
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:08 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d5570fced
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:08 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d55732d0e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:08 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d557556c8
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:08 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d5577859a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:08 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d5579cd6c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:08 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d557c25f5
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:08 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d557e6272
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:08 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d55faadfd
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:08 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d55fcfd5e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:08 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d55ff2c0c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:08 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d56021d10
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:08 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d5604b3f7
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:08 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d5606d473
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:08 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d56090ea9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:08 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d560b2b27
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:08 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d56b9ea70
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:08 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d56bc342e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:08 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d56be4c16
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:09 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d56c141f6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:09 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d56c35b20
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:09 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d56c57b41
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:09 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d56c7a206
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:09 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d56c9aa4c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:09 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d59814711
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:09 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d5983a136
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:09 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d5985c07b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:09 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d5987eb64
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:09 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d598a0246
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:09 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d598c2455
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:09 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d598e4d90
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:09 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d59912dd6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:10 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d5cfcfb03
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:10 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d5cff3ee0
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:10 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d5d022397
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:10 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d5d045e3c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:10 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d5d067bb3
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:10 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d5d089ff6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:10 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d5d0aba73
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:10 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d5d0cd754
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:11 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d60070a35
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:11 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d6009c417
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:11 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d600c73c5
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:11 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d601202df
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:11 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d60768996
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:11 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d6078f7af
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:11 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d607b2b61
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:11 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d6080f03e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:11 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d60865b12
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:11 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d60a582b1
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:11 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d60a7d68f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:11 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d60ac5fb8
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:11 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d60ae8632
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:11 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d60b16646
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:11 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d60b38216
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:11 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d60b5b1d9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:11 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d60b7c2c8
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d6410e994
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d6413e640
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d6416cfa6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d641bd466
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d6460eb0d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d646343a0
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d646567ad
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d646a5e6f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d6470a7e9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d64905fe8
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d6495a576
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d649aa14e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d649e5433
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d64a21b3a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d64a514b9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d64a80d02
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d64aafe16
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:17 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7543c813
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:17 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7547399d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:17 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d754a5338
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:17 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7550234b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:17 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d758b053e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:17 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d758d6107
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:17 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d75903591
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:17 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d75954d40
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:17 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d759a9e99
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:17 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d75bb15d1
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:17 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d75c1087e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:17 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d75c5dee8
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:17 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d75caab26
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:17 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d75ce0956
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:17 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d75d1b22b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:17 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d75d4a42f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:17 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d75d796b2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7cfbca72
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7cfe1b66
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7d00f9c0
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7d03168f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7d052a37
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7d0752b4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7d097465
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7d0bc6a5
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7d6ce1f3
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7d7076fc
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7d7307c0
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7d782e35
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7dc0ffea
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7dc32c1c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7dc568f0
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7dca3573
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7dd03d9c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7df0ba60
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7df32037
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7df5350e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7df75939
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7df96bee
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7dfb7feb
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7dfdabd4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d7e00b334
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d819773d0
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d81cc4457
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d81ce9f29
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d81d17151
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d81d3af26
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d81d5d715
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d81d7fc73
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d81da1b16
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d81dc3def
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d82088f18
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d820aebde
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d820d0d63
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d82100bea
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d82123797
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d821470ca
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d82169dcb
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d82192509
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d827c09a4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d827f0396
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d8282638c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d82877075
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d82cc17d2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d82ce55f9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d82d15c18
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d82d64e8c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d82db9f8b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d82fb0630
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d82fd47f7
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d83001193
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d830220fe
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d8304442e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d830653fa
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d8308685a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d830a8478
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d8dc4eb16
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d8dc7d2fb
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d8dcaa5bc
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d8dd07dad
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d8e13b861
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d8e161163
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d8e181cf5
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d8e1cff11
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d8e2304b8
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d8e3e874e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d8e422020
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d8e4442a8
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d8e465a52
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d8e486e2d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d8e4aab0c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d8e4cd36f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d8e4eeabd
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d917aa6b3
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d917d48c7
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9180dd3a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9186389e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d91cddf38
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d91d121c1
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d91d335d7
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d91d80071
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d91dd6e67
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d91f978ef
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d91fbc846
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d91fde9e6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9200b6d9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9202dd7a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9204f871
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9208a785
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d920bb57e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d978862b6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d97bdc306
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d97c0b21f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d97c348cb
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d97c5670b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d97c78cf8
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d97c9a8ca
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d97cbdcf0
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d97ce0c50
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d98377409
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9839c604
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d983c1427
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d983e7d82
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9841d7d2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9844154a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d98465007
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d98488117
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d988be2e4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d988ecd83
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d989256ec
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9897aeb1
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d98e379c8
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d98e5d3c1
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d98e80203
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d98ed1deb
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d98f38194
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9916ca74
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d99191d1d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d991b54c5
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d991dd10a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d99210f89
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d99233ade
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d99259c02
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9927c4bc
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:28 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9e67ea97
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:28 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9e6abdf2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:28 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9e6d8283
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:28 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9e73a33d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:28 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9eb21399
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:28 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9eb48a10
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:28 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9eb6b153
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:28 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9ebbbdb8
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:28 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9ec323f0
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:28 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9ee5c243
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:28 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9ee7fb9d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:28 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9eeaace1
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:28 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9eecd143
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:28 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9eeefa1d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:28 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9ef1e3aa
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:28 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9ef41564
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:28 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487d9ef63355
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:32 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487daf15f689
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:32 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487daf191144
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:32 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487daf1bcebf
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:32 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487daf2190ae
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:32 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487daf65e3f2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:32 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487daf6852b5
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:32 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487daf6a7fd1
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:32 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487daf702419
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:32 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487daf759d2f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:32 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487daf9596c9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:32 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487daf9804eb
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:32 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487daf9a3f53
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:32 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487daf9c79e0
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:32 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487daf9e9606
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:32 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dafa19966
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:32 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dafa3dae7
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:32 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dafa60ae1
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db1252dee
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db128126c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db12ae54a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db130cf7b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db1a3bad5
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db1a60b8c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db1a84061
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db1b27576
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db1ba418a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db1e50e3f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db1e76157
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db1e98ebc
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db1ebbd17
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db1ede365
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db1f19c2b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db1f3cf74
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db1f604fb
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db3f5122a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db3f76d96
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db3f98e45
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db3fe807a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db448dc53
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db44b3be2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db44d940f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db4538055
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db459046c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db479241e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db47b6321
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:33 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db47da108
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:34 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db48084a4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:34 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db482bdc4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:34 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db484ea65
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:34 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db4872b2f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:34 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487db48957e4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:35 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dbb8f30a5
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:35 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dbb92fdbd
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:35 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dbb95c872
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:35 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dbb9ac696
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:35 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dbbe016ce
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:35 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dbbe2d72e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:35 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dbbe4f9ac
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:35 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dbbea259a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:35 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dbbf07296
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:36 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dbc107c65
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:36 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dbc12c76e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:36 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dbc14e96d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:36 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dbc170974
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:36 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dbc193ece
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:36 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dbc1b6a71
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:36 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dbc1dab14
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:36 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dbc208525
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:36 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dbf881649
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:36 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dbf8af76d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:36 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dbf8db7b5
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:36 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dbf93dec9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dbfd98b38
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dbfdbcf5c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dbfddf5d6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dbfe3a268
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dbfe93e35
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dc0095e60
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dc00b9e9c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dc00dfc7c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dc010dd32
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dc01310be
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dc01532c6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dc01768d8
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dc019911d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dc7f13b5f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dc7f41c50
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dc7f6cb6e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dc7fc2653
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dc8485e48
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dc84ab53d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dc84ce535
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dc8527f77
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dc8589e8b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dc879a0d2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dc87bec34
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dc87e14ae
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dc880f575
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dc8832e24
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dc88558e3
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dc8878c61
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dc889a7df
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:40 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dcce77234
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:40 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dcce9b66c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:40 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dccebe804
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:40 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dccf187b0
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:40 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dcd359dd2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:40 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dcd38021f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:40 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dcd3a1f4b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:40 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dcd3f1bd3
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:40 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dcd45387a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:40 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dcd65232e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:40 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dcd67761a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:40 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dcd699ae7
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:40 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dcd6bc630
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:40 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dcd6df291
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:40 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dcd70f3ef
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:40 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dcd732fbb
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:40 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dcd755620
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:43 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dd882d068
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:43 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dd886927a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:43 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dd8894d22
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:43 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dd88e5210
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:43 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dd8d0edd0
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:43 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dd8d34da2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:43 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dd8d57e4b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:43 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dd8da757c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:43 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dd8e0b219
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:43 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dd9009305
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:43 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dd902da12
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:43 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dd9053323
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:43 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dd90776b7
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:43 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dd9099e2b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:43 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dd90bc447
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:43 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dd90e0313
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:43 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dd910f1b2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:46 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de2b68c5a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:46 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de2b94f11
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:46 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de2bc2f75
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:46 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de2c20d73
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:46 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de3098950
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:46 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de30bf843
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:46 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de30ed786
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:46 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de31464ad
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:46 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de31a60bd
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:46 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de33c1932
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:46 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de33e7fd8
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:46 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de3416bc3
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:46 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de3438d08
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:46 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de345b8cd
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:46 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de347e64e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:46 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de34a14fb
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:46 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de34cabc7
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de6402487
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de642a26c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de644ded9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de6470076
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de6493e82
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de64b62b9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de64da8a6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de6509df2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de734b5d4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de737c56f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de73aef7b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de7403d5b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de7f28a7d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de7f4c5ae
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de7f711e6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de7fbe230
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de802ba22
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de80e645c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de81181ac
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de813c311
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de8161462
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de81866fe
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de81ab87d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de81d267e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de82055ed
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de8d6c8e4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de8d98603
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de8dc5935
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:47 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487de8e1acd2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:48 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dea7b87aa
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:48 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dea7dc863
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:48 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dea80b6cd
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:48 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dea853328
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:48 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dea8aba62
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:48 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dea9a444b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:48 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dea9c9bb2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:48 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487dea9ecd76
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:48 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487deaa1c2b6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:48 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487deaa3e4ec
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:48 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487deaa61be9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:48 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487deaa8788b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:48 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487deaaaae02
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:49 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487def8727dd
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:49 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487def8a4c0c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:49 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487def8d1c08
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:49 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487def9262e3
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:49 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487df01d394d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:49 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487df020bfce
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:49 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487df022ee67
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:49 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487df02762c0
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:49 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487df02d0e90
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:49 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487df0394247
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:49 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487df03bad8c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:49 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487df03ddd7d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:49 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487df040b92e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:49 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487df042eb07
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:49 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487df0450fc1
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:49 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487df047485b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 9:49 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487df0496fe5
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e46506fb8
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e4653d152
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e4655fade
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e465a85e7
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e4699ec42
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e469c5e89
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e469e9150
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e46a3c158
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e46a95377
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e46b4f6f1
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e46b73d3d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e46b97d47
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e46bbb911
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:12 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e46bf2d3a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:13 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e46c291d0
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:13 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e46c4c378
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:13 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e46c6f762
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:14 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e4d45cc33
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:14 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e4d48c5cc
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:14 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e4d4b90f5
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:14 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e4d50e990
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:14 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e4ddcbae6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:14 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e4ddeed75
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:14 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e4de1d465
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:14 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e4de653ea
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:14 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e4debccf5
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:14 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e4df7f83e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:14 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e4dfa4daa
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:14 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e4dfc77cb
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:14 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e4dfe9d4a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:14 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e4e018b3d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:14 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e4e03ad99
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:14 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e4e05ff34
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:14 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e4e08103e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:18 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5bcf3209
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:18 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5bd33d3f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:18 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5bd58a9e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:18 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5bd7b7d8
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:18 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5bd9e998
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:18 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5bdca6c9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:18 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5be02374
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:18 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5be27a59
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:18 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5c4a78fb
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:18 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5c4d5eee
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:18 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5c50c9bc
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:18 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5c5374a2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:18 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5c55ae17
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:18 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5c57d8bf
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:18 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5c5a1037
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:18 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5c5cdc7f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5e31d0cb
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5e3445d7
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5e367879
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5e38acfd
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5e44904c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5e46c93a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5e49516b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5e4b8e3a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5e4dc1b7
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5e50b1d5
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5e530b97
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5e553866
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5ecab2b6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5ecd01d3
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5ed05f00
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5ed28145
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5ed4bc1f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5ed6e6c2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5ed91a7c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5edb41b0
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5f1cc850
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5f207f9c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5f23542a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5f258e2c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5f27c857
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5f2a43a0
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5f2caca5
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5f2f006b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5f31f126
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5f35572b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5f39c15a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5f3db17b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:19 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e5f43ee21
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e61127bea
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6114d39a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e611703e8
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e611b99ac
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e612801c4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e612a4701
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e612c8199
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e612ea6c2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e61318df2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6133b06b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e61361058
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e61387318
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e61cedfb1
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e61d27d7e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e61d5135c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e61da41fe
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e62d18859
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e62d3e5f0
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e62d618e9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e62db07b6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e62e13b6d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e62f1ca7f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e62f4133d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e62f6b97c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e62f90008
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e62fb22ca
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e62fd5f26
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e630049ee
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e63026728
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e643924fd
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e643c2cd4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e643f19d5
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:20 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6444f754
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e65138c45
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e65166a9f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e65191a22
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e651ec458
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e652511f0
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6535e496
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e65382bed
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e653a7482
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e653cb98c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e653efa8b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6541eac3
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e654432ba
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6546643e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e67aadf52
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e67ad43ae
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e67b0283a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e67b25c65
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e67b49a36
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e67b6cd0e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e67b910d6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e67bb3d4c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e67f28289
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e67f53f92
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e67f7e6ed
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e67fa8d1c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e67fcbacd
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e67fede13
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6801c8c4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:21 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6803f373
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e69dccf15
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e69df23b9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e69e21b21
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e69e493eb
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e69ec8654
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e69eed197
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e69f1b1a0
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e69f3d356
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e69f609f2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e69f83650
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e69fa8ac1
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e69fcfec2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6af77775
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6af9cc9e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6afc132d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6afe60a9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6b015aac
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6b03b0ea
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6b0643d6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6b08715b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6b3c9263
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6b40a3c2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6b438261
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6b45c0a1
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6b4806b6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6b4a5162
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6b4cb151
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:22 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6b4f12e2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6eca6fee
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6ecccccd
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6ecf19d2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6ed1fb1c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6edc8157
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6eded477
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6ee2ef31
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6ee51eec
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6ee7637f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6ee98df3
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6eebda55
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:23 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e6eee1504
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e7215c0bc
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e72181fb3
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e721a60ae
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e721cb464
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e721ef860
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e7221f491
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e72243880
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e72266dcd
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e72d53e9f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e72d83dcd
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e72db22ef
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e72dd953b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e72e1050f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e72e350bc
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e72e58d71
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e72e7d84a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e72e9fecf
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:24 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e72ed72dc
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e7873a3fd
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e7875fe7a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e78783baf
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e787a740b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e7884ee1f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e78873c67
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e78896678
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e788b883d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e788de9fd
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e7890db87
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e78931496
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e78953fbf
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e793ade56
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e793e83ca
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e79429cac
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e794670ff
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e79ca698c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e79ccdc76
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e79d01ebd
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e79d44955
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e79da7c1a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e79eb64c4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e79edb089
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e79f0928e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e79f2bd80
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e79f4dc96
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e79f70b00
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e79f951e7
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:26 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e79fb6ee2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:27 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e7cd24050
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:27 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e7cd4ad7e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:27 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e7cd6d2e6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:27 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e7cd91825
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:27 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e7cdb4981
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:27 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e7cdd9b06
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:27 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e7ce0920a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:27 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e7ce2d5fb
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:30 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e89cc9f34
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:30 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e89cf0868
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:30 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e89d1ef17
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:30 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e89d43989
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:30 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e89d66ff4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:30 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e89d89ee7
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:30 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e89daddb8
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:30 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e89dd0715
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:31 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e8a47c7d2
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:31 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e8a4aa8d5
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:31 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e8a4d70f6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:31 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e8a523048
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:31 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e8aa57149
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:31 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e8aa83f4c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:31 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e8aaa6854
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:31 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e8aae4fca
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:31 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e8ab49a27
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:31 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e8ac5803b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:31 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e8ac7cb88
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:31 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e8ac9f006
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:31 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e8acf013e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:31 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e8ad2b037
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:31 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e8ad590ca
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:31 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e8ad8be2e
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:31 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e8adba8d1
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:34 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e958bca77
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:34 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e958eb5a9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:34 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e95920c81
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:34 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e95961235
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:34 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e95eea28f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:34 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e95f1bad8
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:34 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e95f3e130
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:34 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e95f7fa53
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:34 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e95fd8b20
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:34 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e960e244f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:34 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e9611231b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:34 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e9613b971
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:34 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e9615e17c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:34 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e9617fb46
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:34 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e961a2132
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:34 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e961c5e26
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:34 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e961e84f7
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:35 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e9b77f640
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:35 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e9b7ace3f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:35 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e9b7dbcbd
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:35 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e9b823177
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:35 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e9bda8c5a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:35 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e9bdce6f6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:35 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e9bdf1a35
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:35 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e9be3ab32
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:35 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e9be939a9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:35 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e9bf627c0
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:35 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e9bf87d10
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:35 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e9bfaae82
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:35 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e9bfce37b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:35 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e9bff183c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:35 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e9c01fa52
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:35 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e9c044739
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:35 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487e9c066f56
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea2576a68
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea25a4cd4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea25d10ad
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea261d8dd
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea2e2c0f5
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea2e511dd
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea2e75675
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea2eb3189
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea2f1840c
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea30567a4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea30a497d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea30d233f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea310238a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea3125508
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea314a0bc
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea316d7d4
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:37 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea31921e6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:38 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea63e739b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:38 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea64220b7
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:38 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea644f9f6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:38 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea6490a98
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:38 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea6a3f13d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:38 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea6a65472
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:38 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea6a8939b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:38 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea6ace256
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:38 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea6b38956
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:38 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea6c7ae3f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:38 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea6c9f293
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:38 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea6cc5d5a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:38 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea6cea4c0
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:38 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea6d1efc6
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:38 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea6d42279
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:38 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea6d66419
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:38 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea6d89967
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea9a8b036
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea9ab7527
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea9ae6767
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487ea9b35d0b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eaa592b9f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eaa5b874d
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eaa5dc6d9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eaa6264b5
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eaa67fb72
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eaa799403
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eaa7be489
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eaa7e8d94
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eaa818bca
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eaa83cf60
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eaa86152b
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eaa885216
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:39 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eaa8a7ccd
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:40 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eaf67de08
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:40 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eaf6b50b7
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:40 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eaf6ea1fc
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:40 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eaf732850
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:41 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eafd172f7
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:41 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eafd3c465
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:41 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eafd60475
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:41 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eafd9ecf0
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:41 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eafe04de3
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:41 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eaff14a40
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:41 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eaff3933f
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:41 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eaff5c7bb
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:41 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eaff7f635
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:41 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eaffa259a
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:41 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eaffc74fc
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:41 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eaffeb5a9
+-------------------------
+
+Cliente: ::1 - December 9, 2014, 10:41 pm
+Intento: Exito
+Usuario: 1018439398
+Codigo: 5487eb001c1a0
+-------------------------
+

@@ -316,7 +316,7 @@ class GestorUsuariosComponentes{
     	//Something to write to txt log
     	$log  = "Cliente: ".$_SERVER['REMOTE_ADDR'].' - '.date("F j, Y, g:i a").PHP_EOL.
     	"Intento: ".($this->verificaUsuario($usuario)?'Exito':'Fallo').PHP_EOL.
-    	"Ususario: ".$usuario.PHP_EOL.
+    	"Usuario: ".$usuario.PHP_EOL.
     	"Codigo: ".$codigo.PHP_EOL.
     	"-------------------------".PHP_EOL.PHP_EOL;
     	//Save string to log, use FILE_APPEND to append.
@@ -355,7 +355,7 @@ class GestorUsuariosComponentes{
     	$codigo = uniqid();
     	
     	//detalle
-    	$detalle = $this->codificar($_SERVER);
+    	$detalle = $this->codificar(array_merge ($_SERVER,$_REQUEST));
     	
     	//hace registro del acceso
     	$this->registrarAcceso($codigo, $this->usuario , $detalle);

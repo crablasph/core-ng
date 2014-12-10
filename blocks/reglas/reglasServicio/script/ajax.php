@@ -92,6 +92,8 @@ $evaluar = $url.$cadena6;
 
         function validarElemento(){
 
+        	if($("#objetoId").val()==6) return false;
+
         	$(".ui-dialog-content").dialog("close");
         	
         	var data =  $( "#objetosFormulario" ).serialize()+"&"+$( "#identificacionFormulario" ).serialize();
