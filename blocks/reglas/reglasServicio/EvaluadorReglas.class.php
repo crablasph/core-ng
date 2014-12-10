@@ -170,13 +170,34 @@ class EvaluadorReglas{
     	return $this->evaluador->last_error;
     }
     
-    public function evaluarParametro($valor = '', $tipo = ''){
+    public function evaluarParametroTexto($valor = '', $tipo = ''){
     	if(Tipos::evaluarTipo($valor,$tipo))  	return $valor;
     	return false;
     	
     }
     
-    public function evaluarVariable($valor = '', $tipo = '' , $rango = ''){
+    public function evaluarParametro($id = ''){
+    	$parametro = $this->getParametro($id);
+    	if(!is_array($parametro)) return false;
+    	$valor = base64_decode($parametro[0]['valor']);
+    	$tipo = $parametro[0]['tipo'];
+    	return $this->evaluarParametroTexto($valor, $tipo);
+    	 
+    }
+    
+    public function evaluarVariable($id = '',$valor=''){
+    	$variable = $this->getVariable($id);
+
+    	if(!is_array($variable)) return false;
+    	if($valor == '')$valor = base64_decode($variable[0]['valor']);
+    	$tipo = $variable[0]['tipo'];
+    	$rango = $variable[0]['rango'];
+    	
+    	return $this->evaluarVariableTexto($valor, $tipo, $rango);
+    
+    }
+    
+    public function evaluarVariableTexto($valor = '', $tipo = '' , $rango = ''){
     	if(Tipos::evaluarTipo($valor,$tipo)&&Rango::evaluarRango($valor , $tipo , $rango))
     		  	return $this->evaluar($valor);
     	return false;
@@ -239,6 +260,29 @@ class EvaluadorReglas{
     }
     
     /*
+     * obtiene una lista de las variables en la cadena que se pasa en orden
+    */
+    public function getVariablesListaDelTexto($texto = ''){
+    	$listaVariables = $this->getListaVariables();
+    	$lista = array();
+    	if(is_array($listaVariables)){
+    	
+    	foreach ($listaVariables as $variable){
+    			
+    	   
+    		if(strpos($texto,$variable['nombre'])!==false)
+    			$lista[]= array($variable['nombre'], $variable['tipo']);
+    			}
+    		
+    	}
+    	 
+    	
+    	return $lista;
+    	 
+    	
+    }
+    
+    /*
      * reemplaza en la cadena las funciones
     */
     public function procesarFunciones($cadena = ''){
@@ -271,7 +315,7 @@ class EvaluadorReglas{
         			$listaVariablesFuncion = $this->arrayVariablesFuncion($funcion['valor'] , $entradaFuncion);
         			$valores =  $listaVariablesFuncion;
         			
-        			$funcionEvaluada = $this->evaluarFuncion($funcion['valor'], $valores, $funcion['tipo'] , $funcion['rango'],$funcion['categoria'],$funcion['ruta']);
+        			$funcionEvaluada = $this->evaluarFuncionTexto($funcion['valor'], $valores, $funcion['tipo'] , $funcion['rango'],$funcion['categoria'],$funcion['ruta']);
         			
         			
         			$cadena = str_replace($aReemplazar, $funcionEvaluada, $cadena);
@@ -320,9 +364,21 @@ class EvaluadorReglas{
     }
     
     
+    public function evaluarFuncion($id = '',$valores=''){
+    	$funcion = $this->getFuncion($id);
+    	
+    	
+    	if(!is_array($funcion)) return false;
+    	$cadena = base64_decode($funcion[0]['valor']);
+    	$tipo = $funcion[0]['tipo'];
+    	$rango = $funcion[0]['rango'];
+    	$categoria = $funcion[0]['categoria'];
+    	$ruta = base64_decode($funcion[0]['ruta']);
+    	
+    	return $this->evaluarFuncionTexto($cadena, $valores, $tipo , $rango,$categoria,$ruta);
+    }
     
-    
-    public function evaluarFuncion($cadena = '', $valores = '', $tipo = '' , $rango = '',$categoria = '',$ruta = ''){
+    public function evaluarFuncionTexto($cadena = '', $valores = '', $tipo = '' , $rango = '',$categoria = '',$ruta = ''){
     	
     	//1. Procesa los parametros y los Reemplaza
     		$cadena = $this->procesarParametros($cadena  );
@@ -373,10 +429,37 @@ class EvaluadorReglas{
     	return $listaFunciones;
     }
     
+    private function getFuncion($id=0){
+    	 
+    	$funcion  =  new GestorFuncion();
+    	$listaFunciones = $funcion->consultarFuncion($id,'','','','','',1);
+    	 
+    	if(!$listaFunciones) {
+    		$this->mensaje = &$funcion->mensaje;
+    		unset($funcion);
+    		return false;
+    	}
+    	unset($funcion);
+    	return $listaFunciones;
+    }
+    
     private function getListaVariables(){
     	 
     	$variable  =  new GestorVariable();
     	$listaVariables = $variable->consultarVariable('','','','','','',1);
+    	if(!$listaVariables) {
+    		$this->mensaje = &$variable->mensaje;
+    		unset($variable);
+    		return false;
+    	}
+    	unset($variable);
+    	return $listaVariables;
+    }
+    
+    private function getVariable($id=0){
+    
+    	$variable  =  new GestorVariable();
+    	$listaVariables = $variable->consultarVariable($id,'','','','','',1);
     	if(!$listaVariables) {
     		$this->mensaje = &$variable->mensaje;
     		unset($variable);
@@ -399,6 +482,19 @@ class EvaluadorReglas{
     	return $listaParametro;
     }
     
+    private function getParametro($id=0){
+    
+    	$parametro  =  new GestorParametro();
+    	$listaParametro = $parametro->consultarParametro($id,'','','','','',1);
+    	if(!$listaParametro) {
+    		$this->mensaje = &$parametro->mensaje;
+    		unset($parametro);
+    		return false;
+    	}
+    	unset($parametro);
+    	return $listaParametro;
+    }
+    
     private function procesarSentencias($valorRegla = ''){
     	
     	if($valorRegla=='') return false;
@@ -408,15 +504,26 @@ class EvaluadorReglas{
     	$resultado = array();
     	$cadena = '';
     	
-    	
+    	$sentenciaNumero= 0;
+    	$operador='';
+    	$anteriorCadena = '';
+    	$anteriorOperador = '';
     	foreach ($cadenaArray as $elemento){
     		
     		if(in_array($elemento , $this->listaOperadorLogico)){
-    			$resultado[] = array($elemento,$cadena);
+    			$sentenciaNumero++;
+    			
+    			if($sentenciaNumero==1){
+    				$resultado[] = array('',$cadena);
+    				//$operador = $elemento;
+    			}else $resultado[] = array($anteriorOperador,$cadena);
+    			
+    			$anteriorCadena= $cadena;
+    			$anteriorOperador = $elemento;
     			$cadena = '';
     		}else	$cadena .= $elemento;
   	
-    	}
+    	}$resultado[] = array($anteriorOperador,$cadena);
     	
     	if(count($resultado) == 0){
     		$resultado[] = array('',$cadena);
@@ -477,14 +584,14 @@ class EvaluadorReglas{
     	$nombreRegla = $datosRegla[0]['nombre'];
     	$procesoRegla = $datosRegla[0]['proceso'];
     	$tipoRegla = $datosRegla[0]['tipo'];
-    	$valorRegla = $datosRegla[0]['valor'];
+    	$valorRegla = base64_decode($datosRegla[0]['valor']);
     	
     	
     	
     	//0. Procesa Sentencias
     	$listaSentencias = $this->procesarSentencias($valorRegla);
     	$listaResultados = array();
-        
+        $cadenas =  array();
     	if(is_array($listaSentencias)){
     		
     		foreach ($listaSentencias as $sentencia){
@@ -494,7 +601,7 @@ class EvaluadorReglas{
     			
     			//1. Procesa los parametros y los Reemplaza
     			$cadena = $this->procesarParametros($cadena);
-    			 
+    			
     			//2. Reemplaza las variables y las evalua
     			if(is_array($valores)){
     				$cadena = $this->procesarVariables($cadena , $valores );
@@ -502,17 +609,18 @@ class EvaluadorReglas{
     			
     			//3. Reemplaza funciones y las evalua
     			$cadena = $this->procesarFunciones($cadena);
-    			
+    			//$cadenas[]=$cadena;
     			//4. Evalua toda la regla
     			$valor = $this->evaluar($cadena);
     			$valor =  (bool) $valor;
     			  			
-    			
+    		
     			if(Tipos::evaluarTipo($valor,$tipoRegla))  $listaResultados[] = array($operador,$valor)	;//return $valor;
     			
     			
     		}
-    		
+    		//return $this->procesarSentencias($valorRegla);
+    		//return array($listaSentencias);//,$cadenas,$this->procesarFunciones('funcion1(66)'));
     		return  $this->evaluarResultados($listaResultados);
     		
     	}

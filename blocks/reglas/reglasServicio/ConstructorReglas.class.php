@@ -57,7 +57,7 @@ class ConstructorReglas{
     	
     	if(!$this->validarAcceso(0,1)) return false;
     	
-    	if($nombre===''||$proceso===''||$valor===''||$tipo===''){
+    	if($nombre===''||$proceso===''||$valor===''){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
     		return false;
     	}
@@ -71,9 +71,9 @@ class ConstructorReglas{
     	$parametros['proceso'] = $proceso;
     	$parametros['tipo'] = 1;
     	$parametros['valor'] = $valor;
-    	$parametros['estado'] = $estado;
+    	$parametros['estado'] = 3;
     	
-    	
+    	 
     	$ejecutar = $this->registrador->ejecutar(self::ID_OBJETO,$parametros,1);
     	
     	if(!$ejecutar){
@@ -98,7 +98,7 @@ class ConstructorReglas{
     	if($nombre!='')	$parametros['nombre'] = $nombre; 
     	if($descripcion!='')	$parametros['descripcion'] = $descripcion;
     	if($proceso!='')	$parametros['proceso'] = $proceso;
-    	if($tipo!='')	$parametros['tipo'] = $tipo;
+    	$parametros['tipo'] = 1;
     	if($valor!='')	$parametros['valor'] = $valor;
     	if($estado!='')	$parametros['estado'] = $estado;
     	$parametros['id'] = $id;

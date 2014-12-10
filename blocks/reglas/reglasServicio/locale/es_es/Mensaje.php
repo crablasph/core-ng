@@ -95,6 +95,24 @@ $this->idioma["errorIdNoExistePermisos"] = "Identificador de la permiso no Exist
 $this->idioma["errorDuplicarPermisos"] = "Error Duplicando Permisos";
 $this->idioma["errorEliminarPermisos"] = "Error Eliminando Permisos";
 $this->idioma["errorCambiarEstadoPermisos"] = "Error Cambiando Estados Permisos";
+
+$this->idioma["errorCreacionReglas"] = "Error Creando Reglas";
+$this->idioma["errorLecturaReglas"] = "No se encontraron registros de Reglas";
+$this->idioma["errorIdNoDefinidoReglas"] = "Identificador de la regla no definido";
+$this->idioma["errorActualizarReglas"] = "Error Actualizando Reglas";
+$this->idioma["errorIdNoExisteReglas"] = "Identificador de la regla no Existe";
+$this->idioma["errorDuplicarReglas"] = "Error Duplicando Reglas";
+$this->idioma["errorEliminarReglas"] = "Error Eliminando Reglas";
+$this->idioma["errorCambiarEstadoReglas"] = "Error Cambiando Estados Reglas";
+
+$this->idioma["errorCreacionRelaciones"] = "Error Creando Permiso";
+$this->idioma["errorLecturaRelaciones"] = "No se encontraron registros de Permisos";
+$this->idioma["errorIdNoDefinidoRelaciones"] = "Identificador del permiso no definido";
+$this->idioma["errorActualizarRelaciones"] = "Error Actualizando Permiso";
+$this->idioma["errorIdNoExisteRelaciones"] = "Identificador del permiso no Existe";
+$this->idioma["errorDuplicarRelaciones"] = "Error Duplicando Permiso";
+$this->idioma["errorEliminarRelaciones"] = "Error Eliminando Permiso";
+$this->idioma["errorCambiarEstadoRelaciones"] = "Error Cambiando Estados Permiso";
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 $this->idioma["registroObjetoNoExiste"] = "Registro objeto no existe";
@@ -165,10 +183,10 @@ $this->idioma['permiso']="permiso";
 $this->idioma['permisoTitulo']="Seleccione Permiso";
 $this->idioma['valor']="valor";
 $this->idioma['valorTitulo']="Ingrese Valor";
-$this->idioma['ruta']="valor";
+$this->idioma['ruta']="ruta";
 $this->idioma['rutaTitulo']="Ingrese Ruta";
 $this->idioma['usuario']="usuario";
-$this->idioma['rutaTitulo']="Ingrese Usuario";
+$this->idioma['usuarioTitulo']="Ingrese Usuario";
 $this->idioma['rango']="rango";
 $this->idioma['rangoTitulo']="Ingrese Rango";
 $this->idioma['descripcion']="descripción";
@@ -186,5 +204,10 @@ $this->idioma['guardar']="Guardar";
 $this->idioma['crear']="Crear";
 $this->idioma['accionCambiarEstado']="Accion: Cambiar estado resultados:<br>";
 $this->idioma['accionDuplicar']="Accion: Duplicar resultados:<br>";
-
+$this->idioma['accionEvaluar']="Accion: Evaluar resultados:<br>";
+$this->idioma['operaciones']="Operaciones";
+$this->idioma['parametros']="Parámetros";
+$this->idioma['variables']="Variables";
+$this->idioma['funciones']="Funciones";
+$this->idioma['evaluar']="Evaluar";
 ?>

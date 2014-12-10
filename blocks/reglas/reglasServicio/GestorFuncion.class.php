@@ -87,26 +87,29 @@ class GestorFuncion{
     	
     }
     
-    public function actualizarFuncion($id = '',$nombre ='',$descripcion='',$proceso='',$proceso = '',$tipo = '',$rango='',$categoria = '',$ruta='',$valor='',$estado=''){
+    public function actualizarFuncion($id = '',$nombre ='',$descripcion='',$proceso = '',$tipo = '',$rango='',$categoria = '',$ruta='',$valor='',$estado=''){
     	 
+    	
+    	
     	if(!$this->validarAcceso($id,3)) return false;
     	if($id==''||is_null($id)){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
     		return false;
     	}
-    	 
+    	
     	if($nombre!='')	$parametros['nombre'] = $nombre; 
     	if($descripcion!='')	$parametros['descripcion'] = $descripcion;
     	if($proceso!='')	$parametros['proceso'] = $proceso;
-    	if($rango!='') $parametros['rango'] = $rango;
     	if($tipo!='')	$parametros['tipo'] = $tipo;
+    	if($rango!='') $parametros['rango'] = $rango;
+    	
     	if($categoria!='')$parametros['categoria'] = $categoria;
     	if($ruta!='')$parametros['ruta'] = $ruta;
     	if($valor!='')	$parametros['valor'] = $valor;
     	if($estado!='')	$parametros['estado'] = $estado;
     	$parametros['id'] = $id;
     	 
-    	 
+    	return $this->registrador->ejecutar(self::ID_OBJETO,$parametros,3);
     	if(!$this->registrador->ejecutar(self::ID_OBJETO,$parametros,3)){
     
     		$this->mensaje = &$this->registrador->mensaje;

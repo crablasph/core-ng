@@ -858,7 +858,9 @@ class Registrador{
 				break;
 			case 3:
 				//actualizar
-				if(!$this->procesarParametros($parametros)||!$this->setWhere('id')||!$this->persistencia->update($this->parametros,$this->valores,$this->where)){ 
+				if(!$this->procesarParametros($parametros)||
+				   !$this->setWhere('id')||
+				   !$this->persistencia->update($this->parametros,$this->valores,$this->where)){
 					$this->mensaje->addMensaje("101","errorActualizar".$this->tablaAlias,'error');
 					
 				

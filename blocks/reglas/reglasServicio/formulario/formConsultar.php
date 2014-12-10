@@ -133,7 +133,10 @@ class FormularioConsultar {
     		return false;
     	}
     	   
-    	if(!is_array($this->listaElementos)) return false;
+    	if(!is_array($this->listaElementos)) {
+    		$this->mensaje->addMensaje("4000","errorLectura".ucfirst($this->objetoAlias),'information');
+    		return false;
+    	}
     	return true;
     }
     
@@ -442,14 +445,17 @@ class FormularioConsultar {
     	echo $this->formularioConsulta();
     	echo '</div>';
     	
-    	if(!$verifica){
-    		echo $this->mensaje->getLastMensaje();
-    		return false; 
-    	}
+    	
     	
     	//Muestra la tbla
     	echo '<div id="resultado">'; 
-    	   echo $this->dibujarTabla();
+
+    	if(!$verifica){
+    		echo $this->mensaje->getLastMensaje();
+    		return false;
+    	}
+    	
+    	echo $this->dibujarTabla();
     	echo '</div>';
     	
     	

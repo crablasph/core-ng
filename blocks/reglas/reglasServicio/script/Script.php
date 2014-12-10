@@ -8,6 +8,7 @@ $indice=0;
 $funcion[$indice++]="jquery.validationEngine.js";
 $funcion[$indice++]="jquery.validationEngine-es.js";
 $funcion[$indice++]="jquery.dataTables.js";
+$funcion[$indice++]="jquery-linedtextarea.js";
 
 
 

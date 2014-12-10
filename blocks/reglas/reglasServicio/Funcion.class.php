@@ -38,6 +38,13 @@ class Funcion {
     
     }
     
+    function evaluar($objetoId) {
+    
+    	include_once ($this->ruta . "funcion/evaluar.php");
+    
+    
+    }
+    
     
     function duplicar($objetoId) {
     
@@ -115,6 +122,9 @@ class Funcion {
 	        	case 'cambiarEstado':
 	        		$this->cambiarEstado($_REQUEST['objetoId']);
 	        		break;
+	        	case 'evaluar':
+	        		 $this->evaluar($_REQUEST['objetoId']);
+	        			break;
 	        	default:
 	        		default;
 	        	

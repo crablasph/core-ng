@@ -48,8 +48,8 @@ class Rango{
     private function validarEntero($valor = '',$rango = ''){
     	$intervalo = explode(",",$rango);
     	if(!$intervalo) return false;
-    	$minimo = $intervalo[0];
-    	$maximo = $intervalo[1];
+    	$minimo = (integer) $intervalo[0];
+    	$maximo = (integer) $intervalo[1];
     	if($valor<$minimo||$valor>$maximo) return false;
     	return true;
     }
@@ -57,8 +57,12 @@ class Rango{
     private function validarDoble($valor = '',$rango = ''){
     	$intervalo = explode(",",$rango);
     	if(!$intervalo) return false;
-    	$minimo = $intervalo[0];
-    	$maximo = $intervalo[1];
+    	
+    	$minimo = (double) $intervalo[0];
+    	if(strpos($intervalo[0],'.')!==false) $minimo = (double) str_replace(".",",",$intervalo[0]);
+    	$maximo = (double) $intervalo[1];
+    	if(strpos($intervalo[1],'.')!==false) $maximo = (double) str_replace(".",",",$intervalo[1]);
+    	
     	if($valor<$minimo||$valor>$maximo) return false;
     	return true;
     }

@@ -37,6 +37,7 @@ class FormularioCrear {
     private $Objetoduplicar;
     private $objetoEliminar;
     private $columnas;
+    private $operadores;
     private $listaParametros;
     private $listaAtributosParametros;
     
@@ -56,6 +57,7 @@ class FormularioCrear {
         $this->permiso = $this->cliente->getListaPermisos();
         $this->categoria = $this->cliente->getListaCategorias();
         $this->columnas = $this->cliente->getDatosColumnas();
+        $this->operadores = $this->cliente->getListaOperadores();
 
     }
     
@@ -127,17 +129,23 @@ class FormularioCrear {
     
     
     
-    private function getListaElementos(){
+    private function getListaElementos($nombre = '', $argumentos = ''){
     	
     	//determinar si en la variable request hay algo de aqui
     	//$this->atributosObjeto
     	//
-    	$this->determinarListaParametros();
+    	if($argumentos =='') $this->determinarListaParametros();
     	
-    	$metodo = "consultar".ucfirst($this->objetoAliasSingular);
-    	$argumentos =  $this->listaParametros;
+    	if($nombre ==''){
+    		$metodo = "consultar".ucfirst($this->objetoAliasSingular);
+    	}else{
+    		$metodo = "consultar".ucfirst($nombre);
+    	}
+    	if($argumentos ==''){
+    		$argumentos =  $this->listaParametros;
+    	}
     	
-    	if($this->metodoValidar=='actualizar'){
+    	if($this->metodoValidar=='actualizar'||$nombre!=''){
     		
     		try {
     			$this->listaElementos =  call_user_func_array(array($this->cliente , $metodo), $argumentos);
@@ -148,13 +156,15 @@ class FormularioCrear {
     		if(!is_array($this->listaElementos)) return false;
     		
     		
-    		
-    		foreach ($this->listaElementos as $elemento){
-    			foreach ($elemento as $a=>$b){
-    				$_REQUEST[$a] = $b;
-    			}
-    		
+    		if($nombre==''){
+    			foreach ($this->listaElementos as $elemento){
+    				foreach ($elemento as $a=>$b){
+    					$_REQUEST[$a] = $b;
+    				}
+    			
+    			}	
     		}
+    		
     	}
     	   
     	
@@ -248,9 +258,13 @@ class FormularioCrear {
     
     private function selectElemento($elemento='elemento', $blanco = false){
     	$cambio = '';
-    	if(strtolower($this->objetoAlias)=='variables'||strtolower($this->objetoAlias)=='funciones'){
+    	if(strtolower($this->objetoAlias)!='reglas'){
     		if($elemento=='tipo'){
     			$cambio = ' onchange="cambiarRango(\''.$elemento.'\')"';
+    		}
+    		
+    		if($elemento=='categoria'){
+    			$cambio = ' onchange="cambiarCategoria(\''.$elemento.'\')"';
     		}
     	}
     	
@@ -264,7 +278,7 @@ class FormularioCrear {
     	$textos = array();
     	$textos[0] = utf8_encode($this->lenguaje->getCadena ($elemento));
     	$textos[1] = utf8_encode($this->lenguaje->getCadena ($elemento."Titulo"));
-    	$cadena .= '<div  class="contenedorInput" >';
+    	$cadena .= '<div  class="contenedorInputBloque" >';
     	$cadena .= '<div style="float:left; width:150px;">';
     	$cadena .= '<label for="'.$textos[0].'">';
     	$cadena .= ucfirst($textos[0]);
@@ -296,7 +310,7 @@ class FormularioCrear {
     	$textos = array();
     	$textos[0] = utf8_encode($this->lenguaje->getCadena ($elemento));
     	$textos[1] = utf8_encode($this->lenguaje->getCadena ($elemento."Titulo"));
-    	$cadena .='<div class="contenedorInput" >';
+    	$cadena .='<div class="contenedorInputBloque" >';
     	$cadena .='<div style="float:left;width:150px; ">';
     	$cadena .= '<label for="'.$textos[0].'">';
     	$cadena .= ucfirst(strtolower($textos[0]));
@@ -317,14 +331,106 @@ class FormularioCrear {
     	$cadena .= '></input>';
     	$cadena .= '</div>';
     	
-    	
     	//input hidden codificado
     	if($codificada) {
     		$cadena.= '<input type="hidden" id="'.$elemento.'Codificado" name="'.$elemento.'Codificado" ';
-    		if(isset($_REQUEST[$elemento])) $cadena =' value="'.$_REQUEST[$elemento].'" ';
+    		if(isset($_REQUEST[$elemento])) $cadena .=' value="'.$_REQUEST[$elemento].'" ';
     		else $cadena .=' value="" ';
     		$cadena .=' >';
     	}
+    	return $cadena; 
+    }
+    
+    private function getVariablesListaDelTexto($texto=''){
+    	$metodo = 'getVariablesListaDelTexto';
+    	$argumentos =  array($texto);
+    	return   call_user_func_array(array($this->cliente , $metodo), $argumentos);
+    	 
+    }
+    
+    private function listasInput($regla = false){
+    	
+    	
+    	
+    	$cadena= '';
+    	$cadena.=' <div id="tabsListas">';
+    	$cadena.=' <ul>';
+    	$cadena.=' <li><a href="#tabs-operaciones">'.utf8_encode($this->lenguaje->getCadena ('operaciones')).'</a></li>';
+    	$cadena.=' <li><a href="#tabs-parametros">'.utf8_encode($this->lenguaje->getCadena ('parametros')).'</a></li>';
+    	$cadena.=' <li><a href="#tabs-variables">'.utf8_encode($this->lenguaje->getCadena ('variables')).'</a></li>';
+    	if($regla===true){
+    		$cadena.=' <li><a href="#tabs-funciones">'.utf8_encode($this->lenguaje->getCadena ('funciones')).'</a></li>';
+    	}
+    	$cadena.=' </ul>';
+    	
+    	
+    	//operaciones
+    	$cadena.=' <div class="tabOverflow" id="tabs-operaciones">';
+    	$cadena.=' <div >';
+    	
+    	foreach ($this->operadores as $operador){
+    		$cadena.=' <div onclick="insertarValorTextBox(\''.$operador['nombre'].'\')" class="elementoListaCalculadora"><a  title="'.$operador['alias'].'"  >'.$operador['nombre'].'</a></div>';
+    	}
+    	
+    	$cadena.=' </div>';
+    	$cadena.=' </div>';
+    	
+    	
+    	//parametros
+    	
+    	$cadena.=' <div class="tabOverflow" id="tabs-parametros">';
+    	$cadena.=' <div >';
+    	 if($this->getListaElementos('parametro',array('','','','','','',1))){
+    	 	foreach ($this->listaElementos as $elemento){
+    	 		$cadena.=' <div onclick="insertarValorTextBox(\'_'.$elemento['nombre'].'_\')" class="elementoListaCalculadora"><a  title="insertar '.$elemento['nombre'].'  " >'.$elemento['nombre'].'</a></div>';
+    	 	} 	
+    	 }
+    
+    	$cadena.=' </div>';
+    	$cadena.=' </div>';
+
+    	
+    	//variables
+    	 
+    	$cadena.=' <div class="tabOverflow" id="tabs-variables">';
+    	$cadena.=' <div >';
+    	if($this->getListaElementos('variable',array('','','','','','',1))){
+    		foreach ($this->listaElementos as $elemento){
+    			$cadena.=' <div onclick="insertarValorTextBox(\''.$elemento['nombre'].'\')" class="elementoListaCalculadora"><a  title="insertar '.$elemento['nombre'].'"  >'.$elemento['nombre'].'</a></div>';
+    		}
+    	}
+    	 
+    	
+    	$cadena.=' </div>';
+    	$cadena.=' </div>';
+    	 
+    	
+    	
+    	if($regla===true){
+    		//funciones
+    		
+    		$cadena.=' <div class="tabOverflow" id="tabs-funciones">';
+    		$cadena.=' <div >';
+    		if($this->getListaElementos('funcion',array('','','','','1'))){
+    			
+    			foreach ($this->listaElementos as $elemento){
+    				
+    				$v2 = $this->getVariablesListaDelTexto(base64_decode($elemento['valor']));
+    				
+    				$valorParametrosFuncion='';
+    				foreach ($v2 as $v) $valorParametrosFuncion.=$v[0].",";
+    				$valorParametrosFuncion = trim($valorParametrosFuncion, ",");
+    				$cadena.=' <div onclick="insertarValorTextBox(\''.$elemento['nombre'].'('.$valorParametrosFuncion.')\')" class="elementoListaCalculadora"><a  title="insertar '.$elemento['nombre'].'"  >'.$elemento['nombre'].'</a></div>';
+    			}
+    		}
+    		
+    		 
+    		$cadena.=' </div>';
+    		$cadena.=' </div>';
+    	}
+    	
+    	$cadena.=' </div>';
+    	
     	return $cadena; 
     }
     
@@ -335,15 +441,51 @@ class FormularioCrear {
     	$textos = array();
     	$textos[0] = utf8_encode($this->lenguaje->getCadena ($elemento));
     	$textos[1] = utf8_encode($this->lenguaje->getCadena ($elemento."Titulo"));
-    	$cadena .='<div class="contenedorInput" >';
+    	$cadena .='<div class="contenedorInputBloque" >';
+    	
+    	
     	$cadena .='<div style="float:left; width:150px;">';
     	$cadena .= '<label for="'.$textos[0].'">';
     	$cadena .= ucfirst(strtolower($textos[0]));
     	$cadena .= '</label>';
     	$cadena .= '<span style="white-space:pre;"> </span>';
     	$cadena .= '</div>';
+    	 
     	
-    	$cadena .= '<textarea rows="4" cols="50"  class="ui-corner-all ';
+    	if(strtolower($this->objetoAlias)=='reglas'&&$elemento=='valor'){
+    		$cadena .="<br>".$this->listasInput(true);
+    	}
+    	
+    	if(strtolower($this->objetoAlias)=='funciones'&&$elemento=='valor'){
+    		$cadena .="<br>".$this->listasInput(false);
+    	}
+    	
+    	
+    	$cadena .= ' ';
+    	if($elemento!='valor'&&strtolower($this->objetoAlias)!='reglas'&&strtolower($this->objetoAlias)!='funciones'){
+    		//echo "defecto".$elemento;
+    		$cadena .= '<div><textarea rows="4" cols="50" class="ui-corner-all ';
+    	}elseif ($elemento!='valor'&&strtolower($this->objetoAlias)=='reglas'){
+    		//echo "reglas".$elemento;
+    		$cadena .= '<div><textarea rows="4" cols="50" class="ui-corner-all ';
+    	}elseif ($elemento!='valor'&&strtolower($this->objetoAlias)=='funciones'){
+    		//echo "funciones".$elemento;
+    		$cadena .= '<div><textarea rows="4" cols="50" class="ui-corner-all ';
+    	}elseif($elemento=='valor'&&strtolower($this->objetoAlias)=='reglas'){
+    		//echo "valorReglas".$elemento;
+    		$cadena .= '<div class="contenedorValor" ><textarea rows="4" cols="50" class="contenedorValor ';
+    	}elseif($elemento=='valor'&&strtolower($this->objetoAlias)=='funciones'){
+    		//echo "valorFunciones".$elemento;
+    		$cadena .= '<div class="contenedorValor" ><textarea rows="4" cols="50" class="contenedorValor ';
+    	}elseif ($elemento=='valor'&&strtolower($this->objetoAlias)!='funciones'&&strtolower($this->objetoAlias)!='reglas'){
+    		$cadena .= '<div class="contenedorValor" ><textarea rows="4" cols="50" class="ui-corner-all ';
+    	}else $cadena .= '<div class="contenedorValor" ><textarea rows="4" cols="50" class="';
+    	
+    	//$cadena .= '<textarea rows="4" cols="50"  ';
+    	
+    	//if($elemento!='valor'&&strtolower($this->objetoAlias)!='reglas'&&strtolower($this->objetoAlias)!='funciones') $cadena .= 'class="ui-corner-all ';
+    	//else $cadena .= 'class="  contenedorValor  ';
+    	
     	if($requerido) $cadena .= ' validate[required] ';
     	$cadena .='" title="'.$textos[1].'" name="'.$elemento.'" id="'.$elemento.'"  placeholder="'.ucfirst($textos[0]).'" ';
     	
@@ -355,6 +497,7 @@ class FormularioCrear {
     	$cadena .=$valor;
     	 
     	$cadena .= '</textarea>';
+    	$cadena .= '</div>';
     	
     	//input hidden codificado
     	if($codificada) {
@@ -365,9 +508,7 @@ class FormularioCrear {
     	}
     	
     	$cadena .= '</div>';
-    	$cadena .= '<br>';
-    	$cadena .= '<br>';
-    	$cadena .= '<br>';
+    	
     	 
     	
     	
@@ -388,7 +529,7 @@ class FormularioCrear {
     	$texto[2] = utf8_encode($this->lenguaje->getCadena ('minimo'));
     	$texto[3] = utf8_encode($this->lenguaje->getCadena ('maximo'));
     	
-    	$cadena .='<div class="contenedorInput" >';
+    	$cadena .='<div class="contenedorInputBloque" >';
     	$cadena .='<div style="float:left; width:150px;">';
     	$cadena .= '<label for="'.$textos[0].'">';
     	$cadena .= ucfirst(strtolower($textos[0]));
@@ -481,6 +622,7 @@ class FormularioCrear {
     				$cadena .= $this->selectElemento($elemento[$nombre],$this->setBool($elemento[$requerido]));
     				break;
     			case 'textarea':
+    				
     				$cadena .= $this->textAreaElemento($elemento[$nombre],$this->setBool($elemento[$requerido]),$this->setBool($elemento[$codificado]));
     				break;
     			case 'rangeSlider':
