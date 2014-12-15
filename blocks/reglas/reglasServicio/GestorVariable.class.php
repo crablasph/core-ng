@@ -10,6 +10,8 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 }
 
 
+include_once ("Tipos.class.php");
+include_once ("Rango.class.php");
 include_once ("Mensaje.class.php");
 include_once ("Registrador.class.php");
 include_once ("GestorUsuariosComponentes.class.php");
@@ -53,6 +55,40 @@ class GestorVariable{
     	return true;
     }
     
+    private function getValorReal($valor = '',$tipo = ''){
+    	 
+    	$valor= base64_decode($valor);
+    	 
+    	if(!Tipos::validarTipo($valor,$tipo)){
+    		$this->mensaje->addMensaje("101","errorEntradaParametrosTipo",'error');
+    		return false;
+    	}
+    
+    	if(Tipos::validarTipo($valor,$tipo)) $valor = is_null(Tipos::evaluarTipo($valor,$tipo))?'nulo':base64_encode(Tipos::evaluarTipo($valor,$tipo)) ;
+    	if(strtolower(Tipos::getTipoAlias($tipo))=='porcentaje')
+    		$valor = base64_encode($valor*100);
+    	if(strtolower(Tipos::getTipoAlias($tipo))=='nulo')
+    		$valor = base64_encode('nulo');
+    	if(strtolower(Tipos::getTipoAlias($tipo))=='boleano')
+    		$valor = (string) $valor==''?base64_encode('0'):base64_encode(1);
+    	 
+    	return $valor;
+    }
+    
+    private function getRangoReal($rango = '',$tipo = ''){
+    
+    	$intervalo = explode(",",$rango);
+    	if(!$intervalo) return false;
+    	$resultadoLista =  array();
+    
+    	foreach ($intervalo as $valor){
+    		
+    		$resultadoLista[] = base64_decode($this->getValorReal(base64_encode($valor),$tipo));
+    	}
+	    
+    	return implode(',',$resultadoLista);
+    }
+    
     public function crearVariable($nombre ='',$descripcion='',$proceso='',$tipo = '',$rango='',$valor='',$estado=''){
     	
     	if(!$this->validarAcceso(0,1)) return false;
@@ -68,14 +104,25 @@ class GestorVariable{
     	if($descripcion!='')	$parametros['descripcion'] = $descripcion;
     	$parametros['proceso'] = $proceso;
     	$parametros['tipo'] = $tipo;
-    	$parametros['rango'] = $rango;
-    	$parametros['valor'] = $valor;
+    	
+    	$parametros['rango'] = $this->getRangoReal($rango,$tipo);
+    	
+    	$parametros['valor'] = $this->getValorReal($valor,$tipo);
+    	$valor = $parametros['valor'];
+    	
+    	if(!$parametros['valor']) return false;
+    	
+    	if(!Rango::validarRango(base64_decode($valor),$tipo,$rango)){
+    		$this->mensaje->addMensaje("101","errorEntradaRangoTipo",'error');
+    		return false;;
+    	}
+    	
     	$parametros['estado'] = $estado;
     	
     	
     	$ejecutar = $this->registrador->ejecutar(self::ID_OBJETO,$parametros,1);
-    	   	if(!$ejecutar){
-    		
+    	
+    	if(!$ejecutar){	
     		$this->mensaje = &$this->registrador->mensaje;
     		return false;
     	}
@@ -95,9 +142,35 @@ class GestorVariable{
     	if($nombre!='')	$parametros['nombre'] = $nombre; 
     	if($descripcion!='')	$parametros['descripcion'] = $descripcion;
     	if($proceso!='')	$parametros['proceso'] = $proceso;
-    	if($rango!='')$parametros['rango'] = $rango;
+    	
+    	
     	if($tipo!='')	$parametros['tipo'] = $tipo;
-    	if($valor!='')	$parametros['valor'] = $valor;
+    	else{
+    		//consultar tipo
+    		$consulta = $this->registrador->ejecutar(self::ID_OBJETO,array($id),2);
+    		$tipo = $consulta[0]['tipo'];
+    	}
+    	
+    	if($rango!='')$parametros['rango'] = $this->getRangoReal($rango,$tipo);
+    	else{
+    		$rango = $this->getRangoReal($consulta[0]['rango'],$tipo);
+    	}
+    	 
+    	if($valor!=''){
+    		$parametros['valor'] = $this->getValorReal($valor,$tipo);
+    		$valor = $parametros['valor'];
+    		if(!$parametros['valor']) return false;
+    		 
+    	}else{
+    		$valor = $consulta[0]['valor'];
+    	}
+    	
+        if(!Rango::validarRango(base64_decode($valor),$tipo,$rango)){
+    		$this->mensaje->addMensaje("101","errorEntradaRangoTipo",'error');
+    		return false;;
+    	}
+    	 
+    	
     	if($estado!='')	$parametros['estado'] = $estado;
     	$parametros['id'] = $id;
     	 
@@ -175,13 +248,14 @@ class GestorVariable{
     
     	 
     
-    	if(!$this->registrador->ejecutar(self::ID_OBJETO,$parametros,4)){
-    
+    $ejecutar = $this->registrador->ejecutar(self::ID_OBJETO,$parametros,4);
+     	if(!$ejecutar){
+    		
     		$this->mensaje = &$this->registrador->mensaje;
     		return false;
     	}
-    
-    	return true;
+    	
+    	return $ejecutar;
     
     }
     

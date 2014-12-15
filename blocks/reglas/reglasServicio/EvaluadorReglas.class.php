@@ -30,11 +30,14 @@ class EvaluadorReglas{
     private $usuario;
     private $listaOperadorLogico;
     private $listaOperadorComparacion;
+    private $pasosEvaluacionSentenciasRegla;
     
     function __construct(){
     	$this->evaluador = new \EvalMath();
     	$this->mensaje = new Mensaje();
     	$this->usuario = $_REQUEST['usuario'];
+    	
+    	//esto debe cambairse por los valores dela bd
     	$this->listaOperadorLogico = array('&','|','^','~');
     	$this->listaOperadorComparacion = array('===','!==','==','<>','>=','<=','>','<');
     }
@@ -100,6 +103,49 @@ class EvaluadorReglas{
     	 
     }
     
+    private function evaluarFuncionSoapProxy($valor = '',$ruta = ''){
+    	 
+    	try {
+    		$options = array(
+    
+    				'exception'=>true,
+    				'trace'=>1,
+    				'login' => $this->usuario,
+    				'password' => '123456',
+    				'cache_wsdl'=>WSDL_CACHE_NONE
+    		);
+    
+    		$client = new SoapClient($ruta, $options);
+    
+    		//procesa Valor para se llamado como metodo
+    
+    		$argumentos =  array();
+    
+    		$pp = strpos ($valor,'(');
+    		$pl = strrpos ($valor,')');
+    		$longitud = $pl - $pp;
+    		$cadenaArgumentos = substr($valor,$pp,$longitud+1);
+    		$metodo = str_replace ($cadenaArgumentos,'',$valor);
+    
+    		$argumentos =  explode(",",$cadenaArgumentos);
+    
+    		if(!is_array($argumentos)) $argumentos = array($cadenaArgumentos);
+    
+    		$ejecucion = $client->__soapCall(  $metodo , $argumentos );
+    
+    		return $ejecucion;
+    		 
+    	} catch (\Exception $e) {
+    		$this->mensaje->addMensaje("1000","errorSoapCall",'error');
+    
+    		return false;
+    
+    
+    	}
+    	 
+    	return false;
+    
+    }
     
     
     private function procesarOperadoresComparacion($valor=''){
@@ -109,12 +155,12 @@ class EvaluadorReglas{
     		if(strpos($valor,$operador)!==false){
     			$lista =  explode($operador,$valor);
     			$izquierda = trim($lista[0]);
-    			if(Tipos::validarFecha($izquierda)){
+    			if(Tipos::validar_fecha($izquierda)){
     				$izquierda = \DateTime::createFromFormat('d/m/Y', $izquierda);
                 	
     			}
     			$derecha = trim($lista[1]);
-    			if(Tipos::validarFecha($derecha)){
+    			if(Tipos::validar_fecha($derecha)){
     				$derecha = \DateTime::createFromFormat('d/m/Y', $derecha);
     			}
     			
@@ -155,13 +201,15 @@ class EvaluadorReglas{
     
     private function evaluarValor($valor = '',$tipo=''){
     	
-    	if(Tipos::validarFecha($valor)){
-    		return $valor ;//= \DateTime::createFromFormat('d/m/Y', $valor);
-    	}
+
     	
-    	if(strtolower(Tipos::getTipoNombre($tipo))=='percent') $valor = $valor/100;
+    	if(strpos($valor,')')!==false) return @Tipos::evaluarTipo($this->evaluador->e($valor),$tipo);
     	
-    	return @$this->evaluador->e($valor);
+    	if($tipo=='') return @$this->evaluador->e($valor);
+    	
+    	if(Tipos::validarTipo($valor,$tipo)) return Tipos::evaluarTipo($valor,$tipo); 
+    	
+    	
     }
     
     private function evaluar($valor = '', $categoria = '',$ruta = '',$tipo=''){
@@ -177,6 +225,9 @@ class EvaluadorReglas{
     		case '3':
     			return $this->evaluarFuncionSoap($valor,$ruta);
     			break;
+    		case '4':
+    			return $this->evaluarFuncionSoapProxy($valor,$ruta);
+    			break;
     		default:
     			$valor =  $this->procesarOperadoresComparacion($valor);
     			return $this->evaluarValor($valor,$tipo);
@@ -190,7 +241,7 @@ class EvaluadorReglas{
     }
     
     public function evaluarParametroTexto($valor = '', $tipo = ''){
-    	if(Tipos::evaluarTipo($valor,$tipo))  	return $valor;
+    	if(Tipos::validarTipo($valor,$tipo))  	return is_null(Tipos::evaluarTipo($valor,$tipo))?'nulo':Tipos::evaluarTipo($valor,$tipo);
     	return false;
     	
     }
@@ -200,6 +251,7 @@ class EvaluadorReglas{
     	if(!is_array($parametro)) return false;
     	$valor = base64_decode($parametro[0]['valor']);
     	$tipo = $parametro[0]['tipo'];
+    	
     	return $this->evaluarParametroTexto($valor, $tipo);
     	 
     }
@@ -217,8 +269,8 @@ class EvaluadorReglas{
     }
     
     public function evaluarVariableTexto($valor = '', $tipo = '' , $rango = ''){
-    	if(Tipos::evaluarTipo($valor,$tipo)&&Rango::evaluarRango($valor , $tipo , $rango))
-    		  	return $this->evaluar($valor);
+    	if(Tipos::validarTipo($valor,$tipo)&&Rango::validarRango($valor , $tipo , $rango))
+    		return is_null(Tipos::evaluarTipo($valor,$tipo))?'nulo':Tipos::evaluarTipo($valor,$tipo);
     	return false;
     	
     }
@@ -267,7 +319,7 @@ class EvaluadorReglas{
 
     		foreach ($valores as $valor){
     			foreach ($listaVariables as $variable){
-    				if($variable['nombre']==$valor[0]&&Rango::evaluarRango($valor[1],$variable['tipo'],$variable['rango']))$cadena = str_replace($valor[0], $this->evaluarValor($valor[1],$variable['tipo']), $cadena);
+    				if($variable['nombre']==$valor[0]&&Rango::validarRango($valor[1],$variable['tipo'],$variable['rango']))$cadena = str_replace($valor[0], $this->evaluarValor($valor[1],$variable['tipo']), $cadena);
     				
     			}
     		}
@@ -408,12 +460,13 @@ class EvaluadorReglas{
     	}
     	
     	//3. Evalua toda la funcion
-    	$valor = $this->evaluar($cadena,$categoria,$ruta);
+    	$valor = $this->evaluar($cadena,$categoria,$ruta,$tipo);
     	
     	if(!$valor) return $this->getErrorEvaluador();
     	
+    	
     	//4. valida el tipo
-    	if(Tipos::evaluarTipo($valor,$tipo)&&Rango::evaluarRango($valor , $tipo , $rango))  	return $valor;
+    	if(@Tipos::validarTipo($valor,$tipo)&&@Rango::validarRango($valor , $tipo , $rango))  	return (is_array($valor)||is_object($valor))?serialize($valor):$valor;
     	
     	return false;
     	 
@@ -612,44 +665,56 @@ class EvaluadorReglas{
     	$listaResultados = array();
         $cadenas =  array();
         $valorez =  array();
+        $pasosSentencias =  array();
     	if(is_array($listaSentencias)){
     		
     		foreach ($listaSentencias as $sentencia){
                  
     			$operador = $sentencia[0];
     			$cadena = trim($sentencia[1]);
+    			$cadenas[]=$cadena;
     			
     			//1. Procesa los parametros y los Reemplaza
     			$cadena = $this->procesarParametros($cadena);
-    			
+    			$cadenas[]=$cadena;
     			//2. Reemplaza las variables y las evalua
     			if(is_array($valores)){
     				$cadena = $this->procesarVariables($cadena , $valores );
+    				$cadenas[]=$cadena;
     			}
     			
     			//3. Reemplaza funciones y las evalua
     			$cadena = $this->procesarFunciones($cadena);
-    			//$cadenas[]=$cadena;
+    			$cadenas[]=$cadena;
+    			
     			//4. Evalua toda la regla
     			$valor = $this->evaluar($cadena);
     			//$valorez []= $valor;
     			$valor =  (bool) $valor;
+    			$cadenas[]=$valor?'verdadero':'falso';
     			
-    		
-    			if(Tipos::evaluarTipo($valor,$tipoRegla))  $listaResultados[] = array($operador,$valor)	;//return $valor;
+    			$pasosSentencias[] = $cadenas;
+    			$cadenas =  array();
+    			if(Tipos::validarTipo($valor,$tipoRegla))  $listaResultados[] = array($operador,$valor)	;//return $valor;
     			
     			
     		}
+    		$this->pasosEvaluacionSentenciasRegla = $pasosSentencias;
     		//return $this->procesarSentencias($valorRegla);
     		//return 100 == 100;
     		//return $this->procesarOperadoresComparacion('100 === 100');
     		//return array($cadenas,$listaResultados);//,$cadenas,$this->procesarFunciones('funcion1(66)'));
-    		return  $this->evaluarResultados($listaResultados);
+    		//return  $this->evaluarResultados($listaResultados);
+    		return  array($this->evaluarResultados($listaResultados),$pasosSentencias,$listaResultados);
     		
     	}
     	    	 
     	 return false;
     	
+    }
+    
+    public function getPasosCalculoRegla(){
+    	return $this->pasosEvaluacionSentenciasRegla;
     }
     
         
@@ -658,3 +723,6 @@ class EvaluadorReglas{
 }
 
 ?>
+
+
+

@@ -133,7 +133,7 @@ class Duplicar {
 	    		$accion =  false;
 	    	}
 	    	$resultados []= array($parametro, $accion);
-	    	$cadenaMensaje .= 'id Elemento '.$parametro;
+	    	$cadenaMensaje .= 'id Elemento '.$parametro." crea ".$accion;
 	    	if(!$accion) $cadenaMensaje .= ' <span style="color=red;">FALLO</span>';
 	    	else $cadenaMensaje .= ' <span style="color=green;">EXITO</span>';
 	    	$cadenaMensaje .= '<br>';

@@ -29,6 +29,7 @@ $(function() {
 	{ hide: { duration: 800 } }
 	);
 });
+
 //Funcion para insertar despues del cursor en un text area
 //fuente http://jsfiddle.net/rmDzu/2/
 jQuery.fn.extend({
@@ -58,6 +59,21 @@ jQuery.fn.extend({
 	  });
 	}
 	});
+//http://jquery-howto.blogspot.com/2013/08/jquery-form-reset.html
+$.fn.clearForm = function() {
+	  return this.each(function() {
+	    var type = this.type, tag = this.tagName.toLowerCase();
+	    if (tag == 'form')
+	      return $(':input',this).clearForm();
+	    if (type == 'text' || type == 'password' || tag == 'textarea')
+	      this.value = '';
+	    else if (type == 'checkbox' || type == 'radio')
+	      this.checked = false;
+	    else if (tag == 'select')
+	      this.selectedIndex = -1;
+	  });
+	};
+
 
 
 $(function() {
@@ -71,25 +87,31 @@ $(function() {
 	$( "#consultar" ).button({
 	      text: false,
 	      icons: {
-	        primary: "ui-icon-circle-zoomin"
+	      primary: "ui-icon-circle-zoomin"
 	      }
 	    }).click(function() {
-	    	if($('#objetoId').val()!=0) 	getFormularioConsulta(true);
+	    	if($('#objetoId').val()!=0){
+	    		getFormularioConsulta(true);
+	    		cambiarVisibilidadBusqueda();
+	    	}
 	    });
 	
 	$( "#crear" ).button({
 	      text: false,
 	      icons: {
-	        primary: "ui-icon-circle-plus"
+	      primary: "ui-icon-circle-plus"
 	      }
 	    }).click(function() {
-	    	if($('#objetoId').val()!=0) 	getFormularioCreacionEdicion(true);
+	    	if($('#objetoId').val()!=0){
+	    		$('#selectedItems').val('');
+	    		getFormularioCreacionEdicion(true);
+	    	}
 	    });;
 	
 	$( "#editar" ).button({
 	      text: false,
 	      icons: {
-	        primary: "ui-icon-pencil"
+	      primary: "ui-icon-pencil"
 	      }
 	    }).click(function() {
 	    	if($('#objetoId').val()!=0&&$('#selectedItems').val()!='') 	getFormularioCreacionEdicion(false);

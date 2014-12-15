@@ -1,0 +1,11 @@
+1. agregar al porcentaje tipo, en valor signo porcentaje
+**** segun el ti. ok
+2. validar los tipos en los valores antes de guardar., rangos.ok
+3. cuando se duplique quede en estado creado. ok
+4. en proceso carga lista de una fuente externa. muestra el nombre.
+5. ocultar el buscar, por defecto oculto con. ok
+6. boton para limpiar formulario de busqueda. reiniciar. ok
+7. documentar el alcance del servicio SOAP como tipo en funcion. falta
+8. debe poderse llamar funciones dentro de funciones. ok
+9. la presentacion de operaciones. debe estar agrupada en 5 columnas, funciones, variables, etc. con cuadritos.ok
+10. agregar pasos de calculo regla.ok

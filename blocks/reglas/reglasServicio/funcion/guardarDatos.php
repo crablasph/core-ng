@@ -157,7 +157,7 @@ class GuardarDatos {
 	    	
 	    	
 	    	$cadenaMensaje = '';
-	    	if(!$accion) $cadenaMensaje = $this->lenguaje->getCadena ( $this->metodoAccion."AccionFallo" );
+	    	if(!$accion||@strpos('error',strtolower($accion))!==false) $cadenaMensaje = $this->lenguaje->getCadena ( $this->metodoAccion."AccionFallo" ).$accion;
 	    	else {
 	    		$cadenaMensaje = $this->lenguaje->getCadena ( $this->metodoAccion."Accion" );
 	    		

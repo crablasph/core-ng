@@ -100,11 +100,14 @@ class Evaluar {
     
     	if(!is_array($this->atributosObjeto)) return false;
     	return true;
+    	
     }
     
     private function setBool($valor = ''){
+    	
     	if($valor=='t') return true;
     	return false;
+    	
     }
     
     public function evaluar(){
@@ -130,9 +133,11 @@ class Evaluar {
     		$argumentos =  array($parametro);
     		
     		$accion =  call_user_func_array(array($this->cliente , $metodo), $argumentos);
-    		$cadenaMensaje .= $accion;
+    		
+    		$cadenaMensaje .= !$accion?'falso':(string) $accion;
     		$cadenaMensaje .= '<br>';
     		$this->mensaje->addMensaje('2001',":".$cadenaMensaje,'information');
+    		
     		echo $this->mensaje->getLastMensaje();
     		return true;
     	}
@@ -181,8 +186,7 @@ class Evaluar {
     		$argumentos =  array($parametro,$variablesParametros[0][1]);
     		
     		$accion =  call_user_func_array(array($this->cliente , $metodo), $argumentos);
-    		if(!$accion) $cadenaMensaje .='falso';
-    		else $cadenaMensaje .= $accion;
+    		$cadenaMensaje .= !$accion?'falso':(string) $accion;
     		$cadenaMensaje .= '<br>';
     		
     		$this->mensaje->addMensaje('2001',":".$cadenaMensaje,'information');
@@ -235,8 +239,47 @@ class Evaluar {
     		$argumentos =  array($parametro,$variablesParametros);
     	    
     		$accion =  call_user_func_array(array($this->cliente , $metodo), $argumentos);
-    		if(!$accion) $cadenaMensaje .='falso';
-    		else $cadenaMensaje .=  is_bool($accion)?'verdadero':$accion;
+    		
+    		$pasos = '';
+    		$conteoPasos =  0;
+    		if(strtolower($this->objetoAliasSingular)=='regla') {
+    			
+    			$pasos .= $accion[0]?'verdadero':'falso';
+    			$pasos .= '<br><br>';
+    			//$cadenaMensaje .= serialize($accion[0]);
+    			foreach ($accion[1] as $act){
+    				$conteoPasos++;
+    				$pasos .="Sentencia ".$conteoPasos.".<br>";
+    				foreach ($act as $elemento){
+    					$pasos .= $elemento."<br>";
+    				}
+    				$pasos .= "<br>";
+    				
+    			}
+    			
+    			$pasos .= "Final:<br>";
+    			foreach ($accion[2] as $act){
+    				$valorr = $act[1]?'verdadero':'falso';
+    				$operadorr = (string) "".$act[0]."";
+    				$pasos .= $operadorr." ".$valorr." ";
+    				
+    				
+    			}
+    			
+    			$res = $accion[0]?'verdadero':'falso';;
+    			$pasos .= "= ".$res;
+    			$pasos .= "<br>";
+    			
+    			$cadenaMensaje .= $pasos;
+    			
+    		}else{
+    			
+    			$cadenaMensaje .= (!$accion?'falso': ($accion===true?'verdadero':'falso'));
+    		}
+    		
+    		if(strtolower($this->objetoAliasSingular)=='funcion') $cadenaMensaje .= !$accion?'falso':(string) $accion;
+    		
+    		
     		
     		
     		$cadenaMensaje .= '<br>';

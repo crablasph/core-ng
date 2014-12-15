@@ -62,6 +62,7 @@ $evaluar = $url.$cadena6;
         	if(idObjeto!=0){
         		$('#objetoId').val(idObjeto);
         		$('#objetoSeleccionado').html('<span class="ui-button-text">'+aliasObjeto+'</span>');
+        		$('#selectedItems').val('');
         		getFormularioConsulta(true);
             }
         	
@@ -105,7 +106,7 @@ $evaluar = $url.$cadena6;
 			var validar =  false;
 			if($("#formVariablesEvaluar").length>0){
 				data += "&"+ $( "#formVariablesEvaluar" ).serialize();
-			
+				
 				validar= true;
 				}
         	
@@ -128,6 +129,7 @@ $evaluar = $url.$cadena6;
 		                if(jresp.indexOf('formVariablesEvaluar')>0){
 		                	div.innerHTML = '';
 		                	$(jresp).dialog();
+		                	
 		                }else {
 		                	$(".ui-dialog-content").dialog('destroy').remove();
 			                getFormularioConsulta(true, jresp);
@@ -187,10 +189,14 @@ $evaluar = $url.$cadena6;
 			            data:data,
 			            dataType: "html",
 			            success: function(jresp){
-			                
-			            	getFormularioConsulta(true, jresp);
-			            	$('#selectedItems').val('');
+			            	if(jresp.indexOf('Error')>0){
+			                	div.innerHTML = '';
+			                	$(jresp).dialog();
+			                }else {
+			            	 getFormularioConsulta(true, jresp);
+			            	 $('#selectedItems').val('');
 					       }
+			            }
 			        });
         	}
         	
@@ -221,12 +227,15 @@ $evaluar = $url.$cadena6;
 			  			 div.innerHTML=mensaje;
 			  			setTimeout(function() {
 			  		        $("#divMensaje").hide('drop', {}, 500)
-			  		    }, 5000);
+			  		    }, 20000);
 			  	        goToByScroll($("#divMensaje").attr("id"));
 		  			}
 		  			else div.innerHTML="";
 		  			var elemento= 'fecha_registro';
 		  			activarRangoFecha(elemento);
+		  			$("button").button().click(function(event) {
+                		event.preventDefault();
+                	});
 			       }
 	        });
 
@@ -261,34 +270,25 @@ $evaluar = $url.$cadena6;
 				  			 div.innerHTML=mensaje;
 				  			setTimeout(function() {
 				  		        $("#divMensaje").hide('drop', {}, 500)
-				  		    }, 5000);
+				  		    }, 20000);
 			  			}
 			  			else div.innerHTML="";
-			  			if($( "#tipo option:selected" ).text().toLowerCase()=='fecha'){
-			  				  alternarInput('valor','text');
-					    	  activarFechaValor();
-					    	  activarRangoFecha('rango');
-					    	  	
-			  			}else if($( "#tipo option:selected" ).text().toLowerCase()=='boleano'&&$( "#objetoId" ).val()!=4&&$( "#objetoId" ).val()!=3){
-			  				  cambiarRango('');
-			  				  alternarInput('valor','boleano');
-				  			
-			  			}else if($( "#tipo option:selected" ).text().toLowerCase()=='boleano'&&$( "#objetoId" ).val()==3){
-			  				cambiarRango('');
-			  			}else if($( "#tipo option:selected" ).text().toLowerCase()=='porcentaje'){
-			  				
-			  				alternarInput('valor','text');
-			  			}
-
+			  			
+			  			
+			  			if($( "#categoria").length>0)cambiarCategoria('');
 			  			if($( "#tabsListas").length>0){
 				  			$( "#tabsListas").tabs();
+				  			 crearBotonesCalculadora();
 				  			//$( "#tabsListas" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
 				  		    //$( "#tabsListas li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
 				       }
+			  			cambiarRango('');
+			  			$("button").button().click(function(event) {
+	                		event.preventDefault();
+	                	});
 
-			  			if($( "#categoria").length>0){
-			  				cambiarCategoria('');
-					  			}
+			  			
+
 			  			
 		            }
 		        });
@@ -403,7 +403,9 @@ $evaluar = $url.$cadena6;
 
 	function cambiarCategoria(elemento){
 		elemento=  'ruta';
-		$('#'+elemento).val('');
+
+		if($( "#categoria").length==0) return false;
+		
 		$('#'+elemento).show();
 		switch($( "#categoria option:selected" ).text().toLowerCase()){
 		case 'interna':
@@ -416,15 +418,36 @@ $evaluar = $url.$cadena6;
 		codificarValor('ruta');
 	}
 
+	function cambiarClaseValidacion(idObjeto , valor){
+		
+		var objetosNo =  [3,4];
+		var objetosWork =  parseInt($( "#objetoId" ).val());
+		 if(idObjeto=='valor'&&objetosNo.indexOf( objetosWork)>=0) return false;
+	     if($( "#"+idObjeto+"" ).length==0) return false;
+	      var listaClass =  $( "#"+idObjeto+"" ).attr('class').split(' ');
+	      var claseElegida = '';
+	      var valorABuscar = 'validate';
+	      valor =  valor.replace(/ /g,'');
+	      for(i=0;i<listaClass.length;i++){
+	    	  if(listaClass[i].search(valorABuscar)>=0) claseElegida = listaClass[i];
+	    	  
+		      }  
+          
+	      $( "#"+idObjeto+"").removeClass(claseElegida).addClass(valor);
+	 
+	}
+
 	function cambiarRango(elemento){
 		      
 		      elemento = 'rango';
 		      
+		      var valorInicial = $( "#valor" ).val();
 		      desactivarRangoFecha(elemento);
 		      $('#min'+toTitleCase(elemento)).removeAttr('disabled');
 		      $('#max'+toTitleCase(elemento)).removeAttr('disabled');
 		      desactivarFechaValor();
-		      alternarInput('valor','textarea'); 
+		      alternarInput('valor','textarea');
+		      
 		      switch($( "#tipo option:selected" ).text().toLowerCase()){
 			      case 'boleano':
 
@@ -432,10 +455,9 @@ $evaluar = $url.$cadena6;
 			    	  var maximo = 1;
 			    	  var cadena = minimo + "," + maximo; 
 
-			    	  if($( "#objetoId" ).val()!=4&&$( "#objetoId" ).val()!=3){
-				    	   alternarInput('valor','boleano');
-			    	  }
-			    	  if($('#'+elemento).length==0) return false;
+			    	  
+			    	  alternarInput('valor','boleano');
+			    	  
 			    	   
 			    	  $('#'+elemento).val(cadena);
 			    	  $('#'+elemento).hide();
@@ -443,18 +465,18 @@ $evaluar = $url.$cadena6;
 			    	  
 			    	  $('#min'+toTitleCase(elemento)).hide();
 			    	  $('#max'+toTitleCase(elemento)).hide();
+			    	  cambiarClaseValidacion('valor' , 'validate[required,custom[flotante]]');
+			    	  cambiarClaseValidacion('min'+toTitleCase(elemento) , 'validate[required,custom[integer]]');
+			    	  cambiarClaseValidacion('max'+toTitleCase(elemento) , 'validate[required,custom[integer]]');
 			    	  
 			    	  break;
 			      case 'entero':
 
-			    	  $('#min'+toTitleCase(elemento)).val('-500');
-			    	  $('#max'+toTitleCase(elemento)).val('500');
-
-			    	  
 			    	  var minimo = $('#min'+toTitleCase(elemento)).val();
 			    	  var maximo = $('#max'+toTitleCase(elemento)).val();;
 			    	  var cadena = minimo + "," + maximo;
 			    	  $('#'+elemento).val(cadena);
+			    	  
 				      
 			    	  $('#min'+toTitleCase(elemento)).attr("placeholder", "ej:-1000");
 			    	  $('#max'+toTitleCase(elemento)).attr("placeholder", "ej:1000");
@@ -462,12 +484,11 @@ $evaluar = $url.$cadena6;
 			    	  $('#'+elemento).hide();
 			    	  $('#min'+toTitleCase(elemento)).show();
 			    	  $('#max'+toTitleCase(elemento)).show();
+			    	  cambiarClaseValidacion('valor' , 'validate[required,custom[flotante]]');
+			    	  cambiarClaseValidacion('min'+toTitleCase(elemento) , 'validate[required,custom[integer]]');
+			    	  cambiarClaseValidacion('max'+toTitleCase(elemento) , 'validate[required,custom[integer]]');
 			    	  break;
-			      case 'doble':
-
-			    	  $('#min'+toTitleCase(elemento)).val('-1000.45');
-			    	  $('#max'+toTitleCase(elemento)).val('100.1');
-			    	  
+			      case 'doble':			    	  
 
 			    	  var minimo = $('#min'+toTitleCase(elemento)).val();
 			    	  var maximo = $('#max'+toTitleCase(elemento)).val();;
@@ -481,12 +502,11 @@ $evaluar = $url.$cadena6;
 			    	  $('#'+elemento).hide();
 			    	  $('#min'+toTitleCase(elemento)).show();
 			    	  $('#max'+toTitleCase(elemento)).show();
+			    	  cambiarClaseValidacion('valor' , 'validate[required,custom[flotante]]');
+			    	  cambiarClaseValidacion('min'+toTitleCase(elemento) , 'validate[required,custom[flotante]]');
+			    	  cambiarClaseValidacion('max'+toTitleCase(elemento) , 'validate[required,custom[flotante]]');
 			    	  break;
-			      case 'porcentaje':
-
-			    	  $('#min'+toTitleCase(elemento)).val(0);
-			    	  $('#max'+toTitleCase(elemento)).val(100);
-			    	  
+			      case 'porcentaje':			    	  
 			    	  
 			    	  var minimo = $('#min'+toTitleCase(elemento)).val();
 			    	  var maximo = $('#max'+toTitleCase(elemento)).val();;
@@ -500,7 +520,9 @@ $evaluar = $url.$cadena6;
 			    	  $('#'+elemento).hide();
 			    	  $('#min'+toTitleCase(elemento)).show();
 			    	  $('#max'+toTitleCase(elemento)).show();
-			    	  
+			    	  cambiarClaseValidacion('valor' , 'validate[required,custom[flotante]]');
+			    	  cambiarClaseValidacion('min'+toTitleCase(elemento) , 'validate[required,custom[flotante]]');
+			    	  cambiarClaseValidacion('max'+toTitleCase(elemento) , 'validate[required,custom[flotante]]');
 				      break;
 			      case 'fecha':
 			    	  if($( "#objetoId" ).val()!=4&&$( "#objetoId" ).val()!=3){
@@ -517,9 +539,6 @@ $evaluar = $url.$cadena6;
 			    	  $('#min'+toTitleCase(elemento)).attr("placeholder", 'ej:'+fecha);
 			    	  $('#max'+toTitleCase(elemento)).attr("placeholder", 'ej:1/01/2018');
 
-			    	  $('#min'+toTitleCase(elemento)).val(fecha);
-			    	  $('#max'+toTitleCase(elemento)).val('1/01/2016');
-			    	  
 
 			    	  var minimo = $('#min'+toTitleCase(elemento)).val();
 			    	  var maximo = $('#max'+toTitleCase(elemento)).val();;
@@ -532,7 +551,9 @@ $evaluar = $url.$cadena6;
 			    	  $('#min'+toTitleCase(elemento)).show();
 			    	  $('#max'+toTitleCase(elemento)).show();
                       
-			    	  
+			    	  cambiarClaseValidacion('valor' , 'validate[required,custom[date]]');
+			    	  cambiarClaseValidacion('min'+toTitleCase(elemento) , 'validate[required,custom[date]]');
+			    	  cambiarClaseValidacion('max'+toTitleCase(elemento) , 'validate[required,custom[date]]');
 			    	  activarRangoFecha(elemento);
 
 				      
@@ -551,6 +572,9 @@ $evaluar = $url.$cadena6;
 			    	  $('#min'+toTitleCase(elemento)).hide();
 			    	  $('#max'+toTitleCase(elemento)).hide();
 			    	  $('#'+elemento).show();
+			    	  cambiarClaseValidacion('valor' , 'validate[required]');
+			    	  cambiarClaseValidacion('min'+toTitleCase(elemento) , 'validate[required]');
+			    	  cambiarClaseValidacion('max'+toTitleCase(elemento) , 'validate[required]');
 			    	  break;
 			      case 'lista':
 
@@ -565,6 +589,9 @@ $evaluar = $url.$cadena6;
 			    	  $('#min'+toTitleCase(elemento)).hide();
 			    	  $('#max'+toTitleCase(elemento)).hide();
 			    	  $('#'+elemento).show();
+			    	  cambiarClaseValidacion('valor' , 'validate[required]');
+			    	  cambiarClaseValidacion('min'+toTitleCase(elemento) , 'validate[required]');
+			    	  cambiarClaseValidacion('max'+toTitleCase(elemento) , 'validate[required]');
 			    	  break;
 			      case 'nulo':
 			    	  var cadena = 'null';
@@ -573,7 +600,9 @@ $evaluar = $url.$cadena6;
 			    	  $('#min'+toTitleCase(elemento)).hide();
 			    	  $('#max'+toTitleCase(elemento)).hide();
 			    	  $('#'+elemento).hide();
-			    	  
+			    	  cambiarClaseValidacion('valor' , 'validate[required]');
+			    	  cambiarClaseValidacion('min'+toTitleCase(elemento) , 'validate[required]');
+			    	  cambiarClaseValidacion('max'+toTitleCase(elemento) , 'validate[required]');
 				      break;
 				  default:
 				      $('#'+elemento).hide();
@@ -582,12 +611,19 @@ $evaluar = $url.$cadena6;
 			    	  
 					      break;
 			      }
+
+		      $( "#valor" ).val(valorInicial);
 		}
 
 	function alternarInput(elemento,opcion){
 		var select = $("#"+elemento);
 
-
+        
+		var objetosNo =  [3,4];
+		var objetosWork =  parseInt($( "#objetoId" ).val());
+		
+		 if(elemento=='valor'&&objetosNo.indexOf( objetosWork)>=0) return false;
+		
 		var attributes = $("#"+elemento).prop("attributes");
         var cadenaAtributos = '';
         $valor = '';
@@ -765,6 +801,29 @@ $evaluar = $url.$cadena6;
 	            elem.setSelectionRange(caretPos, caretPos);
 	        }
 	    }
+	}
+
+	function cambiarVisibilidadBusqueda(){
+		$('#contenedorBuscador').toggle();
+		$('#botones').toggle();
+	}
+
+	function crearBotonesCalculadora(){
+		$( ".elementoListaCalculadora" ).each(function( index ) {
+			  $( this ).button() ;
+			});
+	}
+
+	function formularioReset(elemento){
+		$('#'+elemento)[0].reset();
+		cambiarCategoria('categoria');
+		cambiarRango('tipo');
+	}
+
+	function formularioClean(elemento){
+		$('#'+elemento).clearForm()
+		cambiarCategoria('categoria');
+		cambiarRango('tipo');
 	}
 		
 

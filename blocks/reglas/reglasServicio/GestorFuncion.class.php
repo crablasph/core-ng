@@ -9,6 +9,8 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
     exit ();
 }
 
+include_once ("Tipos.class.php");
+include_once ("Rango.class.php");
 
 include_once ("Mensaje.class.php");
 include_once ("Registrador.class.php");
@@ -34,6 +36,41 @@ class GestorFuncion{
     	$this->registrador->setUsuario($this->usuario);
     	    	
     }
+    
+    private function getValorReal($valor = '',$tipo = ''){
+    
+    	$valor= base64_decode($valor);
+    
+    	if(!Tipos::validarTipo($valor,$tipo)){
+    		$this->mensaje->addMensaje("101","errorEntradaParametrosTipo",'error');
+    		return false;
+    	}
+    
+    	if(Tipos::validarTipo($valor,$tipo)) $valor = is_null(Tipos::evaluarTipo($valor,$tipo))?'nulo':base64_encode(Tipos::evaluarTipo($valor,$tipo)) ;
+    	if(strtolower(Tipos::getTipoAlias($tipo))=='porcentaje')
+    		$valor = base64_encode($valor*100);
+    	if(strtolower(Tipos::getTipoAlias($tipo))=='nulo')
+    		$valor = base64_encode('nulo');
+    	if(strtolower(Tipos::getTipoAlias($tipo))=='boleano')
+    		$valor = (string) $valor==''?base64_encode('0'):base64_encode(1);
+    
+    	return $valor;
+    }
+    
+    private function getRangoReal($rango = '',$tipo = ''){
+    
+    	$intervalo = explode(",",$rango);
+    	if(!$intervalo) return false;
+    	$resultadoLista =  array();
+    
+    	foreach ($intervalo as $valor){
+    
+    		$resultadoLista[] = base64_decode($this->getValorReal(base64_encode($valor),$tipo));
+    	}
+    	 
+    	return implode(',',$resultadoLista);
+    }
+    
     
     private function validarAcceso($idRegistro , $permiso){
     	$usuario = new GestorUsuariosComponentes();
@@ -68,8 +105,10 @@ class GestorFuncion{
     	$parametros['nombre'] = $nombre;
     	if($descripcion!='')	$parametros['descripcion'] = $descripcion;
     	$parametros['proceso'] = $proceso;
-    	$parametros['rango'] = $rango;
+    	
     	$parametros['tipo'] = $tipo;
+    	$parametros['rango'] = $this->getRangoReal($rango,$tipo);
+    	
     	$parametros['categoria'] = $categoria;
     	$parametros['ruta'] = $ruta;
     	$parametros['valor'] = $valor;
@@ -101,7 +140,11 @@ class GestorFuncion{
     	if($descripcion!='')	$parametros['descripcion'] = $descripcion;
     	if($proceso!='')	$parametros['proceso'] = $proceso;
     	if($tipo!='')	$parametros['tipo'] = $tipo;
-    	if($rango!='') $parametros['rango'] = $rango;
+    	else{
+    		$consulta = $this->registrador->ejecutar(self::ID_OBJETO,array($id),2);
+    		$tipo = $consulta[0]['tipo'];
+    	}
+    	if($rango!='')$parametros['rango'] = $this->getRangoReal($rango,$tipo);
     	
     	if($categoria!='')$parametros['categoria'] = $categoria;
     	if($ruta!='')$parametros['ruta'] = $ruta;
@@ -182,13 +225,14 @@ class GestorFuncion{
     
     	 
     
-    	if(!$this->registrador->ejecutar(self::ID_OBJETO,$parametros,4)){
-    
+    	$ejecutar = $this->registrador->ejecutar(self::ID_OBJETO,$parametros,4);
+     	if(!$ejecutar){
+    		
     		$this->mensaje = &$this->registrador->mensaje;
     		return false;
     	}
-    
-    	return true;
+    	
+    	return $ejecutar;
     
     }
     

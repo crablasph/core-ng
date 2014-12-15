@@ -42,6 +42,7 @@ class Rango{
     
         
     private function validarBoleano($valor,$rango=''){
+    	$valor = (bool) $valor;
     	return is_bool($valor);
     }
     
@@ -59,9 +60,9 @@ class Rango{
     	if(!$intervalo) return false;
     	
     	$minimo = (double) $intervalo[0];
-    	if(strpos($intervalo[0],'.')!==false) $minimo = (double) str_replace(".",",",$intervalo[0]);
+    	if(strpos($intervalo[0],'.')!==false) $minimo = (double) $intervalo[0];
     	$maximo = (double) $intervalo[1];
-    	if(strpos($intervalo[1],'.')!==false) $maximo = (double) str_replace(".",",",$intervalo[1]);
+    	if(strpos($intervalo[1],'.')!==false) $maximo = (double) $intervalo[1];
     	
     	if($valor<$minimo||$valor>$maximo) return false;
     	return true;
@@ -96,14 +97,18 @@ class Rango{
     }
     
     private function validarLista($valor,$rango=''){
-    	return is_array(explode(",",$valor));
+    	foreach (explode(",",$valor) as  $val){
+    		if(in_array($valor,explode(",",$rango))) return true;
+    	}
+    	return false;
     }
     
     private function validarNulo($valor = '',$rango = ''){
+    	$valor =  null;
     	return is_null($valor);
     }
     
-    public static function evaluarRango($valor = "" , $tipo = "" , $rango = ""){
+    public static function validarRango($valor = "" , $tipo = "" , $rango = ""){
     	
     	$arrayDatos = self::setAmbiente($tipo);
     	

@@ -176,6 +176,7 @@ $this->idioma['categoria']="categoria";
 $this->idioma['categoriaTitulo']="Seleccione Categoría";
 $this->idioma['categoriaTilde']="categoría";
 $this->idioma['reiniciar']="reiniciar";
+$this->idioma['limpiar']="Limpiar";
 $this->idioma['reiniciarTitulo']="Ingrese Reiniciar";
 $this->idioma['objeto']="objeto";
 $this->idioma['objetoTitulo']="Seleccione Objeto";
@@ -210,4 +211,6 @@ $this->idioma['parametros']="Parámetros";
 $this->idioma['variables']="Variables";
 $this->idioma['funciones']="Funciones";
 $this->idioma['evaluar']="Evaluar";
+$this->idioma["errorEntradaParametrosTipo"] = 'Error en la entrada de valor o rango. Inconsistente con el tipo';
+$this->idioma["errorEntradaRangoTipo"] = 'Error en la entrada de rango. Inconsistente con el tipo ó Valor';
 ?>

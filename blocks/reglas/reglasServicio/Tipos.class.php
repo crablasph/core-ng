@@ -37,13 +37,20 @@ class Tipos{
     	$nombreTipo = $registrador->getTipo($tipo,'id','nombre');
     	$aliasTipo = $registrador->getTipo($tipo,'id','alias');
     	$metodo = "validar".ucfirst($aliasTipo);
+    	$metodo2 = "evaluar".ucfirst($aliasTipo);
     	unset($registrador);
-    	return array("id" =>$idTipo,"nombre" =>$nombreTipo,"alias" =>$aliasTipo,"metodo" =>$metodo);
+    	return array("id" =>$idTipo,"nombre" =>$nombreTipo,"alias" =>$aliasTipo,"metodo" =>$metodo,"metodoEvaluar"=>$metodo2);
     	
     }
     
     private function validarBoleano($valor){
+    	$valor = (bool) $valor;
     	return is_bool($valor);
+    }
+    
+    private function evaluarBoleano($valor){
+    	$valor = (bool) $valor;
+    	return $valor;
     }
     
     private function validarEntero($valor){
@@ -51,16 +58,32 @@ class Tipos{
     	return is_int($valor);
     }
     
+    private function evaluarEntero($valor){
+    	$valor = (int) $valor;
+    	return is_int($valor)?$valor:false;
+    }
+    
     private function validarDoble($valor){
     	$valor = (float) $valor;
     	return is_float($valor);
     }
     
-    public function validarPorcentaje($valor){
+    private function evaluarDoble($valor){
+    	$valor = (float) $valor;
+    	return is_float($valor)?$valor:false;
+    }
+    
+    private function validarPorcentaje($valor){
+    	$valor = (float) $valor;
     	return is_float($valor);
     }
     
-    public function validarFecha($valor){
+    private function evaluarPorcentaje($valor){
+    	$valor = (float) $valor;
+    	return is_float($valor)?$valor/100:false;
+    }
+    
+    private function validarFecha($valor){
     	//Formato
     	//'d/m/Y'
     	//30/01/2014
@@ -69,16 +92,47 @@ class Tipos{
     	return $d && $d->format('d/m/Y') == $valor;
     }
     
+    private function evaluarFecha($valor){
+    	//Formato
+    	//'d/m/Y'
+    	//30/01/2014
+    	//
+    	$d = \DateTime::createFromFormat('d/m/Y', $valor);
+    	return $d&&$d->format('d/m/Y') == $valor?$valor:false;
+    }
+    
     private function validarTexto($valor){
     	return is_string($valor);
+    }
+    
+    private function evaluarTexto($valor){
+    	return is_string($valor)? (string) $valor:false;
     }
     
     private function validarLista($valor){
     	return is_array(explode(",",$valor));
     }
     
+    private function evaluarLista($valor){
+    	return is_array(explode(",",$valor))?$valor:false;
+    }
+    
     private function validarNulo($valor){
+    	$valor =  null;
     	return is_null($valor);
+    }
+    
+    private function evaluarNulo($valor){
+    	return null;
+    }
+    
+    //http://www.sergiomejias.com/2007/09/validar-una-fecha-con-expresiones-regulares-en-php/
+    public function validar_fecha($fecha){
+    	if (ereg("(0[1-9]|[12][0-9]|3[01])[/](0[1-9]|1[012])[/](19|20)[0-9]{2}", $fecha)) {
+    		return true;
+    	} else {
+    		return false;
+    	}
     }
     
     public static function evaluarTipo($valor = "" , $tipo = ""){
@@ -90,7 +144,7 @@ class Tipos{
     		$idTipo = $arrayDatos['id'];
     		$nombreTipo = $arrayDatos['nombre'];
     		$aliasTipo = $arrayDatos['alias'];
-    		$metodo = $arrayDatos['metodo'];
+    		$metodo = $arrayDatos['metodoEvaluar'];
     		
     		switch($tipo){
     			case $idTipo:
@@ -109,10 +163,19 @@ class Tipos{
     	
     }
     
-    public static function getTipoNombre($tipo = ""){
+    public static function getTipoAlias($tipo = ""){
 
     	$arrayDatos = self::setAmbiente($tipo);
     	
+    	if($arrayDatos){
+    		return $arrayDatos['alias'];
+    	}
+    }
+    
+    public static function getTipoNombre($tipo = ""){
+    
+    	$arrayDatos = self::setAmbiente($tipo);
+    	 
     	if($arrayDatos){
     		return $arrayDatos['nombre'];
     	}

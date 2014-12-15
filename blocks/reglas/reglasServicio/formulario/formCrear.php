@@ -3,7 +3,9 @@ namespace reglas\formulario;
 
 include_once (dirname(__FILE__).'/../ClienteServicioReglas.class.php');
 include_once (dirname(__FILE__).'/../Mensaje.class.php');
+include_once (dirname(__FILE__).'/../Tipos.class.php');
 
+use reglas\Tipos as Tipos;
 use reglas\ClienteServicioReglas as ClienteServicioReglas;
 use reglas\Mensaje as Mensaje;
 
@@ -358,15 +360,15 @@ class FormularioCrear {
     	$cadena.=' <li><a href="#tabs-operaciones">'.utf8_encode($this->lenguaje->getCadena ('operaciones')).'</a></li>';
     	$cadena.=' <li><a href="#tabs-parametros">'.utf8_encode($this->lenguaje->getCadena ('parametros')).'</a></li>';
     	$cadena.=' <li><a href="#tabs-variables">'.utf8_encode($this->lenguaje->getCadena ('variables')).'</a></li>';
-    	if($regla===true){
+    	//if($regla===true){
     		$cadena.=' <li><a href="#tabs-funciones">'.utf8_encode($this->lenguaje->getCadena ('funciones')).'</a></li>';
-    	}
+    	//}
     	$cadena.=' </ul>';
     	
     	
     	//operaciones
     	$cadena.=' <div class="tabOverflow" id="tabs-operaciones">';
-    	$cadena.=' <div >';
+    	$cadena.=' <div class="contenedorCalculadora">';
     	
     	foreach ($this->operadores as $operador){
     		$cadena.=' <div onclick="insertarValorTextBox(\''.$operador['nombre'].'\')" class="elementoListaCalculadora"><a  title="'.$operador['alias'].'"  >'.$operador['nombre'].'</a></div>';
@@ -382,7 +384,7 @@ class FormularioCrear {
     	$cadena.=' <div >';
     	 if($this->getListaElementos('parametro',array('','','','','','',1))){
     	 	foreach ($this->listaElementos as $elemento){
-    	 		$cadena.=' <div onclick="insertarValorTextBox(\'_'.$elemento['nombre'].'_\')" class="elementoListaCalculadora"><a  title="insertar '.$elemento['nombre'].'  " >'.$elemento['nombre'].'</a></div>';
+    	 		$cadena.=' <div style="overflow: hidden;" onclick="insertarValorTextBox(\'_'.$elemento['nombre'].'_\')" class="elementoListaCalculadora"><a  title="insertar '.$elemento['nombre'].' , valor:'.base64_decode($elemento['valor']).' ,tipo:'.Tipos::getTipoAlias($elemento['tipo']).' " >'.$elemento['nombre'].'</a></div>';
     	 	} 	
     	 }
     
@@ -396,7 +398,7 @@ class FormularioCrear {
     	$cadena.=' <div >';
     	if($this->getListaElementos('variable',array('','','','','','',1))){
     		foreach ($this->listaElementos as $elemento){
-    			$cadena.=' <div onclick="insertarValorTextBox(\''.$elemento['nombre'].'\')" class="elementoListaCalculadora"><a  title="insertar '.$elemento['nombre'].'"  >'.$elemento['nombre'].'</a></div>';
+    			$cadena.=' <div style="overflow: hidden;" onclick="insertarValorTextBox(\''.$elemento['nombre'].'\')" class="elementoListaCalculadora"><a  title="insertar '.$elemento['nombre'].' , valor:'.base64_decode($elemento['valor']).' ,tipo:'.Tipos::getTipoAlias($elemento['tipo']).' "  >'.$elemento['nombre'].'</a></div>';
     		}
     	}
     	 
@@ -406,7 +408,7 @@ class FormularioCrear {
     	 
     	
     	
-    	if($regla===true){
+    	//if($regla===true){
     		//funciones
     		
     		$cadena.=' <div class="tabOverflow" id="tabs-funciones">';
@@ -418,16 +420,18 @@ class FormularioCrear {
     				$v2 = $this->getVariablesListaDelTexto(base64_decode($elemento['valor']));
     				
     				$valorParametrosFuncion='';
-    				foreach ($v2 as $v) $valorParametrosFuncion.=$v[0].",";
+    				if(is_array($v2)){
+    					foreach ($v2 as $v) $valorParametrosFuncion.=$v[0].",";
+    				}
     				$valorParametrosFuncion = trim($valorParametrosFuncion, ",");
-    				$cadena.=' <div onclick="insertarValorTextBox(\''.$elemento['nombre'].'('.$valorParametrosFuncion.')\')" class="elementoListaCalculadora"><a  title="insertar '.$elemento['nombre'].'"  >'.$elemento['nombre'].'</a></div>';
+    				$cadena.=' <div style="overflow: hidden;" onclick="insertarValorTextBox(\''.$elemento['nombre'].'('.$valorParametrosFuncion.')\')" class="elementoListaCalculadora"><a  title="insertar '.$elemento['nombre'].'('.$valorParametrosFuncion.') ,tipo:'.Tipos::getTipoAlias($elemento['tipo']).'"  >'.$elemento['nombre'].'</a></div>';
     			}
     		}
     		
     		 
     		$cadena.=' </div>';
     		$cadena.=' </div>';
-    	}
+    	//}
     	
     	$cadena.=' </div>';
     	
@@ -640,12 +644,16 @@ class FormularioCrear {
     	//Botones
     	$textos[0] = $this->lenguaje->getCadena ('guardar');
     	$textos[1] = $this->lenguaje->getCadena ('reiniciar');
+    	$textos[2] = $this->lenguaje->getCadena ('limpiar');
     	$cadena .= '<div id="botones"  class="marcoBotones">';
     	$cadena .= '<div class="campoBoton">';
     	$cadena .= '<button  onclick="guardarElemento(false)" type="button" tabindex="2" id="botonConsultar" value="'.$textos[0].'" class="ui-button-text ui-state-default ui-corner-all ui-button-text-only">'.ucfirst($textos[0]).'</button>';
     	$cadena .= '</div>';
     	$cadena .= '<div class="campoBoton">';
-    	$cadena .= '<button type="reset" tabindex="2" id="botonReiniciar" value="'.$textos[1].'" class="ui-button-text ui-state-default ui-corner-all ui-button-text-only">'.ucfirst($textos[1]).'</button>';
+    	$cadena .= '<button type="reset" tabindex="2" onclick="formularioReset(\'formularioCreacionEdicion\')" id="botonReiniciar" value="'.$textos[1].'" class="ui-button-text ui-state-default ui-corner-all ui-button-text-only">'.ucfirst($textos[1]).'</button>';
+    	$cadena .= '</div>';
+    	$cadena .= '<div class="campoBoton">';
+    	$cadena .= '<button type="button" onclick="formularioClean(\'formularioCreacionEdicion\')" tabindex="2" id="botonLimpiar" value="'.$textos[1].'" class="ui-button-text ui-state-default ui-corner-all ui-button-text-only">'.ucfirst($textos[2]).'</button>';
     	$cadena .= '</div>';
     	$cadena .= '</div>';
     	 

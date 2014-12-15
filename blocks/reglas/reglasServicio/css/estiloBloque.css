@@ -4,8 +4,35 @@
     box-sizing: border-box;
 }
 
-.elementoListaCalculadora{
+.contenedorCalculadora{
+	display:inline-block;
+	float:left;
+	position : relative;
+	width:100%;
 	
+}
+
+
+.ui-button{
+	overflow: hidden;
+}
+
+.elementoListaCalculadora{
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; 
+	width:10em;
+	padding:0.2em;
+	margin:0.1em;
+	display:inline;
+	float:left;
+	text-align:center;
+}
+
+.expandible:hover{
+	background: #F39814; 
+	color: white;
+	cursor:pointer;
 }
 
 .ui-tabs-vertical { width: 55em; }

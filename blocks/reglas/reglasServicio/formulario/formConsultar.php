@@ -377,8 +377,9 @@ class FormularioConsultar {
     	
     	$textos[1] = $this->lenguaje->getCadena ('buscar'). " ".$this->objetoAlias;;
     	$cadena .='<fieldset class="ui-corner-all">';
-    	$cadena .='<legend>'.$textos[1].'</legend>';
-    	 
+    	
+    	$cadena .='<legend title="'.$this->lenguaje->getCadena ('buscar').'" onclick="cambiarVisibilidadBusqueda()" class="expandible">'.$textos[1].'</legend>';
+    	$cadena .='<div style="display:none" id="contenedorBuscador">';
     	
     	$nombre = 'nombre';
     	$requerido = 'requerido_consultar';
@@ -407,15 +408,22 @@ class FormularioConsultar {
     	//Botones
     	$textos[0] = $this->lenguaje->getCadena ('buscar');
     	$textos[1] = $this->lenguaje->getCadena ('reiniciar');
-    	$cadena .= '<div id="botones"  class="marcoBotones">';
+    	$textos[2] = $this->lenguaje->getCadena ('limpiar');
+    	$cadena .= '<div id="botones" style="display:none"  class="marcoBotones">';
     	$cadena .= '<div class="campoBoton">';
     	$cadena .= '<button  onclick="getFormularioConsulta(false)" type="button" tabindex="2" id="botonConsultar" value="'.$textos[0].'" class="ui-button-text ui-state-default ui-corner-all ui-button-text-only">'.ucfirst($textos[0]).'</button>';
     	$cadena .= '</div>';
     	$cadena .= '<div class="campoBoton">';
-    	$cadena .= '<button type="reset" tabindex="2" id="botonReiniciar" value="'.$textos[1].'" class="ui-button-text ui-state-default ui-corner-all ui-button-text-only">'.ucfirst($textos[1]).'</button>';
+    	$cadena .= '<button type="reset" onclick="formularioReset(\'formularioConsulta\')" tabindex="2" id="botonReiniciar" value="'.$textos[1].'" class="ui-button-text ui-state-default ui-corner-all ui-button-text-only">'.ucfirst($textos[1]).'</button>';
+    	$cadena .= '</div>';
+    	$cadena .= '<div class="campoBoton">';
+    	$cadena .= '<button type="button" onclick="formularioClean(\'formularioConsulta\')" tabindex="2" id="botonLimpiar" value="'.$textos[1].'" class="ui-button-text ui-state-default ui-corner-all ui-button-text-only">'.ucfirst($textos[2]).'</button>';
     	$cadena .= '</div>';
     	$cadena .= '</div>';
-    	 
+
+    	//fin contenedor busqueda
+    	$cadena .='<div>';
+    	
     	//fin
     	$cadena .= '</form>';
     	$cadena .='<br>';

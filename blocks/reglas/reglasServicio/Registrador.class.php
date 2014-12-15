@@ -761,7 +761,7 @@ class Registrador{
 		return $leido[0][0];
 	}
 	
-	private function registrarPropietario($ultimoId = ''){
+	private function registrarPropietario($ultimoId = '',$objetoInsertar = ''){
 		//recupera ultimo Id
 		
 		 if($ultimoId&&$ultimoId>=0){
@@ -775,7 +775,7 @@ class Registrador{
 		 	
 		 	$parametros =  array();
 		 	$parametros['usuario'] = $this->usuario;
-		 	$parametros['objeto'] = $idObjeto;
+		 	$parametros['objeto'] = $objetoInsertar;
 		 	$parametros['registro'] = $ultimoId;
 		 	$parametros['permiso'] = 0;
 		 	$parametros['estado'] = 1;
@@ -825,7 +825,7 @@ class Registrador{
 				 
 				//registrar propietario
 				
-				if(!$this->registrarPropietario($ultimoId)) return false;
+				if(!$this->registrarPropietario($ultimoId,$idObjeto)) return false;
 				return $ultimoId;
 				
 				break;
@@ -884,6 +884,7 @@ class Registrador{
 					if(!$leido) return false;
 					//2. Crear
 						$parametros = $this->procesarLeido($leido[0]);
+						$parametros['estado'] = 3;
 						$nombre = $parametros['nombre'];
 						$creacion =  false;
 						$i = 0;
@@ -901,7 +902,17 @@ class Registrador{
 					  if(!$creacion){
 					  	$this->mensaje->addMensaje("101","errorDuplicar".$this->tablaAlias,'error');
 					  	return false;
-					  }		
+					  
+					  }
+
+					  $ultimoId =  $this->recuperarUltimoId();
+					  
+					  	
+					  //registrar propietario
+					  if(!$this->registrarPropietario($ultimoId,$idObjeto)) return false;
+					  return $ultimoId;
+					  
+					  
 					
 					
 					
