@@ -112,6 +112,8 @@ class EvaluadorReglas{
     				'trace'=>1,
     				'login' => $this->usuario,
     				'password' => '123456',
+    				'proxy_host'=> 'proxy.udistrital.edu.co',
+    				'proxy_port'=> '3128',
     				'cache_wsdl'=>WSDL_CACHE_NONE
     		);
     

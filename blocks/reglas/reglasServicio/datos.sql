@@ -123,8 +123,8 @@ INSERT INTO reglas.columnas
   columnas_actualizar,  columnas_codificada , columnas_deshabilitado ,columnas_autocompletar ,
   columnas_requerido_consultar,columnas_requerido_crear,columnas_requerido_actualizar) VALUES
   
-  ('id','Identificación','text',true,false,false,false,false,true,false,false,true),
-  ('nombre','Nombre','text',true,true,true,false,false,true,false, true, false),
+  ('id','Identificación','text',true,false,false,false,false,false,false,false,true),
+  ('nombre','Nombre','text',true,true,true,false,false,false,false, true, false),
   ('descripcion','Descripción','textarea',false,true,true,false,false,false,false, false, false),
   ('proceso','Proceso','text',true,true,true,false,false,true,false, true, false),
   ('tipo','Tipo','select',true,true,true,true,false,false,false, true, false),
@@ -133,11 +133,11 @@ INSERT INTO reglas.columnas
   ('fecha_registro','Fecha Registro','date',true,false,false,false,false,false,false, false, false),
   ('rango','Rango','rangeSlider',false,true,true,false,false,false, false, true, false),
   ('categoria','Categoría','select',true,true,true,false,false,false,false,true,false),
-  ('ruta','Ruta','text',false,true,true,false,false,true,false,true,false),
+  ('ruta','Ruta','text',false,true,true,false,false,false,false,true,false),
   ('usuario','Usuario','text',true,true,true,false,false,false,false,true,false),
   ('objeto','Objeto','select',true,true,true,false,false,false,false,true,false),
   ('registro','Registro','text',false,true,true,false,false,false,false,true,false),
-  ('permiso','Permiso','select',true,true,true,false,false,true,false,true,false);
+  ('permiso','Permiso','select',true,true,true,false,false,false,false,true,false);
 
 --Crea tabla de Permisos  
   CREATE TABLE reglas.permisos
@@ -189,7 +189,8 @@ ALTER TABLE reglas.categoria_funcion
             cfun_nombre,cfun_alias)
     VALUES ( 'I','Interna'),
     		( 'B','Base de datos'),
-    		( 'S','Servicio Web Soap');
+    		( 'S','Servicio Web Soap Interno'),
+    		( 'P','Servicio Web Soap Proxy');
     		
 
 --operadores
@@ -231,6 +232,30 @@ ALTER TABLE reglas.operadores
     		( '<=','Menor igual','Comparación'),
     		( '>=','Mayor igual','Comparación');
  
+
+--procesos, tabla temporal ya que esto debe venir de otro lado
+--reglas.procesos
+  CREATE TABLE reglas.procesos
+(
+  pro_id serial NOT NULL,
+  pro_nombre text NOT NULL,
+  pro_alias text NOT NULL,
+  CONSTRAINT procesos_pk PRIMARY KEY (pro_id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE reglas.procesos
+  OWNER TO reglas;
+  
+ INSERT INTO reglas.procesos(pro_nombre,pro_alias)
+ VALUES ( 'proceso1','proceso 1'),
+        ( 'proceso2','proceso 2'),
+        ( 'proceso3','proceso 3');
+  
+ -----
+ -----
+
 
 --Tabla de parametros	   
 CREATE TABLE reglas.parametros
@@ -471,7 +496,7 @@ ALTER TABLE reglas.tipo_usuarios
 CREATE TABLE reglas.usuarios
 (
   usu_id integer NOT NULL,
-  usu_tipo integer UNIQUE NOT NULL,
+  usu_tipo integer NOT NULL,
   usu_estado integer NOT NULL,
   usu_fecha_registro date NOT NULL DEFAULT ('now'::text)::date,
   CONSTRAINT usuarios_pk PRIMARY KEY (usu_id),

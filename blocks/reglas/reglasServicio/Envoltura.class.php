@@ -22,6 +22,8 @@ include_once ("GestorVariable.class.php");
 include_once ("ConstructorReglas.class.php");
 include_once ("EvaluadorReglas.class.php");
 
+include_once (dirname(__FILE__)."/definiciones/Definiciones.php");
+
 
 
 class Envoltura {
@@ -95,9 +97,21 @@ class Envoltura {
     	 
     }
     
-    public function __call($method_name, $arguments){
-    	$variableSoap =  $this->miConfigurador->getVariableConfiguracion ( "soapVariable");
+    private function validarMetodosDefinicion($method_name){
     	
+    	$definiciones = new Definiciones;
+    	return in_array($method_name,get_class_methods($definiciones));
+    }
+    
+    public function __call($method_name, $arguments){
+    	
+      $variableSoap =  $this->miConfigurador->getVariableConfiguracion ( "soapVariable");
+
+      if(isset($_REQUEST[$variableSoap])&&!$this->validarMetodosDefinicion($method_name)){
+      	 $this->mensaje->addMensaje("101","metodoNoExiste",'error');
+      	 return $this->mensaje->getLastMensaje("soap");
+      }
+    
       if($this->validarAcceso()){	
 
 	    	if($this->validarMetodo($method_name)){

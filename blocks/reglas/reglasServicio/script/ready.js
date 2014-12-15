@@ -17,6 +17,13 @@ $('#clave').keydown(function(e) {
     }
 });
 
+$(window).keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+
 $('#tabla').DataTable({"jQueryUI": true	});
 
 $(function() {

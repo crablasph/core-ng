@@ -42,6 +42,7 @@ class FormularioCrear {
     private $operadores;
     private $listaParametros;
     private $listaAtributosParametros;
+    private $proceso;
     
     function __construct($lenguaje,$objetoId = '') {
 
@@ -50,6 +51,8 @@ class FormularioCrear {
 
         $this->miConfigurador->fabricaConexiones->setRecursoDB ( 'principal' );
 
+        if(isset($_REQUEST['usuario'])) $_REQUEST['usuarioDefinitivo'] = $_REQUEST['usuario'];
+        
         $this->lenguaje = $lenguaje;
         $this->mensaje = new Mensaje();
         $this->cliente  = new ClienteServicioReglas();
@@ -60,6 +63,7 @@ class FormularioCrear {
         $this->categoria = $this->cliente->getListaCategorias();
         $this->columnas = $this->cliente->getDatosColumnas();
         $this->operadores = $this->cliente->getListaOperadores();
+        $this->proceso = $this->cliente->getListaProcesos();
 
     }
     
@@ -89,6 +93,14 @@ class FormularioCrear {
     	foreach ($this->atributosObjeto as $nombreObjeto){
     		foreach ($this->columnas as $datosColumna){
     			if($datosColumna['nombre']==$nombreObjeto&&$datosColumna[$this->metodoValidar]=='t'){
+    				
+    				if($nombreObjeto == 'usuario'){
+    				    if(isset($_REQUEST[$nombreObjeto."Definitivo"])) $this->listaParametros[] = $_REQUEST[$nombreObjeto."Definitivo"];
+    				    else $this->listaParametros[] = '';
+    					$this->listaAtributosParametros[] = $datosColumna;
+    					continue;
+    				}
+    				
     				if(isset($_REQUEST[$nombreObjeto])&&$datosColumna['codificada']!='t') $this->listaParametros[] = $_REQUEST[$nombreObjeto];
     				elseif (isset($_REQUEST[$nombreObjeto])&&$datosColumna['codificada']=='t') $this->listaParametros[] = $_REQUEST[$nombreObjeto."Codificada"];
     				else $this->listaParametros[] = '';
@@ -194,6 +206,13 @@ class FormularioCrear {
     		if($elemento['id']==$id) return $elemento['alias'];
     	}
     }
+    
+    private function getObjetoNombrePorId($objeto ='', $id = ''){
+    	foreach ($this->$objeto as $elemento){
+    		if($elemento['id']==$id) return $elemento['nombre'];
+    	}
+    }
+    
     
     private function setTextoTabla($valor = '', $nombre =''){
     	
@@ -305,7 +324,7 @@ class FormularioCrear {
     	 
     }
     
-    private function textElemento($elemento='elemento', $requerido = false, $codificada =  false){
+    private function textElemento($elemento='elemento', $requerido = false, $codificada =  false, $autocompletar =  false){
     	$cadena= '';
     	$cadenaHidden= '';
     	$valor = ''; 
@@ -319,8 +338,29 @@ class FormularioCrear {
     	$cadena .= '</label>';
     	$cadena .= '<span style="white-space:pre;"> </span>';
     	$cadena .= '</div>';
-    	$cadena .= '<input type="text" class="ui-corner-all '; 
+    	
+    	if($autocompletar){
+    		
+    		$cadena .= '<input type="text" class="ui-corner-all ';
+    		if($requerido) $cadena .= ' validate[required,custom[valorLista]] ';
+    		
+    		$cadena .='" title="'.$textos[1].'" name="'.$elemento.'Nombre" id="'.$elemento.'Nombre"  placeholder="'.ucfirst($textos[0]).'" ';
+    		 
+    		if(isset($_REQUEST[$elemento])&&!$codificada) $valor =' value="'.$this->getObjetoNombrePorId($elemento,$_REQUEST[$elemento]).'" ';
+    		elseif(isset($_REQUEST[$elemento])&&$codificada) $valor =' value="'.$this->getObjetoNombrePorId($elemento,base64_decode($_REQUEST[$elemento])).'" ';
+    		else $valor .=' value="" ';
+    		 
+    		$cadena .=$valor;
+    		 
+    		$cadena .= '></input>';
+    	}
+    	
+    	if($autocompletar){
+    		$cadena .= '<input type="hidden" class="ui-corner-all ';
+    	}else $cadena .= '<input type="text" class="ui-corner-all '; 
+    	
     	if($requerido) $cadena .= ' validate[required] '; 
+    	
     	$cadena .='" title="'.$textos[1].'" name="'.$elemento.'" id="'.$elemento.'"  placeholder="'.ucfirst($textos[0]).'" ';
     	
     	if(isset($_REQUEST[$elemento])&&!$codificada) $valor =' value="'.$_REQUEST[$elemento].'" ';
@@ -349,6 +389,8 @@ class FormularioCrear {
     	return   call_user_func_array(array($this->cliente , $metodo), $argumentos);
     	 
     }
+    
+    
     
     private function listasInput($regla = false){
     	
@@ -614,13 +656,14 @@ class FormularioCrear {
     	$nombre = 'nombre';
     	$requerido = 'requerido_crear';
     	$codificado = 'codificada';
+    	$autocompletar = 'autocompletar';
     	
     	//crea formularios
     	foreach ($this->listaAtributosParametros as $elemento){
 
     		switch($elemento['input']){
     			case 'text':
-    				$cadena .= $this->textElemento($elemento[$nombre],$this->setBool($elemento[$requerido]),$this->setBool($elemento[$codificado])); 
+    				$cadena .= $this->textElemento($elemento[$nombre],$this->setBool($elemento[$requerido]),$this->setBool($elemento[$codificado]),$this->setBool($elemento[$autocompletar])); 
     				break;
     			case 'select':
     				$cadena .= $this->selectElemento($elemento[$nombre],$this->setBool($elemento[$requerido]));

@@ -30,6 +30,7 @@ class Registrador{
 	private $categorias;
 	private $columnasTabla;
 	private $miConfigurador;
+	private $procesos;
 	public $persistencia;
 	private $tabla;
 	private $prefijoColumnas;
@@ -163,6 +164,47 @@ class Registrador{
 		}
 		return $lista;
 	}
+	
+	/*
+	 * procesos
+	*/
+	
+	private function recuperarProcesos(){
+		//popula $this->operadores
+		$this->persistencia =  new Persistencia($this->conexion,'reglas.procesos');
+		$listaColumnas = $this->persistencia->getListaColumnas();
+		if(is_array($listaColumnas)){
+			$this->procesos = $this->persistencia->read($listaColumnas);
+			return true;
+		}
+		$this->operadores = false;
+		$this->mensaje->addMensaje("100","errorRecuperarOperadores",'error');
+		return false;
+	
+	
+	}
+	
+	public function getListaProcesos(){
+		
+		$this->recuperarProcesos();
+	
+		$lista = array();
+		$prefijo = 'pro_';
+		foreach ($this->procesos as $proceso){
+			$fila = array();
+			foreach ($proceso as $a => $b){
+				if(strpos($a,$prefijo)!==false){
+					$indice = str_replace ($prefijo,"",$a);
+					$fila[$indice] =  $b;
+				}
+					
+			}
+			if(count($fila)>0)$lista[] = $fila;
+		}
+		return $lista;
+	}
+	
+	
 	
 	/*
 	 * operadores

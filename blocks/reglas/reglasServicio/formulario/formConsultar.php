@@ -46,6 +46,8 @@ class FormularioConsultar {
 
         $this->miConfigurador->fabricaConexiones->setRecursoDB ( 'principal' );
 
+        if(isset($_REQUEST['usuario'])) $_REQUEST['usuarioDefinitivo'] = $_REQUEST['usuario'];
+        
         $this->lenguaje = $lenguaje;
         $this->mensaje = new Mensaje();
         $this->cliente  = new ClienteServicioReglas();
@@ -75,6 +77,16 @@ class FormularioConsultar {
     	foreach ($this->atributosObjeto as $nombreObjeto){
     		foreach ($this->columnas as $datosColumna){
     			if($datosColumna['nombre']==$nombreObjeto&&$datosColumna['consultar']=='t'){
+    				
+    				if($nombreObjeto == 'usuario'){
+    					if(isset($_REQUEST[$nombreObjeto."Definitivo"])) $this->listaParametros[] = $_REQUEST[$nombreObjeto."Definitivo"];
+    					else $this->listaParametros[] = '';
+    					
+    					$this->listaAtributosParametros[] = $datosColumna;
+    					
+    					continue;
+    				}
+    				
     				if(isset($_REQUEST[$nombreObjeto])&&$datosColumna['codificada']!='t') $this->listaParametros[] = $_REQUEST[$nombreObjeto];
     				elseif (isset($_REQUEST[$nombreObjeto])&&$datosColumna['codificada']=='t') $this->listaParametros[] = $_REQUEST[$nombreObjeto."Codificada"];
     				else $this->listaParametros[] = '';
@@ -167,6 +179,8 @@ class FormularioConsultar {
     	$nombreSelect = '';
     	$aliasSelect = '';
     	foreach ($this->columnas as $columna){
+    		
+    		
     		
     		if($columna['nombre']==$nombre&&$columna['codificada']=='t'){
     			
@@ -458,6 +472,7 @@ class FormularioConsultar {
     	//Muestra la tbla
     	echo '<div id="resultado">'; 
 
+    	
     	if(!$verifica){
     		echo $this->mensaje->getLastMensaje();
     		return false;

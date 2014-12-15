@@ -44,6 +44,11 @@ $cadena5=$this->miConfigurador->fabricaConexiones->crypto->codificar_url($cadena
 $cadenaACodificar6=$cadenaACodificar."&funcion=evaluar";
 $cadena6=$this->miConfigurador->fabricaConexiones->crypto->codificar_url($cadenaACodificar6,$enlace);
 
+//Cadena codificada autocompletar
+$cadenaACodificar7=$cadenaACodificar."&funcion=autocomplete";
+$cadena7=$this->miConfigurador->fabricaConexiones->crypto->codificar_url($cadenaACodificar7,$enlace);
+
+
 
 //URL definitiva
 $consultarFormulario=$url.$cadena1;
@@ -52,10 +57,15 @@ $duplicar = $url.$cadena3;
 $crearFormulario = $url.$cadena4;
 $guardar = $url.$cadena5;
 $evaluar = $url.$cadena6;
+$autocompletar = $url.$cadena7;
 
 ?>
 
 <script type='text/javascript'>
+
+var listaIds =  [];
+var listaNombres = [];
+var listaAlias = [];
 
         function setObjeto(idObjeto,aliasObjeto){
             
@@ -66,7 +76,61 @@ $evaluar = $url.$cadena6;
         		getFormularioConsulta(true);
             }
         	
-        }	
+        }
+
+        function autocompletar(elemento){
+
+        	var data =  $( "#objetosFormulario" ).serialize()+"&"+$( "#identificacionFormulario" ).serialize();
+        	data +=  "&field="+elemento;
+
+        	listaIds =  [];
+        	listaNombres = [];
+        	listaAlias = [];       	
+
+        	$.ajax({
+	            url: "<?php echo $autocompletar;?>",
+	            type:"post",
+	            data:data,
+	            dataType: "json",
+	            success: function(jresp){
+	            	 
+	            	
+		  			for(i=0;i<jresp.length;i++){
+		  				listaIds.push( jresp[i].id);
+		  				listaNombres.push( jresp[i].nombre);
+		  				listaAlias.push( jresp[i].alias); 
+		  			}  
+			       }
+	        });
+
+        	
+        	$( "#"+elemento+'Nombre' ).autocomplete({
+        	      source: listaNombres
+        	    });
+        	    
+        	$( "#"+elemento+'Nombre' ).change(function() {
+        		   
+        	    	var indice = listaNombres.indexOf(this.value);
+        	    	$( "#"+elemento).val(listaIds[indice]);
+        	    	$( "#"+elemento).trigger("change");
+        	    	
+            	    });
+    	    
+        	return 0;
+        	
+           }	
+
+        function cambiarValoresAutocomplete(valor,id){
+	    	var indice = listaNombres.indexOf(valor);
+	    	$( "#"+elemento).val(listaIds[indice]);
+	    	$( "#"+elemento).trigger("change");
+	    	
+        
+        }
+            
+        function validarValorLista(valor,id){
+        	return listaNombres.indexOf(valor)<0?false:true;
+        }
 
         function cambiarEstadoElemento(){
         	var data =  $( "#objetosFormulario" ).serialize()+"&"+$( "#identificacionFormulario" ).serialize();
@@ -287,6 +351,7 @@ $evaluar = $url.$cadena6;
 	                		event.preventDefault();
 	                	});
 
+			  			if($( "#proceso").length>0) autocompletar('proceso');
 			  			
 
 			  			

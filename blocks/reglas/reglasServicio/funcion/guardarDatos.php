@@ -45,6 +45,8 @@ class GuardarDatos {
         $this->miConfigurador = \Configurador::singleton ();
 
         $this->miConfigurador->fabricaConexiones->setRecursoDB ( 'principal' );
+        
+        if(isset($_REQUEST['usuario'])) $_REQUEST['usuarioDefinitivo'] = $_REQUEST['usuario'];
 
         $this->lenguaje = $lenguaje;
         $this->mensaje = new Mensaje();
@@ -97,6 +99,12 @@ class GuardarDatos {
     	foreach ($this->atributosObjeto as $nombreObjeto){
     		foreach ($this->columnas as $datosColumna){
     			if($datosColumna['nombre']==$nombreObjeto&&$datosColumna[$this->metodoAccion]=='t'){
+    				if($nombreObjeto == 'usuario'){
+    					if(isset($_REQUEST[$nombreObjeto."Definitivo"])) $this->listaParametros[] = $_REQUEST[$nombreObjeto."Definitivo"];
+    					else $this->listaParametros[] = '';
+    					$this->listaAtributosParametros[] = $datosColumna;
+    					continue;
+    				}
     				if(isset($_REQUEST[$nombreObjeto])&&$datosColumna['codificada']!='t') $this->listaParametros[] = $_REQUEST[$nombreObjeto];
     				elseif (isset($_REQUEST[$nombreObjeto])&&$datosColumna['codificada']=='t') $this->listaParametros[] = $_REQUEST[$nombreObjeto."Codificado"];
     				else $this->listaParametros[] = '';

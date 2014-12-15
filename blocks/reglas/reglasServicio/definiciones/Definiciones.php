@@ -1,5 +1,5 @@
 <?php
-namespace reglas\reglasServicio;
+namespace reglas;
 
 
 if (! isset ( $GLOBALS ["autorizado"] )) {
@@ -7,7 +7,7 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
     exit ();
 }
 
-
+class Definiciones {
     
     
      /////////////PARAMETROS//////////////////////////////////////////
@@ -457,6 +457,6 @@ if (! isset ( $GLOBALS ["autorizado"] )) {
 	}
 	
 	
-	
+}
 
 ?>

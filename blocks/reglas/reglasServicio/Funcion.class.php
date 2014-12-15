@@ -74,6 +74,13 @@ class Funcion {
     
     }
     
+    function autocompletar($objetoId) {
+    
+    	include_once ($this->ruta . "funcion/autocompletar.php");
+    
+    
+    }
+    
     function crearForm($objetoId) {
     	 
     	include_once ($this->ruta . "formulario/formCrear.php");
@@ -125,6 +132,9 @@ class Funcion {
 	        	case 'evaluar':
 	        		 $this->evaluar($_REQUEST['objetoId']);
 	        			break;
+	        	case 'autocomplete':
+	        		$this->autocompletar($_REQUEST['objetoId']);
+	        		break;
 	        	default:
 	        		default;
 	        	
