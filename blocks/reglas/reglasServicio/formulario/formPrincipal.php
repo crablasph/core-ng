@@ -40,11 +40,16 @@ class Formulario {
     	$url.=$this->miConfigurador->getVariableConfiguracion("site");
     	$url.="/index.php?";
     	
-    	$url.="bloqueNombre=". $this->miConfigurador->getVariableConfiguracion ( "bloqueActualNombre" );
-    	$url.="&bloqueGrupo=". $this->miConfigurador->getVariableConfiguracion ( "bloqueActualGrupo" );
-    	$url.="&pagina=".$this->miConfigurador->getVariableConfiguracion("pagina");
+    	$cadenaACodificar="bloqueNombre=". $this->miConfigurador->getVariableConfiguracion ( "bloqueActualNombre" );
+    	$cadenaACodificar.="&bloqueGrupo=". $this->miConfigurador->getVariableConfiguracion ( "bloqueActualGrupo" );
+    	$cadenaACodificar.="&pagina=".$this->miConfigurador->getVariableConfiguracion("pagina");
     	
-    	$cadena ='<form id="formUsuario" name="formUsuario" action="'.$url.'">';
+    	//Codificar las variables
+    	$enlace=$this->miConfigurador->getVariableConfiguracion("enlace");
+    	
+    	$cadenaCod=$this->miConfigurador->fabricaConexiones->crypto->codificar_url($cadenaACodificar,$enlace);
+    	
+    	$cadena ='<form id="formUsuario"  method="POST" name="formUsuario" action="'.$url.$cadenaCod.'">';
     	$cadena .='<fieldset>';
     	$cadena .='<div class="contenedorInput" >';
     	$cadena .='<div style="float:left; ">';
