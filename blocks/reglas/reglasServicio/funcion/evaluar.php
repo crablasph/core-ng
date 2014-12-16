@@ -272,12 +272,12 @@ class Evaluar {
     			
     			$cadenaMensaje .= $pasos;
     			
-    		}else{
-    			
-    			$cadenaMensaje .= (!$accion?'falso': ($accion===true?'verdadero':'falso'));
     		}
     		
-    		if(strtolower($this->objetoAliasSingular)=='funcion') $cadenaMensaje .= !$accion?'falso':(string) $accion;
+    		if(strtolower($this->objetoAliasSingular)=='funcion'){
+    			if(is_bool($accion)) $cadenaMensaje .= !$accion?'falso':'verdadero';
+    			else $cadenaMensaje .= !$accion?'falso':(string) $accion;
+    		}
     		
     		
     		

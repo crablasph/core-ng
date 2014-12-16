@@ -469,26 +469,7 @@ ALTER TABLE reglas.reglas_h
 
 
 
---Tabla tipo_usuarios creacion
-CREATE TABLE reglas.tipo_usuarios
-(
-  tipo_usuarios_id serial NOT NULL,
-  tipo_usuarios_nombre text NOT NULL,
-  tipo_usuarios_alias text NOT NULL,
-  CONSTRAINT tipo_usuarios_pk PRIMARY KEY (tipo_usuarios_id)
-)
-WITH (
-  OIDS=FALSE
-);
-ALTER TABLE reglas.tipo_usuarios
-  OWNER TO reglas;
 
- --Llenar tabla
-  INSERT INTO reglas.tipo_usuarios(
-            tipo_usuarios_nombre, tipo_usuarios_alias)
-    VALUES 
-    ('usuarios','Usuarios'),
-    ('grupo','Grupos');
 
 
 --usuarios
@@ -496,22 +477,29 @@ ALTER TABLE reglas.tipo_usuarios
 CREATE TABLE reglas.usuarios
 (
   usu_id integer NOT NULL,
-  usu_tipo integer NOT NULL,
   usu_estado integer NOT NULL,
   usu_fecha_registro date NOT NULL DEFAULT ('now'::text)::date,
   CONSTRAINT usuarios_pk PRIMARY KEY (usu_id),
   CONSTRAINT reglas_estados_fk FOREIGN KEY (usu_estado)
       REFERENCES reglas.estados (estados_id) MATCH SIMPLE
-      ON UPDATE NO ACTION ON DELETE SET NULL,
-  CONSTRAINT funciones_tipo_usuarios_fk FOREIGN KEY (usu_tipo)
-      REFERENCES reglas.tipo_usuarios (tipo_usuarios_id) MATCH SIMPLE
-      ON UPDATE NO ACTION ON DELETE NO ACTION
+      ON UPDATE NO ACTION ON DELETE SET NULL
 )
 WITH (
   OIDS=FALSE
 );
 ALTER TABLE reglas.usuarios
   OWNER TO reglas;
+  
+  ----inserta usuarios de pruebas
+  INSERT INTO reglas.usuarios(
+            usu_id, usu_estado)
+    VALUES 
+    ('10',1),
+    ('11',1),
+    ('12',1),
+    ('13',1),
+    ('14',1),
+    ('15',1);
   
  --Acceso
 --Tabla de Acceso	   
@@ -560,6 +548,11 @@ WITH (
 );
 ALTER TABLE reglas.relaciones
   OWNER TO reglas;
+
+--se agrega un usuario como administrador para poder probar
+INSERT INTO reglas. relaciones (re_usuario , rel_objeto ,rek_registro, rel_permiso , rel_estado)
+                          VALUES ( 11 , 0 , 0 , 5 , 1);
+ 
  
 CREATE TABLE reglas.relaciones_h
 (

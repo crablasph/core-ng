@@ -21,6 +21,8 @@ class GestorUsuariosComponentes{
     private $registrador;
     private $usuario;
     public $mensaje;
+    private $listaRegistrosPermitidos =  array();
+    private $superUsuario =  false;
     
     function __construct($usuario = ''){
     	
@@ -39,24 +41,92 @@ class GestorUsuariosComponentes{
     	
     }
     
-    private function validarAcceso($idRegistro , $permiso){
+    public function validarAcceso($idRegistro = '', $permiso = '', $idObjeto = ''){
     	
-    	$permisos = $this->permisosUsuario($this->usuario,self::ID_OBJETO,0);
-    	if(!$permisos&&isset($idRegistro)&&$idRegistro!==0&&$idRegistro!==''&&!is_null($idRegistro)) 
-    		$permisos = $this->permisosUsuario($this->usuario,self::ID_OBJETO,$idRegistro);
-    	 
-    	if(in_array(0,$permisos)||in_array(5,$permisos)) return true;
-    	 
-    	if(!in_array($permiso,$permisos)||!$this->validarRelacion($this->usuario,self::ID_OBJETO,$idRegistro,$permiso)){
+    	
+    	
+    	$listaPermitidos = $this->permisosUsuarioObjeto($this->usuario,$idObjeto);
+    	
+    	if(!is_array($listaPermitidos)){
     		$this->mensaje->addMensaje("101","errorPermisosGeneral",'error');
-    		
     		return false;
     	}
     	
-    	return true;
+    	if($this->superUsuario===true) return true;
+    	
+    	$idRegistro = (integer) $idRegistro;
+    	$permiso =  (integer) $permiso;
+    	$idObjeto =  (integer) $permiso;
+
+    	//echo $permiso."///<br>";
+    	//var_dump($listaPermitidos,"<br>",$this->listaRegistrosPermitidos,"<br>",$idRegistro,$permiso);
+    	 
+    	
+    	foreach ($listaPermitidos as $permitidos){
+    		
+    		
+    		
+    		
+    		//actua propietario del objeto
+    		if($permitidos['registro']==0&&$permitidos['permiso']==0) {
+    			$this->superUsuario = true;
+    			return true;
+    		}
+    		
+    		//tiene el permiso sobre todo el objeto
+    		if($permitidos['registro']==0&&$permitidos['permiso']==$permiso) {
+    			$this->superUsuario = true;
+    			return true;
+    		}
+    		
+    		//es admin
+    		if($permitidos['permiso']==5){
+    			$this->superUsuario = true;
+    			return true;
+    		}
+    		
+    		
+    		//tiwne permiso solicitado explicitamente
+    		if($permitidos['registro']==$idRegistro&&$permitidos['permiso']==$permiso) return true;
+    		
+    		//es propietario del registro
+    		if($permitidos['registro']==$idRegistro&&$permitidos['permiso']==0) return true;
+    		
+    		
+    		//propietario de algunos elementos y se permite consultarlos
+    		if($permiso==2&&$permitidos['permiso']==0) return true;
+
+    		
+    		//tiene el permiso de consultar, no es claro sobre cuales elementos
+    		if($permiso==$permitidos['permiso']&&$permiso==2) return true;
+    		
+    		
+    		
+    		
+    	}
+    	
+    	$this->mensaje->addMensaje("101","errorPermisosGeneral",'error');
+    	return false;
+    	
+
+    }
+    
+    public function filtrarPermitidos($consulta){
+    	
+    	if(!is_array($consulta)) return false;
+    	
+    	if($this->superUsuario===true) return $consulta;
+    	
+    	$resultado =  array();
+    	foreach ($consulta as $fila){
+    		if(in_array($fila['id'],$this->listaRegistrosPermitidos)) $resultado[] = $fila ;
+    	}
+    	
+    	return $resultado;
     }
     
     private function verificaUsuario($usuario){
+    	
     	$idTablaUsuarios = 5;
     	$parametros =  array();
     	$parametros['id'] = $usuario;
@@ -87,12 +157,14 @@ class GestorUsuariosComponentes{
     		$this->mensaje->addMensaje("101","registroObjetoNoExiste",'error');
     		return false;
     	}
+    	
     	return true;
     }
     
     public function crearRelacion($usuario ='',$objeto='',$registro='',$permiso = '',$estado=''){
     	
-    	if(!$this->validarAcceso(0,1)) return false;
+    	if(!$this->validarAcceso(0,1,self::ID_OBJETO)) return false;
+    	
     	if($usuario===''||$objeto===''||$registro===''||$permiso===''){
     		
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
@@ -103,8 +175,6 @@ class GestorUsuariosComponentes{
     	
     	//verifica que el usuario exista
     	if(!$this->verificaUsuario($usuario)) return false;
-    	
-    	
     	
     	//verifica que el objeto exista
     	if(!$this->registrador->getObjeto($objeto,'id','id')){
@@ -146,7 +216,7 @@ class GestorUsuariosComponentes{
     
     public function actualizarRelacion($id = '',$usuario ='',$objeto='',$registro='',$permiso = '',$estado=''){
     	 
-    	if(!$this->validarAcceso($id,3)) return false;
+    	if(!$this->validarAcceso($id,3,self::ID_OBJETO)) return false;
     	if($id==''||is_null($id)){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
     		return false;
@@ -202,7 +272,7 @@ class GestorUsuariosComponentes{
     
     public function consultarRelacion($id = '',$usuario ='',$objeto='',$permiso = '',$estado='',$fecha=''){
     
-    	if(!$this->validarAcceso($id,2)) return false;
+    	if(!$this->validarAcceso($id,2,self::ID_OBJETO)) return false;
     	$parametros =  array();
     	if($id!='')$parametros['id'] = $id;
     	if($usuario!='')$parametros['usuario'] = $usuario;
@@ -219,13 +289,13 @@ class GestorUsuariosComponentes{
     		return false;
     	}
     
-    	return $consulta;
+    	return $this->filtrarPermitidos($consulta);
     
     }
     
     public function activarInactivarRelacion($id = ''){
     
-    	if(!$this->validarAcceso($id,3)) return false;
+    	if(!$this->validarAcceso($id,3,self::ID_OBJETO)) return false;
     	if($id==''||is_null($id)){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
     		return false;
@@ -269,13 +339,65 @@ class GestorUsuariosComponentes{
     	}
     	
     	$retorna =  array();
+    	
     	foreach ($consulta as $registro){
-    		$retorna[] = $registro['permiso']; 
+    		
+    		$retorna[] = $registro['permiso'];
+    		 
     	}
     	
     	return $retorna; 
     	 
     	 
+    }
+    
+    public function permisosUsuarioObjeto($usuario ='',$objeto=''){
+    	 
+    	if($usuario===''||$objeto===''){
+    
+    		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
+    		return false;
+    	}
+    	 
+    	
+    	//es admin?
+    
+    	if($usuario!='')$parametros['usuario'] = $usuario;
+    	$parametros['permiso'] = 5;
+    	$consulta = $this->registrador->ejecutar(self::ID_OBJETO,$parametros,2);
+    	
+    	if(is_array($consulta)){
+    		$this->superUsuario =  true;
+    	}
+    	
+    	
+    	// consulta relaciones asociadas al usuario y objeto
+    	$parametros =  array();
+    	if($usuario!='')$parametros['usuario'] = $usuario;
+    	if($objeto!='')$parametros['objeto'] = $objeto;
+    	$consulta = $this->registrador->ejecutar(self::ID_OBJETO,$parametros,2);
+    	 
+    	 
+    	if(!is_array($consulta)){
+    		 
+    		$this->mensaje->addMensaje("101","usuarioSinPermisos",'error');
+    		return false;
+    	}
+    	 
+    	$retorna =  array();
+
+    	
+    	foreach ($consulta as $registro){
+    		$this->listaRegistrosPermitidos[] = (integer) $registro['registro'];
+    		$a = (integer) $registro['registro'];
+    		$b = (integer) $registro['permiso'];
+    		$retorna[] = array( 'registro'=> $a,  'permiso'=> $b);
+    		 
+    	}
+    	asort($this->listaRegistrosPermitidos);
+    	return $retorna;
+    
+    
     }
     
     public function validarRelacion($usuario ='',$objeto='',$registro='',$permiso = ''){

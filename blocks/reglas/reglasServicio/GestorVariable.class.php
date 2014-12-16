@@ -24,6 +24,7 @@ class GestorVariable{
     private $registrador;
     private $usuario;
     public $mensaje;
+    private $verificadorAcceso ;
     
     function __construct(){
     	
@@ -34,26 +35,11 @@ class GestorVariable{
     	//configurar usuario
     	$this->usuario = $_REQUEST['usuario'];
     	$this->registrador->setUsuario($this->usuario);
+    	$this->verificadorAcceso = new  GestorUsuariosComponentes();
     	
     }
     
-    private function validarAcceso($idRegistro , $permiso){
-    	$usuario = new GestorUsuariosComponentes();
-    	
-    	$permisos = $usuario->permisosUsuario($this->usuario,self::ID_OBJETO,0);
-    	if(!$permisos&&isset($idRegistro)&&$idRegistro!==0&&$idRegistro!==''&&!is_null($idRegistro)) 
-    		$permisos = $usuario->permisosUsuario($this->usuario,self::ID_OBJETO,$idRegistro);
-    	 
-    	if(in_array(0,$permisos)||in_array(5,$permisos)) return true;
-    	 
-    	if(!in_array($permiso,$permisos)||!$usuario->validarRelacion($this->usuario,self::ID_OBJETO,$idRegistro,$permiso)){
-    		$this->mensaje->addMensaje("101","errorPermisosGeneral",'error');
-    		unset($usuario);
-    		return false;
-    	}
-    	unset($usuario);
-    	return true;
-    }
+    
     
     private function getValorReal($valor = '',$tipo = ''){
     	 
@@ -91,7 +77,7 @@ class GestorVariable{
     
     public function crearVariable($nombre ='',$descripcion='',$proceso='',$tipo = '',$rango='',$valor='',$estado=''){
     	
-    	if(!$this->validarAcceso(0,1)) return false;
+    	if(!$this->verificadorAcceso->validarAcceso(0,1,self::ID_OBJETO)) return false;
     	if($nombre==''||$proceso==''||$valor==''||$tipo==''||$rango==''){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
     		return false;
@@ -133,7 +119,7 @@ class GestorVariable{
     
     public function actualizarVariable($id = '',$nombre ='',$descripcion='',$proceso='',$tipo = '',$rango = '',$valor='',$estado=''){
     	 
-    	if(!$this->validarAcceso($id,3)) return false;
+    	if(!$this->verificadorAcceso->validarAcceso($id,3,self::ID_OBJETO)) return false;
     	if($id==''||is_null($id)){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
     		return false;
@@ -188,7 +174,7 @@ class GestorVariable{
     
     public function consultarVariable($id = '',$nombre ='',$proceso='',$tipo = '',$estado='',$fecha=''){
     
-    	if(!$this->validarAcceso($id,2)) return false;
+    	if(!$this->verificadorAcceso->validarAcceso($id,2,self::ID_OBJETO)) return false;
     	$parametros =  array();
     	if($nombre!='')	$parametros['nombre'] = $nombre; 
     	//if($descripcion!='')	$parametros['descripcion'] = $descripcion;
@@ -207,13 +193,13 @@ class GestorVariable{
     		return false;
     	}
     
-    	return $consulta;
+    	return $this->verificadorAcceso->filtrarPermitidos($consulta);
     
     }
     
     public function activarInactivarVariable($id = ''){
     
-    	if(!$this->validarAcceso($id,3)) return false;
+    	if(!$this->verificadorAcceso->validarAcceso($id,3)) return false;
     	if($id==''||is_null($id)){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
     		return false;
@@ -236,7 +222,7 @@ class GestorVariable{
     
     public function duplicarVariable($id = ''){
     	
-    	if(!$this->validarAcceso($id,1)) return false;
+    	if(!$this->verificadorAcceso->validarAcceso($id,1,self::ID_OBJETO)) return false;
     
     	if($id==''||is_null($id)){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');

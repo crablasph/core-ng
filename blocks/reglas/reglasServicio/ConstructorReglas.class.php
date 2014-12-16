@@ -20,6 +20,7 @@ class ConstructorReglas{
     private $registrador;
     private $usuario;
     public $mensaje;
+    private $verificadorAcceso ;
     
     function __construct(){
     	$this->registrador = new Registrador();
@@ -28,34 +29,17 @@ class ConstructorReglas{
     	//configurar usuario
     	$this->usuario = $_REQUEST['usuario'];
     	$this->registrador->setUsuario($this->usuario);
+    	$this->verificadorAcceso = new  GestorUsuariosComponentes();
     	
     	
     }
     
-    private function validarAcceso($idRegistro = '', $permiso){
-    	$usuario = new GestorUsuariosComponentes();
-    	
-    	$permisos = $usuario->permisosUsuario($this->usuario,self::ID_OBJETO,0);
-    	if(!$permisos&&isset($idRegistro)&&$idRegistro!==0&&$idRegistro!==''&&!is_null($idRegistro)) 
-    		$permisos = $usuario->permisosUsuario($this->usuario,self::ID_OBJETO,$idRegistro);
-    	
-    	
-        
-    	if(in_array(0,$permisos)||in_array(5,$permisos)) return true;
-    	
-    	if(!in_array($permiso,$permisos)||!$usuario->validarRelacion($this->usuario,self::ID_OBJETO,$idRegistro,$permiso)){
-    		$this->mensaje->addMensaje("101","errorPermisosGeneral",'error');
-    		unset($usuario); 
-    		return false;
-    	}
-    	unset($usuario);
-    	return true;
-    }
+    
     
     public function crearRegla($nombre ='',$descripcion='',$proceso='',$tipo = '',$valor='',$estado=''){
 
     	
-    	if(!$this->validarAcceso(0,1)) return false;
+    	if(!$this->verificadorAcceso->validarAcceso(0,1,self::ID_OBJETO)) return false;
     	
     	if($nombre===''||$proceso===''||$valor===''){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
@@ -88,7 +72,7 @@ class ConstructorReglas{
     
     public function actualizarRegla($id = '',$nombre ='',$descripcion='',$proceso='',$tipo = '',$valor='',$estado=''){
     	 
-    	if(!$this->validarAcceso($id,3)) return false;
+    	if(!$this->verificadorAcceso->validarAcceso($id,3,self::ID_OBJETO)) return false;
     	
     	if($id==''||is_null($id)){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
@@ -117,7 +101,7 @@ class ConstructorReglas{
     public function consultarRegla($id = '',$nombre ='',$proceso='',$tipo = '',$estado='', $fecha=''){
     
     	
-    	if(!$this->validarAcceso($id,2)) return false;
+    	if(!$this->verificadorAcceso->validarAcceso($id,2,self::ID_OBJETO)) return false;
     	
     	$parametros =  array();
     	if($nombre!='')	$parametros['nombre'] = $nombre; 
@@ -137,13 +121,13 @@ class ConstructorReglas{
     		return false;
     	}
     
-    	return $consulta;
+    	return $this->verificadorAcceso->filtrarPermitidos($consulta);
     
     }
     
     public function activarInactivarRegla($id = ''){
     
-    	if(!$this->validarAcceso($id,3)) return false;
+    	if(!$this->verificadorAcceso->validarAcceso($id,3,self::ID_OBJETO)) return false;
     	
     	if($id==''||is_null($id)){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
@@ -167,7 +151,7 @@ class ConstructorReglas{
     
     public function duplicarRegla($id = ''){
     
-    	if(!$this->validarAcceso($id,1)) return false;
+    	if(!$this->verificadorAcceso->validarAcceso($id,1,self::ID_OBJETO)) return false;
     	
     	if($id==''||is_null($id)){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
