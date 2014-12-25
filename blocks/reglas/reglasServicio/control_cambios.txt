@@ -1,12 +1,17 @@
-
-
-
-
-
-
-
-
-
+sans serif. ok
+cargar bootstrap. ok
+contenido alineado a la izquierda data tables. ok
+validacion antes de guardar la funcion y regla. ok
+revisar que se pueda ejecutar funcion sobre funcion.ok
+en las variables al evaluar mostrar rango ,tipo y valor. ok
+* agregar un permiso para ejecucion. pendiente. se agrega pero no se usa hay que definir esto bien.
+* Agrear fk de objetos a la tabla de relaciones
+registrar las funciones predefinidas. ok
+al momento de buscar las variables y parametros para reemplazar tener en cuenta cosas como nombre... variable1 y variable11.. ok
+terminar el autocomplete para que sea reutilizable. cambiar el ajax
+buscar en la calculadora los elementos. ok
+llevar todo a componentes e implementar 2 bloques. los mensajes del componentes van en codigo
+.....a...llevar al core, persistencia y mensaje.
 7. documentar el alcance del servicio SOAP como tipo en funcion. falta
 
 

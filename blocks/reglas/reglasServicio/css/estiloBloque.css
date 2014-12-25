@@ -4,12 +4,19 @@
     box-sizing: border-box;
 }
 
+
+
 .contenedorCalculadora{
 	display:inline-block;
 	float:left;
 	position : relative;
 	width:100%;
 	
+}
+
+* {
+ font-size: 100%;
+ font-family: sans-serif;
 }
 
 
@@ -75,6 +82,10 @@
 	display:inline-block;
 }
 
+input {
+        max-width: 100%;
+    }
+    
 
 
 #herramientas{
@@ -105,10 +116,7 @@ select {
       width: 200px;
     }
     
-.tabla tr td {
-    text-align: center;
-    
-}
+
 
 .tabla .ui-selecting  { background: #FECA40; }
 .tabla .ui-selected  { background: #F39814; color: white; }

@@ -4,7 +4,7 @@
  * 
  * Esta clase maneja mensajes en el sistema
  * se pueden manejar diferentes tipos salidas de mensajes como
- * html, json, soap ó texto
+ * html, json, soap, texto, objeto , id (el codigo del mensaje), entrada (cadena de entrada)
  * y se pueden categorizar tal y como se definen en el objeto de formularioHtml
  * information, warning, error,etc....
  * uso:
@@ -12,6 +12,10 @@
    echo Mensaje->getLastMensaje();
    //si se quiere especificar el tipo de salida. ej:
    echo Mensaje->getLastMensaje('json');
+ * mesnajes al vuelo:
+ * $cadenaAlVuelo = 'mensaje al vuelo';
+ * Mensaje->addMensaje("cod",':'.$cadenaAlVuelo,'information');
+ * echo Mensaje->getLastMensaje();//retornara el mensaje en formato html o el predefinido en la creación del objeto
  */
 
 namespace reglas;
@@ -36,13 +40,14 @@ class Mensaje {
 	private $lastId ;
 	private $lenguaje;
 	private $formulario;
-	public $debug;
+	private $debug;
 	
-	function __construct($salidaTipo = '') {
+	function __construct($salidaTipo = '', $lenguaje = '') {
 		if ($salidaTipo!='') $this->salidaTipo = $salidaTipo;
 		else $this->salidaTipo = 'html';
 		$this->debug =  false;
-		$this->lenguaje = new Lenguaje ();
+		if(!is_object($lenguaje))$this->lenguaje = new Lenguaje ();
+		else $this->lenguaje = $lenguaje;
         $this->formulario = new \FormularioHtml ();
 	}
 	
@@ -55,6 +60,12 @@ class Mensaje {
 		
 		if ($salidaTipo!='') $this->salidaTipo = $salidaTipo;
 		else $this->salidaTipo = 'html';
+	}
+	
+	public function debug($debug = false){
+		if(is_bool($debug)) $this->debug = $debug;
+		$this->debug = false;
+		
 	}
 	
 	public function getListaMensajes(){
@@ -102,6 +113,8 @@ class Mensaje {
 		$mensaje = new \stdClass;
 		//set id mensaje
 		$mensaje->id = $id;
+		//set cadena de entrada en el obje
+		$mensaje->entrada = $cadena;
 		//recupera cadena de la clase lenguaje
 		if($cadena[0]==':') $mensaje->texto = substr($cadena,1,strlen($cadena)-2);
 		else $mensaje->texto = $this->recuperarCadena($cadena);
@@ -130,6 +143,7 @@ class Mensaje {
 	private function procesarSalida(&$mensaje){
 		
 		switch($this->salidaTipo){
+			default:
 			case 'html':
 				
 				// -------------Control texto-----------------------
@@ -157,7 +171,12 @@ class Mensaje {
 			case 'objeto':
 				return $mensaje;
 				break;
-				
+			case 'id':
+				return $mensaje->id;
+				break;
+			case 'entrada':
+				return $mensaje->entrada;
+				break;
 			default:
 				return false;
 				break;

@@ -38,7 +38,7 @@ class Funcion {
     
     }
     
-    function evaluar($objetoId) {
+    function evaluar($objetoId,$texto =  false) {
     
     	include_once ($this->ruta . "funcion/evaluar.php");
     
@@ -131,6 +131,9 @@ class Funcion {
 	        		break;
 	        	case 'evaluar':
 	        		 $this->evaluar($_REQUEST['objetoId']);
+	        			break;
+	        	case 'evaluarTexto':
+	        			$this->evaluar($_REQUEST['objetoId'],true);
 	        			break;
 	        	case 'autocomplete':
 	        		$this->autocompletar($_REQUEST['objetoId']);

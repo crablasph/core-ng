@@ -136,7 +136,7 @@ class Formulario {
         echo '<br><br><hr>';
 		
 		//cuerpo
-    	echo '<div id="cuerpo">';
+    	echo '<div class="container-fluid" id="cuerpo">';
     	
     	
     	//define espacios para interacciones
@@ -146,7 +146,7 @@ class Formulario {
     	echo '</div>';
     	
     	//espacio Trabajo
-    	echo '<div id="espacioTrabajo">';
+    	echo '<div  id="espacioTrabajo">';
     	
     	
     	

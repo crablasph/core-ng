@@ -184,14 +184,19 @@ class Persistencia {
     
     }
     
-    function read($fields , $where = null){
+    function read($fields , $where = null, $groupBy = '',$orderBy = ''){
         
     	if($this->probarTabla()&&
     	  $this->validarCampos($fields)){
     		
     		$query = "SELECT ".implode(",",$fields);
     		$query .= " FROM ".$this->tabla;
+    		
     		if(!is_null($where)&&$where!='')$query .=" WHERE ".$where;
+    		
+    		if($groupBy!=''&&is_array($groupBy)) $query .=" GROUP BY ".implode(',',$groupBy)." ";
+    		if($orderBy!=''&&is_array($orderBy)) $query .=" ORDER BY ".implode(',',$orderBy)." ";
+    		
     		$this->setQuery($query);
     		$consulta = $this->ejecutar("busqueda") ;
     		if($consulta ==  false){
@@ -406,7 +411,7 @@ class Persistencia {
     private function recuperarTablaEsquema(){
     	//recupera tabla y esquema
     	$arrNombre = explode (".",$this->tabla);
-    	if(count($arrNombre)>0){
+    	if(count($arrNombre)>1){
     		$esquema = $arrNombre[0];
     		$tabla =   $arrNombre[1];
     	}else {

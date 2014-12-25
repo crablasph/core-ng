@@ -83,7 +83,8 @@ class Rango{
     	//'d/m/Y'
     	//30/01/2014
     	//
-    	$d = \DateTime::createFromFormat('d/m/Y', $valor); 
+    	$d = \DateTime::createFromFormat('d/m/Y', $valor);
+    	if($d && $rango=='*') return true; 
     	$intervalo = explode(",",$rango);
     	if(!$intervalo) return false;
     	$minimo = \DateTime::createFromFormat('d/m/Y', $intervalo[0]);
@@ -93,14 +94,16 @@ class Rango{
     }
     
     private function validarTexto($valor = '',$rango = ''){
+    	if($rango=='*') return true;
     	return in_array($valor,explode(",",$rango));
     }
     
     private function validarLista($valor,$rango=''){
+    	if($rango=='*') return true;
     	foreach (explode(",",$valor) as  $val){
-    		if(in_array($valor,explode(",",$rango))) return true;
+    		if(!in_array($val,explode(",",$rango))) return false;
     	}
-    	return false;
+    	return true;
     }
     
     private function validarNulo($valor = '',$rango = ''){

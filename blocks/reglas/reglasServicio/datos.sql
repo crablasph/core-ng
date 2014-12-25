@@ -123,8 +123,8 @@ INSERT INTO reglas.columnas
   columnas_actualizar,  columnas_codificada , columnas_deshabilitado ,columnas_autocompletar ,
   columnas_requerido_consultar,columnas_requerido_crear,columnas_requerido_actualizar) VALUES
   
-  ('id','Identificación','text',true,false,false,false,false,false,false,false,true),
-  ('nombre','Nombre','text',true,true,true,false,false,false,false, true, false),
+  ('id','Identificación','text',true,false,false,false,false,true,false,false,true),
+  ('nombre','Nombre','text',true,true,true,false,false,false,true, true, false),
   ('descripcion','Descripción','textarea',false,true,true,false,false,false,false, false, false),
   ('proceso','Proceso','text',true,true,true,false,false,true,false, true, false),
   ('tipo','Tipo','select',true,true,true,true,false,false,false, true, false),
@@ -165,7 +165,8 @@ ALTER SEQUENCE "permisos_permisos_id_seq" MINVALUE 0 START 0 RESTART 0;
     		( 'consultar','Consultar'),
     		( 'actualizar','Actualizar'),
     		( 'eliminar','Eliminar'),
-    		( 'administrador','Administrador');
+    		( 'administrador','Administrador'),
+    		( 'ejecutar','Ejecutar');
 
 
 --categorias funcion
@@ -407,8 +408,7 @@ ALTER TABLE reglas.funciones
   fun_fecha_registro_h date NOT NULL ,
   fun_fecha_h date NOT NULL DEFAULT ('now'::text)::date,
   fun_usuario text NOT NULL,
-  CONSTRAINT funciones_h_pk PRIMARY KEY (fun_hid)
-  
+  CONSTRAINT funciones_h_pk PRIMARY KEY (fun_hid)  
 )
 WITH (
   OIDS=FALSE
@@ -550,7 +550,7 @@ ALTER TABLE reglas.relaciones
   OWNER TO reglas;
 
 --se agrega un usuario como administrador para poder probar
-INSERT INTO reglas. relaciones (re_usuario , rel_objeto ,rek_registro, rel_permiso , rel_estado)
+INSERT INTO reglas.relaciones (re_usuario , rel_objeto ,rek_registro, rel_permiso , rel_estado)
                           VALUES ( 11 , 0 , 0 , 5 , 1);
  
  

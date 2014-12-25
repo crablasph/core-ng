@@ -196,14 +196,14 @@ class EvalMath {
 	);
 
 	var $fc = array( // calc functions emulation
-		'average'=>array(-1), 'mean'=>array(-1),
-		'median'=>array(-1),  'mode'=>array(-1), 'range'=>array(-1),
-		'max'=>array(-1),	  'min'=>array(-1),
-		'mod'=>array(2),	  'pi'=>array(0),
+		'average'=>array(-1), 'mean'=>array(-1), 'promedio'=>array(-1),
+		'median'=>array(-1),'mediana'=>array(-1),  'mode'=>array(-1),'moda'=>array(-1), 'range'=>array(-1), 'rango'=>array(-1),
+		'max'=>array(-1),	  'min'=>array(-1), 'maximo'=>array(-1),	  'minimo'=>array(-1),
+		'mod'=>array(2), 'modulo'=>array(2),	  'pi'=>array(0),
 		'power'=>array(2),	  'log'=>array(1, 2),
-		'round'=>array(1, 2),
+		'round'=>array(1, 2), 'redondear'=>array(1, 2),
 		'number_format'=>array(1, 2), 'number_format_eu'=>array(1, 2),
-		'sum'=>array(-1),	 'product'=>array(-1),
+		'sum'=>array(-1),'suma'=>array(-1),	 'product'=>array(-1),'producto'=>array(-1),
 		'rand_int'=>array(2), 'rand_float'=>array(0),
 		'arctan2'=>array(2),  'atan2'=>array(2),
 		'if'=>array(3)
@@ -597,8 +597,20 @@ class EvalMathFuncs {
 		$args = func_get_args();
 		return (call_user_func_array(array('self', 'sum'), $args) / count($args));
 	}
+	
+	static function promedio() {
+		$args = func_get_args();
+		return (call_user_func_array(array('self', 'sum'), $args) / count($args));
+	}
 
 	static function median() {
+		$args = func_get_args();
+		sort( $args );
+		$middle = floor( count( $args ) / 2 ); // upper median for even counts
+		return $args[ $middle ];
+	}
+	
+	static function mediana() {
 		$args = func_get_args();
 		sort( $args );
 		$middle = floor( count( $args ) / 2 ); // upper median for even counts
@@ -612,14 +624,39 @@ class EvalMathFuncs {
 		end( $v );
 		return key( $v );
 	}
+	
+	static function moda() {
+		$args = func_get_args();
+		$v = array_count_values( $args );
+		asort( $v );
+		end( $v );
+		return key( $v );
+	}
 
 	static function range() {
 		$args = func_get_args();
 		sort( $args );
 		return end( $args ) - reset( $args );
 	}
+	
+	static function rango() {
+		$args = func_get_args();
+		sort( $args );
+		return end( $args ) - reset( $args );
+	}
 
 	static function max() {
+		$args = func_get_args();
+		$res = array_pop($args);
+		foreach($args as $a) {
+			if ($res < $a) {
+				$res = $a;
+			}
+		}
+		return $res;
+	}
+	
+	static function maximo() {
 		$args = func_get_args();
 		$res = array_pop($args);
 		foreach($args as $a) {
@@ -640,8 +677,23 @@ class EvalMathFuncs {
 		}
 		return $res;
 	}
+	
+	static function minimo() {
+		$args = func_get_args();
+		$res = array_pop($args);
+		foreach($args as $a) {
+			if ($res > $a) {
+				$res = $a;
+			}
+		}
+		return $res;
+	}
 
 	static function mod($op1, $op2) {
+		return $op1 % $op2;
+	}
+	
+	static function modulo($op1, $op2) {
 		return $op1 % $op2;
 	}
 
@@ -664,6 +716,10 @@ class EvalMathFuncs {
 	static function round($val, $precision = 0) {
 		return round($val, $precision);
 	}
+	
+	static function redondear($val, $precision = 0) {
+		return round($val, $precision);
+	}
 
 	static function number_format($val, $decimals = 0) {
 		return number_format($val, $decimals, '.', ',');
@@ -675,8 +731,16 @@ class EvalMathFuncs {
 	static function sum() {
 		return array_sum( func_get_args() );
 	}
+	
+	static function suma() {
+		return array_sum( func_get_args() );
+	}
 
 	static function product() {
+		return array_product( func_get_args() );
+	}
+	
+	static function producto() {
 		return array_product( func_get_args() );
 	}
 

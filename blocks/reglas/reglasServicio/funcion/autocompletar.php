@@ -51,6 +51,7 @@ class Autocompletar {
         $this->mensaje = new Mensaje();
         $this->cliente  = new ClienteServicioReglas();
         $this->proceso = $this->cliente->getListaProcesos();
+        
     }
     
     
@@ -62,12 +63,72 @@ class Autocompletar {
     	return false;
     }
     
+    private function seleccionarObjeto(){
+    	$this->objeto = $this->cliente->getListaObjetos();
+    	foreach ($this->objeto as $objeto){
+    		if($objeto['id']==$this->objetoId){
+    
+    			$this->objetoNombre = $objeto['nombre'];
+    			$this->objetoAlias = $objeto['alias'] 	;
+    			$this->objetoAliasSingular = $objeto['ejecutar'];
+    			 
+    			$this->objetoVisble = $this->setBool($objeto['visible']);
+    			$this->objetoCrear = $this->setBool($objeto['crear']);
+    			$this->objetoConsultar = $this->setBool($objeto['consultar']);
+    			$this->objetoActualizar = $this->setBool($objeto['actualizar']);
+    			$this->objetoCambiarEstado = $this->setBool($objeto['cambiarestado']);
+    			$this->objetoDuplicar = $this->setBool($objeto['duplicar']);
+    			$this->objetoEliminar = $this->setBool($objeto['eliminar']);
+    			 
+    			return true;
+    		}
+    	}
+    	return false;
+    }
+    
+    private function getObjetoAliasPorId($objeto ='', $id = ''){
+    	foreach ($this->$objeto as $elemento){
+    		if($elemento['id']==$id) return $elemento['alias'];
+    	}
+    }
+    
+    private function getObjetoNombrePorId($objeto ='', $id = ''){
+    	foreach ($this->$objeto as $elemento){
+    		if($elemento['id']==$id) return $elemento['nombre'];
+    	}
+    }
+    
+    private function getListaPropiedad($nombre='anonimo'){
+
+    	if($this->seleccionarObjeto()){
+    		
+    		$metodo = "consultar".ucfirst($this->objetoAliasSingular);
+    		$argumentos =  array('','');
+    		$peticion = call_user_func_array(array($this->cliente , $metodo), $argumentos);
+    		
+    		if(!is_array($peticion)) return false;
+    		
+    		$resultado = array();
+    		$indice = 0;
+    		foreach ($peticion as $registro){
+    			$indice++;
+    			$resultado [] =  array('id'=>$registro[$nombre],'nombre'=>$registro[$nombre],'alias'=>$registro[$nombre]);
+    		}
+    		return $resultado; 
+    		
+    		
+    	}
+    	return false;
+    }
+    
     public function autocompletar(){
     	
     	$mensaje = 'accionAutocompletar';
     	
 	    
     	if($_REQUEST['field']=='proceso') echo json_encode($this->proceso);
+    	if($_REQUEST['field']=='nombre') echo json_encode($this->getListaPropiedad('nombre'));
+    	if($_REQUEST['field']=='id') echo json_encode($this->getListaPropiedad('id'));
     	
     	return true;
     }

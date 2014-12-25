@@ -3,9 +3,11 @@ namespace reglas\formulario;
 
 include_once (dirname(__FILE__).'/../ClienteServicioReglas.class.php');
 include_once (dirname(__FILE__).'/../Mensaje.class.php');
+include_once (dirname(__FILE__).'/../Tipos.class.php');
 
 use reglas\ClienteServicioReglas as ClienteServicioReglas;
 use reglas\Mensaje as Mensaje;
+use reglas\Tipos as Tipos;
 
 if(!isset($GLOBALS["autorizado"])) {
 	include("../index.php");
@@ -38,14 +40,16 @@ class Evaluar {
     private $columnas;
     private $listaParametros;
     private $listaAtributosParametros;
+    private $texto;
 	    
-    function __construct($lenguaje,$objetoId = '') {
+    function __construct($lenguaje,$objetoId = '',$texto =  false) {
 
     	$this->objetoId = $objetoId;
         $this->miConfigurador = \Configurador::singleton ();
 
         $this->miConfigurador->fabricaConexiones->setRecursoDB ( 'principal' );
 
+        $this->texto =  (bool) $texto;
         $this->lenguaje = $lenguaje;
         $this->mensaje = new Mensaje();
         $this->cliente  = new ClienteServicioReglas();
@@ -124,13 +128,20 @@ class Evaluar {
 	    $mensaje = 'accionEvaluar';
 	    
 	    $cadenaMensaje = $this->lenguaje->getCadena ( $mensaje );
-	    $parametro = $this->listaParametros[0];
+	    if(isset($this->listaParametros[0]))$parametro = $this->listaParametros[0];
     	
     	    
-    	
+	    
     	if(strtolower($this->objetoAliasSingular)=='parametro'){
     		$metodo = "evaluar".ucfirst($this->objetoAliasSingular);
-    		$argumentos =  array($parametro);
+    		
+    		if($this->texto===true){
+    			$metodo.='Texto';
+    			$argumentos = array();
+    			$argumentos[] = base64_decode($_REQUEST['valorCodificado']);
+    			$argumentos[] = $_REQUEST['tipo'];
+    			
+    		}else 		$argumentos =  array($parametro);
     		
     		$accion =  call_user_func_array(array($this->cliente , $metodo), $argumentos);
     		
@@ -145,14 +156,17 @@ class Evaluar {
     	if(strtolower($this->objetoAliasSingular)=='variable'){
     		//recupera datos
     		$metodo = "consultar".ucfirst($this->objetoAliasSingular);
-    		$argumentos =  array($parametro);
+    		if(isset($parametro)) $argumentos =  array($parametro);
+    		
+    		
     		$elemento =  call_user_func_array(array($this->cliente , $metodo), $argumentos);
     		
-    		if(!is_array($elemento)){
+    		if(!is_array($elemento)&&$this->texto===false){
     			return false;
     		}
+    		//$accion = is_array($elemento)?$this->getVariablesListaDelTexto($elemento[0]['nombre']):$this->getVariablesListaDelTexto(base64_decode($_REQUEST['valorCodificado']));
+    		$accion = $this->getVariablesListaDelTexto($elemento[0]['nombre']." ");
     		
-    		$accion = $this->getVariablesListaDelTexto($elemento[0]['nombre']);
     		
     		
     		$creaFormularioVariables =  array();
@@ -166,24 +180,35 @@ class Evaluar {
     				}else{
     					$variablesParametros[] =  array($a[0],$_REQUEST['variable'.ucfirst($a[0])]);
     				}
-    				$formularioVariable .='<div class="contenedorInput">';
-    				$formularioVariable .='<div><label>'.$a[0].'</label>:<span style="white-space:pre;"> </span> </div><div><input class="ui-corner-all validate[required] " type="text" id="variable'.ucfirst($a[0]).'" name="variable'.ucfirst($a[0]).'">';
+    				$formularioVariable .='<div title="tipo:'.Tipos::getTipoAlias($a[1]).' rango:'.$a[2].' valor:'.$a[3].' " class="contenedorInput">';
+    				$formularioVariable .='<div  ><label>'.$a[0].'</label>:<span style="white-space:pre;"> </span> </div><div><input class="ui-corner-all validate[required] " type="text" id="variable'.ucfirst($a[0]).'" name="variable'.ucfirst($a[0]).'">';
     				$formularioVariable .='</input></div>';
     				$formularioVariable .='</div><br>';
     			}
-    			$formularioVariable .= '<br><br><input onclick="validarElemento()" type="button" value="'.$this->lenguaje->getCadena ( 'evaluar' ).'" class="ui-button-text ui-state-default ui-corner-all ui-button-text-only"></input>';
+    			$formularioVariable .= '<br><br><div id="botones"  class="marcoBotones"><input onclick="validarElemento()" type="button" value="'.$this->lenguaje->getCadena ( 'evaluar' ).'" class="ui-button-text ui-state-default ui-corner-all ui-button-text-only"></input></div>';
     			$formularioVariable .= '</form">';
     			
     		}
-    	
-    		if(in_array(1, $creaFormularioVariables)){
+    		
+    		
+    		if(in_array(1, $creaFormularioVariables)&&$this->texto===false){
     			
     			echo $formularioVariable;
     			return false;
     		}
     		
     		$metodo = "evaluar".ucfirst($this->objetoAliasSingular);
-    		$argumentos =  array($parametro,$variablesParametros[0][1]);
+    		if($this->texto===true){
+    			$metodo.='Texto';
+    			$argumentos = array();
+    			$argumentos[] = base64_decode($_REQUEST['valorCodificado']);
+    			
+    			$argumentos[] = $_REQUEST['tipo'];
+    			$argumentos[] = $_REQUEST['rango'];
+    			
+    		
+    		}else	$argumentos =  @array($parametro,$variablesParametros[0][1]);
+    		
     		
     		$accion =  call_user_func_array(array($this->cliente , $metodo), $argumentos);
     		$cadenaMensaje .= !$accion?'falso':(string) $accion;
@@ -198,16 +223,20 @@ class Evaluar {
     		
     		//recupera datos
     		$metodo = "consultar".ucfirst($this->objetoAliasSingular);
-    		$argumentos =  array($parametro);
-    		$elemento =  call_user_func_array(array($this->cliente , $metodo), $argumentos);
+    		if(isset($parametro)&&$this->texto===false) {
+    			$argumentos =  array($parametro);
+    			$elemento =  call_user_func_array(array($this->cliente , $metodo), $argumentos);
+    		}else $elemento=  false;
+    		 
+    		
     	
-    		if(!is_array($elemento)){
+    		if(!is_array($elemento)&&$this->texto===false){
     			return false;
     		}
+    	    
+    		$accion = is_array($elemento)?$this->getVariablesListaDelTexto(base64_decode($elemento[0]['valor'])):$this->getVariablesListaDelTexto(base64_decode($_REQUEST['valorCodificado']));
     	
-    		$accion = $this->getVariablesListaDelTexto(base64_decode($elemento[0]['valor']));
-    	
-    	
+    		
     		$creaFormularioVariables =  array();
     		$variablesParametros =  array();
     		$formularioVariable = '';
@@ -217,14 +246,18 @@ class Evaluar {
     				if(!isset($_REQUEST['variable'.ucfirst($a[0])])) {
     					$creaFormularioVariables[] =  1;
     				}else{
+    					
     					$variablesParametros[] =  array($a[0],$_REQUEST['variable'.ucfirst($a[0])]);
     				}
-    				$formularioVariable .='<div class="contenedorInput">';
-    				$formularioVariable .='<div><label>'.$a[0].'</label>:<span style="white-space:pre;"> </span> </div><div><input class="ui-corner-all validate[required] " type="text" id="variable'.ucfirst($a[0]).'" name="variable'.ucfirst($a[0]).'">';
+    				$formularioVariable .='<div title="tipo:'.Tipos::getTipoAlias($a[1]).' rango:'.$a[2].' valor:'.$a[3].' " class="contenedorInput">';
+    				$formularioVariable .='<div  ><label>'.$a[0].'</label>:<span style="white-space:pre;"> </span> </div><div><input class="ui-corner-all validate[required] " type="text" id="variable'.ucfirst($a[0]).'" name="variable'.ucfirst($a[0]).'">';
     				$formularioVariable .='</input></div>';
     				$formularioVariable .='</div><br>';
     			}
-    			$formularioVariable .= '<br><br><input onclick="validarElemento()" type="button" value="'.$this->lenguaje->getCadena ( 'evaluar' ).'" class="ui-button-text ui-state-default ui-corner-all ui-button-text-only"></input>';
+    			$formularioVariable .= '<br><br><br><br><br><br><div id="botones"  class=""><input onclick="';
+    			if($this->texto==false)	$formularioVariable .= 'validarElemento()';
+    			else $formularioVariable .= 'evaluarTexto()';
+    			$formularioVariable .= '" type="button" value="'.$this->lenguaje->getCadena ( 'evaluar' ).'" class="ui-button-text ui-state-default ui-corner-all ui-button-text-only"></input></div>';
     			$formularioVariable .= '</form">';
     			 
     		}
@@ -234,11 +267,27 @@ class Evaluar {
     			echo $formularioVariable;
     			return false;
     		}
-    	    
+    		
     		$metodo = "evaluar".ucfirst($this->objetoAliasSingular);
-    		$argumentos =  array($parametro,$variablesParametros);
+    		if($this->texto===true){
+    			$metodo.='Texto';
+    			$argumentos = array();
+    			$argumentos = array();
+    			$argumentos[] = base64_decode($_REQUEST['valorCodificado']);
+    			$argumentos[] = $variablesParametros;
+    			if(isset($_REQUEST['tipo']))$argumentos[] = $_REQUEST['tipo'];
+    			else $argumentos[] =1;
+    			if(isset($_REQUEST['rango'])) $argumentos[] = $_REQUEST['rango'];
+    			if(isset($_REQUEST['categoria'])) $argumentos[] = $_REQUEST['categoria'];
+    			if(isset($_REQUEST['rutaCodificado'])) $argumentos[] = base64_decode($_REQUEST['rutaCodificado']);
+    			
+    		
+    		}else $argumentos =  array($parametro,$variablesParametros);
     	    
+    		var_dump($argumentos);
     		$accion =  call_user_func_array(array($this->cliente , $metodo), $argumentos);
+    		
+    		
     		
     		$pasos = '';
     		$conteoPasos =  0;
@@ -297,7 +346,7 @@ class Evaluar {
     }
     
     private function getVariablesListaDelTexto($texto=''){
-    	$metodo = 'getVariablesListaDelTexto';
+    	$metodo = 'getVariablesListaDelTextoTodo';
     	$argumentos =  array($texto);
     	return   call_user_func_array(array($this->cliente , $metodo), $argumentos);
     	
@@ -340,7 +389,7 @@ class Evaluar {
 
 }
 
-$evaluar = new Evaluar ( $this->lenguaje,$objetoId );
+$evaluar = new Evaluar ( $this->lenguaje,$objetoId,$texto );
 
 
 $evaluar->evaluar ();

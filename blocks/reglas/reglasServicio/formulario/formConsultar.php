@@ -38,6 +38,7 @@ class FormularioConsultar {
     private $columnas;
     private $listaParametros;
     private $listaAtributosParametros;
+    private $proceso;
     
     function __construct($lenguaje,$objetoId = '') {
 
@@ -57,6 +58,7 @@ class FormularioConsultar {
         $this->permiso = $this->cliente->getListaPermisos();
         $this->categoria = $this->cliente->getListaCategorias();
         $this->columnas = $this->cliente->getDatosColumnas();
+        $this->proceso = $this->cliente->getListaProcesos();
 
     }
     
@@ -201,12 +203,20 @@ class FormularioConsultar {
     	
     }
     
+    
+    
+    private function getObjetoNombrePorId($objeto ='', $id = ''){
+    	foreach ($this->$objeto as $elemento){
+    		if($elemento['id']==$id) return $elemento['nombre'];
+    	}
+    }
+    
     private function dibujarTabla(){
     	$columnasFila = '';
     	$textoElemento = '';
     	
     	foreach ($this->listaElementos as $fila){
-    		$textoElemento .= "<tr>";
+    		$textoElemento .= "<tr class=\"fila\">";
     		$columnasFila = '';
     		foreach ($fila as $g=>$f){
     			$textoElemento .= "<td>".ucfirst(strtolower($this->setTextoTabla($f,$g)))."</td>";;
@@ -238,7 +248,7 @@ class FormularioConsultar {
     }
     
     private function dateRangeElemento($elemento='elemento', $requerido = false, $codificada =  false){
-    	$cadena= '<br><br>';
+    	$cadena= '';
     	$cadenaHidden= '';
     	$valor = '';
     	 
@@ -249,20 +259,16 @@ class FormularioConsultar {
     	$texto[2] = utf8_encode($this->lenguaje->getCadena ('min'.$elemento));
     	$texto[3] = utf8_encode($this->lenguaje->getCadena ('max'.$elemento));
     	 
-    	$cadena .='<div class="contenedorInput" >';
-    	$cadena .='<div style="float:left; width:150px;">';
+    	$cadena .='<div class="form-group" >';
+    	
     	$cadena .= '<label for="'.$textos[0].'">';
     	$cadena .= ucfirst(strtolower($textos[0]));
     	$cadena .= '</label>';
     	$cadena .= '<span style="white-space:pre;"> </span>';
-    	$cadena .= '</div>';
-    
-    	if($requerido) $requeridoTexto = ' validate[required] ui-corner-all';
-    	else $requeridoTexto = ' ui-corner-all ';
+    	
+    	if($requerido) $requeridoTexto = ' validate[required] form-control';
+    	else $requeridoTexto = ' form-control ';
     	 
-    	$cadena .= '<div style="position:relative;display:inline;">';
-    	 
-    	$cadena .= '<div style="width:300px;position:absolute;display:inline;">';
     	//input  minimo
     	$valorMinimo = '';
     	$valorMaximo = '';
@@ -298,10 +304,7 @@ class FormularioConsultar {
     	else $cadena .=' value="" ';
     	$cadena .=' >';
     
-    	$cadena .= '</div>';
-    	 
-    	$cadena .= '</div>';
-    
+    	
     	 
     	$cadena .= '</div>';
     
@@ -323,13 +326,14 @@ class FormularioConsultar {
     	$textos = array();
     	$textos[0] = $this->lenguaje->getCadena ($elemento);
     	$textos[1] = $this->lenguaje->getCadena ($elemento."Titulo");
-    	$cadena .= '<div  class="contenedorInput" >';
-    	$cadena .= '<div style="float:left; ">';
+    	$cadena .= '<div  class="form-group" >';
+    	
     	$cadena .= '<label for="'.$textos[0].'">';
     	$cadena .= ucfirst($textos[0]);
     	$cadena .= '</label>';
-    	$cadena .= '</div>';
-    	$cadena .= '<select title="'.$textos[1].'" name="'.$elemento.'" id="'.$elemento.'" class="ui-corner-all">';
+    	$cadena .= '<span style="white-space:pre;"> </span>';
+    	
+    	$cadena .= '<select title="'.$textos[1].'" name="'.$elemento.'" id="'.$elemento.'" class="form-control">';
     	if(!$blanco) $cadena .= '<option ></option>';
     	foreach ($this->$elemento as $fila){
     		$cadena .= '<option ';
@@ -343,21 +347,43 @@ class FormularioConsultar {
     	 
     }
     
-    private function textElemento($elemento='elemento', $requerido = false, $codificada =  false){
+    private function textElemento($elemento='elemento', $requerido = false, $codificada =  false, $autocompletar =  false){
     	$cadena= '';
     	$cadenaHidden= '';
     	$valor = ''; 
     	$textos = array();
     	$textos[0] = $this->lenguaje->getCadena ($elemento);
     	$textos[1] = $this->lenguaje->getCadena ($elemento."Titulo");
-    	$cadena .='<div class="contenedorInput" >';
-    	$cadena .='<div style="float:left; ">';
+    	$cadena .='<div class="form-group" >';
+    	
     	$cadena .= '<label for="'.$textos[0].'">';
     	$cadena .= ucfirst(strtolower($textos[0]));
     	$cadena .= '</label>';
-    	//$cadena .= '<span style="white-space:pre;"> </span>';
-    	$cadena .= '</div>';
-    	$cadena .= '<input type="text" class="ui-corner-all '; 
+    	$cadena .= '<span style="white-space:pre;"> </span>';
+    	
+    	if($autocompletar){
+    	
+    		$cadena .= '<input type="text" class="form-control ';
+    		if($requerido) $cadena .= ' validate[required,custom[valorLista]] ';
+    	
+    		$cadena .='" title="'.$textos[1].'" onkeyup="autocompletar(\''.$elemento.'\')"  name="'.$elemento.'Nombre" id="'.$elemento.'Nombre"  placeholder="'.ucfirst($textos[0]).'" ';
+    		 
+    		if(isset($_REQUEST[$elemento])&&!$codificada&&$elemento=='proceso') $valor =' value="'.$this->getObjetoNombrePorId($elemento,$_REQUEST[$elemento]).'" ';
+    		if(isset($_REQUEST[$elemento])&&!$codificada&&$elemento!='proceso') $valor =' value="'.$_REQUEST[$elemento].'" ';
+    		elseif(isset($_REQUEST[$elemento])&&$codificada&&$elemento=='proceso') $valor =' value="'.$this->getObjetoNombrePorId($elemento,base64_decode($_REQUEST[$elemento])).'" ';
+    		else $valor .=' value="" ';
+    		 
+    		$cadena .=$valor;
+    		 
+    		$cadena .= '></input>';
+    	}
+    	 
+    	if($autocompletar){
+    		$cadena .= '<input type="hidden" class=" form-control ';
+    	}else $cadena .= '<input type="text" class="form-control ';
+    	 
+    	
+    	 
     	if($requerido) $cadena .= ' validate[required] '; 
     	$cadena .='" title="'.$textos[1].'" name="'.$elemento.'" id="'.$elemento.'"  placeholder="'.ucfirst($textos[0]).'" ';
     	
@@ -387,22 +413,23 @@ class FormularioConsultar {
     	$textos = array();
     	
     	//inicio
-    	$cadena = '<form name="formularioConsulta" id="formularioConsulta">';
+    	$cadena = '<form role="form" class="form-inline"  name="formularioConsulta" id="formularioConsulta">';
     	
     	$textos[1] = $this->lenguaje->getCadena ('buscar'). " ".$this->objetoAlias;;
-    	$cadena .='<fieldset class="ui-corner-all">';
+    	$cadena .='<fieldset >';
     	
     	$cadena .='<legend title="'.$this->lenguaje->getCadena ('buscar').'" onclick="cambiarVisibilidadBusqueda()" class="expandible">'.$textos[1].'</legend>';
     	$cadena .='<div style="display:none" id="contenedorBuscador">';
     	
     	$nombre = 'nombre';
     	$requerido = 'requerido_consultar';
-    	
+    	$codificado = 'codificada';
+    	$autocompletar = 'autocompletar';
     	//crea formularios
     	foreach ($this->listaAtributosParametros as $elemento){
     		switch($elemento['input']){
     			case 'text':
-    				$cadena .= $this->textElemento($elemento[$nombre],$this->setBool($elemento[$requerido])); 
+    				$cadena .= $this->textElemento($elemento[$nombre],$this->setBool($elemento[$requerido]),$this->setBool($elemento[$codificado]),$this->setBool($elemento[$autocompletar])); 
     				break;
     			case 'select':
     				$cadena .= $this->selectElemento($elemento[$nombre],$this->setBool($elemento[$requerido]));
@@ -463,7 +490,7 @@ class FormularioConsultar {
     	
     	
         //muestra el formulario
-    	echo '<div id="contenedorFormularioConsulta">';
+    	echo '<div class="container-fluid" id="contenedorFormularioConsulta">';
     	echo $this->formularioConsulta();
     	echo '</div>';
     	

@@ -1,0 +1,21 @@
+
+
+
+
+V. 0.0.1
+
+Notas:
+1. Se sube como bloque.
+2. no esta separado el servicio soap de la interfaz.
+3. para acceder al servicio soap es necesario mandar al post o al get la variable "wsSoap".
+4. No es responsivo datatables. se soporta hasta una tablet de 7"
+5. para aceder a la interfaz es necesario tener un usuario en la tabla "Usuarios" y este debe tener permisos sobre los objetos.
+6. existen dos tipos de funciones soap que se pueden crear. interna y proxy (la ultima se conecta a traves del proxy de la universidad).
+7. Todo acceso a la aplicacion genera log, se guardan las variables $_REQUEST y $_SERVER completay serializada,
+   la tabla se llama Acceso y se llena rapido por lo que neceario definir tareas de estadisticas para no generar demoras,
+   adicionalmente se crea un archivo de log, en este se encuentra el Codigo como se registró en la base de datos.
+8. es posible evaluar, duplicar y cambiar estado desde la busqueda seleccionando elementos de la tabla y presionando el boton "Evaluar".
+9. el menu deplegable de la derecha, es posible cambiar entre, parametros, funciones, variables, reglas y permisos.
+10. en el rango tipo texto o lista, si se pone "*" permite todo. 
+
+   

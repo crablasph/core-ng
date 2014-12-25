@@ -49,6 +49,10 @@ $cadenaACodificar7=$cadenaACodificar."&funcion=autocomplete";
 $cadena7=$this->miConfigurador->fabricaConexiones->crypto->codificar_url($cadenaACodificar7,$enlace);
 
 
+//Cadena codificada autocompletar
+$cadenaACodificar8=$cadenaACodificar."&funcion=evaluarTexto";
+$cadena8=$this->miConfigurador->fabricaConexiones->crypto->codificar_url($cadenaACodificar8,$enlace);
+
 
 //URL definitiva
 $consultarFormulario=$url.$cadena1;
@@ -58,7 +62,7 @@ $crearFormulario = $url.$cadena4;
 $guardar = $url.$cadena5;
 $evaluar = $url.$cadena6;
 $autocompletar = $url.$cadena7;
-
+$evaluarTexto = $url.$cadena8;
 ?>
 
 <script type='text/javascript'>
@@ -68,7 +72,12 @@ var listaNombres = [];
 var listaAlias = [];
 
         function setObjeto(idObjeto,aliasObjeto){
-            
+
+
+        	listaIds =  [];
+        	listaNombres = [];
+        	listaAlias = [];
+			            
         	if(idObjeto!=0){
         		$('#objetoId').val(idObjeto);
         		$('#objetoSeleccionado').html('<span class="ui-button-text">'+aliasObjeto+'</span>');
@@ -80,13 +89,22 @@ var listaAlias = [];
 
         function autocompletar(elemento){
 
+
+            if($('#formularioCreacionEdicion').length>0&&elemento!='proceso') return false;;
+        	
+        	if(typeof listaIds[elemento]=='undefined'){
+
+        	$( "#"+elemento+'Nombre' ).attr('disabled',true);
+            	
+        	listaIds[elemento] =  [];
+        	listaNombres[elemento] = [];
+        	listaAlias[elemento] = [];       	
+
         	var data =  $( "#objetosFormulario" ).serialize()+"&"+$( "#identificacionFormulario" ).serialize();
         	data +=  "&field="+elemento;
 
-        	listaIds =  [];
-        	listaNombres = [];
-        	listaAlias = [];       	
-
+        	
+        	
         	$.ajax({
 	            url: "<?php echo $autocompletar;?>",
 	            type:"post",
@@ -96,40 +114,56 @@ var listaAlias = [];
 	            	 
 	            	
 		  			for(i=0;i<jresp.length;i++){
-		  				listaIds.push( jresp[i].id);
-		  				listaNombres.push( jresp[i].nombre);
-		  				listaAlias.push( jresp[i].alias); 
+		  				listaIds[elemento].push( jresp[i].id);
+		  				listaNombres[elemento].push( jresp[i].nombre);
+		  				listaAlias[elemento].push( jresp[i].alias); 
 		  			}  
 			       }
 	        });
 
         	
         	$( "#"+elemento+'Nombre' ).autocomplete({
-        	      source: listaNombres
+        	      source: listaNombres[elemento]
         	    });
         	    
         	$( "#"+elemento+'Nombre' ).change(function() {
         		   
-        	    	var indice = listaNombres.indexOf(this.value);
-        	    	$( "#"+elemento).val(listaIds[indice]);
-        	    	$( "#"+elemento).trigger("change");
+        	    	var indice = listaNombres[elemento].indexOf(this.value);
+        	    	if(typeof listaIds[elemento][indice] == 'undefined') $( "#"+elemento).val($( "#"+elemento+'Nombre' ).val());
+                	else $( "#"+elemento).val(listaIds[elemento][indice]);
+                	$( "#"+elemento).trigger("change");
         	    	
             	    });
-    	    
+
+        	$( "#"+elemento+'Nombre' ).attr('disabled',false);
+        	}
+
+        	
+        	//$( "#"+elemento+'Nombre' ).trigger("change");
+        	var indice = listaNombres[elemento].indexOf($( "#"+elemento+'Nombre' ).val());
+        	if(typeof listaIds[elemento][indice] == 'undefined') $( "#"+elemento).val($( "#"+elemento+'Nombre' ).val());
+        	else $( "#"+elemento).val(listaIds[elemento][indice]);
+        	
+        	
+        	
         	return 0;
+        	
         	
            }	
 
         function cambiarValoresAutocomplete(valor,id){
 	    	var indice = listaNombres.indexOf(valor);
-	    	$( "#"+elemento).val(listaIds[indice]);
+	    	if(typeof listaIds[elemento][indice] == 'undefined') $( "#"+elemento).val($( "#"+elemento+'Nombre' ).val());
+        	else $( "#"+elemento).val(listaIds[elemento][indice]);
 	    	$( "#"+elemento).trigger("change");
 	    	
         
         }
             
         function validarValorLista(valor,id){
-        	return listaNombres.indexOf(valor)<0?false:true;
+            
+            var elemento = id.replace('Nombre','');
+        	return listaNombres[elemento].indexOf(valor)<0?false:true;
         }
 
         function cambiarEstadoElemento(){
@@ -180,7 +214,7 @@ var listaAlias = [];
 
         	var div = document.getElementById("espacioMensaje");
 			div.innerHTML = '<div id="loading"></div>';
-        	
+			$(".ui-dialog-content").dialog('destroy').remove();
 	        	$.ajax({
 		            url: "<?php echo $evaluar;?>",
 		            type:"post",
@@ -190,15 +224,15 @@ var listaAlias = [];
 		                
 		                var respuesta = $(jresp);
 		                
-		                if(jresp.indexOf('formVariablesEvaluar')>0){
+		                //if(jresp.indexOf('formVariablesEvaluar')>0){
 		                	div.innerHTML = '';
 		                	$(jresp).dialog();
 		                	
-		                }else {
-		                	$(".ui-dialog-content").dialog('destroy').remove();
-			                getFormularioConsulta(true, jresp);
+		                //}else {
+		                //	$(".ui-dialog-content").dialog('destroy').remove();
+			             //   getFormularioConsulta(true, jresp);
 			                
-		                }
+		                //}
 		            	
 				       }
 		        });
@@ -266,8 +300,52 @@ var listaAlias = [];
         	
            }
 
+         function evaluarTexto(){
+            
+        	if($("#formularioCreacionEdicion").validationEngine('validate')!=false){
+
+	        	    var data =  $( "#objetosFormulario" ).serialize()+"&"+$( "#identificacionFormulario" ).serialize();
+		        	data += "&"+ $( "#seleccionFormulario" ).serialize();
+		        	data += "&"+ $( "#formularioCreacionEdicion" ).serialize(); 
+
+		        	var validar =  false;
+					if($("#formVariablesEvaluar").length>0){
+						data += "&"+ $( "#formVariablesEvaluar" ).serialize();
+						
+						validar= true;
+						}
+		    		
+	                var div = document.getElementById("espacioMensaje");
+					div.innerHTML = '<div id="loading"></div>';
+
+					
+		        	
+					
+					if($('#formularioConsulta').length>0) $('#formularioConsulta')[0].reset();
+					$(".ui-dialog-content").dialog('destroy').remove();
+		        	$.ajax({
+			            url: "<?php echo $evaluarTexto;?>",
+			            type:"post",
+			            data:data,
+			            dataType: "html",
+			            success: function(jresp){
+			            	
+			                	div.innerHTML = '';
+			                	$(jresp).dialog();
+			                
+			            }
+			        });
+        	}
+        	
+           }
+
         function getFormularioConsulta(skip, mensaje){
-            idObjeto = $('#idObjeto').val();
+
+        	listaIds =  [];
+        	listaNombres = [];
+        	listaAlias = [];
+        	
+        	idObjeto = $('#idObjeto').val();
             
             var data =  $( "#objetosFormulario" ).serialize()+"&"+$( "#identificacionFormulario" ).serialize();
 			if($( "#formularioConsulta" ).serialize().length>0&&!skip) data += "&"+ $( "#formularioConsulta" ).serialize() ;
@@ -351,7 +429,8 @@ var listaAlias = [];
 	                		event.preventDefault();
 	                	});
 
-			  			if($( "#proceso").length>0) autocompletar('proceso');
+			  			//if($( "#proceso").length>0) autocompletar('nombre');
+			  			
 			  			
 
 			  			
@@ -364,24 +443,28 @@ var listaAlias = [];
     
         
 	function tablaConsulta(){
-		$('#tabla').DataTable({"jQueryUI": true	});
+		
+		
 			$( "#tabla" ).selectable({
-				filter:'tr',
+				filter:'.fila',
 		      stop: function() {
 		       var conteo = 0;
 		       var seleccion =  [];
 		        $( ".ui-selected", this ).each(function() {
-		          var index = $( "#tabla tr" ).index( this );
+		          var index = $( "#tabla tr.fila" ).index( this );
 		          conteo++;
 		          seleccion.push($(this).children(":first").html());
 
 		        });
+		        
 		        if(conteo>0) $('#selectedItems').val(seleccion.join());
 		        else $('#selectedItems').val('');
 		        
 		        
 		      }
 		    });
+
+			$('#tabla').DataTable({"jQueryUI": true, responsive: true	});
 	
 		}
 	function accion(el,cod,id){
@@ -876,6 +959,15 @@ var listaAlias = [];
 	function crearBotonesCalculadora(){
 		$( ".elementoListaCalculadora" ).each(function( index ) {
 			  $( this ).button() ;
+			});
+	}
+
+	function buscarBotonesCalculadora(div ,input){
+		var texto =  $("#"+input).val();
+		
+		$( "."+div ).each(function( index ) {
+			  if($(this).html().indexOf(texto)<0) $(this).hide() ;
+			  else $(this).show() ;
 			});
 	}
 
