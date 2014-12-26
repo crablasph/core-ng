@@ -152,7 +152,7 @@ var listaAlias = [];
            }	
 
         function cambiarValoresAutocomplete(valor,id){
-	    	var indice = listaNombres.indexOf(valor);
+	    	var indice = listaNombres[elemento].indexOf(String(valor));
 	    	if(typeof listaIds[elemento][indice] == 'undefined') $( "#"+elemento).val($( "#"+elemento+'Nombre' ).val());
         	else $( "#"+elemento).val(listaIds[elemento][indice]);
 	    	$( "#"+elemento).trigger("change");
@@ -163,7 +163,13 @@ var listaAlias = [];
         function validarValorLista(valor,id){
             
             var elemento = id.replace('Nombre','');
-        	return listaNombres[elemento].indexOf(valor)<0?false:true;
+            autocompletar(elemento);
+            //console.log(listaNombres[elemento]);
+            if(typeof listaNombres[elemento] == 'undefined') autocompletar(elemento);
+            //for(i=0;i<listaNombres[elemento].length;i++) 
+            //    console.log(typeof valor, typeof listaNombres[elemento],valor,listaNombres[elemento]);
+            //console.log(listaNombres[elemento].length, elemento,valor,listaNombres[elemento],listaNombres[elemento].indexOf(String(valor)));
+        	return listaNombres[elemento].indexOf(String(valor))<0?false:true;
         }
 
         function cambiarEstadoElemento(){
@@ -273,13 +279,44 @@ var listaAlias = [];
 		        	data += "&"+ $( "#formularioCreacionEdicion" ).serialize(); 
 
 		    		
+
+					
+					//si esta editando y justificacion sea diferente de ''
+					if($('#justificacion').length>0) data += "&justificacion="+$('#justificacion').val();
+					
+					if($('#selectedItems').val()!=''){
+						if($('#formularioConsulta').length>0) $('#formularioConsulta')[0].reset();
+						if( $('#justificacion').length==0 || $('#justificacion').val()==''){
+	
+							justificacion =  '<form id="formJustificacion"><label><span>Justificaci&oacuten</span></label><textarea class="validate[required]" id="justificacion" name = "justificacion"></textarea></form>';
+							$(justificacion).dialog({
+								buttons: {
+							        "Aceptar": function() {
+							        	if($("#formJustificacion").validationEngine('validate')==false) return false;
+
+							          $( this ).dialog( "close" );
+							          
+							          guardarElemento();
+								      
+							          
+							        }
+								}
+						   });
+							return 0;	   
+						}
+
+						$(".ui-dialog-content").dialog('destroy').remove();	
+						
+						
+					}
+					
 	                var div = document.getElementById("espacioMensaje");
 					div.innerHTML = '<div id="loading"></div>';
-					
-					
+                    
+					 
 		        	
 					if($('#formularioConsulta').length>0) $('#formularioConsulta')[0].reset();
-					//$('#selectedItems').val('');
+
 		        	
 		        	$.ajax({
 			            url: "<?php echo $guardar;?>",
@@ -429,7 +466,8 @@ var listaAlias = [];
 	                		event.preventDefault();
 	                	});
 
-			  			//if($( "#proceso").length>0) autocompletar('nombre');
+			  			if($( "#proceso").length>0) autocompletar('proceso');
+			  			
 			  			
 			  			
 

@@ -117,10 +117,10 @@ class GestorVariable{
     	
     }
     
-    public function actualizarVariable($id = '',$nombre ='',$descripcion='',$proceso='',$tipo = '',$rango = '',$valor='',$estado=''){
+    public function actualizarVariable($id = '',$nombre ='',$descripcion='',$proceso='',$tipo = '',$rango = '',$valor='',$estado='',$justificacion = ''){
     	 
     	if(!$this->verificadorAcceso->validarAcceso($id,3,self::ID_OBJETO)) return false;
-    	if($id==''||is_null($id)){
+    	if($id==''||is_null($id)||$justificacion == ''||is_null($justificacion)){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
     		return false;
     	}
@@ -159,7 +159,8 @@ class GestorVariable{
     	
     	if($estado!='')	$parametros['estado'] = $estado;
     	$parametros['id'] = $id;
-    	 
+    	$parametros['justificacion'] = $justificacion;
+    	
     	 
     	if(!$this->registrador->ejecutar(self::ID_OBJETO,$parametros,3)){
             

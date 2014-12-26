@@ -51,22 +51,22 @@ class EvaluadorReglas{
     
     public function getFuncionesPredefinidas(){
     	$funcionesPredefinidas =  array( // calc functions emulation
-    			'promedio'=>array(-1),
-    			'mediana'=>array(-1),
-    			'moda'=>array(-1), 'rango'=>array(-1),
-    			'maximo'=>array(-1),	  'minimo'=>array(-1),
-    			'modulo'=>array(2),	  'pi'=>array(0),
-    			'log'=>array(1, 2),
-    			'redondear'=>array(1, 2),
-    			'number_format'=>array(1, 2), 'number_format_eu'=>array(1, 2),
-    			'suma'=>array(-1),	 'producto'=>array(-1),
-    			'rand_int'=>array(2), 'rand_float'=>array(0),
-    			'arctan2'=>array(2),  'atan2'=>array(2),
-    			'if'=>array(3),
-    			'sin'=>array(-1),'sinh'=>array(-1),'arcsin'=>array(-1),'asin'=>array(-1),'arcsinh'=>array(-1),'asinh'=>array(-1),
-    			'cos'=>array(-1),'cosh'=>array(-1),'arccos'=>array(-1),'acos'=>array(-1),'arccosh'=>array(-1),'acosh'=>array(-1),
-    			'tan'=>array(-1),'tanh'=>array(-1),'arctan'=>array(-1),'atan'=>array(-1),'arctanh'=>array(-1),'atanh'=>array(-1),
-    			'sqrt'=>array(-1),'abs'=>array(-1),'ln'=>array(-1),'log10'=>array(-1), 'exp'=>array(-1),'floor'=>array(-1),'ceil'=>array(-1)
+    			'promedio'=>-1,
+    			'mediana'=>-1,
+    			'moda'=>-1, 'rango'=>-1,
+    			'maximo'=>-1,	  'minimo'=>-1,
+    			'modulo'=>2,	  'pi'=>0,
+    			'log'=> 2,
+    			'redondear'=> 2,
+    			'number_format'=> 2 , 'number_format_eu'=>2,
+    			'suma'=>-1,	 'producto'=>-1,
+    			'rand_int'=>2, 'rand_float'=>0,
+    			'arctan2'=>2,  'atan2'=>2,
+    			'if'=>3,
+    			'sin'=>-1,'sinh'=>-1,'arcsin'=>-1,'asin'=>-1,'arcsinh'=>-1,'asinh'=>-1,
+    			'cos'=>-1,'cosh'=>-1,'arccos'=>-1,'acos'=>-1,'arccosh'=>-1,'acosh'=>-1,
+    			'tan'=>-1,'tanh'=>-1,'arctan'=>-1,'atan'=>-1,'arctanh'=>-1,'atanh'=>-1,
+    			'sqrt'=>-1,'abs'=>-1,'ln'=>-1,'log10'=>-1, 'exp'=>-1,'floor'=>-1,'ceil'=>-1
     	);
     	
     	$resultado = array();
@@ -88,7 +88,7 @@ class EvaluadorReglas{
     		
     		); 
     	}
-    	
+    	unset($funcionesPredefinida);
     	return $resultado;
     }
     

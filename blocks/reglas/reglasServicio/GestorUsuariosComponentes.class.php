@@ -214,10 +214,10 @@ class GestorUsuariosComponentes{
     }
     
     
-    public function actualizarRelacion($id = '',$usuario ='',$objeto='',$registro='',$permiso = '',$estado=''){
+    public function actualizarRelacion($id = '',$usuario ='',$objeto='',$registro='',$permiso = '',$estado='',$justificacion=''){
     	 
     	if(!$this->validarAcceso($id,3,self::ID_OBJETO)) return false;
-    	if($id==''||is_null($id)){
+    	if($id==''||is_null($id)||$justificacion == ''||is_null($justificacion)){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
     		return false;
     	}
@@ -257,7 +257,8 @@ class GestorUsuariosComponentes{
     		$parametros['permiso'] = $permiso;
     	}
     	if($estado!='')$parametros['estado'] = $estado;
-    	 
+    	
+    	$parametros['justificacion'] = $justificacion;
     	
     	
     	if(!$this->registrador->ejecutar(self::ID_OBJETO,$parametros,3)){

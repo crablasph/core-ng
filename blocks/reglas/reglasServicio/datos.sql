@@ -297,6 +297,7 @@ ALTER TABLE reglas.parametros
   par_fecha_registro_h date NOT NULL ,
   par_fecha_h date NOT NULL DEFAULT ('now'::text)::date,
   par_usuario text NOT NULL,
+  par_justificacion text NOT NULL DEFAULT 0,
   CONSTRAINT parametros_h_pk PRIMARY KEY (par_hid)
   
 )
@@ -349,6 +350,7 @@ ALTER TABLE reglas.variables
   var_fecha_registro_h date NOT NULL ,
   var_fecha_h date NOT NULL DEFAULT ('now'::text)::date,
   var_usuario text NOT NULL,
+  var_justificacion text NOT NULL DEFAULT 0,
   CONSTRAINT variables_h_pk PRIMARY KEY (var_hid)
   
 )
@@ -408,6 +410,7 @@ ALTER TABLE reglas.funciones
   fun_fecha_registro_h date NOT NULL ,
   fun_fecha_h date NOT NULL DEFAULT ('now'::text)::date,
   fun_usuario text NOT NULL,
+  fun_justificacion text NOT NULL DEFAULT 0,
   CONSTRAINT funciones_h_pk PRIMARY KEY (fun_hid)  
 )
 WITH (
@@ -458,6 +461,7 @@ ALTER TABLE reglas.reglas
   reg_fecha_registro_h date NOT NULL ,
   reg_fecha_h date NOT NULL DEFAULT ('now'::text)::date,
   reg_usuario text NOT NULL,
+  reg_justificacion text NOT NULL DEFAULT 0,
   CONSTRAINT reglas_h_pk PRIMARY KEY (reg_hid)
   
 )
@@ -567,6 +571,7 @@ CREATE TABLE reglas.relaciones_h
   rel_fecha_registro_h date NOT NULL DEFAULT ('now'::text)::date,
   rel_fecha_h date NOT NULL DEFAULT ('now'::text)::date,
   rel_usuario text NOT NULL,
+  rel_justificacion text NOT NULL DEFAULT 0,
   CONSTRAINT relaciones_h_pk PRIMARY KEY (rel_hid)
 )
 WITH (

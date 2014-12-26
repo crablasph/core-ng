@@ -113,6 +113,11 @@ class GuardarDatos {
     		}
     	}
     	
+    	if($this->metodoAccion == 'actualizar'){
+    	
+    		$this->listaParametros[] = isset($_REQUEST['justificacion'])?$_REQUEST['justificacion']:'no justifica';
+    	}
+    	
     	 
     }
     

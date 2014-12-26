@@ -34,6 +34,7 @@ class Persistencia {
     private $arrayColumnas;
     private $columnasHistorico;
     public $mensaje;
+    private $justificacion;
     
     
     function __construct($conexion = 'estructura' , $tabla = '' , $historico = false , $usuario = '') {
@@ -48,6 +49,7 @@ class Persistencia {
     	else $this->usuario =  $usuario;
     	$this->mensaje =  new Mensaje();
     	$this->saltarHistorico = false;
+    	$this->justificacion = '';
     	if (! $this->miRecursoDB) {
     
     		$this->mensaje->addMensaje("2","errorConexion",'error');
@@ -55,6 +57,10 @@ class Persistencia {
     	}
     
     	
+    }
+    
+    public function setJustificacion($justificacion = 'no Justifica'){
+    	$this->justificacion = $justificacion;
     }
     
     public function getQuery(){
@@ -376,6 +382,11 @@ class Persistencia {
     			$this->columnasHistorico =  $colsh;
     		}
     		
+    		if($this->justificacion!=''){
+    			
+    			$this->columnasHistorico[] = $this->prefijoColumna."_justificacion";;
+    		}
+    		
     		return $cols;
     		
     	}
@@ -388,7 +399,12 @@ class Persistencia {
     	// de los valores de entrada
     	
     	$valores[] = $this->usuario;
-    	  	
+
+    	if($this->justificacion!=''){
+    		$valores[] = "'".$this->justificacion."'";
+    		
+    	}
+    	
     	$sqlInsert = "INSERT INTO ".$this->tabla."_h ( ";
     	$sqlInsert .= implode(",",$this->columnasHistorico);
     	$sqlInsert .= " ) VALUES (";
@@ -447,6 +463,8 @@ class Persistencia {
     			foreach($consultah[0] as $a => $b){
     				if(is_numeric($a)) $valores[] = "'".$b."'";
     			}
+    			
+    			
     			
     			
     			if(!$this->insertarHistorico($valores))	return false;

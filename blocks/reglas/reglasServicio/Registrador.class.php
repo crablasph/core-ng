@@ -838,12 +838,19 @@ class Registrador{
 		
 	public function ejecutar($idObjeto = null, $parametros = array(), $operacion = null){
 		
+		
+		if(isset($parametros['justificacion'])){
+			$justificacion = $parametros['justificacion'];
+			unset($parametros['justificacion']);
+		}
 		$tabla = $this->getObjeto($idObjeto,'id','nombre');
 		if(!$tabla) return false;
 		$this->tablaAlias = $this->getObjeto($idObjeto,'id','alias');
 		$this->setAmbiente($tabla);
 		
 		if(!$this->validarEntrada($idObjeto, $parametros, $operacion)) return false;
+		
+		
 		
 		
 		
@@ -900,9 +907,13 @@ class Registrador{
 				break;
 			case 3:
 				//actualizar
+				
+				$this->persistencia->setJustificacion($justificacion);
+				
 				if(!$this->procesarParametros($parametros)||
 				   !$this->setWhere('id')||
 				   !$this->persistencia->update($this->parametros,$this->valores,$this->where)){
+					//var_dump($this->persistencia->getQuery());
 					$this->mensaje->addMensaje("101","errorActualizar".$this->tablaAlias,'error');
 					
 				
