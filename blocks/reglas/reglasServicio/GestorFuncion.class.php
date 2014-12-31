@@ -75,7 +75,7 @@ class GestorFuncion{
     
     
     
-    public function crearFuncion($nombre ='',$descripcion='',$proceso='',$tipo = '',$rango = '',$categoria = '',$ruta='',$valor='',$estado=''){
+    public function crearFuncion($nombre ='',$descripcion='',$proceso='',$tipo = '',$rango = '', $restriccion='',$categoria = '',$ruta='',$valor='',$estado=''){
     	
     	if(!$this->verificadorAcceso->validarAcceso(0,1,self::ID_OBJETO)) return false;
     	if($nombre==''||$proceso==''||$valor==''||$tipo==''||$rango == ''||$categoria==''||$ruta==''){
@@ -92,6 +92,7 @@ class GestorFuncion{
     	
     	$parametros['tipo'] = $tipo;
     	$parametros['rango'] = $this->getRangoReal($rango,$tipo);
+    	$parametros['restriccion'] = $restriccion;
     	
     	$parametros['categoria'] = $categoria;
     	$parametros['ruta'] = $ruta;
@@ -110,7 +111,7 @@ class GestorFuncion{
     	
     }
     
-    public function actualizarFuncion($id = '',$nombre ='',$descripcion='',$proceso = '',$tipo = '',$rango='',$categoria = '',$ruta='',$valor='',$estado='',$justificacion=''){
+    public function actualizarFuncion($id = '',$nombre ='',$descripcion='',$proceso = '',$tipo = '',$rango='',$restriccion = '',$categoria = '',$ruta='',$valor='',$estado='',$justificacion=''){
     	 
     	
     	
@@ -129,6 +130,8 @@ class GestorFuncion{
     		$tipo = $consulta[0]['tipo'];
     	}
     	if($rango!='')$parametros['rango'] = $this->getRangoReal($rango,$tipo);
+    	
+    	$parametros['restriccion'] = $restriccion;
     	
     	if($categoria!='')$parametros['categoria'] = $categoria;
     	if($ruta!='')$parametros['ruta'] = $ruta;

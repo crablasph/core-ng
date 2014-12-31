@@ -82,11 +82,12 @@ class Definiciones {
 	 * @param integer $proceso IdProceso, entero Obligatorio
 	 * @param integer $tipo Tipo Variable, entero Obligatorio
 	 * @param string $rango rango, cadena Obligatorio
+	 * @param string $restriccion restriccion, cadena Opcional
 	 * @param string $valor Valor codificado base64, Obligatorio
 	 * @param integer $estado Estado, entero Obligatorio
 	 * @return integer Respuesta
 	 */
-	function crearVariable($nombre ='',$descripcion='',$proceso='',$tipo = '',$rango = '',$valor='',$estado=''){
+	function crearVariable($nombre ='',$descripcion='',$proceso='',$tipo = '',$rango = '',$restriccion = '',$valor='',$estado=''){
 	
 	}
 	
@@ -100,11 +101,12 @@ class Definiciones {
 	 * @param integer $proceso IdProceso, entero Opcional
 	 * @param integer $tipo Tipo Variable, entero Opcional
 	 * @param string $rango rango, cadena Obligatorio
+	 * @param string $restriccion restriccion, cadena Opcional
 	 * @param string $valor Valor codificado base64, Opcional
 	 * @param integer $estado Estado, entero Opcional
 	 * @return bool Respuesta
 	 */
-	function actualizarVariable($id = '',$nombre ='',$descripcion='',$proceso='',$tipo = '',$rango = '',$valor='',$estado=''){
+	function actualizarVariable($id = '',$nombre ='',$descripcion='',$proceso='',$tipo = '',$rango = '',$restriccion='',$valor='',$estado=''){
 	
 	}
 	
@@ -156,13 +158,14 @@ class Definiciones {
 	 * @param integer $proceso IdProceso, entero Obligatorio
 	 * @param integer $tipo Tipo Funcion, entero Obligatorio
 	 * @param string $rango rango, cadena Obligatorio
+	 * @param string $restriccion restriccion, cadena Opcional
 	 * @param integer $categoria categoria funcion, entero Obligatorio
 	 * @param string $ruta lugar de ejecucion codificado base64, cadena Obligatorio
 	 * @param string $valor Valor codificado base64, Obligatorio
 	 * @param integer $estado Estado, entero Obligatorio
 	 * @return integer Respuesta
 	 */
-	function crearFuncion($nombre ='',$descripcion='',$proceso='',$tipo = '',$rango = '',$categoria = '',$ruta='',$valor='',$estado=''){
+	function crearFuncion($nombre ='',$descripcion='',$proceso='',$tipo = '',$rango = '',$restriccion='',$categoria = '',$ruta='',$valor='',$estado=''){
 	
 	}
 	
@@ -176,13 +179,14 @@ class Definiciones {
 	 * @param integer $proceso IdProceso, entero Opcional
 	 * @param integer $tipo Tipo funcion, entero Opcional
 	 * @param string $rango rango, cadena Obligatorio
+	 * @param string $restriccion restriccion, cadena Opcional
 	 * @param integer $categoria categoria funcion, entero opcional
 	 * @param string $ruta lugar de ejecucion codificado base64, cadena opcional
 	 * @param string $valor Valor codificado base64, Opcional
 	 * @param integer $estado Estado, entero Opcional
 	 * @return bool Respuesta
 	 */
-	function actualizarFuncion($id = '',$nombre ='',$descripcion='',$proceso='',$tipo = '',$rango = '',$categoria = '',$ruta='',$valor='',$estado=''){
+	function actualizarFuncion($id = '',$nombre ='',$descripcion='',$proceso='',$tipo = '',$rango = '',$restriccion='',$categoria = '',$ruta='',$valor='',$estado=''){
 	
 	}
 	

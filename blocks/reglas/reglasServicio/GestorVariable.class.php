@@ -75,7 +75,7 @@ class GestorVariable{
     	return implode(',',$resultadoLista);
     }
     
-    public function crearVariable($nombre ='',$descripcion='',$proceso='',$tipo = '',$rango='',$valor='',$estado=''){
+    public function crearVariable($nombre ='',$descripcion='',$proceso='',$tipo = '',$rango='',$restriccion='',$valor='',$estado=''){
     	
     	if(!$this->verificadorAcceso->validarAcceso(0,1,self::ID_OBJETO)) return false;
     	if($nombre==''||$proceso==''||$valor==''||$tipo==''||$rango==''){
@@ -92,6 +92,8 @@ class GestorVariable{
     	$parametros['tipo'] = $tipo;
     	
     	$parametros['rango'] = $this->getRangoReal($rango,$tipo);
+    	
+    	$parametros['restriccion'] = $restriccion;
     	
     	$parametros['valor'] = $this->getValorReal($valor,$tipo);
     	$valor = $parametros['valor'];
@@ -117,7 +119,7 @@ class GestorVariable{
     	
     }
     
-    public function actualizarVariable($id = '',$nombre ='',$descripcion='',$proceso='',$tipo = '',$rango = '',$valor='',$estado='',$justificacion = ''){
+    public function actualizarVariable($id = '',$nombre ='',$descripcion='',$proceso='',$tipo = '',$rango = '', $restriccion = '',$valor='',$estado='',$justificacion = ''){
     	 
     	if(!$this->verificadorAcceso->validarAcceso($id,3,self::ID_OBJETO)) return false;
     	if($id==''||is_null($id)||$justificacion == ''||is_null($justificacion)){
@@ -156,7 +158,7 @@ class GestorVariable{
     		return false;;
     	}
     	 
-    	
+    	$parametros['restriccion'] = $restriccion;
     	if($estado!='')	$parametros['estado'] = $estado;
     	$parametros['id'] = $id;
     	$parametros['justificacion'] = $justificacion;

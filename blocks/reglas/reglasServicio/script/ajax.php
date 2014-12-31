@@ -454,19 +454,22 @@ var listaAlias = [];
 			  			else div.innerHTML="";
 			  			
 			  			
-			  			if($( "#categoria").length>0)cambiarCategoria('');
-			  			if($( "#tabsListas").length>0){
+			  			if(document.getElementById('categoria')&&$( "#categoria").length>0)cambiarCategoria('');
+			  			
+			  			if(document.getElementById('tabsListas')&&$( "#tabsListas").length>0){
 				  			$( "#tabsListas").tabs();
 				  			 crearBotonesCalculadora();
 				  			//$( "#tabsListas" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
 				  		    //$( "#tabsListas li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
 				       }
+			  			
 			  			cambiarRango('');
 			  			$("button").button().click(function(event) {
 	                		event.preventDefault();
 	                	});
 
-			  			if($( "#proceso").length>0) autocompletar('proceso');
+			  			
+				  		if(document.getElementById('proceso'))	autocompletar('proceso');
 			  			
 			  			
 			  			
@@ -626,7 +629,7 @@ var listaAlias = [];
 	function cambiarRango(elemento){
 		      
 		      elemento = 'rango';
-		      
+		      if(!document.getElementById('valor')) return 0;
 		      var valorInicial = $( "#valor" ).val();
 		      desactivarRangoFecha(elemento);
 		      $('#min'+toTitleCase(elemento)).removeAttr('disabled');

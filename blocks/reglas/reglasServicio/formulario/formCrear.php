@@ -175,8 +175,9 @@ class FormularioCrear {
     		if($nombre=='funcion'){
     			$metodo = 'getFuncionesPredefinidas';
     			$listaFuncionesGenerales =  call_user_func_array(array($this->cliente , $metodo), $argumentos);
-    			if(is_array($listaFuncionesGenerales))
+    			if(is_array($this->listaElementos))
     				$this->listaElementos = array_merge($listaFuncionesGenerales,$this->listaElementos);
+    			else $this->listaElementos = $listaFuncionesGenerales;
     		}
     		
     		if(!is_array($this->listaElementos)) return false;
@@ -602,7 +603,7 @@ class FormularioCrear {
     	$texto[2] = utf8_encode($this->lenguaje->getCadena ('minimo'));
     	$texto[3] = utf8_encode($this->lenguaje->getCadena ('maximo'));
     	
-    	$cadena .='<div class="form-group" >';
+    	$cadena .='<br><div class="form-group" >';
     	
     	$cadena .= '<label for="'.$textos[0].'">';
     	$cadena .= ucfirst(strtolower($textos[0]));
@@ -656,6 +657,7 @@ class FormularioCrear {
     
     	
     	$cadena .= '</div>';
+    	$cadena .= '<br>';
     		
     	
     	 

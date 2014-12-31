@@ -944,8 +944,8 @@ class Registrador{
 						
 						do{
 							
-							if($i==0) $parametros['nombre'] = $nombre."_copia";
-							else $parametros['nombre'] = $nombre."_copia".$i;
+							if($i==0) $parametros['nombre'] = $nombre." copia";
+							else $parametros['nombre'] = $nombre." copia".$i;
 							$this->procesarParametros($parametros);
 							$creacion =  $this->persistencia->create($this->parametros,$this->valores);
 							

@@ -78,7 +78,7 @@ class EvaluadorReglas{
     				'descripcion' =>'función Predefinida',
     				'proceso'=>0,
     				'tipo'=>3,
-    				'rango'=>'-999999999999999999999999999,999999999999999999999999',
+    				'rango'=>'-999999999999999999999999999,999999999999999999999999999',
     				'categoria'=>1,
     				'ruta','',
     				'valor'=>'',
@@ -332,13 +332,15 @@ class EvaluadorReglas{
     	if($valor == '')$valor = base64_decode($variable[0]['valor']);
     	$tipo = $variable[0]['tipo'];
     	$rango = $variable[0]['rango'];
+    	$restriccion = $variable[0]['restriccion'];
     	
-    	return $this->evaluarVariableTexto($valor, $tipo, $rango);
+    	return $this->evaluarVariableTexto($valor, $tipo, $rango,$restriccion);
     
     }
     
-    public function evaluarVariableTexto($valor = '', $tipo = '' , $rango = ''){
-    	if(Tipos::validarTipo($valor,$tipo)&&Rango::validarRango($valor , $tipo , $rango))
+    public function evaluarVariableTexto($valor = '', $tipo = '' , $rango = '',$restriccion = ''){
+    	
+    	if(Tipos::validarTipo($valor,$tipo)&&Rango::validarRango($valor , $tipo , $rango,$restriccion))
     		return is_null(Tipos::evaluarTipo($valor,$tipo))?'nulo':Tipos::evaluarTipo($valor,$tipo);
     	return false;
     	
@@ -388,7 +390,7 @@ class EvaluadorReglas{
 
     		foreach ($valores as $valor){
     			foreach ($listaVariables as $variable){
-    				if($variable['nombre']==$valor[0]&&Rango::validarRango($valor[1],$variable['tipo'],$variable['rango']))$cadena = str_replace($valor[0], $this->evaluarValor($valor[1],$variable['tipo']), $cadena);
+    				if($variable['nombre']==$valor[0]&&Rango::validarRango($valor[1],$variable['tipo'],$variable['rango'],$variable['restriccion']))$cadena = str_replace($valor[0], $this->evaluarValor($valor[1],$variable['tipo']), $cadena);
     				
     			}
     		}
@@ -537,11 +539,12 @@ class EvaluadorReglas{
     	$rango = $funcion[0]['rango'];
     	$categoria = $funcion[0]['categoria'];
     	$ruta = base64_decode($funcion[0]['ruta']);
+    	$restriccion = $funcion[0]['restriccion'];
     	
-    	return $this->evaluarFuncionTexto($cadena, $valores, $tipo , $rango,$categoria,$ruta);
+    	return $this->evaluarFuncionTexto($cadena, $valores, $tipo , $rango,$categoria,$ruta,$restriccion);
     }
     
-    public function evaluarFuncionTexto($cadena = '', $valores = '', $tipo = '' , $rango = '',$categoria = '',$ruta = ''){
+    public function evaluarFuncionTexto($cadena = '', $valores = '', $tipo = '' , $rango = '',$categoria = '',$ruta = '',$restriccion=''){
     	
     	//1. Procesa los parametros y los Reemplaza
     		$cadena = $this->procesarParametros($cadena  );
@@ -551,6 +554,7 @@ class EvaluadorReglas{
     		$cadena = $this->procesarVariables($cadena , $valores );
     	}
     	
+    	//revisa si hay funciones y las evalua nuevamente
     	//procesa las funciones internas
     	    $cadena =  $this->procesarFunciones($cadena);
     	
@@ -559,11 +563,11 @@ class EvaluadorReglas{
     	
     	if(!$valor) return $this->getErrorEvaluador();
     	
-    	//revisa si hay funciones y las evalua nuevamente
+    	
     	
     	
     	//4. valida el tipo
-    	if(@Tipos::validarTipo($valor,$tipo)&&@Rango::validarRango($valor , $tipo , $rango))  	return (is_array($valor)||is_object($valor))?serialize($valor):$valor;
+    	if(@Tipos::validarTipo($valor,$tipo)&&@Rango::validarRango($valor , $tipo , $rango,$restriccion))  return (is_array($valor)||is_object($valor))?serialize($valor):$valor;
     	
     	return false;
     	 
