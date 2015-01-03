@@ -47,24 +47,26 @@ class GestorUsuariosComponentes{
     	
     	$listaPermitidos = $this->permisosUsuarioObjeto($this->usuario,$idObjeto);
     	
+    	if($this->superUsuario===true) return true;
+    	
     	if(!is_array($listaPermitidos)){
     		$this->mensaje->addMensaje("101","errorPermisosGeneral",'error');
     		return false;
     	}
     	
-    	if($this->superUsuario===true) return true;
     	
     	$idRegistro = (integer) $idRegistro;
     	$permiso =  (integer) $permiso;
     	$idObjeto =  (integer) $permiso;
 
-    	//echo $permiso."///<br>";
-    	//var_dump($listaPermitidos,"<br>",$this->listaRegistrosPermitidos,"<br>",$idRegistro,$permiso);
-    	 
-    	
     	foreach ($listaPermitidos as $permitidos){
     		
     		
+    		//es admin
+    		if($permitidos['permiso']==5){
+    			$this->superUsuario = true;
+    			return true;
+    		}
     		
     		
     		//actua propietario del objeto
@@ -79,11 +81,6 @@ class GestorUsuariosComponentes{
     			return true;
     		}
     		
-    		//es admin
-    		if($permitidos['permiso']==5){
-    			$this->superUsuario = true;
-    			return true;
-    		}
     		
     		
     		//tiwne permiso solicitado explicitamente

@@ -20,7 +20,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE reglas.tipo_datos
-  OWNER TO reglas;
+  OWNER TO ecosiis;
 
  --Llenar tabla
   INSERT INTO reglas.tipo_datos(
@@ -47,7 +47,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE reglas.estados
-  OWNER TO reglas;
+  OWNER TO ecosiis;
   
   --llena Tabla de estados
   
@@ -79,7 +79,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE reglas.objetos
-  OWNER TO reglas;
+  OWNER TO ecosiis;
   
   
   ---Lnea Tabla de Objetos
@@ -116,7 +116,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE reglas.columnas
-  OWNER TO reglas;
+  OWNER TO ecosiis;
 
 INSERT INTO reglas.columnas
 ( columnas_nombre , columnas_alias , columnas_input, columnas_consultar,columnas_crear,
@@ -127,7 +127,7 @@ INSERT INTO reglas.columnas
   ('nombre','Nombre','text',true,true,true,false,false,false,true, true, false),
   ('descripcion','Descripción','textarea',false,true,true,false,false,false,false, false, false),
   ('proceso','Proceso','text',true,true,true,false,false,true,false, true, false),
-  ('tipo','Tipo','select',true,true,true,true,false,false,false, true, false),
+  ('tipo','Tipo','select',true,true,true,false,false,false,false, true, false),
   ('valor','Valor','textarea',false,true,true,true,false,false, false, true, false),
   ('estado','Estado','select',true,true,true,false,false,false,false, true, false),
   ('fecha_registro','Fecha Registro','date',true,false,false,false,false,false,false, false, false),
@@ -152,11 +152,11 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE reglas.permisos
-  OWNER TO reglas;
+  OWNER TO ecosiis;
   
  
 --set a la secuencia en 0
-ALTER SEQUENCE "permisos_permisos_id_seq" MINVALUE 0 START 0 RESTART 0;
+ALTER SEQUENCE reglas."permisos_permisos_id_seq" MINVALUE 0 START 0 RESTART 0;
 
 ---Llena Tabla de Permisos
   INSERT INTO reglas.permisos(
@@ -183,7 +183,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE reglas.categoria_funcion
-  OWNER TO reglas;
+  OWNER TO ecosiis;
 
 
 ---Llena Tabla de categoria funciones
@@ -209,7 +209,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE reglas.operadores
-  OWNER TO reglas;
+  OWNER TO ecosiis;
 
 
 ---Llena Tabla de categoria funciones
@@ -248,7 +248,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE reglas.procesos
-  OWNER TO reglas;
+  OWNER TO ecosiis;
   
  INSERT INTO reglas.procesos(pro_nombre,pro_alias)
  VALUES ( 'proceso1','proceso 1'),
@@ -282,7 +282,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE reglas.parametros
-  OWNER TO reglas;
+  OWNER TO ecosiis;
      
 --tabla h parametros
  CREATE TABLE reglas.parametros_h
@@ -306,7 +306,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE reglas.parametros_h
-  OWNER TO reglas;
+  OWNER TO ecosiis;
 
 
 --Variables
@@ -335,7 +335,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE reglas.variables
-  OWNER TO reglas;
+  OWNER TO ecosiis;
      
 --tabla h variables
  CREATE TABLE reglas.variables_h
@@ -361,7 +361,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE reglas.variables_h
-  OWNER TO reglas;
+  OWNER TO ecosiis;
   
   
  --Funciones
@@ -395,7 +395,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE reglas.funciones
-  OWNER TO reglas;
+  OWNER TO ecosiis;
      
 --tabla h funciones
  CREATE TABLE reglas.funciones_h
@@ -422,7 +422,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE reglas.funciones_h
-  OWNER TO reglas;
+  OWNER TO ecosiis;
   
   
 
@@ -450,7 +450,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE reglas.reglas
-  OWNER TO reglas;
+  OWNER TO ecosiis;
      
 --tabla h variables
  CREATE TABLE reglas.reglas_h
@@ -474,7 +474,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE reglas.reglas_h
-  OWNER TO reglas;
+  OWNER TO ecosiis;
 
 
 
@@ -497,7 +497,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE reglas.usuarios
-  OWNER TO reglas;
+  OWNER TO ecosiis;
   
   ----inserta usuarios de pruebas
   INSERT INTO reglas.usuarios(
@@ -525,7 +525,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE reglas.acceso
-  OWNER TO reglas;
+  OWNER TO ecosiis;
 
 
 
@@ -556,10 +556,10 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE reglas.relaciones
-  OWNER TO reglas;
+  OWNER TO ecosiis;
 
 --se agrega un usuario como administrador para poder probar
-INSERT INTO reglas.relaciones (re_usuario , rel_objeto ,rek_registro, rel_permiso , rel_estado)
+INSERT INTO reglas.relaciones (rel_usuario , rel_objeto ,rel_registro, rel_permiso , rel_estado)
                           VALUES ( 11 , 0 , 0 , 5 , 1);
  
  
@@ -583,6 +583,6 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE reglas.relaciones_h
-  OWNER TO reglas;
+  OWNER TO ecosiis;
    
   
