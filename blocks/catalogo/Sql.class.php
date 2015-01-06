@@ -141,6 +141,13 @@ class Sql extends \Sql {
   				$cadenaSql .= " FROM catalogo.catalogo_elemento ";
             	break;
             	
+            	case "listarElementosID":
+            		$cadenaSql = "SELECT elemento_id, elemento_padre, elemento_codigo, elemento_catalogo, ";
+            		$cadenaSql .= " elemento_nombre, elemento_fecha_creacion ";
+            		$cadenaSql .= " FROM catalogo.catalogo_elemento ";
+            		$cadenaSql .= " WHERE elemento_catalogo=".$variable;
+            		break;
+            	
             case "buscarUltimoIdCatalogo":
             	 $cadenaSql =  "select max(lista_id) from catalogo.catalogo_lista";
             	break;

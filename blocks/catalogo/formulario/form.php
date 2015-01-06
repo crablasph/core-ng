@@ -62,16 +62,18 @@ class Formulario {
     	$cadena1 = "<br><br><br><br><br><br><br>";
     	$cadena1 .= "<div id='espacioTrabajo'>";
     	
+    	
+    	
+    	
     	//menu 
     	$cadena1 .= "<div id='marcoMenu'>";
-    	$cadena1 .= '<div  id="menu" class="menu2">';
-    	//$cadena .= '<div class="menu" style="max-width: 80%;margin: 0 auto;color:green;text-align:center;">';
-    	$cadena1 .= '<div  class="ui-state-default ui-corner-all botonMenu">';
-    	$cadena1 .='<a style="text-align: center;" class="ui-icon ui-icon-plus" onclick="agregarElementoLista()"  title="'.$textos[0].'">+</a>';
-    	$cadena1 .='</div>';
-    	$cadena1 .= '<div  class="ui-state-default ui-corner-all botonMenu">';
-    	$cadena1 .='<a style="text-align: center;" class="ui-icon ui-icon-home" onclick="irACasa()"  title="'.$textos[8].'">+</a>';
-    	$cadena1 .='</div>';
+    	$cadena1 .= '<div  id="menu"  class="ui-widget-header ui-corner-all">';
+    	
+    	$cadena1 .= '<button id="agregarElemento"  class="botonMenu" title="'.$textos[0].'">';
+    	$cadena1 .='</button>';
+    	
+    	$cadena1 .= '<button id="irACasa"  class="botonMenu" title="'.$textos[8].'">';
+    	$cadena1 .='</button>';
     	//</div>';
     	//$cadena .='</div>';
     	$cadena1 .='</div>';
@@ -139,23 +141,23 @@ class Formulario {
     		//Edicion
     		//mostrar
     		$cadena .= "<td>";
-    		$cadena .= '<div class="interno">';
-    		$cadena .= '<div class="mostrarElemento" onclick="mostrarElementoLista('.$fila[0].')" id="el'.$fila[0].'" title="'.$textos[1].'">v</div>';
-    		$cadena .='</div>';
+    		
+    		$cadena .= '<button class="mostrar" onclick="mostrarElementoLista('.$fila[0].')" id="el'.$fila[0].'" title="'.$textos[1].'"></button>';
+    		
     		$cadena .= "</td>";
     		
     		//editar elementos
     		$cadena .= "<td>";
-    		$cadena .= '<div class="interno">';
-    		$cadena .= '<div class="editarElemento2"  onclick="editarElementoLista(this)" id="el'.$fila[0].'" title="'.$textos[2].'">e</div>';
-    		$cadena .='</div>';
+    		
+    		$cadena .= '<button class="editar"  onclick="editarElementoLista(this)" id="el'.$fila[0].'" title="'.$textos[2].'"></button>';
+    		
     		$cadena .= "</td>";
     		
     		//Eliminar
     		$cadena .= "<td>";
-    		$cadena .= '<div class="interno">';
-    		$cadena .= '<div class="eliminarElemento" onclick="eliminarElementoLista(this)" id="el'.$fila[0].'" title="'.$textos[5].'">x</div>';
-    		$cadena .='</div>';
+    		
+    		$cadena .= '<button class="eliminar" onclick="eliminarElementoLista(this)" id="el'.$fila[0].'" title="'.$textos[5].'"></button>';
+    		
     		$cadena .= "</td>";
     		
     		//termina fila

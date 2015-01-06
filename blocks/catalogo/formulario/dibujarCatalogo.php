@@ -84,11 +84,18 @@ class Formulario {
     	
     	$base = $this->consultarElementosNivel(0);
     	
+    	$this->consultarDatosCatalogo();
+    	
+    	
     	//Inicio Lista
     	echo "<br>";
     	echo '<div id = "arbol">';
     	echo '<fieldset class="ui-corner-all ui-widget ui-widget-content ui-corner-all">';
-    	echo "<br>";
+    	echo '<legend>'.$this->arrayDatos[0]['lista_nombre'].'</legend>';
+    	
+    	
+    	
+    	
     	if(!$base){
     		$this->miConfigurador->setVariableConfiguracion ( 'mostrarMensaje', 'catalogoVacio' );
     		
@@ -100,6 +107,11 @@ class Formulario {
     	echo "</div>";
     	echo "<br>";
     	
+    	$textos[8]=$this->lenguaje->getCadena("listaCasa");
+    	echo '<div class="marcoBotones">';
+    	echo '<button id="volver"  class="botonMenu" value="'.$textos[8].'" title="'.$textos[8].'">'.$textos[8];
+    	echo '</button>';
+    	echo "</div>";
     	
     	
     }
@@ -109,8 +121,8 @@ class Formulario {
     	if($base){
     		
 	    	echo '<ul  ';
-	    	if($this->conteoListas==0&&!$hijo) echo 'class="tree" ' ;
-	    	else echo 'style="list-style: none; ';
+	    	//if($this->conteoListas==0&&!$hijo) echo 'class="tree" ' ;
+	    	//else echo 'style="list-style: none; ';
 	    	$this->conteoListas++;
 	    	echo '">';
 	    	foreach ($base as $b){
@@ -128,41 +140,51 @@ class Formulario {
 	    		echo '<li id="el'.$b['elemento_id'].'">';
 	    		
 	    		/////comienzo fila
-	    		echo '<div class="bloque ui-state-default ui-corner-all ui-button-text-only">';
+	    		echo '<div class="fila">';
 	    		echo '<div class="interno" >';
 	    		//contraer - expandir
 	    		if($base2){
 	    			
-	    			echo '<a title="click para expandir elementos" style="color: transparent;" class="agregar" onclick="cambioHijos(\'contenedor'.$b['elemento_id'].'\',this)">+';
-	    			echo "</a>";
+	    			echo '<button title="click para expandir elementos" class="expandir" onclick="cambioHijos(\'contenedor'.$b['elemento_id'].'\',this)">';
+	    			echo "</button>";
 	    		}
-	    		if(isset($_REQUEST['editar'])&&$_REQUEST['editar']==true){
-		    		//edicion
-		    	
-	    			//eliminar
-	    			echo '<a title="click para eliminar" style="color: transparent;" class="eliminarElemento" onclick="eliminarElementoCatalogo('.$b['elemento_id'].','.$b['elemento_padre'].','.$b['elemento_codigo'].','.$b['elemento_catalogo'].')">e';
-	    			echo "</a>";
-	    			
-	    			//editar
-		    		echo '<a title="click para editar" style="color: transparent;" class="editarElemento2" onclick="editarElementoCatalogo('.$b['elemento_id'].','.$b['elemento_padre'].','.$b['elemento_codigo'].',\''.$b['elemento_nombre'].'\','.$b['elemento_catalogo'].')">e';
-		    		echo "</a>";
-		    		
-		    		
-	    		}
+	    		
+	    		
+	    		
 	    		
 	    		echo "</div>";
 	    		
 	    		echo '<div class="interno"   ';
-	    		if(isset($_REQUEST['editar'])&&$_REQUEST['editar']==true){
+	    		/*if(isset($_REQUEST['editar'])&&$_REQUEST['editar']==true){
 	    			echo 'title="click para seleccionar el padre"';
-	    		}
+	    		}*/
 	    		
 	    		
-	    		echo ' onclick="accion(\'contenedor'.$b['elemento_id'].'\','.$b['elemento_codigo'].','.$b['elemento_id'].')"';
+	    		echo ' title="'.$b['elemento_fecha_creacion'].'" onclick="accion(\'contenedor'.$b['elemento_id'].'\','.$b['elemento_codigo'].','.$b['elemento_id'].')"';
 	    			
 	    		echo '>';
-	    		echo $b['elemento_codigo'].". ".$b['elemento_nombre']." - ".$b['elemento_fecha_creacion'];
+	    		echo $b['elemento_codigo']." ".$b['elemento_nombre']."  ";
 	    		echo "</div>";
+	    		
+	    		
+	    		if(isset($_REQUEST['editar'])&&$_REQUEST['editar']==true){
+	    			//edicion
+
+	    			echo '<div class="interno">';
+	    			echo '<div class="posiscion">';
+	    			
+	    			//eliminar
+	    			echo '<button title="click para eliminar" class="eliminar" onclick="eliminarElementoCatalogo('.$b['elemento_id'].','.$b['elemento_padre'].','.$b['elemento_codigo'].','.$b['elemento_catalogo'].')">';
+	    			echo "</button>";
+	    		
+	    			//editar
+	    			echo '<button title="click para editar" class="editar" onclick="editarElementoCatalogo('.$b['elemento_id'].','.$b['elemento_padre'].','.$b['elemento_codigo'].',\''.$b['elemento_nombre'].'\','.$b['elemento_catalogo'].')">';
+	    			echo "</button>";
+	    		
+	    		
+	    			echo '</div>';
+	    			echo '</div>';
+	    		}
 	    		
 	    		echo "</div>";
 	    		///fin fila

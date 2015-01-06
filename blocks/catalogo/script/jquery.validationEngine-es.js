@@ -17,6 +17,15 @@
                     },
                     "alertText": "* Field must equal test"
                 },
+                "valorLista": { 
+                    "func": function(field, rules, i, options){
+                    	
+                    	return validarValorLista(field.val(), field.attr('id'));
+                  
+                    },
+                    "alertText": "* Valor no esta en la lista",
+                    "alertTextLoad": "* Cargando, espere por favor"
+                },
                 "minSize": {
                     "regex": "none",
                     "alertText": "* Mínimo de ",

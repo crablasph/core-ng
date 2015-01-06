@@ -88,6 +88,10 @@ class Funcion {
     	include_once ($this->ruta . "funcion/eliminarElementoCatalogo.php");
     }
     
+    private function autocompletar(){
+    	include_once ($this->ruta . "funcion/autocompletar.php");
+    }
+    
     
     function action() {
         
@@ -136,6 +140,12 @@ class Funcion {
 				case "cambiarNombreCatalogo":
 					$this->cambiarNombreCatalogo();
 					break;
+					
+				case "autocompletar":
+					
+					$this->autocompletar();
+					break;
+						
 				default:
 					break;
 			}

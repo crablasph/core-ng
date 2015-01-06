@@ -101,34 +101,39 @@ class Formulario {
     }
     
     private function edicionNombreCatalogo(){
+    	
     	$nombre =  $this->lenguaje->getCadena ( 'nombreCatalogo' );
     	$nombreTitulo =  $this->lenguaje->getCadena ( 'nombreTitulo' );
-    	$crear =  $this->lenguaje->getCadena ( 'cambiarNombre' );
+    	
     	$crearTitulo =  $this->lenguaje->getCadena ( 'cambiarNombreTitulo' );
     	 
-    	echo '<form name="catalogo_1" action="index.php" method="post" id="catalogo_1">';
+    	echo '<form id="catalogo_1" name="catalogo" action="index.php" method="post">';
     	//echo '<div id="agregar" class="marcoBotones">';
     	echo '<fieldset class="ui-corner-all ui-widget ui-widget-content ui-corner-all">';
-    	 
+    	echo '<legend>'.$this->lenguaje->getCadena ( 'catalogo' ).'</legend>';
     	 
     	echo '<div style="float:left; width:150px"><label for="nombre">'.$nombre.'</label><span style="white-space:pre;"> </span></div>';
     	echo '<input type="text" maxlength="" size="50" value="'.$this->arrayDatos[0][1].'" class="ui-widget ui-widget-content ui-corner-all  validate[required] " tabindex="1" name="nombreCatalogo" id="nombreCatalogo" title="'.$nombreTitulo.'">';
     	 
     	echo '</fieldset>';
-    	//echo '</div>';
-    	 
-    	echo '<div id="botones"  class="marcoBotones">';
-    	echo '<div class="campoBoton">';
-    	echo '<button  onclick="cambiarNombreCatalogo()" type="button" tabindex="2" id="crearA" value="'.$crear.'" class="ui-button-text ui-state-default ui-corner-all ui-button-text-only">'.$crear.'</button>';
-    	
-    	echo '</div>';
-    	echo '</div>';
     	echo '</form>';
+    	 
+    	
     }
     
     private function edicionBotones(){
     	
-    	echo '<div id="botones" class="marcoBotones"> ';
+    	$crear =  $this->lenguaje->getCadena ( 'cambiarNombre' );
+    	echo '<div id="botones"  class="marcoBotones">';
+    	
+    	echo '<div class="campoBoton">';
+    	echo '<button  onclick="cambiarNombreCatalogo()" type="button" tabindex="2" id="crearA" value="'.$crear.'" class="ui-button-text ui-state-default ui-corner-all ui-button-text-only">'.$crear.'</button>';
+    	 
+    	echo '</div>';
+    	
+    	
+    	
+    	
     	echo '<div class="campoBoton">';
     	echo '<button "="" onclick=" agregarElementoCatalogo()" type="button" tabindex="2" id="agregarA"';
         echo 'value="Agregar Elemento" class="ui-button-text ui-state-default ui-corner-all ui-button-text-only">Agregar Elemento</button>';
@@ -154,14 +159,14 @@ class Formulario {
     	$idPadreTitulo =  $this->lenguaje->getCadena ( 'idPadreTitulo' );
     	$idPadre =  $this->lenguaje->getCadena ( 'idPadre' );
     	echo '<div class="jqueryui  anchoColumna1">';
-    	echo '<div style="float:left; width:150px"><label for="idPadre">'.$idPadre.'</label></div>';
-    	echo '<div style="float:left; width:536px;"><div  tabindex="3" size="50" value="0" name="lidPadre" id="lidPadre" title="'.$idPadreTitulo.'" class="ui-widget ui-widget-content ui-corner-all">0</div></div>';
+    	echo '<div style="float:left;display:inline; width:150px"><label for="idPadre">'.$idPadre.'</label></div>';
+    	echo '<input type="text" onchange="cambiarPadre()" onkeyup="autocompletar()" class="ui-widget ui-widget-content ui-corner-all validate[required,custom[valorLista]]"  tabindex="3" size="50" value="0" name="lidPadre" id="lidPadre" title="'.$idPadreTitulo.'" class="ui-widget ui-widget-content ui-corner-all"></input>';
     	echo '</div>';
     	
     }
     
     private function campoNombre(){
-    	echo '<br>';
+    	
     	echo ' <div class="jqueryui  anchoColumna1">';
     	echo ' <div style="float:left; width:150px"><label for="nombreElemento">Nombre Elemento</label><span style="white-space:pre;"> </span></div>';
     	echo ' <input type="text" maxlength="" size="50" value="" class="ui-widget ui-widget-content';
@@ -195,27 +200,25 @@ class Formulario {
     	
     	$tab = 0;
     	
+    	echo "<br>";
+    	$this->notaUso();
+    	 
+    	echo "<br>";
     	
     	$this->edicionNombreCatalogo();
     	
-    	echo "<br>";
-    	$this->notaUso();
-    	
-    	echo "<br>";
-    	
-    	echo '<fieldset class="ui-corner-all ui-widget ui-widget-content ui-corner-all">';
-    	   	
     	
     	
     	echo  '<form id="catalogo" name="catalogo" action="index.php" method="post">';
+    	echo '<fieldset class="ui-corner-all ui-widget ui-widget-content ui-corner-all">';
+    	echo '<legend>'.$this->lenguaje->getCadena ( 'elementos' ).'</legend>';   	
+    	
     	$this->campoId();
     	
     	$this->campoPadre();
     	
-    	
-    	
-    	
     	$this->campoNombre();
+    	
     	echo '<input id="idCatalogo" type="hidden" value="'.$_REQUEST['idCatalogo'].'" name="idCatalogo">';
     	echo '<input id="idReg" type="hidden" value="0" name="idReg">';
     	echo '<input id="idPadre" type="hidden" value="0" name="idPadre">';

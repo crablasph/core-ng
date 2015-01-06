@@ -28,6 +28,46 @@ $('#tabla').DataTable({
 });
 
 
+$( "#agregarElemento" ).button({
+    text: false,
+    icons: {
+    primary: "ui-icon-plus"
+    }
+  }).click(function() {
+  	agregarElementoLista();
+  	
+  });
+
+$( "#irACasa" ).button({
+    text: false,
+    icons: {
+    primary: "ui-icon-home"
+    }
+  }).click(function() {
+  	irACasa();
+  	
+  });
+
+$( ".mostrar" ).button({
+	    text: false,
+	    icons: {
+	    primary: "ui-icon-search"
+	    }
+	  });
+
+	$( ".editar" ).button({
+	    text: false,
+	    icons: {
+	    primary: "ui-icon-pencil"
+	    }
+	  });
+
+	$( ".eliminar" ).button({
+	    text: false,
+	    icons: {
+	    primary: "ui-icon-trash"
+	    }
+	  });
 
 
 $(function() {
@@ -39,6 +79,12 @@ $(function() {
 	},
 	{ hide: { duration: 800 } }
 	);
+	
+	
+	
+	
+	
+	
 });
 
 $(function() {

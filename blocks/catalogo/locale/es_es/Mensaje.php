@@ -70,4 +70,7 @@ $this->idioma['crearLabel']="Crear catalogo";
 $this->idioma["listaMostrar"]="Ver";
 $this->idioma["listaEdicion"]="Editar";
 $this->idioma["listaEliminacion"]="Eliminar";
+
+$this->idioma['catalogo']="Catálogo";
+$this->idioma['elementos']="Elementos";
 ?>

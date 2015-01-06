@@ -62,6 +62,10 @@ $cadenaACodificar9=$cadenaACodificar."&funcion=eliminarElementoCatalogo";
 $cadena9=$this->miConfigurador->fabricaConexiones->crypto->codificar_url($cadenaACodificar9,$enlace);
 
 
+$cadenaACodificar10=$cadenaACodificar."&funcion=autocompletar";
+$cadena10=$this->miConfigurador->fabricaConexiones->crypto->codificar_url($cadenaACodificar10,$enlace);
+
+
 //URL definitiva
 $addLista=$url.$cadena1;
 $crearCatalogo=$url.$cadena2;
@@ -73,9 +77,14 @@ $nomCatal=$url.$cadena7;
 $mosLista=$url.$cadena8;
 $delCatal=$url.$cadena9;
 $casa =  $url.$cadena0;
+$autocompletar = $url.$cadena10;
 ?>
 
 <script type='text/javascript'>
+
+var listaIds =  [];
+var listaNombres = [];
+var listaAlias = [];
 
 	    function irACasa(){
 	    	window.location = '<?php echo $casa; ?>';
@@ -91,7 +100,7 @@ $casa =  $url.$cadena0;
 	                
 		  			var div = document.getElementById("marcoTrabajo");
 		  			div.innerHTML = jresp;
-		  			
+		  			autocompletar();
 			       }
 	        });
 			$(document).tooltip();
@@ -108,10 +117,16 @@ $casa =  $url.$cadena0;
 	            dataType: "html",
 	            success: function(jresp){
 	                
-		  			var div = document.getElementById("contenidoCatalogoListas");
+		  			var div = document.getElementById("marcoTrabajo");
 		  			div.innerHTML = "";
 		  			div.innerHTML = jresp;
-		  			
+
+		  			$( "#volver" ).button().click(function() {
+		  			  	irACasa();
+		  			  	
+		  		  });
+		  			autocompletar();
+		  			  
 		  			
 			       }
 	        });
@@ -119,7 +134,7 @@ $casa =  $url.$cadena0;
 		}
 
 		function eliminarElementoCatalogo(id,idPadre,codigo,idCatalogo){
-			var r = confirm("Â¿Esta seguro que desea eliminar el elemento?");
+			var r = confirm("¿Está seguro que desea eliminar el elemento?");
 			if (r == true) {
 				$(document).tooltip('destroy');
 				var str = "&idCatalogo="+idCatalogo+"&id="+codigo+"&idPadre="+idPadre+"&idReg="+id;
@@ -137,7 +152,7 @@ $casa =  $url.$cadena0;
 				  			div.innerHTML += jresp;
 		                } 			
 			  			
-			  			
+		            	autocompletar();
 				   }
 		        });
 				$(document).tooltip();
@@ -163,9 +178,14 @@ $casa =  $url.$cadena0;
 	                }else{
 	                	var div = document.getElementById("arbol");
 			  			div.innerHTML = jresp;
-	                } 			
+	                }
+
+	                $( "#volver" ).button().click(function() {
+		  			  	irACasa();
+		  			  	
+		  		  }); 			
 		            
-		  			
+	                autocompletar();
 			       }
 	        });
 		}
@@ -186,10 +206,17 @@ $casa =  $url.$cadena0;
 			  			a = document.createElement("div");
 			  			a.id = "el"+jresp;	
 		            	editarElementoLista(a);
+		            	
 	                }else{
 	                	var div = document.getElementById("arbol");
 			  			div.innerHTML = jresp;
-	                } 			
+	                }
+
+	                $( "#volver" ).button().click(function() {
+		  			  	irACasa();
+		  			  	
+		  		  }); 			
+	                autocompletar();
 		            
 		  			
 			       }
@@ -219,7 +246,7 @@ $casa =  $url.$cadena0;
 			  			
 	                } 			
 		            
-		  			
+	                autocompletar();
 			       }
 	        });
 		}
@@ -242,7 +269,7 @@ $casa =  $url.$cadena0;
 			                
 				  			var div = document.getElementById("marcoTrabajo");
 				  			div.innerHTML = jresp;
-				  			
+				  			autocompletar();
 					       }
 			        });
 					$(document).tooltip();
@@ -253,7 +280,7 @@ $casa =  $url.$cadena0;
 		
 		
 		$('#idPadre').val(cod);
-		$('#lidPadre').html(cod);
+		$('#lidPadre').val(cod);
 		$('#idPadre').val(id);
 		$('#idReg').val(id);
 	}
@@ -267,26 +294,129 @@ $casa =  $url.$cadena0;
 		var className = $(esto).attr('class');
 		$( esto ).removeAttr( "title" );
 
-		if(className == 'disminuir'){
-			$( esto ).removeClass( 'disminuir' );
-			$( esto ).addClass( 'agregar' );
-			$( esto ).attr('title', 'click para expandir elementos');
+		//ui-icon ui-icon-plus
+		
+		
+		
+		if($( esto ).children().hasClass('ui-icon-plus')){
+			$( esto ).button({
+			    text: false,
+			    icons: {
+			    primary: "ui-icon-minus"
+			    }
+			  }).attr('title', 'click para contraer elementos');
+		
 		}else{
-			$( esto ).removeClass( 'agregar' );
-			$( esto ).addClass( 'disminuir' );
-			$( esto ).attr('title', 'click para contraer elementos');
+			$( esto ).button({
+			    text: false,
+			    icons: {
+			    primary: "ui-icon-plus"
+			    }
+			  }).attr('title', 'click para expandir elementos');
+		
 		}
-
+		
+		
 		$(document).tooltip();
 		
 	}
+
+
+	function autocompletar(elemento){
+
+
+        
+    	
+    	if(typeof listaIds['lidPadre']=='undefined'){
+
+    		
+    	$( "#lidPadre" ).attr('disabled',true);
+        	
+    	listaIds['lidPadre'] =  [];
+    	listaNombres['lidPadre'] = [];
+    	listaAlias['lidPadre'] = [];       	
+
+        data = "idCatalogo="+$("#idCatalogo").val();
+    	
+    	
+    	$.ajax({
+            url: "<?php echo $autocompletar;?>",
+            type:"post",
+            data:data,
+            dataType: "json",
+            success: function(jresp){
+            	 
+            	
+	  			for(i=0;i<jresp.length;i++){
+		  			
+	  				listaIds['lidPadre'].push( jresp[i].id);
+	  				listaNombres['lidPadre'].push( jresp[i].nombre);
+	  				listaAlias['lidPadre'].push( jresp[i].alias);
+	  				 
+	  			}  
+		       }
+        });
+
+    	
+    	
+    	
+    	
+    	$( "#lidPadre" ).autocomplete({
+    	      source: listaNombres['lidPadre']
+    	    });
+    	    
+    	$( "#lidPadre" ).change(function() {
+    		   
+    	    	var indice = listaNombres['lidPadre'].indexOf(this.value);
+    	    	if(typeof listaIds['lidPadre'][indice] == 'undefined') $( "#idPadre").val($( "#lidPadre" ).val());
+            	else $( "#idPadre").val(listaIds['lidPadre'][indice]);
+            	
+    	    	
+        	    });
+
+    	$( "#lidPadre" ).attr('disabled',false);
+    	
+    	}
+
+    	
+    	
+    	var indice = listaNombres['lidPadre'].indexOf($( "#lidPadre" ).val());
+    	if(typeof listaIds['lidPadre'][indice] == 'undefined') $( "#idPadre").val($( "#lidPadre" ).val());
+    	else $( "#idPadre").val(listaIds['lidPadre'][indice]);
+    	
+    	
+    	
+    	return 0;
+    	
+    	
+       }
+
+    	
+	function cambiarPadre(){
+		var indice = listaNombres['lidPadre'].indexOf($( "#lidPadre" ).val());
+    	if(typeof listaIds['lidPadre'][indice] == 'undefined') $( "#idPadre").val($( "#lidPadre" ).val());
+    	else $( "#idPadre").val(listaIds['lidPadre'][indice]);
+
+    	console.log($( "#idPadre").val());
+    	
+    
+	}
+	
+	function validarValorLista(valor,id){
+        
+        
+        if(valor==0) return true;
+        autocompletar();
+        if(typeof listaNombres['lidPadre'] == 'undefined') autocompletar();
+     	return listaNombres['lidPadre'].indexOf(String(valor))<0?false:true;
+    }
 
 	function editarElementoCatalogo(id,padre,codigo,nombre,idCatalogo){
 		$('#idPadre').val(padre);
 		$('#id').val(codigo);
 		$('#nombreElemento').val(nombre);
 		$('#idCatalogo').val(idCatalogo);
-		$('#lidPadre').html(padre);
+		$('#lidPadre').val(padre);
 		$('#idReg').val(id);
 		$("#agregarA").html("Guardar Cambios elemento "+codigo+" con padre "+padre+"")
 		$("#agregarA").val("Guardar Cambios elemento "+codigo+" con padre "+padre+"");
@@ -298,7 +428,7 @@ $casa =  $url.$cadena0;
 		$("#agregarA").val("Agregar elemento");
 		$("#agregarA").attr("onclick","agregarElementoCatalogo()");
 		$('#idReg').val(0);
-		$('#lidPadre').html('0');
+		$('#lidPadre').val(0);
 		$('#catalogo')[0].reset();
 		a = document.createElement("div");
 			a.id = "el"+idCatalogo;	
@@ -318,8 +448,41 @@ $casa =  $url.$cadena0;
                 
 	  			var div = document.getElementById("marcoTrabajo");
 	  			div.innerHTML = jresp;
+
+	  			$( "button" ).button();
+	  			  
+	  			
+	  			$( "#volver" ).button().click(function() {
+	  			  	irACasa();
+	  			  	
+	  		  });
+	  			
+	  			$( ".expandir" ).button({
+	  			    text: false,
+	  			    icons: {
+	  			    primary: "ui-icon-plus"
+	  			    }
+	  			  });
+
+	  			$( ".editar" ).button({
+	  			    text: false,
+	  			    icons: {
+	  			    primary: "ui-icon-pencil"
+	  			    }
+	  			  });
+
+	  			$( ".eliminar" ).button({
+	  			    text: false,
+	  			    icons: {
+	  			    primary: "ui-icon-trash"
+	  			    }
+	  			  });
+
+	  			autocompletar();
+
 	  			
 		       }
+	       
         });
 		$(document).tooltip();
 }
@@ -341,8 +504,12 @@ $casa =  $url.$cadena0;
 	                
 		  			var div = document.getElementById("marcoTrabajo");
 		  			div.innerHTML = jresp;
+
+		  			autocompletar();
 		  			
 			       }
+
+		       
 	        });
 		}
 		$(document).tooltip();

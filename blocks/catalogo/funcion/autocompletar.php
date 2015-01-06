@@ -1,7 +1,5 @@
 <?php 
-namespace arka\catalogo\cambiarNombreCatalogo;
-
-
+namespace arka\catalogo\eliminarCatalogo;
 
 
 
@@ -18,8 +16,7 @@ class Formulario {
     var $miFormulario;
     var $sql;
     var $esteRecursoDB;
-    var $funcion;
-    var $editar;
+    var $miFuncion;
 
     function __construct($lenguaje, $formulario , $sql , $funcion) {
 
@@ -33,11 +30,7 @@ class Formulario {
         
         $this->sql = $sql;
         
-        $this->funcion = $funcion;
-        
-
-        
-        
+        //$this->miFuncion = $funcion;
         
         $conexion = "catalogo";
         $this->esteRecursoDB = $this->miConfigurador->fabricaConexiones->getRecursoDB($conexion);
@@ -48,51 +41,62 @@ class Formulario {
 
     }
 
-    function cambiarNombre() {
+    function eliminar() {
 		
     	
     	
-    	//validar request nombre
-    	if(!isset($_REQUEST['nombreCatalogo'])){
-    		$this->miConfigurador->setVariableConfiguracion ( 'mostrarMensaje', 'errorNombre' );
+    	//validar request idCatalogo
+    	if(!isset($_REQUEST['idCatalogo'])){
+    		$this->miConfigurador->setVariableConfiguracion ( 'mostrarMensaje', 'errorId' );
     		$this->miConfigurador->setVariableConfiguracion ( 'tipoMensaje','error' );
     		$this->mensaje();
     		exit;
     	}
     	
-    	if(strlen($_REQUEST['nombreCatalogo'])>50){
-    		$this->miConfigurador->setVariableConfiguracion ( 'mostrarMensaje', 'errorLargoNombre' );
+    	if(strlen($_REQUEST['idCatalogo'])>50||!is_numeric($_REQUEST['idCatalogo'])){
+    		$this->miConfigurador->setVariableConfiguracion ( 'mostrarMensaje', 'errorValId' );
     		$this->miConfigurador->setVariableConfiguracion ( 'tipoMensaje','error' );
     		$this->mensaje();
     		exit;
     	}
     	
-    	//validar nombre existente
-    	$cadena_sql = $this->sql->getCadenaSql("buscarCatalogo",$_REQUEST['nombreCatalogo']);
+    	//validar catalogo existente
+    	$cadena_sql = $this->sql->getCadenaSql("buscarCatalogoId",$_REQUEST['idCatalogo']);
+    	$registros = $this->esteRecursoDB->ejecutarAcceso($cadena_sql,"busqueda");
+    	 
+    	if(!$registros){
+    		$this->miConfigurador->setVariableConfiguracion ( 'mostrarMensaje', 'errorCatalogoExiste' );
+    		$this->miConfigurador->setVariableConfiguracion ( 'tipoMensaje','error' );
+    		$this->mensaje();
+    		exit;
+    	}
+    	
+    	
+    	$cadena_sql = $this->sql->getCadenaSql("listarElementosID",$_REQUEST['idCatalogo']);
+    	
     	$registros = $this->esteRecursoDB->ejecutarAcceso($cadena_sql,"busqueda");
     	
-    	if( is_array($registros)){
-    		$this->miConfigurador->setVariableConfiguracion ( 'mostrarMensaje', 'errorNombreExiste' );
-    		$this->miConfigurador->setVariableConfiguracion ( 'tipoMensaje','error' );
-    		$this->mensaje();
-    		exit;
-    	}
-    	
-    	$cadena_sql = $this->sql->getCadenaSql("cambiarNombreCatalogo",array($_REQUEST['nombreCatalogo'],$_REQUEST['idCatalogo']));
-    	
-    	$registros = $this->esteRecursoDB->ejecutarAcceso($cadena_sql);
-    	
     	if(!$registros){
-    		$this->miConfigurador->setVariableConfiguracion ( 'mostrarMensaje', 'errorCambioNombre' );
+    		$this->miConfigurador->setVariableConfiguracion ( 'mostrarMensaje', 'errorEliminar' );
     		$this->miConfigurador->setVariableConfiguracion ( 'tipoMensaje','error' );
     		$this->mensaje();
     		exit;
     	}
+    	
+    	$salida = array();
+    	
+    	foreach ($registros as $fila){
+    		$salida[] = array("id"=>$fila['elemento_id'],"nombre"=>$fila['elemento_codigo'],"alias"=>$fila['elemento_codigo']);
+    	}
+    	
+    	echo json_encode($salida);
+    	return true;
+    	
+    	
 
+    	$this->miConfigurador->setVariableConfiguracion ( 'mostrarMensaje', 'operacionExitosa' );
+    	$this->mensaje();
     	
-		 $this->mensaje2('cambioNombre');
-    	
-    	 //$this->funcion->dibujarCatalogo();
     	
     	exit;
     	
@@ -135,45 +139,13 @@ class Formulario {
 
     }
     
-    function mensaje2($mensaje) {
-    
-    	
-    	
-    	$atributos = array();
-    				$atributos ['mensaje'] = $this->lenguaje->getCadena ( $mensaje );
-    	
-    		// -------------Control texto-----------------------
-    		$esteCampo = 'divMensaje';
-    		$atributos ['id'] = $esteCampo;
-    		$atributos ["tamanno"] = '';
-    		$atributos ["estilo"] = 'information';
-    		$atributos ["etiqueta"] = '';
-    		$atributos ["columnas"] = ''; // El control ocupa 47% del tamaño del formulario
-    		echo $this->miFormulario->campoMensaje ( $atributos );
-    		unset ( $atributos );
-    
-    		 
-    	
-    
-    	return true;
-    
-    }
-    
-    
 
 }
 
-$miFormulario = new Formulario ( $this->lenguaje, $this->miFormulario,$this->sql , $this);
+$miFormulario = new Formulario ( $this->lenguaje, $this->miFormulario,$this->sql,$this );
 
 
-$miFormulario->cambiarNombre ();
-//$miFormulario->mensaje ();
-
-
-
-
-
-
-
+$miFormulario->eliminar ();
+$miFormulario->mensaje ();
 
 ?>
