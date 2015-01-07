@@ -405,7 +405,7 @@ var listaAlias = [];
     	if(typeof listaIds['lidPadre'][indice] == 'undefined') $( "#idPadre").val($( "#lidPadre" ).val());
     	else $( "#idPadre").val(listaIds['lidPadre'][indice]);
 
-    	console.log($( "#idPadre").val());
+    	
     	
     
 	}

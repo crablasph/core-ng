@@ -110,7 +110,7 @@ class Formulario {
     	echo '<form id="catalogo_1" name="catalogo" action="index.php" method="post">';
     	//echo '<div id="agregar" class="marcoBotones">';
     	echo '<fieldset class="ui-corner-all ui-widget ui-widget-content ui-corner-all">';
-    	echo '<legend>'.$this->lenguaje->getCadena ( 'catalogo' ).'</legend>';
+    	echo '<legend>'.utf8_encode($this->lenguaje->getCadena ( 'catalogo' )).'</legend>';
     	 
     	echo '<div style="float:left; width:150px"><label for="nombre">'.$nombre.'</label><span style="white-space:pre;"> </span></div>';
     	echo '<input type="text" maxlength="" size="50" value="'.$this->arrayDatos[0][1].'" class="ui-widget ui-widget-content ui-corner-all  validate[required] " tabindex="1" name="nombreCatalogo" id="nombreCatalogo" title="'.$nombreTitulo.'">';

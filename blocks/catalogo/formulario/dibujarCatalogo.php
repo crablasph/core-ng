@@ -91,7 +91,7 @@ class Formulario {
     	echo "<br>";
     	echo '<div id = "arbol">';
     	echo '<fieldset class="ui-corner-all ui-widget ui-widget-content ui-corner-all">';
-    	echo '<legend>'.$this->arrayDatos[0]['lista_nombre'].'</legend>';
+    	echo '<legend>'.utf8_encode($this->arrayDatos[0]['lista_nombre']).'</legend>';
     	
     	
     	
