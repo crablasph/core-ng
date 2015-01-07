@@ -125,6 +125,12 @@ var listaAlias = [];
 		  			  	irACasa();
 		  			  	
 		  		  });
+		  			$( ".expandir" ).button({
+		  			    text: false,
+		  			    icons: {
+		  			    primary: "ui-icon-plus"
+		  			    }
+		  			  });
 		  			autocompletar();
 		  			  
 		  			
@@ -254,7 +260,7 @@ var listaAlias = [];
 	}
 	
 	function eliminarElementoLista(el){
-			var r = confirm("Â¿Esta seguro que desea eliminar el elemento?");
+			var r = confirm("¿Está seguro que desea eliminar el elemento?");
 			
 				var id =  el.id.substring(2);
 				if (r == true) {
@@ -283,6 +289,7 @@ var listaAlias = [];
 		$('#lidPadre').val(cod);
 		$('#idPadre').val(id);
 		$('#idReg').val(id);
+		autocompletar();
 	}
 
 	function cambioHijos(el,esto){
@@ -361,9 +368,14 @@ var listaAlias = [];
     	
     	
     	
+
+    	
+    	
+    	}
+
     	$( "#lidPadre" ).autocomplete({
-    	      source: listaNombres['lidPadre']
-    	    });
+  	      source: listaNombres['lidPadre']
+  	    });
     	    
     	$( "#lidPadre" ).change(function() {
     		   
@@ -375,10 +387,6 @@ var listaAlias = [];
         	    });
 
     	$( "#lidPadre" ).attr('disabled',false);
-    	
-    	}
-
-    	
     	
     	var indice = listaNombres['lidPadre'].indexOf($( "#lidPadre" ).val());
     	if(typeof listaIds['lidPadre'][indice] == 'undefined') $( "#idPadre").val($( "#lidPadre" ).val());

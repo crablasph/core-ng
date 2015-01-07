@@ -167,8 +167,8 @@ class Formulario {
     function agregarElementoCatalogo() {
 		
     	
-    	
-    	$cadena_sql = $this->sql->getCadenaSql("crearElementoCatalogo",array($_REQUEST['idReg'],$_REQUEST['id'],$_REQUEST['idCatalogo'],$_REQUEST['nombreElemento']));
+
+    	$cadena_sql = $this->sql->getCadenaSql("crearElementoCatalogo",array($_REQUEST['idPadre'],$_REQUEST['id'],$_REQUEST['idCatalogo'],$_REQUEST['nombreElemento']));
     	$registros = $this->esteRecursoDB->ejecutarAcceso($cadena_sql);
     	
     	if(!$registros){
