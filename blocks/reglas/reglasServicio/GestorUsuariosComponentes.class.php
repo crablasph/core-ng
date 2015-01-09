@@ -48,11 +48,12 @@ class GestorUsuariosComponentes{
     	$listaPermitidos = $this->permisosUsuarioObjeto($this->usuario,$idObjeto);
     	
     	if($this->superUsuario===true) return true;
-    	
+    	return array($this->superUsuario,$listaPermitidos);
     	if(!is_array($listaPermitidos)){
     		$this->mensaje->addMensaje("101","errorPermisosGeneral",'error');
     		return false;
     	}
+    	
     	
     	
     	$idRegistro = (integer) $idRegistro;
@@ -350,7 +351,8 @@ class GestorUsuariosComponentes{
     }
     
     public function permisosUsuarioObjeto($usuario ='',$objeto=''){
-    	 
+
+    	
     	if($usuario===''||$objeto===''){
     
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
@@ -374,7 +376,8 @@ class GestorUsuariosComponentes{
     	if($usuario!='')$parametros['usuario'] = $usuario;
     	if($objeto!='')$parametros['objeto'] = $objeto;
     	$consulta = $this->registrador->ejecutar(self::ID_OBJETO,$parametros,2);
-    	 
+
+    	
     	 
     	if(!is_array($consulta)){
     		 

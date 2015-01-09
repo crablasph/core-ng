@@ -77,7 +77,9 @@ class GestorVariable{
     
     public function crearVariable($nombre ='',$descripcion='',$proceso='',$tipo = '',$rango='',$restriccion='',$valor='',$estado=''){
     	
+    	
     	if(!$this->verificadorAcceso->validarAcceso(0,1,self::ID_OBJETO)) return false;
+    	
     	if($nombre==''||$proceso==''||$valor==''||$tipo==''||$rango==''){
     		$this->mensaje->addMensaje("101","errorEntradaParametrosGeneral",'error');
     		return false;
@@ -107,7 +109,7 @@ class GestorVariable{
     	
     	$parametros['estado'] = $estado;
     	
-    	
+         	
     	$ejecutar = $this->registrador->ejecutar(self::ID_OBJETO,$parametros,1);
     	
     	if(!$ejecutar){	

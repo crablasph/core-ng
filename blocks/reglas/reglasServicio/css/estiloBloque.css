@@ -1,3 +1,7 @@
+.no-close .ui-dialog-titlebar-close {
+  display: none;
+}
+
 .contenedorValor{
 	  position: relative;
     width: 100%;

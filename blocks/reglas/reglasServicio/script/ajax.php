@@ -287,19 +287,32 @@ var listaAlias = [];
 					if($('#selectedItems').val()!=''){
 						if($('#formularioConsulta').length>0) $('#formularioConsulta')[0].reset();
 						if( $('#justificacion').length==0 || $('#justificacion').val()==''){
-	
+
+							
 							justificacion =  '<form id="formJustificacion"><label><span>Justificaci&oacuten</span></label><textarea class="validate[required]" id="justificacion" name = "justificacion"></textarea></form>';
+
+							$(".ui-dialog-content").dialog('destroy').remove();
+							
 							$(justificacion).dialog({
+								
+								dialogClass: "no-close",
+									
 								buttons: {
 							        "Aceptar": function() {
-							        	if($("#formJustificacion").validationEngine('validate')==false) return false;
+
+								      if($("#formJustificacion").validationEngine('validate')==false) return false;
 
 							          $( this ).dialog( "close" );
 							          
 							          guardarElemento();
 								      
 							          
-							        }
+							        },
+							        "Cancelar":function() {
+							        	$( this ).dialog( "close" );
+							        	$(".ui-dialog-content").dialog('destroy').remove();
+
+								        }
 								}
 						   });
 							return 0;	   

@@ -199,6 +199,9 @@ $this->idioma['minfecha_registro']="Fecha Inicio";
 $this->idioma['maxfecha_registro']="Fecha Final";
 $this->idioma['fecha_registroTitulo']="Ingrese rango de fechas";
 
+
+
+
 $this->idioma['minimo']="Mínimo";
 $this->idioma['maximo']="Maximo";
 $this->idioma['guardar']="Guardar";
